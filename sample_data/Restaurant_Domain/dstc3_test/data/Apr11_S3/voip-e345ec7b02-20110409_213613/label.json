@@ -1,0 +1,197 @@
+{
+    "caller-id": "e345ec7b02", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "hasinternet": "true", 
+                "type": "pub"
+            }, 
+            "transcription": "im looking for a pub with an internet connection", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110409_213636_0001877_0002260.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "hasinternet", 
+                                "true"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=pub,hasinternet=true)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "type": "pub", 
+                "hasinternet": "true"
+            }, 
+            "transcription": "address please", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110409_213646_0003143_0003313.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "hasinternet": "true", 
+                "type": "pub"
+            }, 
+            "transcription": "phone number please", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110409_213656_0004103_0004270.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "hasinternet": "true", 
+                "childrenallowed": "true", 
+                "type": "pub"
+            }, 
+            "transcription": "are children allowed", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110409_213709_0005375_0005588.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "childrenallowed", 
+                                "true"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(childrenallowed=true)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "childrenallowed": "true", 
+                "hasinternet": "true", 
+                "type": "pub"
+            }, 
+            "transcription": "are children allowed", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110409_213720_0006480_0006700.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "childrenallowed", 
+                                "true"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(childrenallowed=true)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "hasinternet": "true", 
+                "childrenallowed": "true", 
+                "type": "pub"
+            }, 
+            "transcription": "thank you goodbye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-006-110409_213730_0007509_0007671.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a pub and it should have an internet connection. You don't care about the price range. You want to know the address, phone number, and whether children are allowed.", 
+            "request-slots": [
+                "addr", 
+                "phone", 
+                "childrenallowed"
+            ], 
+            "constraints": [
+                [
+                    "pricerange", 
+                    "dontcare"
+                ], 
+                [
+                    "hasinternet", 
+                    "true"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-e345ec7b02-20110409_213613"
+}

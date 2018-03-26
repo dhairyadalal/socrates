@@ -1,0 +1,160 @@
+{
+    "caller-id": "dff7e513a5", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "food": "east asian", 
+                "type": "restaurant", 
+                "area": "riverside"
+            }, 
+            "transcription": "yes im looking for an east asian restaurant in the riverside area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110413_015741_0001850_0002328.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "affirm"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "east asian"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "riverside"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "affirm(food=\"east asian\",=restaurant,area=riverside)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "east asian", 
+                "type": "restaurant", 
+                "area": "riverside"
+            }, 
+            "transcription": "whats the phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110413_015753_0003419_0003564.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "east asian", 
+                "type": "restaurant", 
+                "area": "riverside"
+            }, 
+            "transcription": "whats the price", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110413_015804_0004623_0004717.wav", 
+            "requested-slots": [
+                "price"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "price"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(price)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "east asian", 
+                "type": "restaurant", 
+                "area": "riverside"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-004-110413_015817_0005859_0005999.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find an East asian restaurant and it should be in the riverside area. You want to know the phone number and price of the venue.", 
+            "request-slots": [
+                "phone", 
+                "price"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "east asian"
+                ], 
+                [
+                    "area", 
+                    "riverside"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-dff7e513a5-20110413_015717"
+}

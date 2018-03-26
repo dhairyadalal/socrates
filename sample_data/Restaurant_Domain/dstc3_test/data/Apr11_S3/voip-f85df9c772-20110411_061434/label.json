@@ -1,0 +1,153 @@
+{
+    "caller-id": "f85df9c772", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "hasinternet": "true", 
+                "type": "pub"
+            }, 
+            "transcription": "im looking for a pub with an internet connection", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110411_061456_0001862_0002127.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "hasinternet", 
+                                "true"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=pub,hasinternet=true)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "type": "pub", 
+                "hasinternet": "true"
+            }, 
+            "transcription": "does it allow children", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110411_061509_0003280_0003429.wav", 
+            "requested-slots": [
+                "childrenallowed"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "childrenallowed"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "confirm(childrenallowed=true)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "hasinternet": "true", 
+                "type": "pub"
+            }, 
+            "transcription": "um can you give me the phone number and the price range", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110411_061517_0003917_0004267.wav", 
+            "requested-slots": [
+                "phone", 
+                "pricerange"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "pricerange"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone,pricerange)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "type": "pub", 
+                "hasinternet": "true"
+            }, 
+            "transcription": "thank you goodbye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-004-110411_061539_0006357_0006441.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a pub and it should have an internet connection. You don't care about whether children are allowed. You want to know the phone number and price range.", 
+            "request-slots": [
+                "phone", 
+                "pricerange"
+            ], 
+            "constraints": [
+                [
+                    "hasinternet", 
+                    "true"
+                ], 
+                [
+                    "childrenallowed", 
+                    "dontcare"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-f85df9c772-20110411_061434"
+}

@@ -1,0 +1,166 @@
+{
+    "caller-id": "fb7658656a", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "cough", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110404_154227_0000681_0000707.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "vegetarian", 
+                "type": "restaurant"
+            }, 
+            "transcription": "vegetarian restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110404_154238_0001591_0001750.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "vegetarian"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=vegetarian,=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "vegetarian", 
+                "type": "restaurant", 
+                "pricerange": "dontcare"
+            }, 
+            "transcription": "i dont care unintelligible", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110404_154248_0002714_0002794.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "this", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "vegetarian", 
+                "pricerange": "dontcare", 
+                "type": "restaurant"
+            }, 
+            "transcription": "phone number and price", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110404_154300_0003895_0004023.wav", 
+            "requested-slots": [
+                "phone", 
+                "price"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "price"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone,price)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "vegetarian", 
+                "type": "restaurant", 
+                "pricerange": "dontcare"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-005-110404_154324_0006269_0006392.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a vegetarian restaurant. You don't care about the price range. You want to know the phone number and price of the venue.", 
+            "request-slots": [
+                "phone", 
+                "price"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "vegetarian"
+                ], 
+                [
+                    "pricerange", 
+                    "dontcare"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-fb7658656a-20110404_154219"
+}

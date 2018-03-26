@@ -1,0 +1,151 @@
+{
+    "caller-id": "3e4ce01e63", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "sil", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110407_075921_0001107_0001166.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "type": "restaurant"
+            }, 
+            "transcription": "a restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110407_075931_0002047_0002163.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "indian", 
+                "type": "restaurant"
+            }, 
+            "transcription": "indian", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110407_075942_0003218_0003327.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "indian"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=indian)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "indian", 
+                "type": "restaurant", 
+                "area": "cherry hinton"
+            }, 
+            "transcription": "i am looking for the cherry hinton area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110407_075958_0004601_0004901.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "cherry hinton"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=\"cherry hinton\",task=find)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "indian", 
+                "type": "restaurant", 
+                "area": "cherry hinton"
+            }, 
+            "transcription": "ok that is fine thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-005-110407_080023_0007108_0007429.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "ack"
+                    }, 
+                    {
+                        "slots": [], 
+                        "act": "thankyou"
+                    }, 
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "ack()|thankyou()|bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for an Indian restaurant and it should be in the Cherry Hinton area. Make sure you get the phone number and price.", 
+            "request-slots": [
+                "phone", 
+                "price"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "indian"
+                ], 
+                [
+                    "area", 
+                    "cherry hinton"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-3e4ce01e63-20110407_075909"
+}

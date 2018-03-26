@@ -1,0 +1,138 @@
+{
+    "caller-id": "5b538b4354", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "food": "seafood", 
+                "pricerange": "expensive", 
+                "type": "restaurant"
+            }, 
+            "transcription": "i am looking for a seafood restaurant with an expensive price range", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110404_192400_0001866_0002283.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "seafood"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "expensive"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=seafood,=restaurant,pricerange=expensive,task=find)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "seafood", 
+                "type": "restaurant", 
+                "pricerange": "expensive"
+            }, 
+            "transcription": "please tell me the address and postcode", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110404_192414_0003420_0003736.wav", 
+            "requested-slots": [
+                "addr", 
+                "postcode"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "postcode"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr,postcode)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "seafood", 
+                "pricerange": "expensive", 
+                "type": "restaurant"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-003-110404_192433_0005484_0005609.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a sea food restaurant and it should have expensive pricerange. You want to know the address and postcode.", 
+            "request-slots": [
+                "addr", 
+                "postcode"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "seafood"
+                ], 
+                [
+                    "pricerange", 
+                    "expensive"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-5b538b4354-20110404_192337"
+}

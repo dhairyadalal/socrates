@@ -1,0 +1,293 @@
+{
+    "caller-id": "898b77fa9c", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "noise sil", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110405_033726_0000033_0000221.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "type": "restaurant"
+            }, 
+            "transcription": "restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110405_033737_0001211_0001363.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "turkish", 
+                "type": "restaurant"
+            }, 
+            "transcription": "turkish", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110405_033744_0001965_0002069.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "turkish"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=turkish)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "turkish", 
+                "type": "restaurant"
+            }, 
+            "transcription": "turkish", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110405_033747_0002247_0002354.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "turkish"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=turkish)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "turkish", 
+                "type": "restaurant", 
+                "pricerange": "moderate"
+            }, 
+            "transcription": "moderate price range", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110405_033757_0003168_0003370.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "moderate"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=moderate)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "turkish", 
+                "pricerange": "moderate", 
+                "type": "restaurant"
+            }, 
+            "transcription": "no", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110405_033802_0003779_0003856.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "negate"
+                    }
+                ], 
+                "cam": "negate()"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "turkish", 
+                "type": "restaurant", 
+                "pricerange": "moderate"
+            }, 
+            "transcription": "may i have the phone number and price noise", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110405_033817_0005005_0005393.wav", 
+            "requested-slots": [
+                "phone", 
+                "price"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "price"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone,price)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "food": "turkish", 
+                "pricerange": "moderate", 
+                "type": "restaurant"
+            }, 
+            "transcription": "phone number and price", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-008-110405_033825_0005933_0006132.wav", 
+            "requested-slots": [
+                "phone", 
+                "price"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "price"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone,price)"
+            }
+        }, 
+        {
+            "turn-index": 8, 
+            "goal-labels": {
+                "food": "turkish", 
+                "type": "restaurant", 
+                "pricerange": "moderate"
+            }, 
+            "transcription": "price", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-009-110405_033832_0006776_0006867.wav", 
+            "requested-slots": [
+                "price"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "price"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(price)"
+            }
+        }, 
+        {
+            "turn-index": 9, 
+            "goal-labels": {
+                "food": "turkish", 
+                "pricerange": "moderate", 
+                "type": "restaurant"
+            }, 
+            "transcription": "thank you and good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-010-110405_033852_0008711_0008861.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a Turkish restaurant and it should have moderate pricerange. You want to know the phone number and price.", 
+            "request-slots": [
+                "phone", 
+                "price"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "turkish"
+                ], 
+                [
+                    "pricerange", 
+                    "moderate"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "slightly agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-898b77fa9c-20110405_033723"
+}

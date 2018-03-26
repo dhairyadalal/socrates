@@ -1,0 +1,199 @@
+{
+    "caller-id": "e345ec7b02", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "background noise", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110409_214834_0000869_0000948.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "type": "restaurant"
+            }, 
+            "transcription": "im looking for a cafe food restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110409_214844_0001552_0001857.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "cafe food"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=\"cafe food\",=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "type": "restaurant"
+            }, 
+            "transcription": "background noise", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110409_214846_0001995_0002072.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "type": "restaurant", 
+                "pricerange": "moderate"
+            }, 
+            "transcription": "moderate", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110409_214855_0002950_0003030.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "moderate"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=moderate)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "pricerange": "moderate", 
+                "type": "restaurant"
+            }, 
+            "transcription": "phone number please", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110409_214912_0004497_0004656.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "type": "restaurant", 
+                "pricerange": "moderate"
+            }, 
+            "transcription": "may i have the address please", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110409_214924_0005649_0005907.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "pricerange": "moderate", 
+                "type": "restaurant"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-007-110409_214933_0006589_0006750.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a cafe food restaurant. You don't care about the area. Make sure you get the phone number and address of the venue.", 
+            "request-slots": [
+                "phone", 
+                "addr"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "cafe food"
+                ], 
+                [
+                    "area", 
+                    "dontcare"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-e345ec7b02-20110409_214825"
+}

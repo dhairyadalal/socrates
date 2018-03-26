@@ -1,0 +1,280 @@
+{
+    "caller-id": "e1526dff9d", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "food": "japanese", 
+                "type": "restaurant"
+            }, 
+            "transcription": "need to find a japanese restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110408_034037_0001918_0002214.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "japanese"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=japanese,=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "japanese", 
+                "type": "restaurant"
+            }, 
+            "transcription": "japanese", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110408_034043_0002767_0002872.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "japanese"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=japanese)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "japanese", 
+                "type": "restaurant"
+            }, 
+            "transcription": "no", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110408_034054_0003889_0003971.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "negate"
+                    }
+                ], 
+                "cam": "negate()"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "japanese", 
+                "type": "restaurant"
+            }, 
+            "transcription": "no", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110408_034057_0004123_0004198.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "negate"
+                    }
+                ], 
+                "cam": "negate()"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "japanese", 
+                "type": "restaurant"
+            }, 
+            "transcription": "what is the address", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110408_034108_0005133_0005280.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "japanese", 
+                "type": "restaurant"
+            }, 
+            "transcription": "what is the address", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110408_034115_0005861_0006000.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "japanese", 
+                "type": "restaurant"
+            }, 
+            "transcription": "and the price range", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110408_034121_0006485_0006599.wav", 
+            "requested-slots": [
+                "pricerange"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "pricerange"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(pricerange)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "food": "japanese", 
+                "type": "restaurant"
+            }, 
+            "transcription": "what is the price range the price of the venue", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-008-110408_034127_0006938_0007221.wav", 
+            "requested-slots": [
+                "price", 
+                "pricerange"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "pricerange"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "price"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(pricerange,price)"
+            }
+        }, 
+        {
+            "turn-index": 8, 
+            "goal-labels": {
+                "food": "japanese", 
+                "type": "restaurant"
+            }, 
+            "transcription": "ok thank you goodbye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-009-110408_034138_0008144_0008293.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "ack"
+                    }, 
+                    {
+                        "slots": [], 
+                        "act": "thankyou"
+                    }, 
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "ack()|thankyou()|bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a Japanese restaurant. You don't care about the price range. Make sure you get the address and price of the venue.", 
+            "request-slots": [
+                "addr", 
+                "price"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "japanese"
+                ], 
+                [
+                    "pricerange", 
+                    "dontcare"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-e1526dff9d-20110408_034014"
+}

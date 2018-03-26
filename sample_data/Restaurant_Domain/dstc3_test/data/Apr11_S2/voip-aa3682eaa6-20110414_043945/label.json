@@ -1,0 +1,188 @@
+{
+    "caller-id": "aa3682eaa6", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "pricerange": "expensive", 
+                "type": "restaurant", 
+                "area": "fen ditton"
+            }, 
+            "transcription": "i would like an expensive restaurant in the fen ditton area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110414_044010_0002105_0002473.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "expensive"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "fen ditton"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=expensive,=restaurant,area=\"fen ditton\")"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "pricerange": "expensive", 
+                "area": "dontcare"
+            }, 
+            "transcription": "yes", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110414_044021_0003487_0003591.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "affirm"
+                    }
+                ], 
+                "cam": "affirm()"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "pricerange": "expensive", 
+                "type": "restaurant", 
+                "area": "dontcare"
+            }, 
+            "transcription": "may i have the address and phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110414_044036_0004748_0005028.wav", 
+            "requested-slots": [
+                "phone", 
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr,phone)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "pricerange": "expensive", 
+                "area": "dontcare"
+            }, 
+            "transcription": "what type of food is served", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110414_044059_0007150_0007310.wav", 
+            "requested-slots": [
+                "food"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "food"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(food)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "pricerange": "expensive", 
+                "type": "restaurant", 
+                "area": "dontcare"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-005-110414_044107_0008012_0008157.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find an expensive restaurant and it should be in the Fenditton area. Make sure you get the address, phone number, and type of food of the venue.", 
+            "request-slots": [
+                "addr", 
+                "phone", 
+                "food"
+            ], 
+            "constraints": [
+                [
+                    "pricerange", 
+                    "expensive"
+                ], 
+                [
+                    "area", 
+                    "fen ditton"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-aa3682eaa6-20110414_043945"
+}

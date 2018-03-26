@@ -1,0 +1,250 @@
+{
+    "caller-id": "5fb36e705c", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "food": "japanese", 
+                "pricerange": "dontcare", 
+                "type": "restaurant"
+            }, 
+            "transcription": "im looking for a japanese restaurant and i dont care about the price", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110408_214300_0001874_0002290.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "japanese"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=japanese,=restaurant,pricerange=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "japanese", 
+                "type": "restaurant", 
+                "pricerange": "dontcare"
+            }, 
+            "transcription": "restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110408_214309_0003126_0003236.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "japanese", 
+                "pricerange": "dontcare", 
+                "type": "restaurant"
+            }, 
+            "transcription": "japanese", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110408_214319_0004099_0004234.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "japanese"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=japanese)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "japanese", 
+                "type": "restaurant", 
+                "pricerange": "dontcare"
+            }, 
+            "transcription": "sil", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110408_214320_0004275_0004343.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "japanese", 
+                "pricerange": "dontcare", 
+                "type": "restaurant"
+            }, 
+            "transcription": "i dont care", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110408_214330_0005250_0005359.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "this", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "japanese", 
+                "type": "restaurant", 
+                "pricerange": "dontcare"
+            }, 
+            "transcription": "what is the address", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110408_214342_0006413_0006548.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "japanese", 
+                "pricerange": "dontcare", 
+                "type": "restaurant"
+            }, 
+            "transcription": "and what area is it in", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110408_214352_0007375_0007517.wav", 
+            "requested-slots": [
+                "area"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "area"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(area)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "food": "japanese", 
+                "type": "restaurant", 
+                "pricerange": "dontcare"
+            }, 
+            "transcription": "thank you goodbye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-008-110408_214401_0008297_0008437.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a Japanese restaurant. You don't care about the price range. You want to know the address and area.", 
+            "request-slots": [
+                "addr", 
+                "area"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "japanese"
+                ], 
+                [
+                    "pricerange", 
+                    "dontcare"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "disagree"
+                ]
+            ], 
+            "comments": "The voice was very choppy, which made the responses choppy as well.  The system did not understand my questions very well--I felt like I had break up my questions--talking to the automated system was not very natural and was a bit irritating.", 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-5fb36e705c-20110408_214236"
+}

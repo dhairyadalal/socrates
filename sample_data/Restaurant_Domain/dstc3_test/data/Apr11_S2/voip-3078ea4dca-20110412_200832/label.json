@@ -1,0 +1,289 @@
+{
+    "caller-id": "3078ea4dca", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "background noise", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110412_200850_0001571_0001741.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "fusion", 
+                "type": "restaurant"
+            }, 
+            "transcription": "hi im looking for a fusion restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110412_200855_0001803_0002211.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "hello"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "fusion"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "hello(food=fusion,=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "fusion", 
+                "type": "restaurant"
+            }, 
+            "transcription": "hi im looking for a fusion restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110412_200903_0002733_0003008.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "hello"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "fusion"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "hello(food=fusion,=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "fusion", 
+                "type": "restaurant"
+            }, 
+            "transcription": "yeah cambridge", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110412_200913_0003864_0004008.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "affirm"
+                    }
+                ], 
+                "cam": "affirm()"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "fusion", 
+                "type": "restaurant", 
+                "area": "riverside"
+            }, 
+            "transcription": "riverside area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110412_200921_0004704_0004852.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "riverside"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=riverside)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "fusion", 
+                "near": "regency gallery", 
+                "type": "restaurant", 
+                "area": "riverside"
+            }, 
+            "transcription": "regency gallery", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110412_200930_0005595_0005764.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "near", 
+                                "regency gallery"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(near=\"regency gallery\")"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "fusion", 
+                "near": "regency gallery", 
+                "type": "restaurant", 
+                "area": "riverside"
+            }, 
+            "transcription": "ok can i know the address", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110412_200949_0007294_0007660.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "ack"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "ack()|request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "food": "fusion", 
+                "near": "regency gallery", 
+                "type": "restaurant", 
+                "area": "riverside"
+            }, 
+            "transcription": "and the phone number please", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-008-110412_200958_0008328_0008510.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 8, 
+            "goal-labels": {
+                "food": "fusion", 
+                "near": "regency gallery", 
+                "type": "restaurant", 
+                "area": "riverside"
+            }, 
+            "transcription": "ok thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-009-110412_201012_0009601_0009891.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "ack"
+                    }, 
+                    {
+                        "slots": [], 
+                        "act": "thankyou"
+                    }, 
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "ack()|thankyou()|bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a fusion restaurant. You don't care about the price range. You want to know the address, phone number, and area of the venue.", 
+            "request-slots": [
+                "addr", 
+                "phone", 
+                "area"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "fusion"
+                ], 
+                [
+                    "pricerange", 
+                    "dontcare"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "agree"
+                ]
+            ], 
+            "comments": "the beginning was a little bit confusing but was OK. ", 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-3078ea4dca-20110412_200832"
+}

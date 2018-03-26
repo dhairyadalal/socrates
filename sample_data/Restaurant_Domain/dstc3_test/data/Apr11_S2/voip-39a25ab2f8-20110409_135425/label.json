@@ -1,0 +1,212 @@
+{
+    "caller-id": "39a25ab2f8", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "sil", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110409_135430_0000095_0000530.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {}, 
+            "transcription": "sil", 
+            "method-label": "none", 
+            "audio-file": "fj228x-002-110409_135434_0000761_0000889.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {}, 
+            "transcription": "sil", 
+            "method-label": "none", 
+            "audio-file": "fj228x-003-110409_135437_0001106_0001197.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "pricerange": "cheap", 
+                "type": "pub", 
+                "hastv": "true"
+            }, 
+            "transcription": "breathing cheap pub with television", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110409_135442_0001438_0001694.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "cheap"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "hastv", 
+                                "true"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=cheap,=pub,hastv=true)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "type": "pub", 
+                "pricerange": "cheap", 
+                "hastv": "true"
+            }, 
+            "transcription": "cheap cheap pub with a television", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110409_135448_0001744_0002274.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "cheap"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "hastv", 
+                                "true"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=cheap,=pub,hastv=true)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "pricerange": "cheap", 
+                "type": "pub", 
+                "hastv": "true"
+            }, 
+            "transcription": "sil", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110409_135455_0002520_0003054.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "type": "pub", 
+                "pricerange": "cheap", 
+                "hastv": "true"
+            }, 
+            "transcription": "sil", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110409_135458_0003211_0003313.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "pricerange": "cheap", 
+                "type": "pub", 
+                "hastv": "true"
+            }, 
+            "transcription": "thank you goodbye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-008-110409_135500_0003377_0003557.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a cheap pub and it should have TV. Make sure you get the address and phone number.", 
+            "request-slots": [
+                "addr", 
+                "phone"
+            ], 
+            "constraints": [
+                [
+                    "pricerange", 
+                    "cheap"
+                ], 
+                [
+                    "hastv", 
+                    "true"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-39a25ab2f8-20110409_135425"
+}

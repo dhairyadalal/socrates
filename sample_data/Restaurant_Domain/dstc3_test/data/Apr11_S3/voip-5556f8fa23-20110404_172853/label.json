@@ -1,0 +1,321 @@
+{
+    "caller-id": "5556f8fa23", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "noise sil", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110404_172858_0000040_0000501.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "type": "pub"
+            }, 
+            "transcription": "pub", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110404_172906_0001230_0001321.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=pub)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "type": "pub"
+            }, 
+            "transcription": "noise sil", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110404_172910_0001474_0001668.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "type": "pub"
+            }, 
+            "transcription": "pub", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110404_172912_0001821_0001899.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=pub)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "type": "pub"
+            }, 
+            "transcription": "pub", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110404_172920_0002502_0002652.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=pub)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "type": "pub"
+            }, 
+            "transcription": "does it have a moderate price range", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110404_172924_0002935_0003134.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "moderate"
+                            ]
+                        ], 
+                        "act": "confirm"
+                    }
+                ], 
+                "cam": "confirm(pricerange=moderate)"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "type": "pub", 
+                "pricerange": "moderate"
+            }, 
+            "transcription": "moderate price range", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110404_172927_0003234_0003389.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "moderate"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=moderate)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "type": "pub"
+            }, 
+            "transcription": "what is the address and phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-008-110404_172933_0003817_0003996.wav", 
+            "requested-slots": [
+                "phone", 
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr,phone)"
+            }
+        }, 
+        {
+            "turn-index": 8, 
+            "goal-labels": {
+                "type": "pub", 
+                "pricerange": "moderate"
+            }, 
+            "transcription": "address", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-009-110404_172938_0004442_0004499.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 9, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "type": "pub"
+            }, 
+            "transcription": "in what area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-010-110404_172949_0005531_0005643.wav", 
+            "requested-slots": [
+                "area"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "area"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(area)"
+            }
+        }, 
+        {
+            "turn-index": 10, 
+            "goal-labels": {
+                "type": "pub", 
+                "pricerange": "moderate"
+            }, 
+            "transcription": "what area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-011-110404_172953_0005950_0006058.wav", 
+            "requested-slots": [
+                "area"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "area"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(area)"
+            }
+        }, 
+        {
+            "turn-index": 11, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "type": "pub"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-012-110404_173000_0006563_0006682.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a pub food restaurant and it should have moderate pricerange. Make sure you get the address, phone number, and area.", 
+            "request-slots": [
+                "addr", 
+                "phone", 
+                "area"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "pub food"
+                ], 
+                [
+                    "pricerange", 
+                    "moderate"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-5556f8fa23-20110404_172853"
+}

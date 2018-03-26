@@ -1,0 +1,3517 @@
+{
+    "dia_acts": {
+        "confirm_answer": [
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "Okay",
+                    "usr": "Yes"
+                },
+                "request_slots": []
+            }
+        ],
+        "confirm_question": [
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "Do you want to purchase the tickets?",
+                    "usr": "Could you help me to purchase the tickets?"
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "Do you want to purchase the tickets?",
+                    "usr": "Could you help me to book the tickets?"
+                },
+                "request_slots": [
+                    "ticket"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Do you want to watch that movie?",
+                    "usr": "Could you help me to book that movie ticket?"
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "Do you want to book the tickets?",
+                    "usr": "Could you help me to book the tickets?"
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Do you want to book the tickets for that movie?",
+                    "usr": "Could you help me to book the tickets for that movie?"
+                },
+                "request_slots": []
+            }
+        ],
+        "deny": [
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "Oh, sorry! Something wrong with the service, there is no ticket available!",
+                    "usr": "Oh, sorry! This is the wrong ticket!"
+                },
+                "request_slots": []
+            }
+        ],
+        "greeting": [
+            {
+                "inform_slots": [
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "Hi",
+                    "usr": "Hi"
+                },
+                "request_slots": []
+            }
+        ],
+        "inform": [
+            {
+                "inform_slots": [
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "$moviename$ is available.",
+                    "usr": "I want to watch $moviename$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "ticket"
+                ],
+                "nl": {
+                    "agt": "yes, please",
+                    "usr": "yes"
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "starttime"
+                ],
+                "nl": {
+                    "agt": "$starttime$ is available.",
+                    "usr": "I want to watch at $starttime$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city"
+                ],
+                "nl": {
+                    "agt": "$city$ is available.",
+                    "usr": "I want to watch at $city$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "state"
+                ],
+                "nl": {
+                    "agt": "$state$ is available.",
+                    "usr": "I want to watch at $state$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "date"
+                ],
+                "nl": {
+                    "agt": "$date$ is available.",
+                    "usr": "I want to set it up $date$"
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "$numberofpeople$ tickets",
+                    "usr": "I want $numberofpeople$ tickets please!"
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "theater"
+                ],
+                "nl": {
+                    "agt": "$theater$ is available.",
+                    "usr": "I want to watch at $theater$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "actor"
+                ],
+                "nl": {
+                    "agt": "$actor$",
+                    "usr": "$actor$"
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "actress"
+                ],
+                "nl": {
+                    "agt": "$actress$",
+                    "usr": "$actress$"
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "state",
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "$numberofpeople$ tickets at $city$ $state$.",
+                    "usr": "I need $numberofpeople$ tickets at $city$ $state$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople",
+                    "starttime"
+                ],
+                "nl": {
+                    "agt": "$numberofpeople$ tickets at $starttime$.",
+                    "usr": "I need $numberofpeople$ tickets at $starttime$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "starttime"
+                ],
+                "nl": {
+                    "agt": "$starttime$ on $date$ is available.",
+                    "usr": "I want to watch at $starttime$ on $date$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "moviename",
+                    "starttime"
+                ],
+                "nl": {
+                    "agt": "$moviename$ at $starttime$ is available.",
+                    "usr": "I want to watch $moviename$ at $starttime$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "critic_rating"
+                ],
+                "nl": {
+                    "agt": "$critic_rating$",
+                    "usr": "$critic_rating$"
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "distanceconstraints"
+                ],
+                "nl": {
+                    "agt": "$distanceconstraints$",
+                    "usr": "$distanceconstraints$"
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "description"
+                ],
+                "nl": {
+                    "agt": "$description$",
+                    "usr": "$description$"
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "genre"
+                ],
+                "nl": {
+                    "agt": "$genre$ is available",
+                    "usr": "I want to watch a $genre$ movie."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "mpaa_rating"
+                ],
+                "nl": {
+                    "agt": "$mpaa_rating$",
+                    "usr": "$mpaa_rating$"
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "video_format"
+                ],
+                "nl": {
+                    "agt": "$video_format$",
+                    "usr": "$video_format$"
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "price"
+                ],
+                "nl": {
+                    "agt": "$price$",
+                    "usr": "$price$"
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "zip"
+                ],
+                "nl": {
+                    "agt": "$zip$",
+                    "usr": "$zip$"
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "numberofkids"
+                ],
+                "nl": {
+                    "agt": "$numberofkids$",
+                    "usr": "$numberofkids$"
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "movie_series"
+                ],
+                "nl": {
+                    "agt": "$movie_series$",
+                    "usr": "$movie_series$"
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "theater_chain"
+                ],
+                "nl": {
+                    "agt": "$theater_chain$",
+                    "usr": "$theater_chain$"
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "starttime"
+                ],
+                "nl": {
+                    "agt": "$starttime$ at $city$ is available.",
+                    "usr": "I want to watch at $starttime$ in $city$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "distanceconstraints",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked the tickets for $moviename$ $distanceconstraints$.",
+                    "usr": "Okay, I have booked the tickets for $moviename$ $distanceconstraints$."
+                },
+                "request_slots": [
+                    "taskcomplete"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "distanceconstraints",
+                    "video_format"
+                ],
+                "nl": {
+                    "agt": "$video_format$ $distanceconstraints$",
+                    "usr": "$video_format$ $distanceconstraints$"
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople",
+                    "theater"
+                ],
+                "nl": {
+                    "agt": "$numberofpeople$ tickets at $theater$.",
+                    "usr": "$numberofpeople$ tickets at $theater$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "moviename",
+                    "starttime"
+                ],
+                "nl": {
+                    "agt": "$moviename$ is playing at $starttime$ in $city$.",
+                    "usr": "$moviename$ is playing at $starttime$ in $city$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "theater",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "$moviename$ is playing at $theater$.",
+                    "usr": "I want to watch $moviename$ at $theater$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "numberofpeople",
+                    "starttime"
+                ],
+                "nl": {
+                    "agt": "$numberofpeople$ tickets at $starttime$ $date$.",
+                    "usr": "$numberofpeople$ tickets at $starttime$ $date$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "Okay, your tickets is booked.",
+                    "usr": "Okay, your tickets is booked."
+                },
+                "request_slots": [
+                    "taskcomplete"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "other"
+                ],
+                "nl": {
+                    "agt": "$other$",
+                    "usr": "$other$"
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "theater_chain",
+                    "theater",
+                    "video_format",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked the tickets for $video_format$ $moviename$ starting at $starttime$ at $theater$ on $date$.",
+                    "usr": "Okay, I have booked the tickets for $video_format$ $moviename$ starting at $starttime$ at $theater$ on $date$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "theater_chain",
+                    "numberofpeople",
+                    "theater",
+                    "video_format",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked $numberofpeople$ tickets for $video_format$ $moviename$ starting at $starttime$ at $theater$ on $date$.",
+                    "usr": "Okay, I have booked $numberofpeople$ tickets for $video_format$ $moviename$ starting at $starttime$ at $theater$ on $date$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople",
+                    "theater",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename",
+                    "closing"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ at $theater$ on $date$.",
+                    "usr": "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ at $theater$ on $date$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "numberofpeople",
+                    "theater",
+                    "theater_chain",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename",
+                    "closing"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ at $theater$ in $city$ on $date$.",
+                    "usr": "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ at $theater$ in $city$ on $date$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "numberofpeople",
+                    "theater",
+                    "distanceconstraints",
+                    "state",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, I was able to book $numberofpeople$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $city$ $state$.",
+                    "usr": "Okay, I was able to book $numberofpeople$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $city$ $state$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "numberofpeople",
+                    "theater",
+                    "distanceconstraints",
+                    "video_format",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, I was able to book $numberofpeople$ $video_format$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $city$.",
+                    "usr": "Okay, I was able to book $numberofpeople$ $video_format$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $city$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople",
+                    "theater",
+                    "distanceconstraints",
+                    "video_format",
+                    "state",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, I was able to book $numberofpeople$ $video_format$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $city$ $state$.",
+                    "usr": "Okay, I was able to book $numberofpeople$ $video_format$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $city$ $state$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "numberofpeople",
+                    "theater",
+                    "distanceconstraints",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, I was able to book $numberofpeople$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $city$.",
+                    "usr": "Okay, I was able to book $numberofpeople$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $city$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "theater",
+                    "theater_chain",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked the tickets for $moviename$ starting at $starttime$ at $theater$ in $city$ on $date$.",
+                    "usr": "Okay, I have booked the tickets for $moviename$ starting at $starttime$ at $theater$ in $city$ on $date$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "theater",
+                    "video_format",
+                    "theater_chain",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename",
+                    "closing"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked the tickets for $video_format$ $moviename$ starting at $starttime$ at $theater$ in $city$ on $date$.",
+                    "usr": "Okay, I have booked the tickets for $video_format$ $moviename$ starting at $starttime$ at $theater$ in $city$ on $date$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople",
+                    "theater",
+                    "state",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $state$.",
+                    "usr": "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $state$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "numberofpeople",
+                    "theater",
+                    "zip",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $city$ $zip$.",
+                    "usr": "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $city$ $zip$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople",
+                    "theater",
+                    "distanceconstraints",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ $distanceconstraints$.",
+                    "usr": "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ $distanceconstraints$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople",
+                    "theater",
+                    "zip",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in zipcode $zip$.",
+                    "usr": "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in zipcode $zip$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "numberofpeople",
+                    "theater",
+                    "video_format",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked $numberofpeople$ $video_format$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $city$.",
+                    "usr": "Okay, I have booked $numberofpeople$ $video_format$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $city$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "numberofpeople",
+                    "theater",
+                    "video_format",
+                    "state",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked $numberofpeople$ $video_format$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $city$ $state$.",
+                    "usr": "Okay, I have booked $numberofpeople$ $video_format$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $city$ $state$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "numberofpeople",
+                    "theater",
+                    "distanceconstraints",
+                    "video_format",
+                    "state",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked $numberofpeople$ $video_format$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ $distanceconstraints$ in $city$ $state$.",
+                    "usr": "Okay, I have booked $numberofpeople$ $video_format$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ $distanceconstraints$ in $city$ $state$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople",
+                    "theater",
+                    "video_format",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked $numberofpeople$ tickets for $video_format$ $moviename$ starting at $starttime$ at $theater$ on $date$.",
+                    "usr": "Okay, I have booked $numberofpeople$ tickets for $video_format$ $moviename$ starting at $starttime$ at $theater$ on $date$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "taskcomplete",
+                    "numberofpeople",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked $numberofpeople$ tickets for $moviename$ for you.",
+                    "usr": "Okay, I have booked $numberofpeople$ tickets for $moviename$ for you."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "taskcomplete",
+                    "numberofpeople",
+                    "moviename",
+                    "starttime"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked $numberofpeople$ tickets for $moviename$ at $starttime$ $date$ for you.",
+                    "usr": "Okay, I have booked $numberofpeople$ tickets for $moviename$ at $starttime$ $date$ for you."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "distanceconstraints",
+                    "taskcomplete",
+                    "numberofpeople",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked $numberofpeople$ tickets for $moviename$ $distanceconstraints$.",
+                    "usr": "Okay, I have booked $numberofpeople$ tickets for $moviename$ $distanceconstraints$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "taskcomplete",
+                    "numberofpeople",
+                    "theater",
+                    "starttime"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked $numberofpeople$ tickets for $moviename$ at $starttime$ at $theater$.",
+                    "usr": "Okay, I have booked $numberofpeople$ tickets for $moviename$ at $starttime$ at $theater$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "taskcomplete",
+                    "moviename",
+                    "starttime"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked the tickets for $moviename$ at $starttime$ $date$.",
+                    "usr": "Okay, I have booked the tickets for $moviename$ at $starttime$ $date$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "numberofpeople",
+                    "theater",
+                    "starttime",
+                    "date",
+                    "taskcomplete"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked the tickets at $starttime$ $date$ at $theater$ in $city$.",
+                    "usr": "Okay, I have booked the tickets at $starttime$ $date$ at $theater$ in $city$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "state"
+                ],
+                "nl": {
+                    "agt": "$city$ at $state$ is available",
+                    "usr": "$city$ at $state$"
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "theater",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, I have book the tickets for $moviename$ at $theater$ for you.",
+                    "usr": "Okay, I have book the tickets for $moviename$ at $theater$ for you."
+                },
+                "request_slots": [
+                    "taskcomplete"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "theater",
+                    "taskcomplete",
+                    "numberofpeople",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked $numberofpeople$ tickets for $moviename$ at $theater$.",
+                    "usr": "Okay, I have booked $numberofpeople$ tickets for $moviename$ at $theater$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "numberofpeople",
+                    "theater",
+                    "starttime",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked $numberofpeople$ tickets for $moviename$ at $starttime$ at $theater$ in $city$.",
+                    "usr": "Okay, I have booked $numberofpeople$ tickets for $moviename$ at $starttime$ at $theater$ in $city$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "distanceconstraints",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked the tickets for $moviename$ $distanceconstraints$.",
+                    "usr": "Okay, I have booked the tickets for $moviename$ $distanceconstraints$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked the tickets for $moviename$ on $date$.",
+                    "usr": "Okay, I have booked the tickets for $moviename$ on $date$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "numberofpeople",
+                    "distanceconstraints",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ on $date$ $distanceconstraints$ in $city$.",
+                    "usr": "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ on $date$ $distanceconstraints$ in $city$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "taskcomplete",
+                    "numberofpeople",
+                    "moviename",
+                    "other"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked $numberofpeople$ tickets for $moviename$ on $date$.",
+                    "usr": "Okay, I have booked $numberofpeople$ tickets for $moviename$ on $date$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "numberofpeople",
+                    "state",
+                    "other",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked $numberofpeople$ tickets for $moviename$ at $city$ $state$.",
+                    "usr": "Okay, I have booked $numberofpeople$ tickets for $moviename$ at $city$ $state$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "taskcomplete",
+                    "numberofpeople",
+                    "moviename",
+                    "starttime"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$.",
+                    "usr": "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "distanceconstraints",
+                    "taskcomplete",
+                    "numberofpeople",
+                    "moviename",
+                    "other"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked $numberofpeople$ tickets for $moviename$ $distanceconstraints$.",
+                    "usr": "Okay, I have booked $numberofpeople$ tickets for $moviename$ $distanceconstraints$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "taskcomplete",
+                    "numberofpeople",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked $numberofpeople$ tickets for $moviename$ $date$.",
+                    "usr": "Okay, I have booked $numberofpeople$ tickets for $moviename$ $date$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "taskcomplete",
+                    "moviename",
+                    "theater"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked the tickets for $moviename$ at $theater$ in $city$.",
+                    "usr": "Okay, I have booked the tickets for $moviename$ at $theater$ in $city$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "city",
+                    "taskcomplete",
+                    "moviename",
+                    "starttime"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked the tickets for $moviename$ at $starttime$ on $date$ in $city$.",
+                    "usr": "Okay, I have booked the tickets for $moviename$ at $starttime$ on $date$ in $city$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "theater",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked the tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $city$.",
+                    "usr": "Okay, I have booked the tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $city$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked the tickets for $moviename$ for you.",
+                    "usr": "Okay, I have booked the tickets for $moviename$ for you."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople",
+                    "other",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ on $date$.",
+                    "usr": "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ on $date$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople",
+                    "theater",
+                    "date",
+                    "theater_chain",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked $numberofpeople$ tickets for $moviename$ at $theater$ $theater_chain$ on $date$.",
+                    "usr": "Okay, I have booked $numberofpeople$ tickets for $moviename$ at $theater$ $theater_chain$ on $date$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "theater",
+                    "taskcomplete",
+                    "moviename",
+                    "starttime"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ at $theater$ on $date$.",
+                    "usr": "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ at $theater$ on $date$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "taskcomplete",
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "Yes, I have booked $numberofpeople$ tickets for you.",
+                    "usr": "Yes, I have booked $numberofpeople$ tickets for you."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "theater",
+                    "taskcomplete",
+                    "numberofpeople",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked $numberofpeople$ tickets for $moviename$ at $theater$ on $date$.",
+                    "usr": "Okay, I have booked $numberofpeople$ tickets for $moviename$ at $theater$ on $date$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "taskcomplete",
+                    "theater"
+                ],
+                "nl": {
+                    "agt": "Okay, I have booked the tickets at $theater$ in $city$.",
+                    "usr": "Okay, I have booked the tickets at $theater$ in $city$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "numberofpeople",
+                    "distanceconstraints",
+                    "video_format",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Thank you, I was able to purchase $numberofpeople$ tickets for you to see $moviename$ with $video_format$ $date$ at $city$ $distanceconstraints$ at $starttime$.",
+                    "usr": "Thank you, I was able to purchase $numberofpeople$ tickets for you to see $moviename$ with $video_format$ $date$ at $city$ $distanceconstraints$ at $starttime$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople",
+                    "theater",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename",
+                    "ticket"
+                ],
+                "nl": {
+                    "agt": "Okay - I was able to book $numberofpeople$ tickets for you to see $moviename$ at $theater$ at $starttime$ $date$.",
+                    "usr": "Okay - I was able to book $numberofpeople$ tickets for you to see $moviename$ at $theater$ at $starttime$ $date$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople",
+                    "theater",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename",
+                    "ticket",
+                    "closing"
+                ],
+                "nl": {
+                    "agt": "Okay - I was able to book $numberofpeople$ tickets for you to see $moviename$ at $theater$ at $starttime$ $date$.",
+                    "usr": "Okay - I was able to book $numberofpeople$ tickets for you to see $moviename$ at $theater$ at $starttime$ $date$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople",
+                    "theater",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename",
+                    "ticket",
+                    "closing",
+                    "city"
+                ],
+                "nl": {
+                    "agt": "Okay - I was able to book $numberofpeople$ tickets for you to see $moviename$ at $theater$ in $city$ at $starttime$ $date$.",
+                    "usr": "Okay - I was able to book $numberofpeople$ tickets for you to see $moviename$ at $theater$ in $city$ at $starttime$ $date$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople",
+                    "theater",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay - I was able to book $numberofpeople$ tickets for you to see $moviename$ at $theater$ at $starttime$ $date$.",
+                    "usr": "Okay - I was able to book $numberofpeople$ tickets for you to see $moviename$ at $theater$ at $starttime$ $date$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople",
+                    "theater",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename",
+                    "ticket",
+                    "city"
+                ],
+                "nl": {
+                    "agt": "Okay - I was able to book $numberofpeople$ tickets for you to see $moviename$ at $theater$ in $city$ at $starttime$ $date$.",
+                    "usr": "Okay - I was able to book $numberofpeople$ tickets for you to see $moviename$ at $theater$ in $city$ at $starttime$ $date$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "numberofpeople",
+                    "theater",
+                    "theater_chain",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Thank you, I was able to purchase $numberofpeople$ tickets for you to see $moviename$ at $theater$, $theater_chain$ at $city$ at $starttime$ on $date$.",
+                    "usr": "Thank you, I was able to purchase $numberofpeople$ tickets for you to see $moviename$ at $theater$, $theater_chain$ at $city$ at $starttime$ on $date$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "taskcomplete",
+                    "numberofpeople",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay your purchase of $numberofpeople$ tickets for $moviename$ at $city$ is confirmed.",
+                    "usr": "Okay your purchase of $numberofpeople$ tickets for $moviename$ at $city$ is confirmed."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "numberofpeople",
+                    "theater",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Great - I was able to purchase $numberofpeople$ tickets for you to see $moviename$ $date$ at $theater$ theater in $city$ at $starttime$.",
+                    "usr": "Great - I was able to purchase $numberofpeople$ tickets for you to see $moviename$ $date$ at $theater$ theater in $city$ at $starttime$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "distanceconstraints",
+                    "city",
+                    "taskcomplete",
+                    "numberofpeople",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, your purchase of $numberofpeople$ for $moviename$ at $city$ $distanceconstraints$ is confirmed!",
+                    "usr": "Okay, your purchase of $numberofpeople$ for $moviename$ at $city$ $distanceconstraints$ is confirmed!"
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "city",
+                    "taskcomplete",
+                    "numberofpeople",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, I purchased $numberofpeople$ tickets for $moviename$ at $city$ on $date$.",
+                    "usr": "Okay, I purchased $numberofpeople$ tickets for $moviename$ at $city$ on $date$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "taskcomplete",
+                    "numberofpeople",
+                    "moviename",
+                    "zip"
+                ],
+                "nl": {
+                    "agt": "I have booked you $numberofpeople$ tickets for moviename at $city$, $zip$.",
+                    "usr": "I have booked you $numberofpeople$ tickets for moviename at $city$, $zip$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "numberofpeople",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Great - I was able to purchase $numberofpeople$ tickets for you to watch $moviename$ at $theater$ in $city$ at $starttime$, $date$.",
+                    "usr": "Great - I was able to purchase $numberofpeople$ tickets for you to watch $moviename$ at $theater$ in $city$ at $starttime$, $date$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "state",
+                    "numberofpeople",
+                    "moviename",
+                    "taskcomplete"
+                ],
+                "nl": {
+                    "agt": "Okay your purchase $numberofpeople$ tickets for $moviename$ at $city$, $state$ is confirmed!",
+                    "usr": "Okay your purchase $numberofpeople$ tickets for $moviename$ at $city$, $state$ is confirmed!"
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "taskcomplete",
+                    "numberofpeople",
+                    "moviename",
+                    "starttime"
+                ],
+                "nl": {
+                    "agt": "Okay your purchase of $numberofpeople$ tickets for $moviename$ at $starttime$ in $city$ is confimed!",
+                    "usr": "Okay your purchase of $numberofpeople$ tickets for $moviename$ at $starttime$ in $city$ is confimed!"
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "numberofpeople",
+                    "theater",
+                    "date",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Great, I was able to purchase $numberofpeople$ tickets for you to watch $moviename$ $date$ at $theater$ in $city$.",
+                    "usr": "Great, I was able to purchase $numberofpeople$ tickets for you to watch $moviename$ $date$ at $theater$ in $city$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "numberofpeople",
+                    "state",
+                    "starttime",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Okay, your purchase of $numberofpeople$ tickets for $moviename$ at $starttime$ in $city$, $state$ is confirmed!",
+                    "usr": "Okay, your purchase of $numberofpeople$ tickets for $moviename$ at $starttime$ in $city$, $state$ is confirmed!"
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "numberofpeople",
+                    "distanceconstraints",
+                    "video_format",
+                    "state",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Excellent - I have booked $numberofpeople$ tickets for you to watch $moviename$ at $starttime$ $date$ at $theater$ in $city$ $state$, $distanceconstraints$.",
+                    "usr": "Excellent - I have booked $numberofpeople$ tickets for you to watch $moviename$ at $starttime$ $date$ at $theater$ in $city$ $state$, $distanceconstraints$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "numberofpeople",
+                    "zip",
+                    "date",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "I have successfully purchased $numberofpeople$ tickets to see $moviename$ $date$ at $city$ $zip$.",
+                    "usr": "I have successfully purchased $numberofpeople$ tickets to see $moviename$ $date$ at $city$ $zip$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "theater",
+                    "taskcomplete",
+                    "numberofpeople",
+                    "moviename",
+                    "city"
+                ],
+                "nl": {
+                    "agt": "Okay, your purchase of $numberofpeople$ tickets for $moviename$ at $theater$ in $city$.",
+                    "usr": "Okay, your purchase of $numberofpeople$ tickets for $moviename$ at $theater$ in $city$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "numberofpeople",
+                    "theater",
+                    "state",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Great, I was able to purchase $numberofpeople$ tickets to $moviename$ for $date$ at $starttime$ at $theater$ in $city$, $state$.",
+                    "usr": "Great, I was able to purchase $numberofpeople$ tickets to $moviename$ for $date$ at $starttime$ at $theater$ in $city$, $state$."
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "numberofpeople",
+                    "state",
+                    "starttime",
+                    "date",
+                    "taskcomplete",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Great - I was able to purchase $numberofpeople$ tickets for you to see $moviename$ $date$ at $theater$ in $city$ $state$ at $starttime$.",
+                    "usr": "Great - I was able to purchase $numberofpeople$ tickets for you to see $moviename$ $date$ at $theater$ in $city$ $state$ at $starttime$."
+                },
+                "request_slots": []
+            }
+        ],
+        "multiple_choice": [
+            {
+                "inform_slots": [
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "How many tickets do you need?",
+                    "usr": "How many tickets are available?"
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Which movie do you want to watch?",
+                    "usr": "Which movie is showing?"
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "starttime"
+                ],
+                "nl": {
+                    "agt": "Which date and start time would you like?",
+                    "usr": "Which date and start time are available?"
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "How many tickets do you need?",
+                    "usr": "How many tickets are available for that day?"
+                },
+                "request_slots": []
+            }
+        ],
+        "request": [
+            {
+                "inform_slots": [
+                    "moviename",
+                    "starttime"
+                ],
+                "nl": {
+                    "agt": "Which theater you prefer for the $moviename$ showing at $starttime$?",
+                    "usr": "Which theater will play the $moviename$ at $starttime$?"
+                },
+                "request_slots": [
+                    "theater"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "theater_chain",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Do you want some tickets for $moviename$ at $theater_chain$?",
+                    "usr": "I need some tickets for $moviename$ at $theater_chain$."
+                },
+                "request_slots": [
+                    "ticket"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "startime"
+                ],
+                "nl": {
+                    "agt": "Do you want tickets $starttime$?",
+                    "usr": "I need some tickets $starttime$."
+                },
+                "request_slots": [
+                    "ticket"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "moviename",
+                    "starttime"
+                ],
+                "nl": {
+                    "agt": "Which theater do you like for $moviename$ at $starttime$ in $city$?",
+                    "usr": "Which theater is playing $moviename$ at $starttime$ in $city$?"
+                },
+                "request_slots": [
+                    "theater"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "city"
+                ],
+                "nl": {
+                    "agt": "Which theater do you like at $city$?",
+                    "usr": "Which theater is it playing at $city$?"
+                },
+                "request_slots": [
+                    "theater"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "video_format",
+                    "numberofpeople",
+                    "starttime"
+                ],
+                "nl": {
+                    "agt": "Do you want $numberofpeople$ tickets for $video_format$ at $starttime$?",
+                    "usr": "I need $numberofpeople$ tickets for $video_format$ at $starttime$."
+                },
+                "request_slots": [
+                    "ticket"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "date"
+                ],
+                "nl": {
+                    "agt": "Which theater and what start time do you want on $date$?",
+                    "usr": "Which theater and start time are available on $date$?"
+                },
+                "request_slots": [
+                    "theater",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "What date and start time do you want to book $numberofpeople$ tickets?",
+                    "usr": "What date and start time are availble to book $numberofpeople$ tickets?"
+                },
+                "request_slots": [
+                    "date",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "city",
+                    "starttime"
+                ],
+                "nl": {
+                    "agt": "What movie do you want to watch at $starttime$ $date$ in $city$?",
+                    "usr": "What movie is playing at $starttime$ $date$ in $city$?"
+                },
+                "request_slots": [
+                    "moviename"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "Which theater and start time do you want to book $numberofpeople$ tickets at $city$?",
+                    "usr": "Which theater and start time are available to book $numberofpeople$ tickets at $city$?"
+                },
+                "request_slots": [
+                    "theater",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "numberofpeople",
+                    "zip"
+                ],
+                "nl": {
+                    "agt": "What theater and start time would you like for $numberofpeople$ tickets in $city$ $zip$?",
+                    "usr": "What theater and start time are available to book $numberofpeople$ tickets in $city$ $zip$?"
+                },
+                "request_slots": [
+                    "theater",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople",
+                    "theater"
+                ],
+                "nl": {
+                    "agt": "What date and start time would you like for $numberofpeople$ tickets at $theater$?",
+                    "usr": "What date and start time are available to book $numberofpeople$ tickets at $theater$?"
+                },
+                "request_slots": [
+                    "date",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "city"
+                ],
+                "nl": {
+                    "agt": "What theater and start time would you like at $city$ on $date$?",
+                    "usr": "What theater and start time are available at $city$ on $date$?"
+                },
+                "request_slots": [
+                    "theater",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "What date and start time would you like for some tickets?",
+                    "usr": "What date and start time are available for some tickets?"
+                },
+                "request_slots": [
+                    "date",
+                    "ticket",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "distanceconstraints"
+                ],
+                "nl": {
+                    "agt": "What date and start time would you like $distanceconstraints$?",
+                    "usr": "What date and start time are available $distanceconstraints$?"
+                },
+                "request_slots": [
+                    "date",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "numberofpeople",
+                    "theater"
+                ],
+                "nl": {
+                    "agt": "What date and start time would you like for $numberofpeople$ tickets at $theater$ in $city$?",
+                    "usr": "What date and start time are available to book $numberofpeople$ tickets at $theater$ in $city$?"
+                },
+                "request_slots": [
+                    "date",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "state",
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "What date and start time would you like for $numberofpeople$ tickets in $city$ $state$?",
+                    "usr": "What date and start time are available to book $numberofpeople$ tickets in $city$ $state$?"
+                },
+                "request_slots": [
+                    "date",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "zip"
+                ],
+                "nl": {
+                    "agt": "What date and start time would you like in zipcode $zip$?",
+                    "usr": "What date and start time are available in zipcode $zip$?"
+                },
+                "request_slots": [
+                    "date",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "state"
+                ],
+                "nl": {
+                    "agt": "What theater and start time would you like at $state$?",
+                    "usr": "What theater and start time are available at $state$?"
+                },
+                "request_slots": [
+                    "theater",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "state",
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "Which theater and start time do you want to book $numberofpeople$ tickets at $city$ $state$?",
+                    "usr": "Which theater and start time do you want to book $numberofpeople$ tickets at $city$ $state$?"
+                },
+                "request_slots": [
+                    "theater",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "video_format"
+                ],
+                "nl": {
+                    "agt": "Do you want $video_format$ tickets?",
+                    "usr": "Is there $video_format$ tickets available?"
+                },
+                "request_slots": [
+                    "ticket"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "distanceconstraints"
+                ],
+                "nl": {
+                    "agt": "Do you want tickets $distanceconstraints$?",
+                    "usr": "Is there any ticket available $distanceconstraints$?"
+                },
+                "request_slots": [
+                    "ticket"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "state"
+                ],
+                "nl": {
+                    "agt": "What date and start time do you want to book at $city$ $state$?",
+                    "usr": "What date and start time are available at $city$ $state$?"
+                },
+                "request_slots": [
+                    "date",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "moviename",
+                    "starttime"
+                ],
+                "nl": {
+                    "agt": "Which theater do you want to watch $moviename$ at $starttime$ $date$?",
+                    "usr": "Which theater is $moviename$ playing at $starttime$ $date$?"
+                },
+                "request_slots": [
+                    "theater"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "theater"
+                ],
+                "nl": {
+                    "agt": "What date and start time do you want at $theater$ in $city$?",
+                    "usr": "What date and start time are available at $theater$ in $city$?"
+                },
+                "request_slots": [
+                    "date",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "distanceconstraints",
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "What theater and start time do you want to book $numberofpeople$ tickets $distanceconstraints$?",
+                    "usr": "What theater and start time are available for $numberofpeople$ tickets $distanceconstraints$?"
+                },
+                "request_slots": [
+                    "theater",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "city",
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "What theater and start time do you want to book $numberofpeople$ tickets at $city$ on $date$?",
+                    "usr": "What theater and start time are available for $numberofpeople$ tickets at $city$ on $date$?"
+                },
+                "request_slots": [
+                    "theater",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "What date and start time do you want to book $numberofpeople$ tickets at $city$?",
+                    "usr": "What date and start time are available for $numberofpeople$ tickets at $city$?"
+                },
+                "request_slots": [
+                    "date",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "state",
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "What theater and start time do you want to book $numberofpeople$ tickets at $state$?",
+                    "usr": "What theater and start time are available for $numberofpeople$ tickets at $state$?"
+                },
+                "request_slots": [
+                    "theater",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "distanceconstraints",
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "What date and start time would you like for $numberofpeople$ tickets $distanceconstraints$?",
+                    "usr": "What date and start time are available to book $numberofpeople$ tickets $distanceconstraints$?"
+                },
+                "request_slots": [
+                    "date",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "city",
+                    "zip"
+                ],
+                "nl": {
+                    "agt": "What theater and start time would you like in $city$ $zip$ on $date$?",
+                    "usr": "What theater and start time are available in $city$ $zip$ on $date$?"
+                },
+                "request_slots": [
+                    "theater",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople",
+                    "zip"
+                ],
+                "nl": {
+                    "agt": "What theater and start time would you like for $numberofpeople$ tickets in $zip$?",
+                    "usr": "What theater and start time are available to book $numberofpeople$ tickets in $zip$?"
+                },
+                "request_slots": [
+                    "theater",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "distanceconstraints"
+                ],
+                "nl": {
+                    "agt": "Which theater and start time do you want $distanceconstraints$?",
+                    "usr": "Which theater and start time are available $distanceconstraints$?"
+                },
+                "request_slots": [
+                    "theater",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople",
+                    "zip"
+                ],
+                "nl": {
+                    "agt": "What date and start time do you want to book $numberofpeople$ tickets in zipcode $zip$?",
+                    "usr": "What date and start time are available for $numberofpeople$ tickets in zipcode $zip$?"
+                },
+                "request_slots": [
+                    "date",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "theater",
+                    "greeting"
+                ],
+                "nl": {
+                    "agt": "Do you want tickets at $theater$?",
+                    "usr": "I want some tickets at $theater$."
+                },
+                "request_slots": [
+                    "ticket"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "greeting"
+                ],
+                "nl": {
+                    "agt": "Do you want tickets at $theater$?",
+                    "usr": "I want some tickets at $theater$."
+                },
+                "request_slots": [
+                    "ticket"
+                ]
+            },
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "Do you need anything else?",
+                    "usr": "Anything else about the movie?"
+                },
+                "request_slots": [
+                    "other"
+                ]
+            },
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "Do you have any constraint for the price?",
+                    "usr": "What is the price?"
+                },
+                "request_slots": [
+                    "price"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "What movie do you want for $numberofpeople$ tickets on $date$?",
+                    "usr": "Which movie is available on $date$ for $numberofpeople$ tickets?"
+                },
+                "request_slots": [
+                    "moviename"
+                ]
+            },
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "Which theater and start time do you want?",
+                    "usr": "Which theater and start time are available?"
+                },
+                "request_slots": [
+                    "theater",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "Which theater and start time do you want to book for $numberofpeople$ tickets on $date$?",
+                    "usr": "Which theater and start time are available for $numberofpeople$ tickets on $date$?"
+                },
+                "request_slots": [
+                    "theater",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "city"
+                ],
+                "nl": {
+                    "agt": "Which theater and start time do you want at $city$?",
+                    "usr": "Which theater and start time are available at $city$?"
+                },
+                "request_slots": [
+                    "theater",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "state",
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "What date and start time do you want to book $numberofpeople$ tickets at $state$?",
+                    "usr": "What date and start time are available to book $numberofpeople$ tickets at $state$?"
+                },
+                "request_slots": [
+                    "date",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "state"
+                ],
+                "nl": {
+                    "agt": "Do you need tickets at $state$?",
+                    "usr": "I need tickets at $state$."
+                },
+                "request_slots": [
+                    "ticket"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "state"
+                ],
+                "nl": {
+                    "agt": "Which theater and start time do you need in $city$ $state$?",
+                    "usr": "Which theater and start time are available at $city$ $state$?"
+                },
+                "request_slots": [
+                    "theater",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "city",
+                    "numberofpeople",
+                    "zip"
+                ],
+                "nl": {
+                    "agt": "Which theater and start time do you need $numberofpeople$ tickets in $city$ $zip$ on $date$?",
+                    "usr": "Which theater and start time are available for $numberofpeople$ tickets in $city$ $zip$ on $date$?"
+                },
+                "request_slots": [
+                    "theater",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "date"
+                ],
+                "nl": {
+                    "agt": "Do you want the tickets on $date$?",
+                    "usr": "Can I get the tickets for $date$?"
+                },
+                "request_slots": [
+                    "ticket"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "city"
+                ],
+                "nl": {
+                    "agt": "Which movie do you want to watch at $city$?",
+                    "usr": "What movie is showing at $city$?"
+                },
+                "request_slots": [
+                    "moviename"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "other",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Which theater do you want to watch $moviename$?",
+                    "usr": "Which theater is playing $moviename$?"
+                },
+                "request_slots": [
+                    "theater"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "theater_chain"
+                ],
+                "nl": {
+                    "agt": "What start time do you want at $theater_chain$?",
+                    "usr": "What start time is it playing at $theater_chain$?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "distanceconstraints"
+                ],
+                "nl": {
+                    "agt": "What movie do you want to watch $distanceconstraints$?",
+                    "usr": "What movie is playing $distanceconstraints$?"
+                },
+                "request_slots": [
+                    "moviename"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "theater"
+                ],
+                "nl": {
+                    "agt": "what movie do you want to watch at $theater$?",
+                    "usr": "what movie is playing at $theater$?"
+                },
+                "request_slots": [
+                    "moviename"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "starttime"
+                ],
+                "nl": {
+                    "agt": "Which theater do you want at $starttime$?",
+                    "usr": "Which theater is it playing at $starttime$?"
+                },
+                "request_slots": [
+                    "theater"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "date"
+                ],
+                "nl": {
+                    "agt": "What movie do you want $data$?",
+                    "usr": "What movie is playing on $date$?"
+                },
+                "request_slots": [
+                    "moviename"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "distanceconstraints"
+                ],
+                "nl": {
+                    "agt": "Which theater $distanceconstraints$ do you like?",
+                    "usr": "Which theater $distanceconstraints$ is available?"
+                },
+                "request_slots": [
+                    "theater"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Do you have any other description requirement for the $moviename$?",
+                    "usr": "Is there any other description for the $moviename$?"
+                },
+                "request_slots": [
+                    "description"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "city"
+                ],
+                "nl": {
+                    "agt": "Do you want some tickets at $city$?",
+                    "usr": "I want some tickets at $city$."
+                },
+                "request_slots": [
+                    "ticket"
+                ]
+            },
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "Do you want to book the tickets?",
+                    "usr": "Could you help me to book the tickets?"
+                },
+                "request_slots": [
+                    "ticket"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Any preference for the start time of $moviename$?",
+                    "usr": "What is the start time for $moviename$?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Which theater do you want to book $numberofpeople$ tickets for $moviename$?",
+                    "usr": "Which theater can I book $numberofpeople$ tickets for $moviename$?"
+                },
+                "request_slots": [
+                    "theater"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Do you want $numberofpeople$ tickets for $moviename$?",
+                    "usr": "Can I get $numberofpeople$ tickets for $moviename$?"
+                },
+                "request_slots": [
+                    "ticket"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Do you want tickets for $moviename$ on $date$?",
+                    "usr": "Can I get tickets for $moviename$ $date$?"
+                },
+                "request_slots": [
+                    "ticket"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "moviename",
+                    "starttime"
+                ],
+                "nl": {
+                    "agt": "Do you want tickets for $moviename$ at $starttime$?",
+                    "usr": "I want tickets for $moviename$ at $starttime$."
+                },
+                "request_slots": [
+                    "ticket"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Do you want tickets for $moviename$ at $city$?",
+                    "usr": "Can I buy tickets for $moviename$ at $city$?"
+                },
+                "request_slots": [
+                    "ticket"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "distanceconstraints",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Any preference for the start time for $moviename$ $distanceconstraints$?",
+                    "usr": "What is the start time for $moviename$ $distanceconstraints$?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "moviename",
+                    "zip"
+                ],
+                "nl": {
+                    "agt": "Any preference for the start time for $moviename$ at zipcode $zip$?",
+                    "usr": "What is the start time for $moviename$ at zipcode $zip$?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Do you want tickets for $moviename$?",
+                    "usr": "Can I get some tickets for $moviename$?"
+                },
+                "request_slots": [
+                    "ticket"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "Do you want $numberofpeople$ tickets?",
+                    "usr": "Can I get $numberofpeople$ tickets?"
+                },
+                "request_slots": [
+                    "ticket"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "What date do you want to book $numberofpeople$ tickets for $moviename$?",
+                    "usr": "What date can I book $numberofpeople$ tickets for $moviename$?"
+                },
+                "request_slots": [
+                    "date"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "moviename",
+                    "theater"
+                ],
+                "nl": {
+                    "agt": "Do you want tickets for $moviename$ at $theater$?",
+                    "usr": "Can I get tickets for $moviename$ at $theater$?"
+                },
+                "request_slots": [
+                    "ticket"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Which theater you want to watch $moviename$?",
+                    "usr": "Which theater is $moviename$ playing?"
+                },
+                "request_slots": [
+                    "theater"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Which theater you want to watch $moviename$ on $date$?",
+                    "usr": "Which theater will $moviename$ play $date$?"
+                },
+                "request_slots": [
+                    "theater"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "What start time do you want to book $numberofpeople$ tickets for $moviename$?",
+                    "usr": "What start time can I book $numberofpeople$ tickets for $moviename$?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "moviename",
+                    "starttime"
+                ],
+                "nl": {
+                    "agt": "What date do you want to book $moviename$ tickets at $starttime$?",
+                    "usr": "Which day $moviename$ will be showing at $starttime$?"
+                },
+                "request_slots": [
+                    "date"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "What start time do you want to book $moviename$ tickets on $date$?",
+                    "usr": "What is the start time for $moviename$ $date$?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Which theater at $city$ you prefer to watch $moviename$?",
+                    "usr": "Which theater is playing $moviename$ at $city$?"
+                },
+                "request_slots": [
+                    "theater"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "What is the date for $moviename$?",
+                    "usr": "When is $moviename$ playing?"
+                },
+                "request_slots": [
+                    "date"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "What is the date you want for $moviename$ at $city$?",
+                    "usr": "What date is $moviename$ playing at $city$?"
+                },
+                "request_slots": [
+                    "date"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "state",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Do you need some tickets for $moviename$ in $state$?",
+                    "usr": "Hi, I'd like to buy tickets for $moviename$ in $state$."
+                },
+                "request_slots": [
+                    "ticket"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "distanceconstraints",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Which theater $distanceconstraints$ you prefer for $moviename$?",
+                    "usr": "Which theater is $moviename$ playing $distanceconstraints$?"
+                },
+                "request_slots": [
+                    "theater"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "state",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Any requirement for the start time for $moviename$ in $state$?",
+                    "usr": "What is the start time for $moviename$ in $state$?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "state",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Which theater you like to watch $moviename$ in $state$?",
+                    "usr": "Which theater is $moviename$ playing in $state$?"
+                },
+                "request_slots": [
+                    "theater"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "state",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "What date do you want to watch $moviename$ in $state$?",
+                    "usr": "When is $moviename$ playing in $state$?"
+                },
+                "request_slots": [
+                    "date"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "moviename",
+                    "zip"
+                ],
+                "nl": {
+                    "agt": "What date you want to watch $moviename$ at zipcode $zip$?",
+                    "usr": "What date is $moviename$ playing at zipcode $zip$?"
+                },
+                "request_slots": [
+                    "date"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "What is the start time you want to watch $moviename$ at $city$?",
+                    "usr": "When is $moviename$ playing at $city$?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "video_format",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "Which theater do you want to watch $video_format$ $moviename$?",
+                    "usr": "Which theater is playing $video_format$ $moviename$?"
+                },
+                "request_slots": [
+                    "theater"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "moviename",
+                    "theater"
+                ],
+                "nl": {
+                    "agt": "What date do you want to watch $moviename$ at $theater$?",
+                    "usr": "Which day is $moviename$ playing at $theater$?"
+                },
+                "request_slots": [
+                    "date"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "moviename",
+                    "theater"
+                ],
+                "nl": {
+                    "agt": "What time do you want to watch $moviename$ at $theater$?",
+                    "usr": "What is the start time for $moviename$ at $theater$?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "moviename",
+                    "zip"
+                ],
+                "nl": {
+                    "agt": "Which theater do you want to watch $moviename$ at zipcode $zip$?",
+                    "usr": "Which theater near zipcode $zip$ is playing $moviename$?"
+                },
+                "request_slots": [
+                    "theater"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "distanceconstraints",
+                    "moviename"
+                ],
+                "nl": {
+                    "agt": "What date do you want to watch $moviename$ $distanceconstraints$?",
+                    "usr": "When is $moviename$ playing $distanceconstraints$?"
+                },
+                "request_slots": [
+                    "date"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "distanceconstraints",
+                    "video_format",
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "Which theater $distanceconstraints$ do you want to order $numberofpeople$ tickets for $video_format$ movie?",
+                    "usr": "Which theater $distanceconstraints$ can I book $numberofpeople$ $video_format$ tickets?"
+                },
+                "request_slots": [
+                    "theater"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "What is the start time for $numberofpeople$ tickets?",
+                    "usr": "What is the start time available for $numberofpeople$ tickets?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "What date and start time would you like?",
+                    "usr": "What date and start time are available?"
+                },
+                "request_slots": [
+                    "date",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "What date and start time would you like? And which theater you prefer?",
+                    "usr": "Can you tell me the available theater and date, start time?"
+                },
+                "request_slots": [
+                    "date",
+                    "theater",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "What time would you like to see it?",
+                    "usr": "What start time is available?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "What time you prefer on $date$ for $numberofpeople$ tickets?",
+                    "usr": "What time is it playing $date$? I need $numberofpeople$ tickets."
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "Which theater would you like?",
+                    "usr": "Which theater is available?"
+                },
+                "request_slots": [
+                    "theater"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "What start time do you like at $city$ for $numberofpeople$ tickets?",
+                    "usr": "What start time can I book $numberofpeople$ tickets at $city$?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "What date would you like to watch it?",
+                    "usr": "What date is available?"
+                },
+                "request_slots": [
+                    "date"
+                ]
+            },
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "What date you prefer, and which theater would you like to go?",
+                    "usr": "Can you tell me the available theater and date?"
+                },
+                "request_slots": [
+                    "date",
+                    "theater"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "distanceconstraints",
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "What start time do you prefer for $numberofpeople$ tickets $distanceconstraints$?",
+                    "usr": "What start time can I book $numberofpeople$ tickets $distanceconstraints$?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "Can you tell me which theater you want for $numberofpeople$ tickets?",
+                    "usr": "Where I can purchase $numberofpeople$ tickets?"
+                },
+                "request_slots": [
+                    "theater"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "state"
+                ],
+                "nl": {
+                    "agt": "What is the start time you like at $city$, $state$?",
+                    "usr": "When it will play at $city$ $state$?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "What date for 4 tickets?",
+                    "usr": "What date is available for $numberofpeople$ tickets?"
+                },
+                "request_slots": [
+                    "date"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "numberofpeople",
+                    "theater"
+                ],
+                "nl": {
+                    "agt": "What is the start time you prefer for $numberofpeople$ tickets at $theater$ in $city$?",
+                    "usr": "I want to purchase $numberofpeople$ tickets. What time is that movie playing at $theater$ in $city$?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "state",
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "What date do you prefer for $numberofpeople$ tickets at $state$?",
+                    "usr": "I need to get $numberofpeople$ tickets. What date is playing at $state$?"
+                },
+                "request_slots": [
+                    "date"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "distanceconstraints",
+                    "video_format",
+                    "state"
+                ],
+                "nl": {
+                    "agt": "Which theater you would prefer in $state$ $distanceconstraints$ for $video_format$?",
+                    "usr": "Which theater $distanceconstraints$ is available in $state$ for $video_format$?"
+                },
+                "request_slots": [
+                    "theater"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "numberofpeople",
+                    "zip"
+                ],
+                "nl": {
+                    "agt": "What is the start time you want on $date$ near zipcode $zip$ for $numberofpeople$ tickets?",
+                    "usr": "I want to purchase $numberofpeople$ tickets. What time is playing on $date$, in zipcode $zip$?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "numberofpeople",
+                    "theater"
+                ],
+                "nl": {
+                    "agt": "What is the start time you want at $theater$ on $date$ for $numberofpeople$ tickets?",
+                    "usr": "I need $numberofpeople$ tickets. What time is the movie playing at $theater$ on $date$?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "numberofpeople",
+                    "zip"
+                ],
+                "nl": {
+                    "agt": "What start time do you prefer at $city$ $zip$ for $numberofpeople$ tickets?",
+                    "usr": "I want to purchase $numberofpeople$ tickets. What time is playing at $city$, and zipcode is $zip$?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "distanceconstraints"
+                ],
+                "nl": {
+                    "agt": "Can you tell me the the start time you prefer $distanceconstraints$?",
+                    "usr": "What is the start time for that movie $distanceconstraints$?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "theater"
+                ],
+                "nl": {
+                    "agt": "Can you tell me the start time you like at $theater$?",
+                    "usr": "What time is playing at $theater$?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "city",
+                    "zip"
+                ],
+                "nl": {
+                    "agt": "Can you tell me the start time you like on $date$ at $city$ $zip$?",
+                    "usr": "What time is playing at $city$ $zip$ on $date$?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "city"
+                ],
+                "nl": {
+                    "agt": "Can you tell me what start time you like at $city$?",
+                    "usr": "What time is playing at $city$?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "date"
+                ],
+                "nl": {
+                    "agt": "Can you tell me what start time you like on $date$?",
+                    "usr": "What time would you like on $date$?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "state",
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "What time do you prefer at $state$ for $numberofpeople$ tickets?",
+                    "usr": "I would like $numberofpeople$ tickets for that movie. What time is it playing at $state$?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople",
+                    "zip"
+                ],
+                "nl": {
+                    "agt": "What start time do you prefer in zipcode $zip$ for $numberofpeople$ tickets?",
+                    "usr": "I need $numberofpeople$ tickets. What is the start time in the area of zipcode $zip$?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "state",
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "Which theater do you prefer at $state$ for $numberofpeople$ tickets?",
+                    "usr": "Which theater can I book $numberofpeople$ tickets at $state$?"
+                },
+                "request_slots": [
+                    "theater"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "state",
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "What start time do you prefer at $city$, $state$ for $numberofpeople$ tickets?",
+                    "usr": "I want to get $numberofpeople$ tickets. What time is it playing at $city$ $state$?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "city",
+                    "theater"
+                ],
+                "nl": {
+                    "agt": "What start time do you like at $theater$ in $city$?",
+                    "usr": "What time is playing at $theater$ in $city$?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "theater"
+                ],
+                "nl": {
+                    "agt": "What start time do you like in $city$ on $date$?",
+                    "usr": "What time is playing at $theater$ on $date$?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "city",
+                    "theater"
+                ],
+                "nl": {
+                    "agt": "What start time do you want at $theater$ in $city$ on $date$?",
+                    "usr": "What time is playing at $theater$ in $city$ on $date$? "
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "distanceconstraints",
+                    "video_format",
+                    "state",
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "Which theater $distanceconstraints$ do you prefer in $state$ for $numberofpeople$ $video_format$ tickets?",
+                    "usr": "I need $numberofpeople$ tickets. Which theater $distanceconstraints$ offers $video_format$ in $state$?"
+                },
+                "request_slots": [
+                    "theater"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "video_format",
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "Which theater do you prefer for $numberofpeople$ $video_format$ tickets?",
+                    "usr": "I need $numberofpeople$ tickets. Which theater offers $video_format$?"
+                },
+                "request_slots": [
+                    "theater"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "distanceconstraints",
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "Which theater $distanceconstraints$ for $numberofpeople$ tickets?",
+                    "usr": "I need $numberofpeople$ tickets. Which theater $distanceconstraints$ is playing?"
+                },
+                "request_slots": [
+                    "theater"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "state"
+                ],
+                "nl": {
+                    "agt": "What is the start time you like at $state$?",
+                    "usr": "What time is playing at $state$?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "city",
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "What is the start time you like at $city$ on $date$ for $numberofpeople$ tickets?",
+                    "usr": "I want to purchase $numberofpeople$ tickets. What time is it playing at $city$ on $date$?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople",
+                    "theater"
+                ],
+                "nl": {
+                    "agt": "What is the start time you prefer at $theater$ for $numberofpeople$ tickets?",
+                    "usr": "What start time can I book $numberofpeople$ tickets at $theater$?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "distanceconstraints",
+                    "video_format"
+                ],
+                "nl": {
+                    "agt": "Which theater $distanceconstraints$ you like for $video_format$ movies?",
+                    "usr": "Which theater $distanceconstraints$ offers $video_format$?"
+                },
+                "request_slots": [
+                    "theater"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "city",
+                    "numberofpeople",
+                    "zip"
+                ],
+                "nl": {
+                    "agt": "What is the start time you like in $city$ near zipcode $zip$ on $date$ for $numberofpeople$ tickets?",
+                    "usr": "I want to get $numberofpeople$ tickets. What is the start time at $city$ $zip$ on $date$?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "zip"
+                ],
+                "nl": {
+                    "agt": "What is the start time you prefer near zipcode $zip$?",
+                    "usr": "What time is playing in zipcode $zip$?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "city",
+                    "numberofpeople",
+                    "theater"
+                ],
+                "nl": {
+                    "agt": "What is the start time you prefer at $theater$ in $city$ on $date$ for $numberofpeople$ tickets?",
+                    "usr": "I want $numberofpeople$ tickets. What is the start time at $theater$ in $city$ on $date$?"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "state"
+                ],
+                "nl": {
+                    "agt": "What date do you prefer at $state$?",
+                    "usr": "What date is playing at $state$?"
+                },
+                "request_slots": [
+                    "date"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "date",
+                    "city"
+                ],
+                "nl": {
+                    "agt": "What time do you like at $city$ on $date$?",
+                    "usr": "What time is playing in $city$ on $date$"
+                },
+                "request_slots": [
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "distanceconstraints",
+                    "state",
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "Which theater $distanceconstraints$ do you prefer in $state$ for $numberofpeople$ tickets?",
+                    "usr": "I need $numberofpeople$ tickets. Which theater $distanceconstraints$ at $state$?"
+                },
+                "request_slots": [
+                    "theater"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "video_format",
+                    "state",
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "Which theater do you prefer in $state$ for $numberofpeople$ $video_format$ tickets?",
+                    "usr": "I need $numberofpeople$ tickets. Which theater offers $video_format$ at $state$?"
+                },
+                "request_slots": [
+                    "theater"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "state"
+                ],
+                "nl": {
+                    "agt": "What date and start time do you want at $state$?",
+                    "usr": "What date and start time are available at $state$?"
+                },
+                "request_slots": [
+                    "date",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "city"
+                ],
+                "nl": {
+                    "agt": "What date and start time do you want at $city$?",
+                    "usr": "What date and start time do you want at $city$?"
+                },
+                "request_slots": [
+                    "date",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "numberofpeople"
+                ],
+                "nl": {
+                    "agt": "Which theater and start time do you want to book $numberofpeople$ tickets?",
+                    "usr": "What theater and start time are available to book $numberofpeople$ tickets?"
+                },
+                "request_slots": [
+                    "theater",
+                    "starttime"
+                ]
+            },
+            {
+                "inform_slots": [
+                    "state"
+                ],
+                "nl": {
+                    "agt": "Which theater you prefer at $state$?",
+                    "usr": "What theater is playing at $state$?"
+                },
+                "request_slots": [
+                    "theater"
+                ]
+            },
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "What movie are you interested in?",
+                    "usr": "What movie is available?"
+                },
+                "request_slots": [
+                    "moviename"
+                ]
+            },
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "Which city would you like?",
+                    "usr": "Which city is available?"
+                },
+                "request_slots": [
+                    "city"
+                ]
+            },
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "How many tickets do you need?",
+                    "usr": "How many tickets are available?"
+                },
+                "request_slots": [
+                    "numberofpeople"
+                ]
+            },
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "Which actor you like?",
+                    "usr": "What actor is in the movie?"
+                },
+                "request_slots": [
+                    "actor"
+                ]
+            },
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "Which actress you like?",
+                    "usr": "What actress is in the movie?"
+                },
+                "request_slots": [
+                    "actress"
+                ]
+            },
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "What critic_rating do you like?",
+                    "usr": "What is the critic_rating for the movie?"
+                },
+                "request_slots": [
+                    "critic_rating"
+                ]
+            },
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "Do you have any distanceconstraint constraint?",
+                    "usr": "What is the distanceconstraints for the movie?"
+                },
+                "request_slots": [
+                    "distanceconstraints"
+                ]
+            },
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "Do you have any description constraint?",
+                    "usr": "What is the description for the movie?"
+                },
+                "request_slots": [
+                    "description"
+                ]
+            },
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "What genre do you like?",
+                    "usr": "What is the genre for the movie?"
+                },
+                "request_slots": [
+                    "genre"
+                ]
+            },
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "What mpaa_rating do you like?",
+                    "usr": "What is the mpaa_rating for the movie?"
+                },
+                "request_slots": [
+                    "mpaa_rating"
+                ]
+            },
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "Do you have any constraint for the price?",
+                    "usr": "What is the price for the movie?"
+                },
+                "request_slots": [
+                    "mpaa_rating"
+                ]
+            },
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "What video format do you want?",
+                    "usr": "What is the video format for the movie?"
+                },
+                "request_slots": [
+                    "video_format"
+                ]
+            },
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "How many kid tickets do you want?",
+                    "usr": "How many kid tickets are available?"
+                },
+                "request_slots": [
+                    "numberofkids"
+                ]
+            },
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "What zip do you want to search?",
+                    "usr": "What is the zip?"
+                },
+                "request_slots": [
+                    "zip"
+                ]
+            },
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "Which theater_chain do you want?",
+                    "usr": "Which theater_chain is it playing?"
+                },
+                "request_slots": [
+                    "theater_chain"
+                ]
+            },
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "Which state do you want?",
+                    "usr": "Which state is availble?"
+                },
+                "request_slots": [
+                    "state"
+                ]
+            },
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "What movie series do you like?",
+                    "usr": "What is the movie series?"
+                },
+                "request_slots": [
+                    "movie_series"
+                ]
+            }
+        ],
+        "thanks": [
+            {
+                "inform_slots": [],
+                "nl": {
+                    "agt": "Thank you",
+                    "usr": "Thank you"
+                },
+                "request_slots": []
+            },
+            {
+                "inform_slots": [
+                    "closing"
+                ],
+                "nl": {
+                    "agt": "Thank you, bye",
+                    "usr": "Thank you, goodbye"
+                },
+                "request_slots": []
+            }
+        ]
+    }
+}

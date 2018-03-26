@@ -1,0 +1,126 @@
+{
+    "caller-id": "50849ace4b", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "type": "pub"
+            }, 
+            "transcription": "im looking for a pub in the moderate price range", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110406_002410_0001984_0002368.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "moderate"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=pub,pricerange=moderate)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "type": "pub", 
+                "pricerange": "moderate"
+            }, 
+            "transcription": "may i have the phone number and the prices", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110406_002421_0003173_0003485.wav", 
+            "requested-slots": [
+                "phone", 
+                "price"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "price"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone,price)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "type": "pub"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-003-110406_002445_0005732_0005867.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a pub food restaurant and it should have moderate pricerange. You want to know the phone number and price of the venue.", 
+            "request-slots": [
+                "phone", 
+                "price"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "pub food"
+                ], 
+                [
+                    "pricerange", 
+                    "moderate"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-50849ace4b-20110406_002346"
+}

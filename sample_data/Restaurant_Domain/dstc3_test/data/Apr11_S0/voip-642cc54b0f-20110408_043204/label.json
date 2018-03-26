@@ -1,0 +1,367 @@
+{
+    "caller-id": "642cc54b0f", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "noise sil", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110408_043207_0000059_0000286.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "pricerange": "cheap", 
+                "type": "restaurant", 
+                "area": "addenbrookes"
+            }, 
+            "transcription": "what is a cheap restaurant in addonbrookes", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110408_043218_0001176_0001440.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "cheap"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "addenbrookes"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=cheap,=restaurant,area=addenbrookes)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "pricerange": "cheap", 
+                "area": "addenbrookes"
+            }, 
+            "transcription": "addonbrookes", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110408_043232_0002663_0002770.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "addenbrookes"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=addenbrookes)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "pricerange": "cheap", 
+                "type": "restaurant", 
+                "area": "addenbrookes"
+            }, 
+            "transcription": "no", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110408_043245_0003973_0004016.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "negate"
+                    }
+                ], 
+                "cam": "negate()"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "pricerange": "cheap", 
+                "area": "addenbrookes"
+            }, 
+            "transcription": "addonbrookes", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110408_043254_0004935_0005047.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "addenbrookes"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=addenbrookes)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "pricerange": "cheap", 
+                "type": "restaurant", 
+                "area": "addenbrookes"
+            }, 
+            "transcription": "doenst matter", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110408_043305_0006003_0006111.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "this", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "type": "restaurant", 
+                "pricerange": "cheap", 
+                "area": "addenbrookes"
+            }, 
+            "transcription": "what is the address", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110408_043314_0006873_0007000.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "pricerange": "cheap", 
+                "type": "restaurant", 
+                "area": "addenbrookes"
+            }, 
+            "transcription": "what is the address", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-008-110408_043325_0007930_0008080.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 8, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "type": "restaurant", 
+                "pricerange": "cheap", 
+                "area": "addenbrookes"
+            }, 
+            "transcription": "yes", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-009-110408_043334_0008932_0008999.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "affirm"
+                    }
+                ], 
+                "cam": "affirm()"
+            }
+        }, 
+        {
+            "turn-index": 9, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "pricerange": "cheap", 
+                "type": "restaurant", 
+                "area": "addenbrookes"
+            }, 
+            "transcription": "what is a cheap restaurant in addonbrookes", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-010-110408_043344_0009661_0010012.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "cheap"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "addenbrookes"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=cheap,=restaurant,area=addenbrookes)"
+            }
+        }, 
+        {
+            "turn-index": 10, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "type": "restaurant", 
+                "pricerange": "cheap", 
+                "area": "addenbrookes"
+            }, 
+            "transcription": "what is the post code", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-011-110408_043354_0010839_0010988.wav", 
+            "requested-slots": [
+                "postcode"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "postcode"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(postcode)"
+            }
+        }, 
+        {
+            "turn-index": 11, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "pricerange": "cheap", 
+                "type": "restaurant", 
+                "area": "addenbrookes"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-012-110408_043403_0011783_0011906.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a cheap restaurant and it should be in the Addenbrookes area. You want to know the address and postcode.", 
+            "request-slots": [
+                "addr", 
+                "postcode"
+            ], 
+            "constraints": [
+                [
+                    "pricerange", 
+                    "cheap"
+                ], 
+                [
+                    "area", 
+                    "addenbrookes"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "slightly agree"
+                ]
+            ], 
+            "comments": "Asked me what area three times;  when I asked for address, it wanted to confirm I didn't care about the price.  When I tried to restart the query, it gave me the address of the restaurant.", 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-642cc54b0f-20110408_043204"
+}

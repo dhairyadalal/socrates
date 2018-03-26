@@ -1,0 +1,228 @@
+{
+    "caller-id": "3078ea4dca", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "sil", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110413_230027_0000542_0000608.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "mexican tex mex", 
+                "type": "restaurant"
+            }, 
+            "transcription": "yeah im looking for a mexican tex mex restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110413_230041_0001432_0001984.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "affirm"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "mexican tex mex"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "affirm(food=\"mexican tex mex\",=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "mexican tex mex", 
+                "type": "restaurant", 
+                "pricerange": "dontcare"
+            }, 
+            "transcription": "i dont care", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110413_230052_0002885_0003060.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "this", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "mexican tex mex", 
+                "pricerange": "dontcare", 
+                "type": "restaurant", 
+                "area": "dontcare"
+            }, 
+            "transcription": "i dont care", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110413_230106_0004308_0004457.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "this", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "mexican tex mex", 
+                "type": "restaurant", 
+                "pricerange": "dontcare", 
+                "area": "dontcare"
+            }, 
+            "transcription": "whats the price range the venue and the postcode please", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110413_230121_0005578_0005938.wav", 
+            "requested-slots": [
+                "pricerange", 
+                "postcode"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "pricerange"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "postcode"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(pricerange,postcode)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "mexican tex mex", 
+                "pricerange": "dontcare", 
+                "type": "restaurant", 
+                "area": "dontcare"
+            }, 
+            "transcription": "and the phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110413_230136_0007328_0007477.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "mexican tex mex", 
+                "type": "restaurant", 
+                "pricerange": "dontcare", 
+                "area": "dontcare"
+            }, 
+            "transcription": "thank you goodbye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-007-110413_230150_0008724_0008845.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a Mexian/Tex-Mex restaurant. You don't care about the price range. You want to know the phone number and postcode of the venue.", 
+            "request-slots": [
+                "phone", 
+                "postcode"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "mexican tex mex"
+                ], 
+                [
+                    "pricerange", 
+                    "dontcare"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-3078ea4dca-20110413_230021"
+}

@@ -28,8 +28,8 @@ class DialogManager:
         self.reward = 0
         self.episode_over = False
         self.state_tracker.initialize_episode()
-        self.user_action = self.user.initialize_episode()
-        self.state_tracker.update(user_action = self.user_action)
+        self.user_ac tion = self.user.initialize_episode()
+        self.st ate_tracker.update(user_action = self.user_action)
         
         if dialog_config.run_mode < 3:
             print ("New episode, user goal:")
@@ -73,7 +73,8 @@ class DialogManager:
         #  Inform agent of the outcome for this timestep (s_t, a_t, r, s_{t+1}, episode_over)
         ########################################################################
         if record_training_data:
-            self.agent.register_experience_replay_tuple(self.state, self.agent_action, self.reward, self.state_tracker.get_state_for_agent(), self.episode_over)
+            self.agent.register_experience_replay_tuple(self.state, self.agent_action, self.reward,
+                                                        self.state_tracker.get_state_for_agent(), self.episode_over)
         
         return (self.episode_over, self.reward)
 

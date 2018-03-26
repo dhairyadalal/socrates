@@ -1,0 +1,185 @@
+{
+    "caller-id": "e794f445b3", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "type": "restaurant", 
+                "area": "kings hedges"
+            }, 
+            "transcription": "i want to find a moderately priced restaurant in the kings hedges area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110409_200240_0001868_0002223.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "moderate"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "kings hedges"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=moderate,=restaurant,area=\"kings hedges\")"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "pricerange": "moderate", 
+                "area": "kings hedges"
+            }, 
+            "transcription": "what is the address", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110409_200252_0003361_0003481.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "type": "restaurant", 
+                "area": "kings hedges"
+            }, 
+            "transcription": "what is the phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110409_200301_0004187_0004313.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "pricerange": "moderate", 
+                "area": "kings hedges"
+            }, 
+            "transcription": "what is the price range", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110409_200312_0005323_0005456.wav", 
+            "requested-slots": [
+                "pricerange"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "pricerange"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(pricerange)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "type": "restaurant", 
+                "area": "kings hedges"
+            }, 
+            "transcription": "thank you goodbye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-005-110409_200325_0006645_0006761.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a moderately priced restaurant and it should be in the Kings Hedges area. You want to know the address, phone number, and price.", 
+            "request-slots": [
+                "addr", 
+                "phone", 
+                "price"
+            ], 
+            "constraints": [
+                [
+                    "pricerange", 
+                    "moderate"
+                ], 
+                [
+                    "area", 
+                    "kings hedges"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-e794f445b3-20110409_200217"
+}

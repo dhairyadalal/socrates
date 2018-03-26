@@ -1,0 +1,253 @@
+{
+    "caller-id": "9c07f3169a", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "food": "italian", 
+                "type": "restaurant", 
+                "area": "castle hill"
+            }, 
+            "transcription": "im looking for an italian restaurant in the castlehill area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110406_023204_0000910_0001228.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "italian"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "castle hill"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=italian,=restaurant,area=\"castle hill\")"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "italian", 
+                "type": "restaurant", 
+                "area": "castle hill"
+            }, 
+            "transcription": "no im looking for an italian restaurant in the castlehill area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110406_023216_0002022_0002415.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "negate"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "italian"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "castle hill"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "negate(food=italian,=restaurant,area=\"castle hill\")"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "italian", 
+                "type": "restaurant", 
+                "area": "castle hill"
+            }, 
+            "transcription": "castlehill", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110406_023226_0003193_0003344.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "castle hill"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=\"castle hill\")"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "italian", 
+                "type": "restaurant", 
+                "area": "castle hill"
+            }, 
+            "transcription": "castlehill", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110406_023235_0004019_0004244.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "castle hill"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=\"castle hill\")"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "italian", 
+                "type": "restaurant", 
+                "area": "castle hill"
+            }, 
+            "transcription": "castlehill", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110406_023240_0004691_0004800.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "castle hill"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=\"castle hill\")"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "italian", 
+                "type": "restaurant", 
+                "area": "castle hill"
+            }, 
+            "transcription": "castlehill you mother fucking program", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110406_023245_0005050_0005305.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "castle hill"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=\"castle hill\")"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "italian", 
+                "type": "restaurant", 
+                "area": "castle hill"
+            }, 
+            "transcription": "thank you goodbye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-007-110406_023255_0006225_0006319.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for an Italian restaurant and it should be in the Castle Hill area. Make sure you get the address, phone number, and price.", 
+            "request-slots": [
+                "addr", 
+                "phone", 
+                "price"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "italian"
+                ], 
+                [
+                    "area", 
+                    "castle hill"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly disagree"
+                ]
+            ], 
+            "comments": null, 
+            "success": false
+        }
+    }, 
+    "session-id": "voip-9c07f3169a-20110406_023152"
+}

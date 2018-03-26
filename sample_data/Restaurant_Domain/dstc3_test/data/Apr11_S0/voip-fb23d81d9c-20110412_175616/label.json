@@ -1,0 +1,330 @@
+{
+    "caller-id": "fb23d81d9c", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "food": "mediterranean", 
+                "type": "restaurant", 
+                "area": "addenbrookes"
+            }, 
+            "transcription": "mediterranean restaurant in addenbrookes area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110412_175640_0001883_0002395.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "mediterranean"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "addenbrookes"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=mediterranean,=restaurant,area=addenbrookes)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "mediterranean", 
+                "type": "restaurant", 
+                "area": "addenbrookes"
+            }, 
+            "transcription": "repeat please", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110412_175700_0003993_0004283.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "repeat"
+                    }
+                ], 
+                "cam": "repeat()"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "mediterranean", 
+                "type": "restaurant", 
+                "area": "addenbrookes"
+            }, 
+            "transcription": "no mediterranean restaurant in addenbrookes area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110412_175714_0005213_0005730.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "negate"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "mediterranean"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "addenbrookes"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "negate(food=mediterranean,=restaurant,area=addenbrookes)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "mediterranean", 
+                "type": "restaurant", 
+                "area": "addenbrookes"
+            }, 
+            "transcription": "address", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110412_175732_0007267_0007574.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "mediterranean", 
+                "type": "restaurant", 
+                "area": "addenbrookes"
+            }, 
+            "transcription": "sil", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110412_175735_0007758_0007893.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "mediterranean", 
+                "type": "restaurant", 
+                "area": "addenbrookes"
+            }, 
+            "transcription": "sil", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110412_175739_0008143_0008204.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "mediterranean", 
+                "type": "restaurant", 
+                "area": "addenbrookes"
+            }, 
+            "transcription": "address", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110412_175752_0009371_0009571.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "food": "mediterranean", 
+                "type": "restaurant", 
+                "area": "addenbrookes"
+            }, 
+            "transcription": "i need the phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-008-110412_175805_0010686_0010839.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 8, 
+            "goal-labels": {
+                "food": "mediterranean", 
+                "type": "restaurant", 
+                "area": "addenbrookes"
+            }, 
+            "transcription": "price range", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-009-110412_175820_0012134_0012285.wav", 
+            "requested-slots": [
+                "pricerange"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "pricerange"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(pricerange)"
+            }
+        }, 
+        {
+            "turn-index": 9, 
+            "goal-labels": {
+                "food": "mediterranean", 
+                "type": "restaurant", 
+                "area": "addenbrookes"
+            }, 
+            "transcription": "sil", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-010-110412_175837_0013674_0014025.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 10, 
+            "goal-labels": {
+                "food": "mediterranean", 
+                "type": "restaurant", 
+                "area": "addenbrookes"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-011-110412_175840_0014112_0014339.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a Mediterranean restaurant and it should be in the Addenbrookes area. Make sure you get the address, phone number, and price range.", 
+            "request-slots": [
+                "addr", 
+                "phone", 
+                "pricerange"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "mediterranean"
+                ], 
+                [
+                    "area", 
+                    "addenbrookes"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "agree"
+                ]
+            ], 
+            "comments": "I had to repeat myself once for the address and again I had to ask for the name of the restaurant because the voice quality was fuzzy.", 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-fb23d81d9c-20110412_175616"
+}

@@ -1,0 +1,324 @@
+{
+    "caller-id": "8ab3bb7cdb", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "noise sil", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110411_201329_0000172_0000436.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {}, 
+            "transcription": "im looking for a", 
+            "method-label": "none", 
+            "audio-file": "fj228x-002-110411_201337_0001154_0001294.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "pricerange": "expensive", 
+                "type": "restaurant", 
+                "area": "fen ditton"
+            }, 
+            "transcription": "an expensive restaurant in the fenditton area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110411_201341_0001353_0001685.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "expensive"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "fen ditton"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=expensive,=restaurant,area=\"fen ditton\")"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "type": "restaurant", 
+                "pricerange": "expensive", 
+                "area": "fen ditton"
+            }, 
+            "transcription": "i dont care", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110411_201351_0002584_0002664.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "this", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "french", 
+                "pricerange": "expensive", 
+                "type": "restaurant", 
+                "area": "riverside"
+            }, 
+            "transcription": "looking for a french restaurant in the river side area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110411_201409_0004121_0004451.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "french"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "riverside"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=french,=restaurant,area=riverside)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "french", 
+                "type": "restaurant", 
+                "pricerange": "expensive", 
+                "area": "riverside"
+            }, 
+            "transcription": "what is the phone number of the venue", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110411_201426_0005962_0006134.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "french", 
+                "hasinternet": "true", 
+                "pricerange": "cheap", 
+                "type": "pub", 
+                "area": "riverside"
+            }, 
+            "transcription": "im looking for a cheap pub with internet connection", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110411_201442_0007427_0007729.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "hasinternet", 
+                                "true"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "cheap"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=cheap,=pub,hasinternet=true)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "food": "french", 
+                "pricerange": "cheap", 
+                "area": "riverside", 
+                "hasinternet": "true", 
+                "type": "pub"
+            }, 
+            "transcription": "i want to know the address phone number and area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-008-110411_201451_0008392_0008675.wav", 
+            "requested-slots": [
+                "phone", 
+                "addr", 
+                "area"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "area"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr,phone,area)"
+            }
+        }, 
+        {
+            "turn-index": 8, 
+            "goal-labels": {
+                "food": "french", 
+                "hasinternet": "true", 
+                "type": "pub", 
+                "pricerange": "cheap", 
+                "area": "riverside"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-009-110411_201509_0010273_0010387.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a cheap pub and it should have an internet connection. You want to know the address, phone number, and area of the venue.", 
+            "request-slots": [
+                "addr", 
+                "phone", 
+                "area"
+            ], 
+            "constraints": [
+                [
+                    "pricerange", 
+                    "cheap"
+                ], 
+                [
+                    "hasinternet", 
+                    "true"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-8ab3bb7cdb-20110411_201324"
+}

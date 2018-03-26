@@ -1,0 +1,214 @@
+{
+    "caller-id": "d0b03d6228", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "type": "restaurant", 
+                "area": "chesterton"
+            }, 
+            "transcription": "moderately priced restaurant in chesterton area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110414_172939_0002524_0003023.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "moderate"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "chesterton"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=moderate,=restaurant,area=chesterton)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "pricerange": "moderate", 
+                "area": "chesterton"
+            }, 
+            "transcription": "yes", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110414_172948_0003863_0003940.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "affirm"
+                    }
+                ], 
+                "cam": "affirm()"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "type": "restaurant", 
+                "area": "chesterton"
+            }, 
+            "transcription": "chesterton area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110414_172958_0004826_0004977.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "chesterton"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=chesterton)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "pricerange": "moderate", 
+                "area": "chesterton"
+            }, 
+            "transcription": "phone number and postcode", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110414_173016_0006597_0006790.wav", 
+            "requested-slots": [
+                "phone", 
+                "postcode"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "postcode"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone,postcode)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "type": "restaurant", 
+                "area": "chesterton"
+            }, 
+            "transcription": "postcode", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110414_173042_0009239_0009384.wav", 
+            "requested-slots": [
+                "postcode"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "postcode"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(postcode)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "pricerange": "moderate", 
+                "area": "chesterton"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-006-110414_173056_0010673_0010788.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a moderately priced restaurant and it should be in the Chesterton area. Make sure you get the address, phone number, and postcode of the venue.", 
+            "request-slots": [
+                "addr", 
+                "phone", 
+                "postcode"
+            ], 
+            "constraints": [
+                [
+                    "pricerange", 
+                    "moderate"
+                ], 
+                [
+                    "area", 
+                    "chesterton"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly disagree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-d0b03d6228-20110414_172908"
+}

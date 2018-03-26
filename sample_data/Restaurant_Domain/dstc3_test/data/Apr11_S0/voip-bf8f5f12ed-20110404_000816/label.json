@@ -1,0 +1,282 @@
+{
+    "caller-id": "bf8f5f12ed", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "sil", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110404_000826_0000789_0000908.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "english", 
+                "type": "restaurant"
+            }, 
+            "transcription": "im looking for an english restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110404_000831_0001153_0001362.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "english"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=english,=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "english", 
+                "type": "restaurant", 
+                "pricerange": "expensive"
+            }, 
+            "transcription": "im looking for an english restaurant any expensive", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110404_000837_0001760_0002037.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "english"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "expensive"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=english,=restaurant,pricerange=expensive)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "english", 
+                "pricerange": "expensive", 
+                "type": "restaurant"
+            }, 
+            "transcription": "expensive expensive", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110404_000842_0002302_0002513.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "expensive"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=expensive)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "english", 
+                "type": "restaurant", 
+                "pricerange": "expensive"
+            }, 
+            "transcription": "expensive", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110404_000850_0003183_0003309.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "expensive"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=expensive)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "english", 
+                "pricerange": "expensive", 
+                "type": "restaurant"
+            }, 
+            "transcription": "what is the address and postcode", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110404_000903_0004356_0004596.wav", 
+            "requested-slots": [
+                "addr", 
+                "postcode"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "postcode"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr,postcode)"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "english", 
+                "type": "restaurant", 
+                "pricerange": "expensive"
+            }, 
+            "transcription": "what is the address and postcode", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110404_000913_0005358_0005615.wav", 
+            "requested-slots": [
+                "addr", 
+                "postcode"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "postcode"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr,postcode)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "food": "english", 
+                "pricerange": "expensive", 
+                "type": "restaurant"
+            }, 
+            "transcription": "okay thank you goodbye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-008-110404_000924_0006515_0006672.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "ack"
+                    }, 
+                    {
+                        "slots": [], 
+                        "act": "thankyou"
+                    }, 
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "ack()|thankyou()|bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find an English restaurant and it should have expensive pricerange. You want to know the address and postcode of the venue.", 
+            "request-slots": [
+                "addr", 
+                "postcode"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "english"
+                ], 
+                [
+                    "pricerange", 
+                    "expensive"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "slightly agree"
+                ]
+            ], 
+            "comments": "It interupted me and starting asking about price range and repeated itself a few times. Seems like this time it wasn't waiting for me to talk before responding.", 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-bf8f5f12ed-20110404_000816"
+}

@@ -1,0 +1,259 @@
+{
+    "caller-id": "e68122aa92", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "yes id like to find", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110406_021015_0002079_0002238.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "affirm"
+                    }
+                ], 
+                "cam": "affirm()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "type": "pub", 
+                "hastv": "true"
+            }, 
+            "transcription": "a pub and it should have tv", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110406_021019_0002370_0002612.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "hastv", 
+                                "true"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=pub,hastv=true)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "type": "pub", 
+                "hastv": "true"
+            }, 
+            "transcription": "yes whats the name of it", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110406_021028_0003352_0003502.wav", 
+            "requested-slots": [
+                "name"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "affirm"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "name"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "affirm()|request(name)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "type": "pub", 
+                "hastv": "true"
+            }, 
+            "transcription": "ok", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110406_021037_0004349_0004424.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "ack"
+                    }
+                ], 
+                "cam": "ack()"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "type": "pub", 
+                "hastv": "true"
+            }, 
+            "transcription": "and what is the address and phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110406_021041_0004461_0004838.wav", 
+            "requested-slots": [
+                "phone", 
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr,phone)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "type": "pub", 
+                "hastv": "true"
+            }, 
+            "transcription": "yes what is the address and phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110406_021044_0004937_0005092.wav", 
+            "requested-slots": [
+                "phone", 
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr,phone)"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "type": "pub", 
+                "hastv": "true"
+            }, 
+            "transcription": "and whats the price range of the venue", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110406_021103_0006811_0007047.wav", 
+            "requested-slots": [
+                "pricerange"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "pricerange"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(pricerange)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "type": "pub", 
+                "hastv": "true"
+            }, 
+            "transcription": "thank you and good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-008-110406_021114_0008037_0008149.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a pub and it should have TV. You don't care about whether children are allowed. You want to know the address, phone number, and price range of the venue.", 
+            "request-slots": [
+                "addr", 
+                "phone", 
+                "pricerange"
+            ], 
+            "constraints": [
+                [
+                    "childrenallowed", 
+                    "dontcare"
+                ], 
+                [
+                    "hastv", 
+                    "true"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly agree"
+                ]
+            ], 
+            "comments": "much much better :)", 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-e68122aa92-20110406_020952"
+}

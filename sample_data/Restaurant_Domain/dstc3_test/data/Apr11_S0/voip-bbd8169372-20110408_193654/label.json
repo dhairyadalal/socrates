@@ -1,0 +1,228 @@
+{
+    "caller-id": "bbd8169372", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "noise sil", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110408_193710_0001564_0001654.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {}, 
+            "transcription": "barking im loo", 
+            "method-label": "none", 
+            "audio-file": "fj228x-002-110408_193714_0001722_0002016.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "drinks and snacks only"
+            }, 
+            "transcription": "barking i am looking for a drinks and snacks", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110408_193719_0002152_0002487.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "drinks and snacks only"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=\"drinks and snacks only\",task=find)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "drinks and snacks only", 
+                "type": "restaurant"
+            }, 
+            "transcription": "im looking for a drinks and snacks restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110408_193723_0002563_0002903.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "drinks and snacks only"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=\"drinks and snacks only\",=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "drinks and snacks only", 
+                "type": "restaurant"
+            }, 
+            "transcription": "im looking for a drinks and snacks restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110408_193727_0003069_0003320.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "drinks and snacks only"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=\"drinks and snacks only\",=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "drinks and snacks only", 
+                "type": "restaurant"
+            }, 
+            "transcription": "barking sil", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110408_193732_0003669_0003785.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "drinks and snacks only", 
+                "type": "restaurant"
+            }, 
+            "transcription": "barking sil", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110408_193737_0004227_0004293.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "food": "drinks and snacks only", 
+                "type": "restaurant"
+            }, 
+            "transcription": "what area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-008-110408_193739_0004380_0004496.wav", 
+            "requested-slots": [
+                "area"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "area"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(area)"
+            }
+        }, 
+        {
+            "turn-index": 8, 
+            "goal-labels": {
+                "food": "drinks and snacks only", 
+                "type": "restaurant"
+            }, 
+            "transcription": "thank you and good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-009-110408_193747_0005101_0005258.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a drinks and snacks only restaurant and it should be in the riverside area. Make sure you get the phone number and address.", 
+            "request-slots": [
+                "phone", 
+                "addr"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "drinks and snacks only"
+                ], 
+                [
+                    "area", 
+                    "riverside"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-bbd8169372-20110408_193654"
+}

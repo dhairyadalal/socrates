@@ -1,0 +1,241 @@
+{
+    "caller-id": "0c8acf2876", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "pricerange": "cheap", 
+                "type": "restaurant"
+            }, 
+            "transcription": "im looking for a cheap restaurant in the castle hi hill area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110410_050222_0001896_0002441.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "hello"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "cheap"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "hello(pricerange=cheap,=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "pricerange": "cheap", 
+                "area": "castle hill"
+            }, 
+            "transcription": "castle hill", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110410_050234_0003537_0003671.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "castle hill"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=\"castle hill\")"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "pricerange": "cheap", 
+                "type": "coffeeshop", 
+                "area": "castle hill"
+            }, 
+            "transcription": "cafe", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110410_050245_0004705_0004785.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "coffeeshop"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=coffeeshop)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "pricerange": "cheap", 
+                "area": "castle hill"
+            }, 
+            "transcription": "do you have anything else im looking for a cheap restaurant", 
+            "method-label": "byalternatives", 
+            "audio-file": "fj228x-004-110410_050314_0006884_0007679.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "reqalts"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "cheap"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "reqalts(pricerange=cheap,=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "pricerange": "cheap", 
+                "type": "restaurant", 
+                "area": "castle hill"
+            }, 
+            "transcription": "okay give me the address", 
+            "method-label": "byalternatives", 
+            "audio-file": "fj228x-005-110410_050330_0009105_0009256.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "pricerange": "cheap", 
+                "area": "castle hill"
+            }, 
+            "transcription": "and the phone number", 
+            "method-label": "byalternatives", 
+            "audio-file": "fj228x-006-110410_050339_0010016_0010131.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "pricerange": "cheap", 
+                "type": "restaurant", 
+                "area": "castle hill"
+            }, 
+            "transcription": "thank you goodbye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-007-110410_050352_0011313_0011421.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a cheap restaurant and it should be in the Castle Hill area. You want to know the address and phone number.", 
+            "request-slots": [
+                "addr", 
+                "phone"
+            ], 
+            "constraints": [
+                [
+                    "pricerange", 
+                    "cheap"
+                ], 
+                [
+                    "area", 
+                    "castle hill"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "slightly agree"
+                ]
+            ], 
+            "comments": "It didn't recognize my location (Castle Hill) on the first try.", 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-0c8acf2876-20110410_050157"
+}

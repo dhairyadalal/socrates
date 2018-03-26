@@ -1,0 +1,228 @@
+{
+    "caller-id": "25b06175db", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "food": "japanese", 
+                "type": "restaurant"
+            }, 
+            "transcription": "japanese restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110404_195626_0001984_0002243.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "japanese"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=japanese,=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "japanese", 
+                "type": "restaurant", 
+                "pricerange": "dontcare"
+            }, 
+            "transcription": "i dont care", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110404_195640_0003583_0003720.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "this", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "japanese", 
+                "pricerange": "dontcare", 
+                "type": "restaurant", 
+                "area": "centre"
+            }, 
+            "transcription": "city centre", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110404_195654_0004966_0005100.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "centre"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=centre)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "japanese", 
+                "type": "restaurant", 
+                "pricerange": "dontcare", 
+                "area": "centre"
+            }, 
+            "transcription": "japanese", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110404_195701_0005646_0005755.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "japanese"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=japanese)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "japanese", 
+                "pricerange": "dontcare", 
+                "type": "restaurant", 
+                "area": "centre"
+            }, 
+            "transcription": "the cen centre area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110404_195714_0006858_0007126.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "centre"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=centre)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "japanese", 
+                "type": "restaurant", 
+                "pricerange": "dontcare", 
+                "area": "centre"
+            }, 
+            "transcription": "no thank you goodbye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-006-110404_195734_0008659_0009010.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "negate"
+                    }, 
+                    {
+                        "slots": [], 
+                        "act": "thankyou"
+                    }, 
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "negate()|thankyou()|bye()"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "japanese", 
+                "pricerange": "dontcare", 
+                "type": "restaurant", 
+                "area": "centre"
+            }, 
+            "transcription": "thank you goodbye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-007-110404_195746_0010131_0010281.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a Japanese restaurant and it should be in the city centre area. Make sure you get the address and price of the venue.", 
+            "request-slots": [
+                "addr", 
+                "price"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "japanese"
+                ], 
+                [
+                    "area", 
+                    "centre"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "lightly disagree"
+                ]
+            ], 
+            "comments": null, 
+            "success": false
+        }
+    }, 
+    "session-id": "voip-25b06175db-20110404_195603"
+}

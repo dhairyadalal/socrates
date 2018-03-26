@@ -1,0 +1,149 @@
+{
+    "caller-id": "5b538b4354", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "childrenallowed": "true", 
+                "hasinternet": "true", 
+                "type": "pub"
+            }, 
+            "transcription": "im looking for a pub with an internet connection and i dont care if children are allowed", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110404_181404_0001847_0002389.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "childrenallowed", 
+                                "true"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "hasinternet", 
+                                "true"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=pub,hasinternet=true,childrenallowed=true)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "hasinternet": "true", 
+                "childrenallowed": "true", 
+                "type": "pub"
+            }, 
+            "transcription": "whats the address phone number and price range", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110404_181419_0003428_0003786.wav", 
+            "requested-slots": [
+                "phone", 
+                "pricerange", 
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "pricerange"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr,phone,pricerange)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "childrenallowed": "true", 
+                "hasinternet": "true", 
+                "type": "pub"
+            }, 
+            "transcription": "thank you goodbye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-003-110404_181444_0006232_0006380.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a pub and it should have an internet connection. You don't care about whether children are allowed. Make sure you get the address, phone number, and price range of the venue.", 
+            "request-slots": [
+                "addr", 
+                "phone", 
+                "pricerange"
+            ], 
+            "constraints": [
+                [
+                    "hasinternet", 
+                    "true"
+                ], 
+                [
+                    "childrenallowed", 
+                    "dontcare"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly agree"
+                ]
+            ], 
+            "comments": "100% accurate. I asked for the address, phone and price in one query and was deliverd the exact request. Good work", 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-5b538b4354-20110404_181340"
+}

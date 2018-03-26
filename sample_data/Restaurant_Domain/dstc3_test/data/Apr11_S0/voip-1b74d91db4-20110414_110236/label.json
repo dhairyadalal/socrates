@@ -1,0 +1,257 @@
+{
+    "caller-id": "1b74d91db4", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "food": "greek", 
+                "type": "restaurant"
+            }, 
+            "transcription": "i would like to find a greek restaurant i need the phone number and the price", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110414_110301_0002062_0002499.wav", 
+            "requested-slots": [
+                "phone", 
+                "price"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "price"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "greek"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "request(phone,price)|inform(food=greek,=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "greek", 
+                "type": "restaurant", 
+                "pricerange": "dontcare"
+            }, 
+            "transcription": "i dont care about the price range", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110414_110312_0003401_0003551.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "greek", 
+                "pricerange": "dontcare", 
+                "type": "restaurant"
+            }, 
+            "transcription": "i dont care about the price range", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110414_110323_0004467_0004622.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "greek", 
+                "type": "restaurant", 
+                "pricerange": "dontcare"
+            }, 
+            "transcription": "any", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110414_110333_0005599_0005671.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "this", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "greek", 
+                "pricerange": "dontcare", 
+                "type": "restaurant"
+            }, 
+            "transcription": "none", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110414_110343_0006598_0006642.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "greek", 
+                "type": "restaurant", 
+                "pricerange": "free"
+            }, 
+            "transcription": "free", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110414_110351_0007450_0007476.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "free"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=free)"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "greek", 
+                "pricerange": "free", 
+                "type": "restaurant"
+            }, 
+            "transcription": "free", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110414_110354_0007692_0007754.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "free"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=free)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "food": "greek", 
+                "type": "restaurant", 
+                "pricerange": "free"
+            }, 
+            "transcription": "thank you goodbye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-008-110414_110405_0008765_0008894.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a Greek restaurant. You don't care about the price range. You want to know the phone number and price.", 
+            "request-slots": [
+                "phone", 
+                "price"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "greek"
+                ], 
+                [
+                    "pricerange", 
+                    "dontcare"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "lightly disagree"
+                ]
+            ], 
+            "comments": "couldn't pick \"don't care\" \"any\" \"all\" for price range.. had to pick from allotted answers.  ", 
+            "success": false
+        }
+    }, 
+    "session-id": "voip-1b74d91db4-20110414_110236"
+}

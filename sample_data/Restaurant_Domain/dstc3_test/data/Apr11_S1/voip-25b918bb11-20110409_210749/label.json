@@ -1,0 +1,278 @@
+{
+    "caller-id": "25b918bb11", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "noise", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110409_210753_0000254_0000419.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "type": "restaurant"
+            }, 
+            "transcription": "restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110409_210803_0001184_0001348.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "pricerange": "free"
+            }, 
+            "transcription": "free", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110409_210813_0002293_0002399.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "free"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=free)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "vegetarian", 
+                "pricerange": "free", 
+                "type": "restaurant"
+            }, 
+            "transcription": "vegetarian", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110409_210823_0003264_0003413.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "vegetarian"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=vegetarian)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "vegetarian", 
+                "type": "restaurant", 
+                "pricerange": "free"
+            }, 
+            "transcription": "sil", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110409_210843_0005273_0005348.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "vegetarian", 
+                "pricerange": "free", 
+                "type": "restaurant"
+            }, 
+            "transcription": "vegetarian restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110409_210847_0005551_0005761.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "vegetarian"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=vegetarian,=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "vegetarian", 
+                "type": "restaurant", 
+                "pricerange": "free", 
+                "area": "girton"
+            }, 
+            "transcription": "in the girton area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110409_210858_0006763_0006905.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "girton"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=girton)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "food": "vegetarian", 
+                "pricerange": "free", 
+                "type": "restaurant", 
+                "area": "girton"
+            }, 
+            "transcription": "sil", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-008-110409_210905_0007542_0007607.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 8, 
+            "goal-labels": {
+                "food": "vegetarian", 
+                "type": "restaurant", 
+                "pricerange": "free", 
+                "area": "girton"
+            }, 
+            "transcription": "what is the address and phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-009-110409_210907_0007626_0007813.wav", 
+            "requested-slots": [
+                "phone", 
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr,phone)"
+            }
+        }, 
+        {
+            "turn-index": 9, 
+            "goal-labels": {
+                "food": "vegetarian", 
+                "pricerange": "free", 
+                "type": "restaurant", 
+                "area": "girton"
+            }, 
+            "transcription": "thank you and have a good day", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-010-110409_210923_0009201_0009386.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a vegetarian restaurant and it should be in the Girton area. You want to know the address and phone number.", 
+            "request-slots": [
+                "addr", 
+                "phone"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "vegetarian"
+                ], 
+                [
+                    "area", 
+                    "girton"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-25b918bb11-20110409_210749"
+}

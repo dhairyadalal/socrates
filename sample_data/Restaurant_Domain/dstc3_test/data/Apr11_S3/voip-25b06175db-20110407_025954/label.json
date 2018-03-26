@@ -1,0 +1,329 @@
+{
+    "caller-id": "25b06175db", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "yes", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110407_030015_0001958_0002075.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "affirm"
+                    }
+                ], 
+                "cam": "affirm()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {}, 
+            "transcription": "im looking for a moderately pri", 
+            "method-label": "none", 
+            "audio-file": "fj228x-002-110407_030019_0002225_0002460.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "type": "restaurant"
+            }, 
+            "transcription": "a moderately priced restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110407_030023_0002640_0002882.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "moderate"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=moderate,=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "pricerange": "moderate"
+            }, 
+            "transcription": "a restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110407_030029_0003299_0003389.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "type": "restaurant", 
+                "area": "new chesterton"
+            }, 
+            "transcription": "the new chesterton area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110407_030041_0004436_0004641.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "new chesterton"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=\"new chesterton\")"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "pricerange": "moderate", 
+                "area": "new chesterton"
+            }, 
+            "transcription": "new chesterton area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110407_030051_0005452_0005620.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "new chesterton"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=\"new chesterton\")"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "type": "restaurant", 
+                "area": "new chesterton"
+            }, 
+            "transcription": "yes", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110407_030056_0006002_0006086.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "affirm"
+                    }
+                ], 
+                "cam": "affirm()"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "pricerange": "moderate", 
+                "area": "new chesterton"
+            }, 
+            "transcription": "what the address", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-008-110407_030105_0006897_0007036.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 8, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "type": "restaurant", 
+                "area": "new chesterton"
+            }, 
+            "transcription": "the address", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-009-110407_030114_0007814_0007975.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 9, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "pricerange": "moderate", 
+                "area": "new chesterton"
+            }, 
+            "transcription": "post code", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-010-110407_030120_0008380_0008511.wav", 
+            "requested-slots": [
+                "postcode"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "postcode"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(postcode)"
+            }
+        }, 
+        {
+            "turn-index": 10, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "type": "restaurant", 
+                "area": "new chesterton"
+            }, 
+            "transcription": "post code", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-011-110407_030124_0008859_0008996.wav", 
+            "requested-slots": [
+                "postcode"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "postcode"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(postcode)"
+            }
+        }, 
+        {
+            "turn-index": 11, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "pricerange": "moderate", 
+                "area": "new chesterton"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-012-110407_030131_0009541_0009692.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a moderately priced restaurant and it should be in the New Chesterton area. You want to know the address and postcode of the venue.", 
+            "request-slots": [
+                "addr", 
+                "postcode"
+            ], 
+            "constraints": [
+                [
+                    "pricerange", 
+                    "moderate"
+                ], 
+                [
+                    "area", 
+                    "new chesterton"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-25b06175db-20110407_025954"
+}

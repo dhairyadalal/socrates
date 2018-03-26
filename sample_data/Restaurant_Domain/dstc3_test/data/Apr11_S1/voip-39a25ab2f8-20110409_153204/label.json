@@ -1,0 +1,187 @@
+{
+    "caller-id": "39a25ab2f8", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "noise", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110409_153210_0000484_0000561.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {}, 
+            "transcription": "noise", 
+            "method-label": "none", 
+            "audio-file": "fj228x-002-110409_153214_0000789_0000910.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {}, 
+            "transcription": "noise", 
+            "method-label": "none", 
+            "audio-file": "fj228x-003-110409_153216_0001009_0001110.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "hasinternet": "true", 
+                "type": "pub"
+            }, 
+            "transcription": "a pub with an internet internet connection an an", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110409_153221_0001184_0001645.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "hasinternet", 
+                                "true"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=pub,hasinternet=true)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "type": "pub", 
+                "hasinternet": "true", 
+                "hastv": "true"
+            }, 
+            "transcription": "a pub with internet and tv", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110409_153225_0001696_0002006.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "hasinternet", 
+                                "true"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "hastv", 
+                                "true"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=pub,hasinternet=true,hastv=true)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "hasinternet": "true", 
+                "type": "pub", 
+                "hastv": "true"
+            }, 
+            "transcription": "sil", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110409_153231_0002601_0002661.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "type": "pub", 
+                "hasinternet": "true", 
+                "hastv": "true"
+            }, 
+            "transcription": "thank you goodbye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-007-110409_153235_0002763_0003021.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a pub and it should have an internet connection and have TV. Make sure you get the address, phone number, and area.", 
+            "request-slots": [
+                "addr", 
+                "phone", 
+                "area"
+            ], 
+            "constraints": [
+                [
+                    "hasinternet", 
+                    "true"
+                ], 
+                [
+                    "hastv", 
+                    "true"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "slightly agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-39a25ab2f8-20110409_153204"
+}

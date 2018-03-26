@@ -1,0 +1,139 @@
+{
+    "caller-id": "e033a9aead", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "background noise", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110409_020729_0000125_0000525.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {}, 
+            "transcription": "unintelligible", 
+            "method-label": "none", 
+            "audio-file": "fj228x-002-110409_020731_0000678_0000801.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "type": "coffeeshop"
+            }, 
+            "transcription": "cafe unintelligible", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110409_020739_0001395_0001616.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "coffeeshop"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=coffeeshop)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "type": "coffeeshop", 
+                "pricerange": "cheap"
+            }, 
+            "transcription": "cafe food cheapest shut the fuck up", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110409_020745_0001795_0002144.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "cafe food"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "cheap"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=\"cafe food\",pricerange=cheap)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "pricerange": "cheap", 
+                "type": "coffeeshop"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-005-110409_020753_0002805_0002950.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a cafe food restaurant and it should have cheap pricerange. Make sure you get the address and phone number.", 
+            "request-slots": [
+                "addr", 
+                "phone"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "cafe food"
+                ], 
+                [
+                    "pricerange", 
+                    "cheap"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly disagree"
+                ]
+            ], 
+            "comments": null, 
+            "success": false
+        }
+    }, 
+    "session-id": "voip-e033a9aead-20110409_020723"
+}

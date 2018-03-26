@@ -1,0 +1,217 @@
+{
+    "caller-id": "2adfea9abd", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "food": "international", 
+                "type": "restaurant", 
+                "area": "dontcare"
+            }, 
+            "transcription": "oh im looking for an international restaurant uh i dont care about the area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110402_213006_0002011_0002640.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "international"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=international,=restaurant,area=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "international", 
+                "type": "restaurant", 
+                "area": "dontcare"
+            }, 
+            "transcription": "location", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110402_213007_0002695_0002769.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "international", 
+                "type": "restaurant", 
+                "area": "dontcare"
+            }, 
+            "transcription": "i dont care location", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110402_213022_0004090_0004240.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "international", 
+                "type": "restaurant", 
+                "area": "dontcare"
+            }, 
+            "transcription": "any location", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110402_213023_0004306_0004433.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "international", 
+                "type": "restaurant", 
+                "area": "dontcare"
+            }, 
+            "transcription": "can i get the address phone number and post code", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110402_213039_0005532_0005995.wav", 
+            "requested-slots": [
+                "phone", 
+                "addr", 
+                "postcode"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "postcode"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr,phone,postcode)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "international", 
+                "type": "restaurant", 
+                "area": "dontcare"
+            }, 
+            "transcription": "thank you goodbye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-006-110402_213101_0008038_0008185.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for an international restaurant. You don't care about the area. Make sure you get the address, phone number, and postcode of the venue.", 
+            "request-slots": [
+                "addr", 
+                "phone", 
+                "postcode"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "international"
+                ], 
+                [
+                    "area", 
+                    "dontcare"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-2adfea9abd-20110402_212939"
+}

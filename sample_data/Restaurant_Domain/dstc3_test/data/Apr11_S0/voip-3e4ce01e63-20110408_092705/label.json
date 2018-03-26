@@ -1,0 +1,179 @@
+{
+    "caller-id": "3e4ce01e63", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "food": "spanish", 
+                "pricerange": "cheap", 
+                "type": "restaurant"
+            }, 
+            "transcription": "hello i am looking for a spanish restaurant in the cheap price range", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110408_092730_0001869_0002465.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "spanish"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "cheap"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=spanish,=restaurant,pricerange=cheap,task=find)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "spanish", 
+                "type": "restaurant", 
+                "pricerange": "cheap", 
+                "area": "dontcare"
+            }, 
+            "transcription": "i dont care", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110408_092743_0003601_0003685.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "this", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "spanish", 
+                "pricerange": "cheap", 
+                "type": "restaurant", 
+                "area": "dontcare"
+            }, 
+            "transcription": "ok what is the address price of the venue", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110408_092758_0004883_0005233.wav", 
+            "requested-slots": [
+                "price", 
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "ack"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "price"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "ack()|request(addr,price)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "spanish", 
+                "type": "restaurant", 
+                "pricerange": "cheap", 
+                "area": "dontcare"
+            }, 
+            "transcription": "ok thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-004-110408_092818_0007093_0007248.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "ack"
+                    }, 
+                    {
+                        "slots": [], 
+                        "act": "thankyou"
+                    }, 
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "ack()|thankyou()|bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a Spanish restaurant and it should have cheap pricerange. You want to know the address and price of the venue.", 
+            "request-slots": [
+                "addr", 
+                "price"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "spanish"
+                ], 
+                [
+                    "pricerange", 
+                    "cheap"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-3e4ce01e63-20110408_092705"
+}

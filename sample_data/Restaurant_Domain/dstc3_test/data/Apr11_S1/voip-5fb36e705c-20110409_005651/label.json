@@ -1,0 +1,252 @@
+{
+    "caller-id": "5fb36e705c", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "food": "continental", 
+                "type": "restaurant"
+            }, 
+            "transcription": "im looking for a continental restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110409_005713_0001923_0002127.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "continental"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=continental,=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "continental", 
+                "type": "restaurant", 
+                "pricerange": "expensive"
+            }, 
+            "transcription": "um it wou in the expensive price range", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110409_005717_0002201_0002530.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "expensive"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=expensive)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "continental", 
+                "pricerange": "expensive", 
+                "type": "restaurant"
+            }, 
+            "transcription": "doesnt matter", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110409_005720_0002736_0002841.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "this", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "continental", 
+                "type": "restaurant", 
+                "pricerange": "expensive"
+            }, 
+            "transcription": "um can i have the phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110409_005730_0003686_0003872.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "continental", 
+                "pricerange": "expensive", 
+                "type": "restaurant"
+            }, 
+            "transcription": "a continental restaura", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110409_005736_0004332_0004470.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "continental"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=continental)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "continental", 
+                "type": "restaurant", 
+                "pricerange": "expensive"
+            }, 
+            "transcription": "what area is it in", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110409_005750_0005737_0005875.wav", 
+            "requested-slots": [
+                "area"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "area"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(area)"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "continental", 
+                "pricerange": "expensive", 
+                "type": "restaurant"
+            }, 
+            "transcription": "what area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110409_005800_0006711_0006816.wav", 
+            "requested-slots": [
+                "area"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "area"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(area)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "food": "continental", 
+                "type": "restaurant", 
+                "pricerange": "expensive"
+            }, 
+            "transcription": "thank you goodbye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-008-110409_005805_0007197_0007325.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a continental restaurant and it should have expensive pricerange. Make sure you get the phone number and area.", 
+            "request-slots": [
+                "phone", 
+                "area"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "continental"
+                ], 
+                [
+                    "pricerange", 
+                    "expensive"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-5fb36e705c-20110409_005651"
+}

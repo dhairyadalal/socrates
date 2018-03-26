@@ -1,0 +1,228 @@
+{
+    "caller-id": "ffc7e922bc", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "food": "italian", 
+                "pricerange": "cheap", 
+                "type": "restaurant"
+            }, 
+            "transcription": "id like find an italian restaurant with a cheap price range", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110411_154046_0001850_0002312.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "italian"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "cheap"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=italian,=restaurant,pricerange=cheap)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "italian", 
+                "type": "restaurant", 
+                "pricerange": "cheap"
+            }, 
+            "transcription": "how much is the average entree", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110411_154059_0003415_0003630.wav", 
+            "requested-slots": [
+                "price"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "price"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(price)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "italian", 
+                "pricerange": "cheap", 
+                "type": "restaurant"
+            }, 
+            "transcription": "what is the phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110411_154106_0004198_0004343.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "italian", 
+                "type": "restaurant", 
+                "pricerange": "cheap"
+            }, 
+            "transcription": "an italian restaurant with a cheap price range", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110411_154114_0004816_0005132.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "italian"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "cheap"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=italian,=restaurant,pricerange=cheap)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "italian", 
+                "pricerange": "cheap", 
+                "type": "restaurant"
+            }, 
+            "transcription": "what is the post code noise", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110411_154137_0007061_0007396.wav", 
+            "requested-slots": [
+                "postcode"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "postcode"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(postcode)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "italian", 
+                "type": "restaurant", 
+                "pricerange": "cheap"
+            }, 
+            "transcription": "thanks good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-006-110411_154145_0008114_0008244.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find an Italian restaurant and it should have cheap pricerange. Make sure you get the phone number and postcode.", 
+            "request-slots": [
+                "phone", 
+                "postcode"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "italian"
+                ], 
+                [
+                    "pricerange", 
+                    "cheap"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "agree"
+                ]
+            ], 
+            "comments": "It told me again about the price for a capuccino, which made sense since it is an Italian restaurant but since it also told me that before it makes me think that is just something you set it up to tell you about most restaurants and I'm not sure why that is important.", 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-ffc7e922bc-20110411_154022"
+}

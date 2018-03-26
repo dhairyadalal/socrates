@@ -1,0 +1,164 @@
+{
+    "caller-id": "f7a47439ef", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "food": "greek", 
+                "pricerange": "moderate", 
+                "type": "restaurant"
+            }, 
+            "transcription": "im looking for a greek restaurant in a moderate price range", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110413_034828_0001921_0002277.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "greek"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "moderate"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=greek,=restaurant,pricerange=moderate)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "greek", 
+                "type": "restaurant", 
+                "pricerange": "moderate"
+            }, 
+            "transcription": "and whats the phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110413_034840_0003350_0003489.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "greek", 
+                "pricerange": "moderate", 
+                "type": "restaurant"
+            }, 
+            "transcription": "and whats the address", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110413_034852_0004565_0004701.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "greek", 
+                "type": "restaurant", 
+                "pricerange": "moderate"
+            }, 
+            "transcription": "ok thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-004-110413_034902_0005456_0005708.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "ack"
+                    }, 
+                    {
+                        "slots": [], 
+                        "act": "thankyou"
+                    }, 
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "ack()|thankyou()|bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a Greek restaurant and it should have moderate pricerange. You want to know the phone number and address.", 
+            "request-slots": [
+                "phone", 
+                "addr"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "greek"
+                ], 
+                [
+                    "pricerange", 
+                    "moderate"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-f7a47439ef-20110413_034805"
+}

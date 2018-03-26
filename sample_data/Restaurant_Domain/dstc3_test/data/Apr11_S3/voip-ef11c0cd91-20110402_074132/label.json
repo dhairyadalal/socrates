@@ -1,0 +1,155 @@
+{
+    "caller-id": "ef11c0cd91", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "sil", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110402_074135_0000192_0000267.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "type": "pub", 
+                "hastv": "true"
+            }, 
+            "transcription": "im looking for a pub with a tv", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110402_074147_0001171_0001463.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "hastv", 
+                                "true"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=pub,hastv=true)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "type": "pub", 
+                "hastv": "true"
+            }, 
+            "transcription": "whats the address", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110402_074156_0002279_0002417.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "type": "pub", 
+                "hastv": "true"
+            }, 
+            "transcription": "does it have internet", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110402_074205_0003125_0003270.wav", 
+            "requested-slots": [
+                "hasinternet"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "hasinternet"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "confirm(hasinternet=true)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "type": "pub", 
+                "hastv": "true"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-005-110402_074213_0003928_0004052.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a pub and it should have TV. You don't care about the price range. Make sure you get the address and whether it has internet.", 
+            "request-slots": [
+                "addr", 
+                "hasinternet"
+            ], 
+            "constraints": [
+                [
+                    "pricerange", 
+                    "dontcare"
+                ], 
+                [
+                    "hastv", 
+                    "true"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-ef11c0cd91-20110402_074132"
+}

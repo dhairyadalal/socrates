@@ -1,0 +1,415 @@
+{
+    "caller-id": "ed12c676f1", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "coughing sil", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110402_223725_0000040_0000506.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {}, 
+            "transcription": "hello", 
+            "method-label": "none", 
+            "audio-file": "fj228x-002-110402_223729_0000858_0000930.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "hello"
+                    }
+                ], 
+                "cam": "hello()"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "pricerange": "cheap", 
+                "type": "restaurant"
+            }, 
+            "transcription": "ah just a cheap restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110402_223737_0001550_0001747.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "cheap"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=cheap,=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "pricerange": "cheap"
+            }, 
+            "transcription": "ah a restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110402_223743_0002273_0002354.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "pricerange": "cheap", 
+                "type": "restaurant"
+            }, 
+            "transcription": "any kind", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110402_223752_0003130_0003228.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "this", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "type": "restaurant", 
+                "pricerange": "cheap", 
+                "area": "romsey"
+            }, 
+            "transcription": "ah i just want cheap food in the romsey area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110402_223802_0003918_0004245.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "cheap"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "romsey"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=cheap,type=restaurant,area=romsey)"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "pricerange": "cheap", 
+                "type": "restaurant", 
+                "area": "romsey"
+            }, 
+            "transcription": "no anywhere in romsey is fine", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110402_223814_0005192_0005424.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "negate"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "this", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "romsey"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "negate(area=romsey,=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "type": "restaurant", 
+                "pricerange": "cheap", 
+                "area": "romsey"
+            }, 
+            "transcription": "what was the name", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-008-110402_223823_0006148_0006249.wav", 
+            "requested-slots": [
+                "name"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "name"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(name)"
+            }
+        }, 
+        {
+            "turn-index": 8, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "pricerange": "cheap", 
+                "type": "restaurant", 
+                "area": "romsey"
+            }, 
+            "transcription": "um whats its uh", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-009-110402_223833_0007061_0007254.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 9, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "type": "restaurant", 
+                "pricerange": "cheap", 
+                "area": "romsey"
+            }, 
+            "transcription": "phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-010-110402_223834_0007279_0007366.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 10, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "pricerange": "cheap", 
+                "type": "restaurant", 
+                "area": "romsey"
+            }, 
+            "transcription": "could you repeat that please", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-011-110402_223847_0008660_0008788.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "repeat"
+                    }
+                ], 
+                "cam": "repeat()"
+            }
+        }, 
+        {
+            "turn-index": 11, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "type": "restaurant", 
+                "pricerange": "cheap", 
+                "area": "romsey"
+            }, 
+            "transcription": "please repeat the phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-012-110402_223855_0009348_0009503.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 12, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "pricerange": "cheap", 
+                "type": "restaurant", 
+                "area": "romsey"
+            }, 
+            "transcription": "ok what kind of food do they serve", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-013-110402_223907_0010552_0010731.wav", 
+            "requested-slots": [
+                "food"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "ack"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "food"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "ack()|request(food)"
+            }
+        }, 
+        {
+            "turn-index": 13, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "type": "restaurant", 
+                "pricerange": "cheap", 
+                "area": "romsey"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-014-110402_223920_0011965_0012028.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a cheap restaurant and it should be in the Romsey area. Make sure you get the phone number and type of food of the venue.", 
+            "request-slots": [
+                "phone", 
+                "food"
+            ], 
+            "constraints": [
+                [
+                    "pricerange", 
+                    "cheap"
+                ], 
+                [
+                    "area", 
+                    "romsey"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "slightly agree"
+                ]
+            ], 
+            "comments": "I wasn't able to understand the name of the restaurant. The system was trying to narrow the list of restaurants first by the type of cuisine, and it took a few tries before I could get it to select the area first.", 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-ed12c676f1-20110402_223719"
+}

@@ -1,0 +1,192 @@
+{
+    "caller-id": "50849ace4b", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "area": "romsey"
+            }, 
+            "transcription": "noise im looking for a restaurant in romsey area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110406_003714_0001928_0002211.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "romsey"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=restaurant,area=romsey)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "american", 
+                "type": "restaurant", 
+                "area": "romsey"
+            }, 
+            "transcription": "american", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110406_003726_0003202_0003326.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "american"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=american)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "american", 
+                "type": "restaurant", 
+                "pricerange": "cheap", 
+                "area": "romsey"
+            }, 
+            "transcription": "noise im looking for a cheap restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110406_003736_0004211_0004369.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "cheap"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=cheap,=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "american", 
+                "pricerange": "cheap", 
+                "type": "restaurant", 
+                "area": "romsey"
+            }, 
+            "transcription": "noise can i have the phone number and post code", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110406_003749_0005430_0005631.wav", 
+            "requested-slots": [
+                "phone", 
+                "postcode"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "postcode"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone,postcode)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "american", 
+                "type": "restaurant", 
+                "pricerange": "cheap", 
+                "area": "romsey"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-005-110406_003806_0007139_0007303.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a cheap restaurant and it should be in the Romsey area. Make sure you get the phone number and postcode of the venue.", 
+            "request-slots": [
+                "phone", 
+                "postcode"
+            ], 
+            "constraints": [
+                [
+                    "pricerange", 
+                    "cheap"
+                ], 
+                [
+                    "area", 
+                    "romsey"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-50849ace4b-20110406_003652"
+}

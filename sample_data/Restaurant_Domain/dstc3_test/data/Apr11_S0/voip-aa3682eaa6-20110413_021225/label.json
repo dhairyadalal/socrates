@@ -1,0 +1,153 @@
+{
+    "caller-id": "aa3682eaa6", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "area": "new chesterton"
+            }, 
+            "transcription": "i would like a restaurant in the new chesterton area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110413_021248_0001870_0002269.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "new chesterton"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=restaurant,area=\"new chesterton\")"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "area": "new chesterton"
+            }, 
+            "transcription": "may i have the address and the type of food", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110413_021301_0003223_0003507.wav", 
+            "requested-slots": [
+                "food", 
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "food"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr,food)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "area": "new chesterton"
+            }, 
+            "transcription": "what type of food is served", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110413_021310_0004285_0004473.wav", 
+            "requested-slots": [
+                "food"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "food"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(food)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "area": "new chesterton"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-004-110413_021318_0005025_0005227.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a restaurant in New Chesterton. You don't care about the price range. Make sure you get the address and type of food.", 
+            "request-slots": [
+                "addr", 
+                "food"
+            ], 
+            "constraints": [
+                [
+                    "pricerange", 
+                    "dontcare"
+                ], 
+                [
+                    "area", 
+                    "new chesterton"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-aa3682eaa6-20110413_021225"
+}

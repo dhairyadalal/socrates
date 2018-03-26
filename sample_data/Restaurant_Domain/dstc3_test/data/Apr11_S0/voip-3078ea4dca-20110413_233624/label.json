@@ -1,0 +1,153 @@
+{
+    "caller-id": "3078ea4dca", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "food": "chinese", 
+                "type": "restaurant", 
+                "area": "cherry hinton"
+            }, 
+            "transcription": "noise i want find a chinese restaurant and it should be in the cherry hinton area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110413_233650_0002017_0002582.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "chinese"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "cherry hinton"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=chinese,=restaurant,area=\"cherry hinton\")"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "chinese", 
+                "type": "restaurant", 
+                "area": "cherry hinton"
+            }, 
+            "transcription": "can i get the address the phone number and the post code please", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110413_233707_0003806_0004153.wav", 
+            "requested-slots": [
+                "phone", 
+                "addr", 
+                "postcode"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "postcode"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr,phone,postcode)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "chinese", 
+                "type": "restaurant", 
+                "area": "cherry hinton"
+            }, 
+            "transcription": "clicking thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-003-110413_233727_0005993_0006258.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "thankyou"
+                    }, 
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "thankyou()|bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a Chinese restaurant and it should be in the Cherry Hinton area. Make sure you get the address, phone number, and postcode.", 
+            "request-slots": [
+                "addr", 
+                "phone", 
+                "postcode"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "chinese"
+                ], 
+                [
+                    "area", 
+                    "cherry hinton"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-3078ea4dca-20110413_233624"
+}

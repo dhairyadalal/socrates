@@ -1,0 +1,189 @@
+{
+    "caller-id": "46f02cb63b", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "food": "chinese", 
+                "type": "restaurant", 
+                "area": "centre"
+            }, 
+            "transcription": "hi i want to find a chinese restaurant in the city center area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110413_122642_0001922_0002350.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "hello"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "chinese"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "centre"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "hello(food=chinese,=restaurant,area=centre)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "chinese", 
+                "type": "restaurant", 
+                "area": "centre"
+            }, 
+            "transcription": "can i have the address", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110413_122657_0003598_0003811.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "chinese", 
+                "type": "restaurant", 
+                "area": "centre"
+            }, 
+            "transcription": "can you give me the phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110413_122708_0004742_0004895.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "chinese", 
+                "type": "restaurant", 
+                "area": "centre"
+            }, 
+            "transcription": "what is the price", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110413_122722_0006133_0006310.wav", 
+            "requested-slots": [
+                "price"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "price"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(price)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "chinese", 
+                "type": "restaurant", 
+                "area": "centre"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-005-110413_122737_0007686_0007836.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a Chinese restaurant and it should be in the city centre area. Make sure you get the address, phone number, and price.", 
+            "request-slots": [
+                "addr", 
+                "phone", 
+                "price"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "chinese"
+                ], 
+                [
+                    "area", 
+                    "centre"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly agree"
+                ]
+            ], 
+            "comments": "Being my first time trying something like that, I found it quite impressive! Definitely worked well and was responsive.", 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-46f02cb63b-20110413_122618"
+}

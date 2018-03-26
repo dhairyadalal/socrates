@@ -1,0 +1,129 @@
+{
+    "caller-id": "71c6e557d4", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "food": "greek", 
+                "type": "restaurant", 
+                "area": "girton"
+            }, 
+            "transcription": "greek restaurant in the girton area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110404_141105_0001800_0002117.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "greek"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "girton"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=greek,=restaurant,area=girton)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "greek", 
+                "type": "restaurant", 
+                "area": "girton"
+            }, 
+            "transcription": "price range", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110404_141117_0003271_0003397.wav", 
+            "requested-slots": [
+                "pricerange"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "pricerange"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(pricerange)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "greek", 
+                "type": "restaurant", 
+                "area": "girton"
+            }, 
+            "transcription": "thank you and good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-003-110404_141134_0004873_0005018.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a Greek restaurant and it should be in the Girton area. Make sure you get the address, phone number, and price range of the venue.", 
+            "request-slots": [
+                "addr", 
+                "phone", 
+                "pricerange"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "greek"
+                ], 
+                [
+                    "area", 
+                    "girton"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-71c6e557d4-20110404_141043"
+}

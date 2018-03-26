@@ -1,0 +1,166 @@
+{
+    "caller-id": "6536df8a43", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "food": "continental", 
+                "pricerange": "expensive", 
+                "type": "restaurant"
+            }, 
+            "transcription": "locate continental restaurant in the expensive price range", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110402_074255_0001915_0002328.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "continental"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "expensive"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=continental,=restaurant,pricerange=expensive)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "continental", 
+                "type": "restaurant", 
+                "pricerange": "expensive"
+            }, 
+            "transcription": "may i have the phone number and area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110402_074315_0004017_0004305.wav", 
+            "requested-slots": [
+                "phone", 
+                "area"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "area"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone,area)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "continental", 
+                "pricerange": "expensive", 
+                "type": "restaurant"
+            }, 
+            "transcription": "what area is it in", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110402_074342_0006876_0007039.wav", 
+            "requested-slots": [
+                "area"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "area"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(area)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "continental", 
+                "type": "restaurant", 
+                "pricerange": "expensive"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-004-110402_074351_0007827_0007926.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a continental restaurant and it should have expensive pricerange. Make sure you get the phone number and area.", 
+            "request-slots": [
+                "phone", 
+                "area"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "continental"
+                ], 
+                [
+                    "pricerange", 
+                    "expensive"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-6536df8a43-20110402_074231"
+}

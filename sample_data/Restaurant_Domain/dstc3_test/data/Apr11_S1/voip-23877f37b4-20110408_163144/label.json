@@ -1,0 +1,182 @@
+{
+    "caller-id": "23877f37b4", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "sil", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110408_163145_0000021_0000086.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "thai", 
+                "pricerange": "moderate", 
+                "type": "restaurant"
+            }, 
+            "transcription": "a thai restaurant and it should have a moderate price range", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110408_163201_0001310_0001651.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "thai"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "moderate"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=thai,=restaurant,pricerange=moderate)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "thai", 
+                "type": "restaurant", 
+                "pricerange": "moderate"
+            }, 
+            "transcription": "alright please give me the phone number and the area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110408_163214_0002705_0002976.wav", 
+            "requested-slots": [
+                "phone", 
+                "area"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "area"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone,area)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "thai", 
+                "pricerange": "moderate", 
+                "type": "restaurant"
+            }, 
+            "transcription": "and the area please", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110408_163227_0004104_0004244.wav", 
+            "requested-slots": [
+                "area"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "area"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(area)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "thai", 
+                "type": "restaurant", 
+                "pricerange": "moderate"
+            }, 
+            "transcription": "alright thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-005-110408_163237_0005056_0005207.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "thankyou"
+                    }, 
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "thankyou()|bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a Thai restaurant and it should have moderate pricerange. You want to know the phone number and area of the venue.", 
+            "request-slots": [
+                "phone", 
+                "area"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "thai"
+                ], 
+                [
+                    "pricerange", 
+                    "moderate"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-23877f37b4-20110408_163144"
+}

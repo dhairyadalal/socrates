@@ -1,0 +1,210 @@
+{
+    "caller-id": "37fff3f6bb", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "food": "american", 
+                "type": "restaurant"
+            }, 
+            "transcription": "i want to find a american restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110412_031026_0001873_0002121.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "american"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=american,=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "american", 
+                "type": "restaurant", 
+                "pricerange": "dontcare"
+            }, 
+            "transcription": "i do not care", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110412_031036_0002935_0003061.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "this", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "american", 
+                "pricerange": "dontcare", 
+                "type": "restaurant", 
+                "area": "dontcare"
+            }, 
+            "transcription": "i do not care", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110412_031045_0003900_0004023.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "this", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "american", 
+                "type": "restaurant", 
+                "pricerange": "dontcare", 
+                "area": "dontcare"
+            }, 
+            "transcription": "i do not care", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110412_031053_0004682_0004813.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "this", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "american", 
+                "pricerange": "dontcare", 
+                "type": "restaurant", 
+                "area": "dontcare"
+            }, 
+            "transcription": "what is the phone number and address", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110412_031105_0005751_0005982.wav", 
+            "requested-slots": [
+                "phone", 
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone,addr)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "american", 
+                "type": "restaurant", 
+                "pricerange": "dontcare", 
+                "area": "dontcare"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-006-110412_031120_0007371_0007484.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find an American restaurant. You don't care about the price range. You want to know the phone number and address.", 
+            "request-slots": [
+                "phone", 
+                "addr"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "american"
+                ], 
+                [
+                    "pricerange", 
+                    "dontcare"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly agree"
+                ]
+            ], 
+            "comments": "Perfect again.", 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-37fff3f6bb-20110412_031005"
+}

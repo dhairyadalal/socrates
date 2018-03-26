@@ -1,0 +1,294 @@
+{
+    "caller-id": "12473d1e85", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "sil", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110405_184358_0000083_0000293.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "pricerange": "free"
+            }, 
+            "transcription": "free", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110405_184409_0001321_0001369.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "free"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=free)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "drinks and snacks only", 
+                "pricerange": "free", 
+                "type": "restaurant"
+            }, 
+            "transcription": "restaurant drinks and snacks", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110405_184421_0002326_0002639.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "drinks and snacks only"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=restaurant,food=\"drinks and snacks only\")"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "drinks and snacks only", 
+                "type": "restaurant", 
+                "pricerange": "dontcare", 
+                "area": "riverside"
+            }, 
+            "transcription": "thats ok any price in riverside area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110405_184437_0003739_0004215.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "riverside"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=dontcare,area=riverside)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "drinks and snacks only", 
+                "pricerange": "moderate", 
+                "type": "restaurant", 
+                "area": "riverside"
+            }, 
+            "transcription": "moderate price range", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110405_184450_0005333_0005523.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "moderate"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=moderate)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "drinks and snacks only", 
+                "type": "restaurant", 
+                "pricerange": "moderate", 
+                "area": "riverside"
+            }, 
+            "transcription": "drinks and snacks", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110405_184459_0006242_0006427.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "drinks and snacks only"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=\"drinks and snacks only\")"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "drinks and snacks only", 
+                "pricerange": "moderate", 
+                "type": "restaurant", 
+                "area": "riverside"
+            }, 
+            "transcription": "what is the address", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110405_184514_0007753_0007900.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "food": "drinks and snacks only", 
+                "type": "restaurant", 
+                "pricerange": "moderate", 
+                "area": "riverside"
+            }, 
+            "transcription": "sil", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-008-110405_184530_0009485_0009554.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 8, 
+            "goal-labels": {
+                "food": "drinks and snacks only", 
+                "pricerange": "moderate", 
+                "type": "restaurant", 
+                "area": "riverside"
+            }, 
+            "transcription": "what is the phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-009-110405_184538_0010160_0010291.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 9, 
+            "goal-labels": {
+                "food": "drinks and snacks only", 
+                "type": "restaurant", 
+                "pricerange": "moderate", 
+                "area": "riverside"
+            }, 
+            "transcription": "thank you goodbye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-010-110405_184551_0011379_0011550.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a drinks and snacks only restaurant and it should be in the riverside area. Make sure you get the address, phone number, and price range.", 
+            "request-slots": [
+                "addr", 
+                "phone", 
+                "pricerange"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "drinks and snacks only"
+                ], 
+                [
+                    "area", 
+                    "riverside"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-12473d1e85-20110405_184354"
+}

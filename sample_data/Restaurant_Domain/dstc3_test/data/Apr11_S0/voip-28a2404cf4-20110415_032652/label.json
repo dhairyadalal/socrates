@@ -1,0 +1,243 @@
+{
+    "caller-id": "28a2404cf4", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "background noise", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110415_032653_0000063_0000136.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "pricerange": "cheap", 
+                "type": "restaurant"
+            }, 
+            "transcription": "im looking for a restaurant that serves cafe food that is cheap", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110415_032709_0001207_0001663.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "cafe food"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "cheap"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=restaurant,food=\"cafe food\",pricerange=cheap)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "type": "restaurant", 
+                "pricerange": "cheap"
+            }, 
+            "transcription": "restaurant that serves cafe food", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110415_032718_0002348_0002620.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "cafe food"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=restaurant,food=\"cafe food\")"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "pricerange": "cheap", 
+                "type": "restaurant"
+            }, 
+            "transcription": "restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110415_032725_0003232_0003322.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "type": "restaurant", 
+                "pricerange": "cheap"
+            }, 
+            "transcription": "id like to know their phone number and area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110415_032739_0004395_0004711.wav", 
+            "requested-slots": [
+                "phone", 
+                "area"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "area"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone,area)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "pricerange": "cheap", 
+                "type": "restaurant"
+            }, 
+            "transcription": "what area is it in", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110415_032752_0005893_0006017.wav", 
+            "requested-slots": [
+                "area"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "area"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(area)"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "type": "restaurant", 
+                "pricerange": "cheap"
+            }, 
+            "transcription": "alright thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-007-110415_032802_0006737_0007014.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "thankyou"
+                    }, 
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "thankyou()|bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a cafe food restaurant and it should have cheap pricerange. You want to know the phone number and area.", 
+            "request-slots": [
+                "phone", 
+                "area"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "cafe food"
+                ], 
+                [
+                    "pricerange", 
+                    "cheap"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "slightly agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-28a2404cf4-20110415_032652"
+}

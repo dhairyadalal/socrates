@@ -1,0 +1,320 @@
+{
+    "caller-id": "c236e610c0", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "hasinternet": "true", 
+                "type": "pub"
+            }, 
+            "transcription": "im looking for a pub with wifi", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110406_182943_0001946_0002167.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "hasinternet", 
+                                "true"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=pub,hasinternet=true)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "type": "pub", 
+                "hasinternet": "true", 
+                "area": "dontcare"
+            }, 
+            "transcription": "doesnt matter", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110406_182957_0003434_0003543.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "this", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "hasinternet": "true", 
+                "type": "pub", 
+                "area": "dontcare"
+            }, 
+            "transcription": "does it have internet", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110406_183005_0004207_0004343.wav", 
+            "requested-slots": [
+                "hasinternet"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "hasinternet"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "confirm(hasinternet=true)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "type": "pub", 
+                "hasinternet": "true", 
+                "area": "dontcare"
+            }, 
+            "transcription": "i need a pub with internet", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110406_183013_0004952_0005101.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "hasinternet", 
+                                "true"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=pub,hasinternet=true)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "hasinternet": "true", 
+                "type": "pub", 
+                "area": "dontcare"
+            }, 
+            "transcription": "and where are they at", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110406_183021_0005838_0005962.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "type": "pub", 
+                "hasinternet": "true", 
+                "area": "dontcare"
+            }, 
+            "transcription": "whats their address", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110406_183030_0006677_0006805.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "hasinternet": "true", 
+                "type": "pub", 
+                "area": "dontcare"
+            }, 
+            "transcription": "and their phone", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110406_183038_0007557_0007664.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "type": "pub", 
+                "hasinternet": "true", 
+                "area": "dontcare"
+            }, 
+            "transcription": "no im looking for the phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-008-110406_183050_0008577_0008746.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 8, 
+            "goal-labels": {
+                "hasinternet": "true", 
+                "type": "pub", 
+                "area": "dontcare"
+            }, 
+            "transcription": "and whats their price", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-009-110406_183101_0009719_0009895.wav", 
+            "requested-slots": [
+                "price"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "price"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(price)"
+            }
+        }, 
+        {
+            "turn-index": 9, 
+            "goal-labels": {
+                "type": "pub", 
+                "hasinternet": "true", 
+                "area": "dontcare"
+            }, 
+            "transcription": "thank you goodbye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-010-110406_183118_0011500_0011634.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a pub and it should have an internet connection. You don't care about the price range. You want to know the address, phone number, and price.", 
+            "request-slots": [
+                "addr", 
+                "phone", 
+                "price"
+            ], 
+            "constraints": [
+                [
+                    "pricerange", 
+                    "dontcare"
+                ], 
+                [
+                    "hasinternet", 
+                    "true"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "disagree"
+                ]
+            ], 
+            "comments": "it only understands \"internet\" most people will ask for \"wifi\" (why-fie)....also when i asked for the \"phone\" it asked me again if i was looking for a pub...people are likely to ask for their \"number\" or their \"phone\" when speaking rather than saying specifically \"phone number\"", 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-c236e610c0-20110406_182922"
+}

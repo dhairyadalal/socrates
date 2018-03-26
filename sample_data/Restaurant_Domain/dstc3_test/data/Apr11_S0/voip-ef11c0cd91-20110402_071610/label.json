@@ -1,0 +1,183 @@
+{
+    "caller-id": "ef11c0cd91", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "type": "restaurant", 
+                "area": "fen ditton"
+            }, 
+            "transcription": "im looking for a moderately priced restaurant in the fen ditton area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110402_071633_0001855_0002259.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "moderate"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "fen ditton"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=moderate,=restaurant,area=\"fen ditton\")"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "chinese", 
+                "type": "restaurant", 
+                "pricerange": "moderate", 
+                "area": "fen ditton"
+            }, 
+            "transcription": "ah chinese", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110402_071645_0003311_0003445.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "chinese"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=chinese)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "chinese", 
+                "pricerange": "moderate", 
+                "type": "restaurant", 
+                "area": "fen ditton"
+            }, 
+            "transcription": "fen ditton", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110402_071659_0004749_0004859.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "fen ditton"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=\"fen ditton\")"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "chinese", 
+                "type": "restaurant", 
+                "pricerange": "moderate", 
+                "area": "fen ditton"
+            }, 
+            "transcription": "the fen ditton area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110402_071713_0006072_0006245.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "fen ditton"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=\"fen ditton\")"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "chinese", 
+                "pricerange": "moderate", 
+                "type": "restaurant", 
+                "area": "fen ditton"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-005-110402_071728_0007589_0007710.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a moderately priced restaurant and it should be in the Fenditton area. You want to know the address, phone number, and type of food.", 
+            "request-slots": [
+                "addr", 
+                "phone", 
+                "food"
+            ], 
+            "constraints": [
+                [
+                    "pricerange", 
+                    "moderate"
+                ], 
+                [
+                    "area", 
+                    "fen ditton"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly disagree"
+                ]
+            ], 
+            "comments": "Kept asking me for the area after I repeated Fenditton.", 
+            "success": false
+        }
+    }, 
+    "session-id": "voip-ef11c0cd91-20110402_071610"
+}

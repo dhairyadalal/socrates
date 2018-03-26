@@ -1,0 +1,219 @@
+{
+    "caller-id": "50849ace4b", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "childrenallowed": "true", 
+                "type": "pub", 
+                "hastv": "true"
+            }, 
+            "transcription": "i am looking for a pub that allows children and has a television", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110402_235457_0001910_0002428.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "childrenallowed", 
+                                "true"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "hastv", 
+                                "true"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(hastv=true,=pub,childrenallowed=true,task=find)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "pricerange": "dontcare", 
+                "hastv": "true", 
+                "childrenallowed": "true", 
+                "type": "pub"
+            }, 
+            "transcription": "any price range i want to know the address phone and whether it has", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110402_235511_0003271_0003897.wav", 
+            "requested-slots": [
+                "phone", 
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "request(addr,phone,pricerange=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "childrenallowed": "true", 
+                "hasinternet": "true", 
+                "type": "pub", 
+                "pricerange": "dontcare", 
+                "hastv": "true"
+            }, 
+            "transcription": "internet", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110402_235512_0003934_0003994.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "hasinternet", 
+                                "true"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(hasinternet=true)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "hasinternet": "true", 
+                "pricerange": "dontcare", 
+                "hastv": "true", 
+                "childrenallowed": "true", 
+                "type": "pub"
+            }, 
+            "transcription": "may i have the address and phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110402_235526_0005214_0005422.wav", 
+            "requested-slots": [
+                "phone", 
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr,phone)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "childrenallowed": "true", 
+                "pricerange": "dontcare", 
+                "type": "pub", 
+                "hasinternet": "true", 
+                "hastv": "true"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-005-110402_235554_0008052_0008199.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a pub and it should allow children and have a television. You want to know the address, phone number, and whether it has internet.", 
+            "request-slots": [
+                "addr", 
+                "phone", 
+                "hasinternet"
+            ], 
+            "constraints": [
+                [
+                    "childrenallowed", 
+                    "true"
+                ], 
+                [
+                    "hastv", 
+                    "true"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "disagree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-50849ace4b-20110402_235432"
+}

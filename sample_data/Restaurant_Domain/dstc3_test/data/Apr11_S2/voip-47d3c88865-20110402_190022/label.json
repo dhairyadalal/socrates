@@ -1,0 +1,604 @@
+{
+    "caller-id": "47d3c88865", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "unitelligible in order to get the", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110402_190028_0000301_0000623.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {}, 
+            "transcription": "unintelligible", 
+            "method-label": "none", 
+            "audio-file": "fj228x-002-110402_190030_0000662_0000742.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {}, 
+            "transcription": "it doesnt matter", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110402_190042_0001878_0002009.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "this", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "type": "pub"
+            }, 
+            "transcription": "ill need a pub", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110402_190052_0002801_0002956.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=pub)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "type": "pub"
+            }, 
+            "transcription": "okay um", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110402_190059_0003597_0003736.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "ack"
+                    }
+                ], 
+                "cam": "ack()"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "type": "pub"
+            }, 
+            "transcription": "allo do they allow children", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110402_190102_0003765_0003981.wav", 
+            "requested-slots": [
+                "childrenallowed"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "childrenallowed"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "confirm(childrenallowed=true)"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "type": "pub"
+            }, 
+            "transcription": "pub", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110402_190106_0004263_0004394.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=pub)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "type": "pub"
+            }, 
+            "transcription": "do they have internet connection", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-008-110402_190111_0004718_0004937.wav", 
+            "requested-slots": [
+                "hasinternet"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "hasinternet"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "confirm(hasinternet=true)"
+            }
+        }, 
+        {
+            "turn-index": 8, 
+            "goal-labels": {
+                "type": "pub"
+            }, 
+            "transcription": "do they have internet connection", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-009-110402_190116_0005173_0005346.wav", 
+            "requested-slots": [
+                "hasinternet"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "hasinternet"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "confirm(hasinternet=true)"
+            }
+        }, 
+        {
+            "turn-index": 9, 
+            "goal-labels": {
+                "type": "pub", 
+                "hasinternet": "true"
+            }, 
+            "transcription": "i need internet connection", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-010-110402_190122_0005724_0005948.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "hasinternet", 
+                                "true"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(hasinternet=true)"
+            }
+        }, 
+        {
+            "turn-index": 10, 
+            "goal-labels": {
+                "hasinternet": "true", 
+                "type": "pub"
+            }, 
+            "transcription": "find another pub", 
+            "method-label": "byalternatives", 
+            "audio-file": "fj228x-011-110402_190128_0006383_0006552.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "reqalts"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "reqalts(=pub)"
+            }
+        }, 
+        {
+            "turn-index": 11, 
+            "goal-labels": {
+                "type": "pub", 
+                "hasinternet": "true"
+            }, 
+            "transcription": "unintelligible do they allow children", 
+            "method-label": "byalternatives", 
+            "audio-file": "fj228x-012-110402_190135_0006988_0007243.wav", 
+            "requested-slots": [
+                "childrenallowed"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "childrenallowed"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "confirm(childrenallowed=true)"
+            }
+        }, 
+        {
+            "turn-index": 12, 
+            "goal-labels": {
+                "hasinternet": "true", 
+                "type": "pub"
+            }, 
+            "transcription": "do they allow children", 
+            "method-label": "byalternatives", 
+            "audio-file": "fj228x-013-110402_190142_0007735_0007942.wav", 
+            "requested-slots": [
+                "childrenallowed"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "childrenallowed"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "confirm(childrenallowed=true)"
+            }
+        }, 
+        {
+            "turn-index": 13, 
+            "goal-labels": {
+                "type": "pub", 
+                "hasinternet": "true"
+            }, 
+            "transcription": "okay great", 
+            "method-label": "byalternatives", 
+            "audio-file": "fj228x-014-110402_190146_0008206_0008331.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "ack"
+                    }
+                ], 
+                "cam": "ack()"
+            }
+        }, 
+        {
+            "turn-index": 14, 
+            "goal-labels": {
+                "hasinternet": "true", 
+                "type": "pub"
+            }, 
+            "transcription": "um i need the address", 
+            "method-label": "byalternatives", 
+            "audio-file": "fj228x-015-110402_190148_0008433_0008622.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 15, 
+            "goal-labels": {
+                "type": "pub", 
+                "hasinternet": "true"
+            }, 
+            "transcription": "address", 
+            "method-label": "byalternatives", 
+            "audio-file": "fj228x-016-110402_190152_0008874_0009010.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 16, 
+            "goal-labels": {
+                "hasinternet": "true", 
+                "type": "pub"
+            }, 
+            "transcription": "whats the phone number", 
+            "method-label": "byalternatives", 
+            "audio-file": "fj228x-017-110402_190158_0009387_0009544.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 17, 
+            "goal-labels": {
+                "type": "pub", 
+                "hasinternet": "true"
+            }, 
+            "transcription": "um", 
+            "method-label": "byalternatives", 
+            "audio-file": "fj228x-018-110402_190206_0010242_0010343.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 18, 
+            "goal-labels": {
+                "hasinternet": "true", 
+                "type": "pub"
+            }, 
+            "transcription": "what is the price", 
+            "method-label": "byalternatives", 
+            "audio-file": "fj228x-019-110402_190214_0011039_0011165.wav", 
+            "requested-slots": [
+                "price"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "price"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(price)"
+            }
+        }, 
+        {
+            "turn-index": 19, 
+            "goal-labels": {
+                "type": "pub", 
+                "hasinternet": "true"
+            }, 
+            "transcription": "what is the price", 
+            "method-label": "byalternatives", 
+            "audio-file": "fj228x-020-110402_190218_0011442_0011581.wav", 
+            "requested-slots": [
+                "price"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "price"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(price)"
+            }
+        }, 
+        {
+            "turn-index": 20, 
+            "goal-labels": {
+                "hasinternet": "true", 
+                "type": "pub"
+            }, 
+            "transcription": "okay", 
+            "method-label": "byalternatives", 
+            "audio-file": "fj228x-021-110402_190234_0013132_0013195.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "ack"
+                    }
+                ], 
+                "cam": "ack()"
+            }
+        }, 
+        {
+            "turn-index": 21, 
+            "goal-labels": {
+                "type": "pub", 
+                "hasinternet": "true"
+            }, 
+            "transcription": "um", 
+            "method-label": "byalternatives", 
+            "audio-file": "fj228x-022-110402_190236_0013258_0013363.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 22, 
+            "goal-labels": {
+                "hasinternet": "true", 
+                "type": "pub"
+            }, 
+            "transcription": "thank you", 
+            "method-label": "byalternatives", 
+            "audio-file": "fj228x-023-110402_190238_0013466_0013569.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "thankyou"
+                    }
+                ], 
+                "cam": "thankyou()"
+            }
+        }, 
+        {
+            "turn-index": 23, 
+            "goal-labels": {
+                "type": "pub", 
+                "hasinternet": "true"
+            }, 
+            "transcription": "thank you", 
+            "method-label": "byalternatives", 
+            "audio-file": "fj228x-024-110402_190247_0014329_0014446.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "thankyou"
+                    }
+                ], 
+                "cam": "thankyou()"
+            }
+        }, 
+        {
+            "turn-index": 24, 
+            "goal-labels": {
+                "hasinternet": "true", 
+                "type": "pub"
+            }, 
+            "transcription": "goodbye thank you", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-025-110402_190248_0014466_0014625.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }, 
+                    {
+                        "slots": [], 
+                        "act": "thankyou"
+                    }
+                ], 
+                "cam": "bye()|thankyou()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a pub and it should have an internet connection and allow children. Make sure you get the address, phone number, and price.", 
+            "request-slots": [
+                "addr", 
+                "phone", 
+                "price"
+            ], 
+            "constraints": [
+                [
+                    "hasinternet", 
+                    "true"
+                ], 
+                [
+                    "childrenallowed", 
+                    "true"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "slightly agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-47d3c88865-20110402_190022"
+}

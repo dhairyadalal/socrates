@@ -1,0 +1,252 @@
+{
+    "caller-id": "e68122aa92", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "type": "pub"
+            }, 
+            "transcription": "im looking for a pub", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110406_071353_0002010_0002220.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=pub)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "type": "restaurant"
+            }, 
+            "transcription": "a food restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110406_071354_0002270_0002408.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(type=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "area": "centre"
+            }, 
+            "transcription": "and it should be in the city center area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110406_071358_0002451_0002729.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "centre"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=centre)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "area": "centre"
+            }, 
+            "transcription": "i know", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110406_071402_0003084_0003157.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "type": "restaurant", 
+                "area": "centre"
+            }, 
+            "transcription": "i dont care", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110406_071406_0003394_0003516.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "this", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "type": "restaurant", 
+                "area": "centre"
+            }, 
+            "transcription": "make sure you get the address and postcode", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110406_071409_0003565_0003855.wav", 
+            "requested-slots": [
+                "addr", 
+                "postcode"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "postcode"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr,postcode)"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "type": "restaurant", 
+                "area": "centre"
+            }, 
+            "transcription": "now the phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110406_071423_0005141_0005282.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "type": "restaurant", 
+                "area": "centre"
+            }, 
+            "transcription": "sweet", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-008-110406_071435_0006366_0006463.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 8, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "type": "restaurant", 
+                "area": "centre"
+            }, 
+            "transcription": "thank you and good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-009-110406_071437_0006496_0006696.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a pub food restaurant and it should be in the city centre area. Make sure you get the address and postcode of the venue.", 
+            "request-slots": [
+                "addr", 
+                "postcode"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "pub food"
+                ], 
+                [
+                    "area", 
+                    "centre"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "agree"
+                ]
+            ], 
+            "comments": "good", 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-e68122aa92-20110406_071330"
+}

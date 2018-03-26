@@ -1,0 +1,182 @@
+{
+    "caller-id": "818a9915fb", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "hasinternet": "true", 
+                "pricerange": "cheap", 
+                "type": "pub"
+            }, 
+            "transcription": "im looking for a cheap pub with internet", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110406_044012_0001905_0002200.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "hasinternet", 
+                                "true"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "cheap"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=cheap,=pub,hasinternet=true)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "pricerange": "cheap", 
+                "hasinternet": "true", 
+                "type": "pub"
+            }, 
+            "transcription": "ok id like the phone number and whether children are allowed", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110406_044025_0003174_0003523.wav", 
+            "requested-slots": [
+                "phone", 
+                "childrenallowed"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "ack"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "childrenallowed"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "ack()|request(phone,childrenallowed)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "hasinternet": "true", 
+                "pricerange": "cheap", 
+                "type": "pub"
+            }, 
+            "transcription": "ok whats the phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110406_044036_0004501_0004655.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "ack"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "ack()|request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "pricerange": "cheap", 
+                "hasinternet": "true", 
+                "type": "pub"
+            }, 
+            "transcription": "ok thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-004-110406_044048_0005645_0005813.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "ack"
+                    }, 
+                    {
+                        "slots": [], 
+                        "act": "thankyou"
+                    }, 
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "ack()|thankyou()|bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a cheap pub and it should have an internet connection. You want to know the phone number and whether children are allowed.", 
+            "request-slots": [
+                "phone", 
+                "childrenallowed"
+            ], 
+            "constraints": [
+                [
+                    "pricerange", 
+                    "cheap"
+                ], 
+                [
+                    "hasinternet", 
+                    "true"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "lightly disagree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-818a9915fb-20110406_043949"
+}

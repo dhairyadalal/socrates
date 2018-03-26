@@ -1,0 +1,205 @@
+{
+    "caller-id": "2e679c317c", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "food": "traditional", 
+                "type": "restaurant"
+            }, 
+            "transcription": "im looking for a traditional restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110407_160152_0001835_0002205.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "traditional"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=traditional,=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "traditional", 
+                "type": "restaurant", 
+                "pricerange": "moderate"
+            }, 
+            "transcription": "im looking for one in the moderate price range", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110407_160205_0003199_0003538.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "moderate"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=moderate)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "traditional", 
+                "pricerange": "moderate", 
+                "type": "restaurant"
+            }, 
+            "transcription": "no i am not", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110407_160218_0004698_0004804.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "negate"
+                    }
+                ], 
+                "cam": "negate()"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "traditional", 
+                "type": "restaurant", 
+                "pricerange": "moderate", 
+                "name": "the eagle"
+            }, 
+            "transcription": "what is the eagles address", 
+            "method-label": "byname", 
+            "audio-file": "fj228x-004-110407_160231_0005912_0006152.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "name", 
+                                "the eagle"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "request(addr,name=\"the eagle\")"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "traditional", 
+                "pricerange": "moderate", 
+                "type": "restaurant", 
+                "name": "the eagle"
+            }, 
+            "transcription": "what is its phone number", 
+            "method-label": "byname", 
+            "audio-file": "fj228x-005-110407_160240_0006833_0006987.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "traditional", 
+                "type": "restaurant", 
+                "pricerange": "moderate", 
+                "name": "the eagle"
+            }, 
+            "transcription": "thank you goodbye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-006-110407_160252_0008081_0008235.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a traditional restaurant and it should have moderate pricerange. Make sure you get the phone number and address.", 
+            "request-slots": [
+                "phone", 
+                "addr"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "traditional"
+                ], 
+                [
+                    "pricerange", 
+                    "moderate"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-2e679c317c-20110407_160129"
+}

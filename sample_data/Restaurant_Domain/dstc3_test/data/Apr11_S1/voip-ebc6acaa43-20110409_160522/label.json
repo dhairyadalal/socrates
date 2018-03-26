@@ -1,0 +1,274 @@
+{
+    "caller-id": "ebc6acaa43", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "noise sil", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110409_160527_0000234_0000455.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "type": "pub"
+            }, 
+            "transcription": "im looking for a pub", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110409_160539_0001279_0001643.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=pub)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "pricerange": "dontcare", 
+                "childrenallowed": "dontcare", 
+                "type": "pub"
+            }, 
+            "transcription": "i do not care about children or price range", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110409_160551_0002377_0002848.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "childrenallowed", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(childrenallowed=dontcare,pricerange=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "childrenallowed": "dontcare", 
+                "near": "dontcare", 
+                "pricerange": "dontcare", 
+                "type": "pub"
+            }, 
+            "transcription": "do not care", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110409_160610_0004336_0004746.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "this", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "pricerange": "dontcare", 
+                "near": "dontcare", 
+                "childrenallowed": "dontcare", 
+                "type": "pub"
+            }, 
+            "transcription": "no", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110409_160622_0005859_0005925.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "negate"
+                    }
+                ], 
+                "cam": "negate()"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "childrenallowed": "dontcare", 
+                "near": "dontcare", 
+                "pricerange": "dontcare", 
+                "type": "pub"
+            }, 
+            "transcription": "what is the phone number and does it have internet", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110409_160633_0006828_0007090.wav", 
+            "requested-slots": [
+                "phone", 
+                "hasinternet"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "hasinternet"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)|confirm(hasinternet=true)"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "pricerange": "dontcare", 
+                "near": "dontcare", 
+                "childrenallowed": "dontcare", 
+                "type": "pub"
+            }, 
+            "transcription": "what is the phone number noise what is the phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110409_160714_0008035_0011123.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "childrenallowed": "dontcare", 
+                "near": "dontcare", 
+                "pricerange": "dontcare", 
+                "type": "pub"
+            }, 
+            "transcription": "what is the phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-008-110409_160717_0011283_0011434.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 8, 
+            "goal-labels": {
+                "pricerange": "dontcare", 
+                "near": "dontcare", 
+                "childrenallowed": "dontcare", 
+                "type": "pub"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-009-110409_160729_0012581_0012710.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a pub. You don't care about the price range. , You don't care about whether children are allowed. Make sure you get the phone number and whether it has internet.", 
+            "request-slots": [
+                "phone", 
+                "hasinternet"
+            ], 
+            "constraints": [
+                [
+                    "pricerange", 
+                    "dontcare"
+                ], 
+                [
+                    "childrenallowed", 
+                    "dontcare"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly disagree"
+                ]
+            ], 
+            "comments": "System did not understand me very well.", 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-ebc6acaa43-20110409_160522"
+}

@@ -1,0 +1,237 @@
+{
+    "caller-id": "5b80ad8d51", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "unintelligible", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110415_001130_0001646_0001693.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {}, 
+            "transcription": "what is unintelligible", 
+            "method-label": "none", 
+            "audio-file": "fj228x-002-110415_001133_0001888_0002054.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "hastv": "true", 
+                "hasinternet": "true", 
+                "area": "dontcare"
+            }, 
+            "transcription": "anything with internet connection and television", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110415_001142_0002584_0002861.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "this", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "hasinternet", 
+                                "true"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "hastv", 
+                                "true"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(hasinternet=true,hastv=true,=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "area": "dontcare", 
+                "hasinternet": "true", 
+                "hastv": "true"
+            }, 
+            "transcription": "any unintelligible", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110415_001145_0003208_0003285.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "hastv": "true", 
+                "hasinternet": "true", 
+                "area": "dontcare"
+            }, 
+            "transcription": "does it have an internet connection thats all i care about", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110415_001157_0004131_0004474.wav", 
+            "requested-slots": [
+                "hasinternet"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "hasinternet"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "confirm(hasinternet=true)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "hasinternet": "true", 
+                "area": "dontcare", 
+                "pricerange": "cheap", 
+                "hastv": "true"
+            }, 
+            "transcription": "background noise address its in the cheap price range", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110415_001216_0005522_0006126.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "cheap"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "request(addr,pricerange=cheap)"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "pricerange": "cheap", 
+                "hastv": "true", 
+                "hasinternet": "true", 
+                "area": "dontcare"
+            }, 
+            "transcription": "unintelligible the address", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110415_001217_0006225_0006375.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "hasinternet": "true", 
+                "area": "dontcare", 
+                "pricerange": "cheap", 
+                "hastv": "true"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-009-110415_001232_0007708_0007910.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a pub and it should have an internet connection and have a television. You want to know the address, phone number, and price of the venue.", 
+            "request-slots": [
+                "addr", 
+                "phone", 
+                "price"
+            ], 
+            "constraints": [
+                [
+                    "hasinternet", 
+                    "true"
+                ], 
+                [
+                    "hastv", 
+                    "true"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "slightly agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-5b80ad8d51-20110415_001112"
+}

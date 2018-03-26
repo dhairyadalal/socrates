@@ -1,0 +1,269 @@
+{
+    "caller-id": "b5d29e45ca", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "breathing", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110407_183449_0000080_0000200.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "fast food", 
+                "pricerange": "cheap", 
+                "type": "restaurant"
+            }, 
+            "transcription": "im looking for a fast food restaurant in the cheap price range", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110407_183501_0001134_0001482.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "fast food"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "cheap"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=\"fast food\",=restaurant,pricerange=cheap)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "fast food", 
+                "type": "restaurant", 
+                "pricerange": "cheap"
+            }, 
+            "transcription": "whats the address", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110407_183513_0002450_0002603.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "fast food", 
+                "pricerange": "cheap", 
+                "type": "restaurant"
+            }, 
+            "transcription": "the phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110407_183527_0003853_0004008.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "fast food", 
+                "type": "restaurant", 
+                "pricerange": "cheap"
+            }, 
+            "transcription": "the price", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110407_183540_0005023_0005338.wav", 
+            "requested-slots": [
+                "price"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "price"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(price)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "fast food", 
+                "pricerange": "cheap", 
+                "type": "restaurant"
+            }, 
+            "transcription": "whats the price", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110407_183552_0005916_0006543.wav", 
+            "requested-slots": [
+                "price"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "price"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(price)"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "fast food", 
+                "type": "restaurant", 
+                "pricerange": "cheap"
+            }, 
+            "transcription": "background noise", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110407_183557_0006996_0007073.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "food": "fast food", 
+                "pricerange": "cheap", 
+                "type": "restaurant"
+            }, 
+            "transcription": "what is the price", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-008-110407_183606_0007640_0007923.wav", 
+            "requested-slots": [
+                "price"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "price"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(price)"
+            }
+        }, 
+        {
+            "turn-index": 8, 
+            "goal-labels": {
+                "food": "fast food", 
+                "type": "restaurant", 
+                "pricerange": "cheap"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-009-110407_183621_0009132_0009420.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a fast food restaurant and it should have cheap pricerange. Make sure you get the address, phone number, and price of the venue.", 
+            "request-slots": [
+                "addr", 
+                "phone", 
+                "price"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "fast food"
+                ], 
+                [
+                    "pricerange", 
+                    "cheap"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-b5d29e45ca-20110407_183446"
+}

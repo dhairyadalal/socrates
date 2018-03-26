@@ -1,0 +1,519 @@
+{
+    "caller-id": "117a2c9a67", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "information", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110409_230730_0000661_0000769.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {}, 
+            "transcription": "no", 
+            "method-label": "none", 
+            "audio-file": "fj228x-002-110409_230739_0001436_0001700.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "negate"
+                    }
+                ], 
+                "cam": "negate()"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "type": "coffeeshop"
+            }, 
+            "transcription": "im looking for a moderately priced coffee shop", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110409_230749_0002384_0002636.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "coffeeshop"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "moderate"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=moderate,=coffeeshop)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "type": "coffeeshop", 
+                "pricerange": "moderate"
+            }, 
+            "transcription": "i would like to know the phone number and type of food", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110409_230754_0002970_0003226.wav", 
+            "requested-slots": [
+                "food", 
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "food"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone,food)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "type": "coffeeshop"
+            }, 
+            "transcription": "no", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110409_230802_0003882_0003961.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "negate"
+                    }
+                ], 
+                "cam": "negate()"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "type": "coffeeshop", 
+                "pricerange": "moderate"
+            }, 
+            "transcription": "no", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110409_230807_0004411_0004488.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "negate"
+                    }
+                ], 
+                "cam": "negate()"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "type": "coffeeshop"
+            }, 
+            "transcription": "background noise", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110409_230810_0004597_0004774.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "type": "coffeeshop", 
+                "pricerange": "moderate"
+            }, 
+            "transcription": "background noise", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-008-110409_230814_0005046_0005197.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 8, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "pricerange": "moderate", 
+                "type": "coffeeshop"
+            }, 
+            "transcription": "i dont care", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-009-110409_230817_0005366_0005494.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "this", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 9, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "type": "coffeeshop", 
+                "pricerange": "moderate"
+            }, 
+            "transcription": "a coffee shop background talking moderately priced", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-010-110409_230831_0006043_0006860.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "coffeeshop"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "moderate"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=coffeeshop,pricerange=moderate)"
+            }
+        }, 
+        {
+            "turn-index": 10, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "pricerange": "moderate", 
+                "type": "coffeeshop"
+            }, 
+            "transcription": "a cafe moderately priced", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-011-110409_230838_0007347_0007608.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "coffeeshop"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "moderate"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=coffeeshop,pricerange=moderate)"
+            }
+        }, 
+        {
+            "turn-index": 11, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "type": "coffeeshop", 
+                "pricerange": "moderate"
+            }, 
+            "transcription": "a cafe", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-012-110409_230845_0008166_0008311.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "coffeeshop"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=coffeeshop)"
+            }
+        }, 
+        {
+            "turn-index": 12, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "pricerange": "moderate", 
+                "type": "coffeeshop", 
+                "area": "dontcare"
+            }, 
+            "transcription": "it doesnt matter", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-013-110409_230852_0008906_0009012.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "this", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 13, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "type": "coffeeshop", 
+                "pricerange": "moderate", 
+                "area": "dontcare"
+            }, 
+            "transcription": "what is the phone and what time of food do they have", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-014-110409_230905_0009769_0010261.wav", 
+            "requested-slots": [
+                "food", 
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "food"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone,food)"
+            }
+        }, 
+        {
+            "turn-index": 14, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "pricerange": "moderate", 
+                "type": "coffeeshop", 
+                "area": "dontcare"
+            }, 
+            "transcription": "background noise", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-015-110409_230910_0010632_0010748.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 15, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "type": "coffeeshop", 
+                "pricerange": "moderate", 
+                "area": "dontcare"
+            }, 
+            "transcription": "background talking what is the phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-016-110409_230929_0011400_0012685.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 16, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "pricerange": "moderate", 
+                "type": "coffeeshop", 
+                "area": "dontcare"
+            }, 
+            "transcription": "what type of food do they have", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-017-110409_230931_0012709_0012893.wav", 
+            "requested-slots": [
+                "food"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "food"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(food)"
+            }
+        }, 
+        {
+            "turn-index": 17, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "type": "coffeeshop", 
+                "pricerange": "moderate", 
+                "area": "dontcare"
+            }, 
+            "transcription": "what is the phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-018-110409_230940_0013567_0013800.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 18, 
+            "goal-labels": {
+                "food": "dontcare", 
+                "pricerange": "moderate", 
+                "type": "coffeeshop", 
+                "area": "dontcare"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-019-110409_230954_0014961_0015111.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a moderately priced coffee shop. You don't care about the area. You want to know the phone number and type of food of the venue.", 
+            "request-slots": [
+                "phone", 
+                "food"
+            ], 
+            "constraints": [
+                [
+                    "pricerange", 
+                    "moderate"
+                ], 
+                [
+                    "area", 
+                    "dontcare"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "slightly agree"
+                ]
+            ], 
+            "comments": "had to re-ask it a couple of times ", 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-117a2c9a67-20110409_230722"
+}

@@ -1,0 +1,1740 @@
+Dialog Parameters: 
+{
+  "simulation_epoch_size": 50, 
+  "slot_err_mode": 0, 
+  "diaact_nl_pairs": "./deep_dialog/data/dia_act_nl_pairs.v6.json", 
+  "save_check_point": 10, 
+  "episodes": 50, 
+  "predict_mode": false, 
+  "cmd_input_mode": 0, 
+  "goal_file_path": "./deep_dialog/data/user_goals_first_turn_template.part.movie.v1.p", 
+  "max_turn": 40, 
+  "experience_replay_pool_size": 1000, 
+  "write_model_dir": "./deep_dialog/checkpoints/", 
+  "usr": 1, 
+  "auto_suggest": 0, 
+  "run_mode": 0, 
+  "trained_model_path": null, 
+  "success_rate_threshold": 0.3, 
+  "nlu_model_path": "./deep_dialog/models/nlu/lstm_[1468447442.91]_39_80_0.921.p", 
+  "epsilon": 0, 
+  "batch_size": 16, 
+  "learning_phase": "all", 
+  "nlg_model_path": "./deep_dialog/models/nlg/lstm_tanh_relu_[1468202263.38]_2_0.610.p", 
+  "act_set": "./deep_dialog/data/dia_acts.txt", 
+  "movie_kb_path": "./deep_dialog/data/movie_kb.1k.p", 
+  "slot_err_prob": 0.05, 
+  "warm_start": 1, 
+  "warm_start_epochs": 100, 
+  "dict_path": "./deep_dialog/data/dicts.v3.p", 
+  "intent_err_prob": 0.05, 
+  "slot_set": "./deep_dialog/data/slot_set.txt", 
+  "act_level": 0, 
+  "dqn_hidden_size": 60, 
+  "agt": 5, 
+  "split_fold": 5, 
+  "gamma": 0.9
+}
+Episode: 0
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK", 
+    "theater": "UNK", 
+    "starttime": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "date": "tomorrow", 
+    "numberofpeople": "3", 
+    "moviename": "10 cloverfield lane"
+  }
+}
+Turn 0 usr: Which theater will 10 cloverfield lane play tomorrow?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch 10 cloverfield lane.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: What is the start time available for 3 tickets?
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I do not care
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: I want to set it up tomorrow
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: Which theater is available?
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 3 tickets please!
+Turn 13 sys: Okay, I have booked 3 tickets for 10 cloverfield lane tomorrow.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 1 / 50, Success rate: 0 / 1 Avg reward: -47.00 Avg turns: 16.00
+Episode: 1
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "city": "seattle", 
+    "numberofpeople": "2", 
+    "theater": "regal meridian 16", 
+    "starttime": "9:30 pm", 
+    "date": "tomorrow", 
+    "moviename": "the witch"
+  }
+}
+Turn 0 usr: Can I get tickets for the witch tomorrow?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch the witch.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: I want to watch at 9:30 pm.
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I want to watch at seattle.
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: I want to set it up tomorrow
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: I want to watch at regal meridian 16.
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 2 tickets please!
+Turn 13 sys: Great - I was able to purchase 2 tickets for you to see the witch tomorrow at regal meridian 16 theater in seattle at 9:30 pm.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Successful Dialog!
+Progress: 2 / 50, Success rate: 1 / 2 Avg reward: 13.00 Avg turns: 16.00
+Episode: 2
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "city": "seattle", 
+    "numberofpeople": "2", 
+    "theater": "regal meridian 16", 
+    "starttime": "9:25 pm", 
+    "date": "tomorrow", 
+    "moviename": "zoolander 2"
+  }
+}
+Turn 0 usr: Can I get tickets for zoolander 2 at regal meridian 16?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch zoolander 2.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: I want to watch at 9:25 pm.
+Turn 5 sys: Which city would you like?
+Turn 6 usr: seattle are you
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: I want to set it up tomorrow
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: I want to watch at regal meridian 16.
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 4 tickets please!
+Turn 13 sys: Great - I was able to purchase 4 tickets for you to see zoolander 2 tomorrow at regal meridian 16 theater in seattle at 9:25 pm.
+Turn 14 usr: Oh, sorry! This is the wrong ticket!
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 3 / 50, Success rate: 1 / 3 Avg reward: -7.00 Avg turns: 16.00
+Episode: 3
+New episode, user goal:
+{
+  "request_slots": {
+    "date": "UNK", 
+    "ticket": "UNK", 
+    "theater": "UNK", 
+    "starttime": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "numberofpeople": "5", 
+    "moviename": "zootopia"
+  }
+}
+Turn 0 usr: What is the start time for zootopia?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: Could you help me to book that movie ticket?
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: What is the start time available for one tickets?
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I do not care
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: What date and start time are available?
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: yes i want to see it
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 5 tickets please!
+Turn 13 sys: Okay, I have booked 5 tickets for zootopia for you.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 4 / 50, Success rate: 1 / 4 Avg reward: -17.00 Avg turns: 16.00
+Episode: 4
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "city": "seattle", 
+    "numberofpeople": "2", 
+    "theater": "regal meridian 16", 
+    "starttime": "8:45 pm", 
+    "date": "tomorrow", 
+    "moviename": "hail caesar"
+  }
+}
+Turn 0 usr: Can I get tickets for hail caesar tomorrow?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch the young messiah.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: I want to watch at 8:45 pm.
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I want to watch at seattle.
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: I want to set it up tomorrow
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: I want to watch at regal meridian 16.
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 2 tickets please!
+Turn 13 sys: Oh sorry, there is no ticket available.
+Turn 14 usr: Oh, sorry! This is the wrong ticket!
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 5 / 50, Success rate: 1 / 5 Avg reward: -23.00 Avg turns: 16.00
+Episode: 5
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "city": "seattle", 
+    "numberofpeople": "2", 
+    "theater": "amc pacific place 11 theater", 
+    "starttime": "10:00 pm", 
+    "date": "tomorrow", 
+    "moviename": "race"
+  }
+}
+Turn 0 usr: Can I get tickets for race at amc pacific place 11 theater?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch race.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: I want to watch at 10:00 pm.
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I want to watch at seattle.
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: I want to set it up tomorrow
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: I want to watch at amc pacific place 11 theater.
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 2 tickets please!
+Turn 13 sys: Great - I was able to purchase 2 tickets for you to see race tomorrow at amc pacific place 11 theater theater in seattle at 10:00 pm.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Successful Dialog!
+Progress: 6 / 50, Success rate: 2 / 6 Avg reward: -7.00 Avg turns: 16.00
+Episode: 6
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK", 
+    "theater": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "city": "knoxville", 
+    "numberofpeople": "2", 
+    "distanceconstraints": "downtown", 
+    "video_format": "3d", 
+    "state": "tn", 
+    "starttime": "evening around 7", 
+    "date": "tomorrow", 
+    "moviename": "the witch"
+  }
+}
+Turn 0 usr: Which theater is the witch playing in tn?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch the witch.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: I want to watch at evening around 7.
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I want to watch at knoxville.
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: I want to set it up tomorrow
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: Which theater downtown can I book 2 3d tickets?
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 2 tickets please!
+Turn 13 sys: Excellent - I have booked 2 tickets for you to watch the witch at evening around 7 tomorrow at $theater$ in knoxville tn, downtown.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 7 / 50, Success rate: 2 / 7 Avg reward: -12.71 Avg turns: 16.00
+Episode: 7
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK", 
+    "theater": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "date": "tomorrow", 
+    "city": "regency academy 6 theater", 
+    "numberofpeople": "four", 
+    "moviename": "creed", 
+    "starttime": "around noon"
+  }
+}
+Turn 0 usr: Which theater will creed play tomorrow?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch creed.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: I want to watch at around noon.
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I want to watch at regency academy 6 theater.
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: I want to set it up tomorrow
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: Where I can purchase four tickets?
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want four tickets please!
+Turn 13 sys: Great - I was able to purchase four tickets for you to watch creed at $theater$ in regency academy 6 theater at around noon, tomorrow.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 8 / 50, Success rate: 2 / 8 Avg reward: -17.00 Avg turns: 16.00
+Episode: 8
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "city": "birmingham", 
+    "numberofpeople": "2", 
+    "theater": "carmike summit 16", 
+    "state": "al", 
+    "starttime": "around 2pm", 
+    "date": "today", 
+    "moviename": "london had fallen"
+  }
+}
+Turn 0 usr: Can I buy tickets for london had fallen at birmingham?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch london had fallen.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: I want to watch at around 2pm.
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I want to watch at birmingham.
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: I want to set it up today
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: I want to watch at carmike summit 16.
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 2 tickets please!
+Turn 13 sys: Great - I was able to purchase 2 tickets for you to see london had fallen today at carmike summit 16 theater in birmingham at around 2pm.
+Turn 14 usr: Oh, sorry! This is the wrong ticket!
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 9 / 50, Success rate: 2 / 9 Avg reward: -20.33 Avg turns: 16.00
+Episode: 9
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "city": "seattle", 
+    "numberofpeople": "2", 
+    "theater": "regal meridian 16", 
+    "starttime": "8:45 pm", 
+    "date": "tomorrow", 
+    "moviename": "the big short"
+  }
+}
+Turn 0 usr: Can I get some tickets for the big short?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch the big short.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: I want to watch at 8:45 pm.
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I want to watch at seattle.
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: I want to set it up tomorrow
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: I want to watch at regal meridian 16.
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 2 tickets please!
+Turn 13 sys: Great - I was able to purchase 2 tickets for you to see the big short tomorrow at regal meridian 16 theater in seattle at 8:45 pm.
+Turn 14 usr: Oh, sorry! This is the wrong ticket!
+Turn 15 sys: Thank you
+Successful Dialog!
+Progress: 10 / 50, Success rate: 3 / 10 Avg reward: -11.00 Avg turns: 16.00
+Episode: 10
+New episode, user goal:
+{
+  "request_slots": {
+    "date": "UNK", 
+    "ticket": "UNK", 
+    "theater": "UNK", 
+    "starttime": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "distanceconstraints": "near me", 
+    "numberofpeople": "5", 
+    "moviename": "zootopia"
+  }
+}
+Turn 0 usr: When is zootopia playing?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch zootopia.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: please for 5 tickets
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I do not care
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: when would you like to see it
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: Can you tell me the available theater and date, start time?
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 5 tickets please!
+Turn 13 sys: Okay, I have booked 5 tickets for zootopia near me.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 11 / 50, Success rate: 3 / 11 Avg reward: -14.27 Avg turns: 16.00
+Episode: 11
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "city": "seattle", 
+    "numberofpeople": "2", 
+    "theater": "regal meridian 16", 
+    "starttime": "9:10 pm", 
+    "date": "tomorrow", 
+    "moviename": "zootopia"
+  }
+}
+Turn 0 usr: Can I get 2 tickets for zootopia?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch zootopia.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: I want to watch at 9:10 pm.
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I want to watch at seattle.
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: I want to set it up tomorrow
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: I want to watch at regal meridian 16.
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 2 tickets please!
+Turn 13 sys: Great - I was able to purchase 2 tickets for you to see zootopia tomorrow at regal meridian 16 theater in seattle at 9:10 pm.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Successful Dialog!
+Progress: 12 / 50, Success rate: 4 / 12 Avg reward: -7.00 Avg turns: 16.00
+Episode: 12
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK", 
+    "theater": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "date": "tomorrow", 
+    "city": "regency", 
+    "numberofpeople": "four", 
+    "moviename": "creed", 
+    "starttime": "around noon"
+  }
+}
+Turn 0 usr: Which theater is playing creed at regency?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch creed.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: I want to watch at around noon.
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I want to watch at regency.
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: I want to set it up tomorrow
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: Where I can purchase four tickets?
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want four tickets please!
+Turn 13 sys: Oh sorry, there is no ticket available.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 13 / 50, Success rate: 4 / 13 Avg reward: -10.08 Avg turns: 16.00
+Episode: 13
+New episode, user goal:
+{
+  "request_slots": {
+    "date": "UNK", 
+    "ticket": "UNK", 
+    "theater": "UNK", 
+    "starttime": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "numberofpeople": "5", 
+    "moviename": "avengers"
+  }
+}
+Turn 0 usr: Which theater is avengers playing?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch avengers.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: What is the start time available for 5 tickets?
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I do not care
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: What date and start time are available?
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: Can you tell me the available theater and date, start time?
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 5 tickets please!
+Turn 13 sys: Okay, I have booked 5 tickets for avengers for you.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 14 / 50, Success rate: 4 / 14 Avg reward: -12.71 Avg turns: 16.00
+Episode: 14
+New episode, user goal:
+{
+  "request_slots": {
+    "date": "UNK", 
+    "ticket": "UNK", 
+    "theater": "UNK", 
+    "starttime": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "city": "portland", 
+    "state": "oregon", 
+    "numberofpeople": "5", 
+    "moviename": "star wars"
+  }
+}
+Turn 0 usr: Which theater can I book 5 tickets for star wars?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch star wars.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: When it will play at portland oregon?
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I want to watch at portland.
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: What date is available?
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: Can you tell me the available theater and date?
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 5 tickets please!
+Turn 13 sys: Okay your purchase 5 tickets for star wars at portland, oregon is confirmed!
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 15 / 50, Success rate: 4 / 15 Avg reward: -15.00 Avg turns: 16.00
+Episode: 15
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "city": "seattle", 
+    "numberofpeople": "2", 
+    "theater": "amc pacific place 11 theater", 
+    "starttime": "9:30 pm", 
+    "date": "tomorrow", 
+    "moviename": "room"
+  }
+}
+Turn 0 usr: Can I get tickets for room at amc pacific place 11 theater?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch room.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: I want to watch at 9:30 pm.
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I want to watch at seattle.
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: I want to set it up tomorrow
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: I want to watch at amc pacific place 11 theater.
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 2 tickets please!
+Turn 13 sys: Great - I was able to purchase 2 tickets for you to see room tomorrow at amc pacific place 11 theater theater in seattle at 9:30 pm.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Successful Dialog!
+Progress: 16 / 50, Success rate: 5 / 16 Avg reward: -9.50 Avg turns: 16.00
+Episode: 16
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK", 
+    "theater": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "date": "tomorrow", 
+    "city": "los angeles", 
+    "numberofpeople": "5", 
+    "moviename": "zootopia", 
+    "starttime": "8pm"
+  }
+}
+Turn 0 usr: Which theater will play the zootopia at 8pm?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch zootopia.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: I want to watch at 8pm.
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I want to watch at los angeles.
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: I want to set it up tomorrow
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: Where I can purchase 5 tickets?
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 5 tickets please!
+Turn 13 sys: Great - I was able to purchase 5 tickets for you to watch zootopia at $theater$ in los angeles at 8pm, tomorrow.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 17 / 50, Success rate: 5 / 17 Avg reward: -11.71 Avg turns: 16.00
+Episode: 17
+New episode, user goal:
+{
+  "request_slots": {
+    "date": "UNK", 
+    "ticket": "UNK", 
+    "theater": "UNK", 
+    "starttime": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "numberofpeople": "3", 
+    "moviename": "gods egypt"
+  }
+}
+Turn 0 usr: What start time can I book 3 tickets for gods egypt?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch gods egypt.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: What start time is available?
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I do not care
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: What date and start time are available?
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: Can you tell me the available theater and date, start time?
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 3 tickets please!
+Turn 13 sys: Okay, I have booked 3 tickets for gods egypt for you.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 18 / 50, Success rate: 5 / 18 Avg reward: -13.67 Avg turns: 16.00
+Episode: 18
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK", 
+    "starttime": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "date": "tomorrow", 
+    "theater": "regency commerce 14", 
+    "numberofpeople": "2", 
+    "moviename": "risen"
+  }
+}
+Turn 0 usr: What start time can I book 2 tickets for risen?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch risen.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: What time is playing at amc lowes oak tree on tomorrow?
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I do not care
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: I want to set it up tomorrow
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: I want to watch at regency commerce 14.
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: Hi
+Turn 13 sys: Okay, I have booked 2 tickets for risen at regency commerce 14 on tomorrow.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 19 / 50, Success rate: 5 / 19 Avg reward: -15.42 Avg turns: 16.00
+Episode: 19
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK", 
+    "theater": "UNK", 
+    "starttime": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "date": "this friday", 
+    "numberofpeople": "4", 
+    "moviename": "star wars"
+  }
+}
+Turn 0 usr: Which theater will star wars play this friday?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch star wars.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: approximately approximately many are you located in
+Turn 5 sys: Which city would you like?
+Turn 6 usr: when would you like to see it
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: I want to set it up this friday
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: Which theater is available?
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 4 tickets please!
+Turn 13 sys: Okay, I have booked 4 tickets for star wars this friday.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 20 / 50, Success rate: 5 / 20 Avg reward: -17.00 Avg turns: 16.00
+Episode: 20
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "city": "seattle", 
+    "numberofpeople": "2", 
+    "theater": "amc lowes oak tree 6", 
+    "starttime": "4:50 pm", 
+    "date": "tomorrow", 
+    "moviename": "race"
+  }
+}
+Turn 0 usr: Can I get 2 tickets for race?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch race.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: I want to watch at 4:50 pm.
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I want to watch at seattle.
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: I want to set it up tomorrow
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: I want to watch at amc lowes oak tree 6.
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 2 tickets please!
+Turn 13 sys: Great - I was able to purchase 2 tickets for you to see race tomorrow at amc lowes oak tree 6 theater in seattle at 4:50 pm.
+Turn 14 usr: hi
+Turn 15 sys: Thank you
+Successful Dialog!
+Progress: 21 / 50, Success rate: 6 / 21 Avg reward: -12.71 Avg turns: 16.00
+Episode: 21
+New episode, user goal:
+{
+  "request_slots": {
+    "date": "UNK", 
+    "ticket": "UNK", 
+    "theater": "UNK", 
+    "starttime": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "city": "los angeles", 
+    "numberofpeople": "1", 
+    "moviename": "deadpool"
+  }
+}
+Turn 0 usr: What is the start time for deadpool?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch deadpool.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: just 1 tickets in los angeles please
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I want to watch at los angeles.
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: What date is available?
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: Can you tell me the available theater and date?
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 1 tickets please!
+Turn 13 sys: Okay your purchase of 1 tickets for deadpool at los angeles is confirmed.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 22 / 50, Success rate: 6 / 22 Avg reward: -14.27 Avg turns: 16.00
+Episode: 22
+New episode, user goal:
+{
+  "request_slots": {
+    "date": "UNK", 
+    "ticket": "UNK", 
+    "theater": "UNK", 
+    "starttime": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "city": "du quoin", 
+    "state": "illinois", 
+    "numberofpeople": "2", 
+    "moviename": "star wars"
+  }
+}
+Turn 0 usr: Which theater can I book 2 tickets for star wars?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch star wars.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: When it will play at du quoin illinois?
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I want to watch at du quoin.
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: What date is available?
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: Can you tell me the available theater and date?
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 2 tickets please!
+Turn 13 sys: Okay your purchase 2 tickets for star wars at du quoin, illinois is confirmed!
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 23 / 50, Success rate: 6 / 23 Avg reward: -15.70 Avg turns: 16.00
+Episode: 23
+New episode, user goal:
+{
+  "request_slots": {
+    "date": "UNK", 
+    "ticket": "UNK", 
+    "theater": "UNK", 
+    "starttime": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "distanceconstraints": "near me", 
+    "numberofpeople": "5", 
+    "moviename": "zootopia"
+  }
+}
+Turn 0 usr: Which theater is zootopia playing?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch zootopia.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: What start time can I book 5 tickets near me?
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I do not care
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: What date and start time are available?
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: Can you tell me the available theater and date, start time?
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 5 tickets please!
+Turn 13 sys: Okay, I have booked 5 tickets for zootopia near me.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 24 / 50, Success rate: 6 / 24 Avg reward: -17.00 Avg turns: 16.00
+Episode: 24
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "city": "seattle", 
+    "numberofpeople": "2", 
+    "theater": "amc pacific place 11 theater", 
+    "starttime": "10:00 pm", 
+    "date": "tomorrow", 
+    "moviename": "race"
+  }
+}
+Turn 0 usr: Can I get some tickets for race?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch race.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: I want to watch at 10:00 pm.
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I want to watch at seattle.
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: I want to set it up tomorrow
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: I want to watch at amc pacific place 11 theater.
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 2 tickets please!
+Turn 13 sys: Great - I was able to purchase 2 tickets for you to see race tomorrow at amc pacific place 11 theater theater in seattle at 10:00 pm.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Successful Dialog!
+Progress: 25 / 50, Success rate: 7 / 25 Avg reward: -13.40 Avg turns: 16.00
+Episode: 25
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK", 
+    "theater": "UNK", 
+    "starttime": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "date": "tomorrow", 
+    "city": "philadelphia", 
+    "numberofpeople": "3", 
+    "moviename": "deadpool", 
+    "zip": "19101"
+  }
+}
+Turn 0 usr: What is the start time for deadpool at zipcode 19101?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch deadpool.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: I want to purchase 3 tickets. What time is it playing at philadelphia on this week?
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I want to watch at philadelphia.
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: I want to set it up tomorrow
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: please
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 3 tickets please!
+Turn 13 sys: I have successfully purchased 3 tickets to see deadpool tomorrow at philadelphia 19101.
+Turn 14 usr: hi
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 26 / 50, Success rate: 7 / 26 Avg reward: -14.69 Avg turns: 16.00
+Episode: 26
+New episode, user goal:
+{
+  "request_slots": {
+    "date": "UNK", 
+    "ticket": "UNK", 
+    "theater": "UNK", 
+    "starttime": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "distanceconstraints": "near me", 
+    "numberofpeople": "5", 
+    "moviename": "zootopia"
+  }
+}
+Turn 0 usr: Which theater is zootopia playing near me?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch zootopia.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: What is the start time available for 5 tickets?
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I do not care
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: What date and start time are available?
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: Can you tell me the available theater and date, start time?
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 5 tickets please!
+Turn 13 sys: Okay, I have booked 5 tickets for zootopia near me.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 27 / 50, Success rate: 7 / 27 Avg reward: -15.89 Avg turns: 16.00
+Episode: 27
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "city": "seattle", 
+    "numberofpeople": "2", 
+    "theater": "amc lowes oak tree 6", 
+    "starttime": "4:25 pm", 
+    "date": "tomorrow", 
+    "moviename": "risen"
+  }
+}
+Turn 0 usr: Can I buy tickets for risen at seattle?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch risen.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: I want to watch at 4:25 pm.
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I want to watch at seattle.
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: I want to set it up tomorrow
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: I want to watch at amc lowes oak tree 6.
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 2 tickets please!
+Turn 13 sys: Great - I was able to purchase 2 tickets for you to see risen tomorrow at amc lowes oak tree 6 theater in seattle at 4:25 pm.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Successful Dialog!
+Progress: 28 / 50, Success rate: 8 / 28 Avg reward: -12.71 Avg turns: 16.00
+Episode: 28
+New episode, user goal:
+{
+  "request_slots": {
+    "date": "UNK", 
+    "ticket": "UNK", 
+    "starttime": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "theater": "beaver creek stadium 12", 
+    "numberofpeople": "3", 
+    "moviename": "10 cloverfield lane"
+  }
+}
+Turn 0 usr: Which day is 10 cloverfield lane playing at beaver creek stadium 12?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch 10 cloverfield lane.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: What is the start time available for 3 tickets?
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I do not care
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: What date and start time are available?
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: I want to watch at beaver creek stadium 12.
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 3 tickets please!
+Turn 13 sys: Okay, I have booked 3 tickets for 10 cloverfield lane at beaver creek stadium 12.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 29 / 50, Success rate: 8 / 29 Avg reward: -13.90 Avg turns: 16.00
+Episode: 29
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "city": "seattle", 
+    "numberofpeople": "2", 
+    "theater": "amc lowes oak tree 6", 
+    "starttime": "4:25 pm", 
+    "date": "tomorrow", 
+    "moviename": "risen"
+  }
+}
+Turn 0 usr: Can I get tickets for risen at amc lowes oak tree 6?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch risen.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: I want to watch at 4:25 pm.
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I want to watch at seattle.
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: I want to set it up tomorrow
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: I want to watch at Regal Pioneer Place Stadium.
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 2 tickets please!
+Turn 13 sys: Oh sorry, there is no ticket available.
+Turn 14 usr: Oh, sorry! This is the wrong ticket!
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 30 / 50, Success rate: 8 / 30 Avg reward: -15.00 Avg turns: 16.00
+Episode: 30
+New episode, user goal:
+{
+  "request_slots": {
+    "date": "UNK", 
+    "ticket": "UNK", 
+    "theater": "UNK", 
+    "starttime": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "distanceconstraints": "close to 95833", 
+    "numberofpeople": "3", 
+    "moviename": "zoology"
+  }
+}
+Turn 0 usr: What is the start time for zoology close to 95833?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: zoology is 
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: What is the start time available for 3 tickets?
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I do not care
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: thank you
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: when should i would you like
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 3 tickets please!
+Turn 13 sys: Okay, I have booked 3 tickets for zoology close to 95833.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 31 / 50, Success rate: 8 / 31 Avg reward: -16.03 Avg turns: 16.00
+Episode: 31
+New episode, user goal:
+{
+  "request_slots": {
+    "date": "UNK", 
+    "ticket": "UNK", 
+    "starttime": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "theater": "beaver creek stadium 12", 
+    "numberofpeople": "3", 
+    "moviename": "10 cloverfield lane"
+  }
+}
+Turn 0 usr: Which day is 10 cloverfield lane playing at beaver creek stadium 12?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch 10 cloverfield lane.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: What is the start time available for 3 tickets?
+Turn 5 sys: Which city would you like?
+Turn 6 usr: du Quoin
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: What date and start time are available?
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: I want to watch at beaver creek stadium 12.
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 3 tickets please!
+Turn 13 sys: Oh sorry, there is no ticket available.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 32 / 50, Success rate: 8 / 32 Avg reward: -17.00 Avg turns: 16.00
+Episode: 32
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK", 
+    "theater": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "date": "tomorrow", 
+    "city": "seattle", 
+    "numberofpeople": "one", 
+    "moviename": "zootopia", 
+    "starttime": "night"
+  }
+}
+Turn 0 usr: Which theater will zootopia play tomorrow?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch zootopia.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: I want to watch at night.
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I want to watch at seattle.
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: I want to set it up tomorrow
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: Where I can purchase one tickets?
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want one tickets please!
+Turn 13 sys: Great - I was able to purchase one tickets for you to watch zootopia at $theater$ in seattle at night, tomorrow.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 33 / 50, Success rate: 8 / 33 Avg reward: -17.91 Avg turns: 16.00
+Episode: 33
+New episode, user goal:
+{
+  "request_slots": {
+    "date": "UNK", 
+    "ticket": "UNK", 
+    "theater": "UNK", 
+    "starttime": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "numberofpeople": "5", 
+    "moviename": "avengers"
+  }
+}
+Turn 0 usr: What date can I book 5 tickets for avengers?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch avengers.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: What start time is available?
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I do not care
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: What date and start time are available?
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: Can you tell me the available theater and date, start time?
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 5 tickets please!
+Turn 13 sys: Okay, I have booked 5 tickets for avengers for you.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 34 / 50, Success rate: 8 / 34 Avg reward: -18.76 Avg turns: 16.00
+Episode: 34
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "city": "seattle", 
+    "numberofpeople": "2", 
+    "theater": "regal meridian 16", 
+    "starttime": "9:10 pm", 
+    "date": "tomorrow", 
+    "moviename": "zootopia"
+  }
+}
+Turn 0 usr: Can I get 2 tickets for zootopia?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch zootopia.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: I want to watch at 9:10 pm.
+Turn 5 sys: Which city would you like?
+Turn 6 usr: i'm sorry i would like to try 
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: I want to set it up tomorrow
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: I want to watch at regal meridian 16.
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 4 tickets please!
+Turn 13 sys: Great - I was able to purchase 4 tickets for you to see zootopia tomorrow at regal meridian 16 theater in seattle at 9:10 pm.
+Turn 14 usr: Oh, sorry! This is the wrong ticket!
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 35 / 50, Success rate: 8 / 35 Avg reward: -19.57 Avg turns: 16.00
+Episode: 35
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "city": "seattle", 
+    "numberofpeople": "2", 
+    "theater": "amc lowes oak tree 6", 
+    "starttime": "7:15 pm", 
+    "date": "tomorrow", 
+    "moviename": "hail caesar"
+  }
+}
+Turn 0 usr: Can I get tickets for hail caesar at amc lowes oak tree 6?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch hail caesar.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: I want to watch at 7:15 pm.
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I want to watch at seattle.
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: I want to set it up tomorrow
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: I want to watch at amc lowes oak tree 6.
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: 2 tickets please
+Turn 13 sys: Great - I was able to purchase 2 tickets for you to see hail caesar tomorrow at amc lowes oak tree 6 theater in seattle at 7:15 pm.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Successful Dialog!
+Progress: 36 / 50, Success rate: 9 / 36 Avg reward: -17.00 Avg turns: 16.00
+Episode: 36
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK", 
+    "theater": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "city": "la", 
+    "numberofpeople": "2", 
+    "distanceconstraints": "downtown", 
+    "video_format": "3d", 
+    "starttime": "7pm", 
+    "date": "tomorrow", 
+    "moviename": "creed"
+  }
+}
+Turn 0 usr: Which theater is playing creed at la?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch creed.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: I want to watch at 7pm.
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I want to watch at la.
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: I want to set it up tomorrow
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: Which theater downtown can I book 2 3d tickets?
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 2 tickets please!
+Turn 13 sys: Thank you, I was able to purchase 2 tickets for you to see creed with 3d tomorrow at la downtown at 7pm.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 37 / 50, Success rate: 9 / 37 Avg reward: -17.81 Avg turns: 16.00
+Episode: 37
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "city": "seattle", 
+    "numberofpeople": "2", 
+    "theater": "amc lowes oak tree 6", 
+    "starttime": "4:50 pm", 
+    "date": "tomorrow", 
+    "moviename": "room"
+  }
+}
+Turn 0 usr: Can I get 2 tickets for room?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch room.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: I want to watch at 4:50 pm.
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I want to watch at seattle.
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: I want to set it up tomorrow
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: I want to watch at amc lowes oak tree 6.
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 2 tickets please!
+Turn 13 sys: Great - I was able to purchase 2 tickets for you to see room tomorrow at amc lowes oak tree 6 theater in seattle at 4:50 pm.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Successful Dialog!
+Progress: 38 / 50, Success rate: 10 / 38 Avg reward: -15.42 Avg turns: 16.00
+Episode: 38
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK", 
+    "theater": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "date": "tomorrow", 
+    "city": "seattle", 
+    "numberofpeople": "one", 
+    "moviename": "zootopia", 
+    "starttime": "night"
+  }
+}
+Turn 0 usr: Which theater can I book one tickets for zootopia?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch zootopia.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: night
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I want to watch at seattle.
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: I want to set it up tomorrow
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: Which theater is available?
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want one tickets please!
+Turn 13 sys: Great - I was able to purchase one tickets for you to watch zootopia at $theater$ in seattle at night, tomorrow.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 39 / 50, Success rate: 10 / 39 Avg reward: -16.23 Avg turns: 16.00
+Episode: 39
+New episode, user goal:
+{
+  "request_slots": {
+    "date": "UNK", 
+    "ticket": "UNK", 
+    "theater": "UNK", 
+    "starttime": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "city": "portland", 
+    "state": "oregon", 
+    "numberofpeople": "3", 
+    "moviename": "zootopia"
+  }
+}
+Turn 0 usr: When is zootopia playing at portland?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch zootopia.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: I would like 3 tickets for that movie. What time is it playing at oregon?
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I want to watch at portland.
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: What date is available?
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: Can you tell me the available theater and date?
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 3 tickets please!
+Turn 13 sys: Okay your purchase 3 tickets for zootopia at portland, oregon is confirmed!
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 40 / 50, Success rate: 10 / 40 Avg reward: -17.00 Avg turns: 16.00
+Episode: 40
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "city": "seattle", 
+    "numberofpeople": "2", 
+    "theater": "amc pacific place 11 theater", 
+    "starttime": "10:00 pm", 
+    "date": "tomorrow", 
+    "moviename": "race"
+  }
+}
+Turn 0 usr: Can I buy tickets for race at seattle?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch race.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: I want to watch at 10:00 pm.
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I want to watch at seattle.
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: I want to set it up tomorrow
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: I want to watch at amc pacific place 11 theater.
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 2 tickets please!
+Turn 13 sys: Great - I was able to purchase 2 tickets for you to see race tomorrow at amc pacific place 11 theater theater in seattle at 10:00 pm.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Successful Dialog!
+Progress: 41 / 50, Success rate: 11 / 41 Avg reward: -14.80 Avg turns: 16.00
+Episode: 41
+New episode, user goal:
+{
+  "request_slots": {
+    "date": "UNK", 
+    "ticket": "UNK", 
+    "theater": "UNK", 
+    "starttime": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "numberofpeople": "two", 
+    "moviename": "london has fallen", 
+    "zip": "90602"
+  }
+}
+Turn 0 usr: What date can I book two tickets for london has fallen?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch london has fallen.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: What time is playing in zipcode 90602?
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I do not care
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: What date and start time are available?
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: Can you tell me the available theater and date, start time?
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want two tickets please!
+Turn 13 sys: okay your purchase of two tickets for london has fallen is confirmed
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 42 / 50, Success rate: 11 / 42 Avg reward: -15.57 Avg turns: 16.00
+Episode: 42
+New episode, user goal:
+{
+  "request_slots": {
+    "date": "UNK", 
+    "ticket": "UNK", 
+    "theater": "UNK", 
+    "starttime": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "city": "portland", 
+    "state": "oregon", 
+    "numberofpeople": "4", 
+    "moviename": "star wars"
+  }
+}
+Turn 0 usr: What date is star wars playing at portland?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: star wars sounds hoping
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: I would like 4 tickets for that movie. What time is it playing at oregon?
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I want to watch at portland.
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: What date is available?
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: Can you tell me the available theater and date?
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 4 tickets please!
+Turn 13 sys: Okay your purchase 4 tickets for star wars at portland, oregon is confirmed!
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 43 / 50, Success rate: 11 / 43 Avg reward: -16.30 Avg turns: 16.00
+Episode: 43
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "city": "seattle", 
+    "numberofpeople": "2", 
+    "theater": "amc lowes oak tree 6", 
+    "starttime": "7:15 pm", 
+    "date": "tomorrow", 
+    "moviename": "hail caesar"
+  }
+}
+Turn 0 usr: Can I get 2 tickets for hail caesar?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch hail caesar.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: I want to watch at 7:15 pm.
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I want to watch at seattle.
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: I want to set it up tomorrow
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: I want to watch at amc lowes oak tree 6.
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 2 tickets please!
+Turn 13 sys: Great - I was able to purchase 2 tickets for you to see hail caesar tomorrow at amc lowes oak tree 6 theater in seattle at 7:15 pm.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Successful Dialog!
+Progress: 44 / 50, Success rate: 12 / 44 Avg reward: -14.27 Avg turns: 16.00
+Episode: 44
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK", 
+    "theater": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "date": "tomorrow", 
+    "city": "regency", 
+    "numberofpeople": "four", 
+    "moviename": "creed", 
+    "starttime": "around noon"
+  }
+}
+Turn 0 usr: Which theater is creed playing?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch creed.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: I want to watch at around noon.
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I want to watch at regency.
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: I want to set it up tomorrow
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: Where I can purchase four tickets?
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want  2 tickets please!
+Turn 13 sys: Oh sorry, there is no ticket available.
+Turn 14 usr: Oh, sorry! This is the wrong ticket!
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 45 / 50, Success rate: 12 / 45 Avg reward: -15.00 Avg turns: 16.00
+Episode: 45
+New episode, user goal:
+{
+  "request_slots": {
+    "date": "UNK", 
+    "ticket": "UNK", 
+    "theater": "UNK", 
+    "starttime": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "numberofpeople": "5", 
+    "moviename": "deadpool"
+  }
+}
+Turn 0 usr: What is the start time for deadpool?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch deadpool.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: What is the start time available for 5 tickets?
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I do not care
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: What date and start time are available?
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: Can you tell me the available theater and date, start time?
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 5 tickets please!
+Turn 13 sys: Okay, I have booked 5 tickets for deadpool for you.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 46 / 50, Success rate: 12 / 46 Avg reward: -15.70 Avg turns: 16.00
+Episode: 46
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK", 
+    "theater": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "date": "tomorrow", 
+    "city": "los angeles", 
+    "numberofpeople": "5", 
+    "moviename": "zootopia", 
+    "starttime": "8pm"
+  }
+}
+Turn 0 usr: Which theater can I book 5 tickets for zootopia?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch zootopia.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: I want to watch at 8pm.
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I want to watch at los angeles.
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: I want to set it up tomorrow
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: Which theater is available?
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 5 tickets please!
+Turn 13 sys: Great - I was able to purchase 5 tickets for you to watch zootopia at $theater$ in los angeles at 8pm, tomorrow.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 47 / 50, Success rate: 12 / 47 Avg reward: -16.36 Avg turns: 16.00
+Episode: 47
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "city": "seattle", 
+    "numberofpeople": "2", 
+    "theater": "pacific place 11 theater", 
+    "theater_chain": "amc", 
+    "starttime": "9:30 pm", 
+    "date": "tomorrow", 
+    "moviename": "room"
+  }
+}
+Turn 0 usr: I need some tickets for room at amc.
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch room.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: I want to watch at 9:30 pm.
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I want to watch at seattle.
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: I want to set it up tomorrow
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: I want to watch at pacific place 11 theater.
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 2 tickets please!
+Turn 13 sys: Thank you, I was able to purchase 2 tickets for you to see room at pacific place 11 theater, amc at seattle at 9:30 pm on tomorrow.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Successful Dialog!
+Progress: 48 / 50, Success rate: 13 / 48 Avg reward: -14.50 Avg turns: 16.00
+Episode: 48
+New episode, user goal:
+{
+  "request_slots": {
+    "date": "UNK", 
+    "ticket": "UNK", 
+    "theater": "UNK", 
+    "starttime": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "city": "du quoin", 
+    "state": "illinois", 
+    "numberofpeople": "2", 
+    "moviename": "star wars"
+  }
+}
+Turn 0 usr: Which theater is playing star wars at du quoin?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch star wars.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: I would like 2 tickets for that movie. What time is it playing at illinois?
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I want to watch at du quoin.
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: What date is available?
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: Can you tell me the available theater and date?
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 2 tickets please!
+Turn 13 sys: Okay your purchase 2 tickets for star wars at du quoin, illinois is confirmed!
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 49 / 50, Success rate: 13 / 49 Avg reward: -15.16 Avg turns: 16.00
+Episode: 49
+New episode, user goal:
+{
+  "request_slots": {
+    "ticket": "UNK", 
+    "starttime": "UNK"
+  }, 
+  "diaact": "request", 
+  "inform_slots": {
+    "date": "tomorrow", 
+    "theater": "regency commerce 14", 
+    "numberofpeople": "2", 
+    "moviename": "risen"
+  }
+}
+Turn 0 usr: What start time can I book 2 tickets for risen?
+Turn 1 sys: What movie are you interested in?
+Turn 2 usr: I want to watch risen.
+Turn 3 sys: What time would you like to see it?
+Turn 4 usr: What time is playing at regency commerce 14 on March 12th?
+Turn 5 sys: Which city would you like?
+Turn 6 usr: I do not care
+Turn 7 sys: What date would you like to watch it?
+Turn 8 usr: I want to set it up tomorrow
+Turn 9 sys: Which theater would you like?
+Turn 10 usr: I want to watch at regency commerce 14.
+Turn 11 sys: How many tickets do you need?
+Turn 12 usr: I want 2 tickets please!
+Turn 13 sys: Okay, I have booked 2 tickets for risen at regency commerce 14 on tomorrow.
+Turn 14 usr: Thank you
+Turn 15 sys: Thank you
+Failed Dialog!
+Progress: 50 / 50, Success rate: 13 / 50 Avg reward: -15.80 Avg turns: 16.00
+Success rate: 13 / 50 Avg reward: -15.80 Avg turns: 16.00

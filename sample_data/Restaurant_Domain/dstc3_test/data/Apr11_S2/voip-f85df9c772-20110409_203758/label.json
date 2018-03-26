@@ -1,0 +1,208 @@
+{
+    "caller-id": "f85df9c772", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "childrenallowed": "true", 
+                "type": "pub", 
+                "hastv": "true"
+            }, 
+            "transcription": "noise i am looking for a pub that allows children and has tv", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110409_203822_0001834_0002333.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "childrenallowed", 
+                                "true"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "hastv", 
+                                "true"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(hastv=true,=pub,childrenallowed=true,task=find)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "type": "pub", 
+                "childrenallowed": "true", 
+                "hastv": "true"
+            }, 
+            "transcription": "can you give me the phone number and the postal code", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110409_203835_0003371_0003645.wav", 
+            "requested-slots": [
+                "phone", 
+                "postcode"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "postcode"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone,postcode)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "childrenallowed": "true", 
+                "type": "pub", 
+                "hastv": "true"
+            }, 
+            "transcription": "noise sil", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110409_203839_0004011_0004105.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "type": "pub", 
+                "childrenallowed": "true", 
+                "hastv": "true"
+            }, 
+            "transcription": "noise sil", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110409_203842_0004327_0004386.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "childrenallowed": "true", 
+                "type": "pub", 
+                "hastv": "true"
+            }, 
+            "transcription": "can you give me the phone number and postal code", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110409_203859_0005868_0006113.wav", 
+            "requested-slots": [
+                "phone", 
+                "postcode"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "postcode"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone,postcode)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "type": "pub", 
+                "childrenallowed": "true", 
+                "hastv": "true"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-006-110409_203919_0007907_0008026.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a pub and it should allow children and have TV. You want to know the phone number and postcode.", 
+            "request-slots": [
+                "phone", 
+                "postcode"
+            ], 
+            "constraints": [
+                [
+                    "childrenallowed", 
+                    "true"
+                ], 
+                [
+                    "hastv", 
+                    "true"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-f85df9c772-20110409_203758"
+}

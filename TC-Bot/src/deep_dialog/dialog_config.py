@@ -4,8 +4,12 @@ Created on May 17, 2016
 @author: xiul, t-zalipt
 '''
 
-sys_request_slots = ['moviename', 'theater', 'starttime', 'date', 'numberofpeople', 'genre', 'state', 'city', 'zip', 'critic_rating', 'mpaa_rating', 'distanceconstraints', 'video_format', 'theater_chain', 'price', 'actor', 'description', 'other', 'numberofkids']
-sys_inform_slots = ['moviename', 'theater', 'starttime', 'date', 'genre', 'state', 'city', 'zip', 'critic_rating', 'mpaa_rating', 'distanceconstraints', 'video_format', 'theater_chain', 'price', 'actor', 'description', 'other', 'numberofkids', 'taskcomplete', 'ticket']
+sys_request_slots = ['moviename', 'theater', 'starttime', 'date', 'numberofpeople', 'genre', 'state', 'city', 'zip',
+                     'critic_rating', 'mpaa_rating', 'distanceconstraints', 'video_format', 'theater_chain', 'price',
+                     'actor', 'description', 'other', 'numberofkids']
+sys_inform_slots = ['moviename', 'theater', 'starttime', 'date', 'genre', 'state', 'city', 'zip', 'critic_rating',
+                    'mpaa_rating', 'distanceconstraints', 'video_format', 'theater_chain', 'price', 'actor',
+                    'description', 'other', 'numberofkids', 'taskcomplete', 'ticket']
 
 start_dia_acts = {
     #'greeting':[],

@@ -1,0 +1,332 @@
+{
+    "caller-id": "25b06175db", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "type": "coffeeshop"
+            }, 
+            "transcription": "yes coffee shop", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110405_041901_0001856_0002071.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "affirm"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "coffeeshop"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "affirm(=coffeeshop)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "type": "coffeeshop", 
+                "pricerange": "dontcare"
+            }, 
+            "transcription": "i dont care", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110405_041911_0002943_0003069.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "this", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "pricerange": "dontcare", 
+                "type": "coffeeshop"
+            }, 
+            "transcription": "in the city", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110405_041924_0004227_0004374.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "type": "coffeeshop", 
+                "pricerange": "dontcare", 
+                "area": "centre"
+            }, 
+            "transcription": "city center", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110405_041932_0005061_0005210.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "centre"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=centre)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "pricerange": "dontcare", 
+                "type": "coffeeshop", 
+                "area": "centre"
+            }, 
+            "transcription": "a address", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110405_041940_0005918_0006042.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "type": "coffeeshop", 
+                "pricerange": "dontcare", 
+                "area": "centre"
+            }, 
+            "transcription": "and the type of food", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110405_041949_0006677_0006901.wav", 
+            "requested-slots": [
+                "food"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "food"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(food)"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "pricerange": "dontcare", 
+                "type": "coffeeshop", 
+                "area": "centre"
+            }, 
+            "transcription": "what type of food", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110405_041957_0007538_0007667.wav", 
+            "requested-slots": [
+                "food"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "food"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(food)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "pricerange": "dontcare", 
+                "area": "centre"
+            }, 
+            "transcription": "food", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-008-110405_042004_0008302_0008420.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(type=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 8, 
+            "goal-labels": {
+                "pricerange": "dontcare", 
+                "type": "restaurant", 
+                "area": "centre"
+            }, 
+            "transcription": "thank ou", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-009-110405_042011_0008948_0009072.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "thankyou"
+                    }
+                ], 
+                "cam": "thankyou()"
+            }
+        }, 
+        {
+            "turn-index": 9, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "pricerange": "dontcare", 
+                "area": "romsey"
+            }, 
+            "transcription": "yes romsey area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-010-110405_042022_0009937_0010173.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "affirm"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "romsey"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "affirm(area=romsey)"
+            }
+        }, 
+        {
+            "turn-index": 10, 
+            "goal-labels": {
+                "pricerange": "dontcare", 
+                "type": "restaurant", 
+                "area": "romsey"
+            }, 
+            "transcription": "well thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-011-110405_042033_0011044_0011297.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }, 
+        {
+            "turn-index": 11, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "pricerange": "dontcare", 
+                "area": "romsey"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-012-110405_042041_0011939_0012080.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a coffee shop in the city centre. You don't care about the price range. You want to know the address and type of food of the venue.", 
+            "request-slots": [
+                "addr", 
+                "food"
+            ], 
+            "constraints": [
+                [
+                    "pricerange", 
+                    "dontcare"
+                ], 
+                [
+                    "area", 
+                    "centre"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly disagree"
+                ]
+            ], 
+            "comments": null, 
+            "success": false
+        }
+    }, 
+    "session-id": "voip-25b06175db-20110405_041840"
+}

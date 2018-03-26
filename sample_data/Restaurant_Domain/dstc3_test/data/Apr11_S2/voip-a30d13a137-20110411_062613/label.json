@@ -1,0 +1,138 @@
+{
+    "caller-id": "a30d13a137", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "childrenallowed": "true", 
+                "type": "pub", 
+                "hastv": "true"
+            }, 
+            "transcription": "noise i am looking for a pub that allows children and has tv", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110411_062636_0001837_0002247.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "childrenallowed", 
+                                "true"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "hastv", 
+                                "true"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(hastv=true,=pub,childrenallowed=true,task=find)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "type": "pub", 
+                "childrenallowed": "true", 
+                "hastv": "true"
+            }, 
+            "transcription": "whats the address and price range of the venue", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110411_062647_0003066_0003351.wav", 
+            "requested-slots": [
+                "price", 
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "price"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr,price)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "childrenallowed": "true", 
+                "type": "pub", 
+                "hastv": "true"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-003-110411_062706_0005102_0005249.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a pub and it should allow children and have TV. You want to know the address and price range of the venue.", 
+            "request-slots": [
+                "addr", 
+                "pricerange"
+            ], 
+            "constraints": [
+                [
+                    "childrenallowed", 
+                    "true"
+                ], 
+                [
+                    "hastv", 
+                    "true"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-a30d13a137-20110411_062613"
+}

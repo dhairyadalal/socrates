@@ -1,0 +1,242 @@
+{
+    "caller-id": "6b7052b349", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "sil", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110406_152332_0000253_0000480.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "area": "fen ditton"
+            }, 
+            "transcription": "restaurant in fen ditton", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110406_152344_0001404_0001705.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "fen ditton"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=restaurant,area=\"fen ditton\")"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "area": "fen ditton"
+            }, 
+            "transcription": "museum", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110406_152400_0003150_0003262.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "near": "queens college", 
+                "type": "restaurant", 
+                "area": "fen ditton"
+            }, 
+            "transcription": "queens college", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110406_152415_0004629_0004781.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "near", 
+                                "queens college"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(near=\"queens college\")"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "near": "queens college", 
+                "type": "restaurant", 
+                "area": "fen ditton"
+            }, 
+            "transcription": "sil", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110406_152427_0005953_0006074.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "near": "great saint marys church", 
+                "type": "restaurant", 
+                "area": "fen ditton"
+            }, 
+            "transcription": "saint marys church", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110406_152430_0006148_0006317.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "near", 
+                                "great saint marys church"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(near=\"great saint marys church\")"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "near": "great saint marys church", 
+                "type": "restaurant", 
+                "area": "fen ditton"
+            }, 
+            "transcription": "can i have the address", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110406_152456_0008706_0008858.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "near": "great saint marys church", 
+                "type": "restaurant", 
+                "area": "fen ditton"
+            }, 
+            "transcription": "and the phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-008-110406_152513_0010494_0010632.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 8, 
+            "goal-labels": {
+                "near": "great saint marys church", 
+                "type": "restaurant", 
+                "area": "fen ditton"
+            }, 
+            "transcription": "thank you goodbye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-009-110406_152539_0013040_0013222.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a restaurant in Fenditton. You don't care about the price range. Make sure you get the address, phone number, and type of food of the venue.", 
+            "request-slots": [
+                "addr", 
+                "phone", 
+                "food"
+            ], 
+            "constraints": [
+                [
+                    "pricerange", 
+                    "dontcare"
+                ], 
+                [
+                    "area", 
+                    "fen ditton"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-6b7052b349-20110406_152326"
+}

@@ -1,0 +1,274 @@
+{
+    "caller-id": "31590e09f5", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "coughing", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110415_152956_0000118_0000321.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "traditional", 
+                "pricerange": "expensive", 
+                "type": "restaurant"
+            }, 
+            "transcription": "i am looking for a traditional restaurant with expensive price range", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110415_153011_0001288_0001846.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "traditional"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "expensive"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=traditional,=restaurant,pricerange=expensive,task=find)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "traditional", 
+                "type": "restaurant", 
+                "pricerange": "expensive"
+            }, 
+            "transcription": "no", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110415_153020_0002701_0002790.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "negate"
+                    }
+                ], 
+                "cam": "negate()"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "traditional", 
+                "pricerange": "expensive", 
+                "type": "restaurant"
+            }, 
+            "transcription": "is that a traditional restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110415_153039_0004322_0004627.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "traditional"
+                            ]
+                        ], 
+                        "act": "confirm"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "confirm"
+                    }
+                ], 
+                "cam": "confirm(food=traditional,=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "traditional", 
+                "type": "restaurant", 
+                "pricerange": "expensive"
+            }, 
+            "transcription": "id like something expensive", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110415_153056_0006123_0006313.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "expensive"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=expensive)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "traditional", 
+                "pricerange": "expensive", 
+                "type": "restaurant"
+            }, 
+            "transcription": "ok give me the address", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110415_153109_0007413_0007660.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "ack"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "ack()|request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "traditional", 
+                "type": "restaurant", 
+                "pricerange": "expensive"
+            }, 
+            "transcription": "background noise", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110415_153117_0008349_0008415.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "food": "traditional", 
+                "pricerange": "expensive", 
+                "type": "restaurant"
+            }, 
+            "transcription": "ok give me the phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-008-110415_153121_0008674_0008894.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "ack"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "ack()|request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 8, 
+            "goal-labels": {
+                "food": "traditional", 
+                "type": "restaurant", 
+                "pricerange": "expensive"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-009-110415_153135_0010041_0010190.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a traditional restaurant and it should have expensive pricerange. You want to know the address and area.", 
+            "request-slots": [
+                "addr", 
+                "area"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "traditional"
+                ], 
+                [
+                    "pricerange", 
+                    "expensive"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "agree"
+                ]
+            ], 
+            "comments": "The system understood everything I said and made wonderful suggestions. Even when I did not say a certain area I wanted it asked and when I said no particular area it gave suggestions base exactly on the items I wanted.", 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-31590e09f5-20110415_152952"
+}

@@ -1,0 +1,242 @@
+{
+    "caller-id": "3078ea4dca", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "sil", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110412_195435_0000290_0000314.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "type": "restaurant"
+            }, 
+            "transcription": "hello i am looking for a moderately priced restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110412_195450_0001359_0001825.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "hello"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "moderate"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "hello(=restaurant,pricerange=moderate,task=find)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "pricerange": "moderate", 
+                "area": "new chesterton"
+            }, 
+            "transcription": "yes somewhere near new cheston chesterton area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110412_195510_0003263_0003831.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "affirm"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "new chesterton"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "affirm(area=\"new chesterton\")"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "type": "restaurant", 
+                "area": "new chesterton"
+            }, 
+            "transcription": "oh kay", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110412_195523_0005028_0005177.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "ack"
+                    }
+                ], 
+                "cam": "ack()"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "pricerange": "moderate", 
+                "area": "new chesterton"
+            }, 
+            "transcription": "which kind of food do they serve", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110412_195527_0005275_0005558.wav", 
+            "requested-slots": [
+                "food"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "food"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(food)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "type": "restaurant", 
+                "area": "new chesterton"
+            }, 
+            "transcription": "ok unintelligible", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110412_195541_0006740_0006896.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "ack"
+                    }
+                ], 
+                "cam": "ack()"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "mexican tex mex", 
+                "type": "restaurant", 
+                "pricerange": "moderate", 
+                "area": "new chesterton"
+            }, 
+            "transcription": "mexican food there too", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110412_195543_0006989_0007139.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "mexican tex mex"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=\"mexican tex mex\")"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "food": "mexican tex mex", 
+                "pricerange": "moderate", 
+                "type": "restaurant", 
+                "area": "new chesterton"
+            }, 
+            "transcription": "ok thank you goodbye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-008-110412_195555_0008100_0008354.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "ack"
+                    }, 
+                    {
+                        "slots": [], 
+                        "act": "thankyou"
+                    }, 
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "ack()|thankyou()|bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a moderately priced restaurant and it should be in the New Chesterton area. You want to know the phone number and address.", 
+            "request-slots": [
+                "phone", 
+                "addr"
+            ], 
+            "constraints": [
+                [
+                    "pricerange", 
+                    "moderate"
+                ], 
+                [
+                    "area", 
+                    "new chesterton"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-3078ea4dca-20110412_195431"
+}

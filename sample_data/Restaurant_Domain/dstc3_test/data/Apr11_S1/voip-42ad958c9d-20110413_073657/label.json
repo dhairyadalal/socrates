@@ -1,0 +1,226 @@
+{
+    "caller-id": "42ad958c9d", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "sniff sound", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110413_073700_0000200_0000229.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "contemporary", 
+                "type": "restaurant"
+            }, 
+            "transcription": "contemporary restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110413_073709_0000931_0001148.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "contemporary"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=contemporary,=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "contemporary", 
+                "type": "restaurant", 
+                "area": "romsey"
+            }, 
+            "transcription": "romsey area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110413_073720_0002041_0002249.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "romsey"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=romsey)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "contemporary", 
+                "type": "restaurant", 
+                "area": "romsey"
+            }, 
+            "transcription": "sniff sound", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110413_073730_0003140_0003229.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "contemporary", 
+                "type": "restaurant", 
+                "area": "romsey"
+            }, 
+            "transcription": "phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110413_073733_0003416_0003547.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "contemporary", 
+                "type": "restaurant", 
+                "area": "romsey"
+            }, 
+            "transcription": "coughing romsey", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110413_073742_0004067_0004498.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "romsey"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=romsey)"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "contemporary", 
+                "type": "restaurant", 
+                "area": "romsey"
+            }, 
+            "transcription": "the price", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110413_073748_0004994_0005082.wav", 
+            "requested-slots": [
+                "price"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "price"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(price)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "food": "contemporary", 
+                "type": "restaurant", 
+                "area": "romsey"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-008-110413_073804_0006496_0006638.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a contemporary restaurant and it should be in the Romsey area. You want to know the phone number and price of the venue.", 
+            "request-slots": [
+                "phone", 
+                "price"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "contemporary"
+                ], 
+                [
+                    "area", 
+                    "romsey"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "agree"
+                ]
+            ], 
+            "comments": "Understood me well. Found information easily.", 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-42ad958c9d-20110413_073657"
+}

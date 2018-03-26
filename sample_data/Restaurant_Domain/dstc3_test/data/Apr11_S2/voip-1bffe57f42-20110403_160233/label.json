@@ -1,0 +1,138 @@
+{
+    "caller-id": "1bffe57f42", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "noise", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110403_160241_0000626_0000739.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "pub food", 
+                "type": "restaurant", 
+                "area": "cherry hinton"
+            }, 
+            "transcription": "pub restaurant in cherryhinton", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110403_160252_0001595_0001910.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "pub food"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "cherry hinton"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=\"pub food\",=restaurant,area=\"cherry hinton\")"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "pub food", 
+                "type": "pub", 
+                "area": "cherry hinton"
+            }, 
+            "transcription": "pub", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110403_160300_0002559_0002681.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=pub)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "pub food", 
+                "type": "pub", 
+                "area": "cherry hinton"
+            }, 
+            "transcription": "thank you goodbye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-004-110403_160312_0003668_0003818.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a pub food restaurant and it should be in the Cherry Hinton area. Make sure you get the address and postcode of the venue.", 
+            "request-slots": [
+                "addr", 
+                "postcode"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "pub food"
+                ], 
+                [
+                    "area", 
+                    "cherry hinton"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "agree"
+                ]
+            ], 
+            "comments": "The system told me there was no pub in the Cherry Hinton area.", 
+            "success": false
+        }
+    }, 
+    "session-id": "voip-1bffe57f42-20110403_160233"
+}

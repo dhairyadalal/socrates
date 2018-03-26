@@ -1,0 +1,339 @@
+{
+    "caller-id": "5eb067b9d1", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "type": "pub", 
+                "area": "castle hill"
+            }, 
+            "transcription": "yes i am looking for a moderately priced pub in the castlehill area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110403_223848_0001792_0002209.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "affirm"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "moderate"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "castle hill"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "affirm(area=\"castle hill\",pricerange=moderate,=pub,task=find)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "hasinternet": "true", 
+                "area": "castle hill", 
+                "pricerange": "moderate", 
+                "type": "pub"
+            }, 
+            "transcription": "im looking for a venue that has internet", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110403_223857_0002811_0003088.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "hasinternet", 
+                                "true"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(hasinternet=true)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "type": "pub", 
+                "hasinternet": "true", 
+                "area": "castle hill"
+            }, 
+            "transcription": "is there moderately", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110403_223910_0004229_0004356.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "type": "pub", 
+                "hasinternet": "true", 
+                "pricerange": "moderate", 
+                "area": "castle hill"
+            }, 
+            "transcription": "price range pub in the castlehill area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110403_223914_0004437_0004735.wav", 
+            "requested-slots": [
+                "pricerange"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "pricerange"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "castle hill"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "request(pricerange,=pub,area=\"castle hill\")"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "hasinternet": "true", 
+                "pricerange": "moderate", 
+                "type": "pub", 
+                "area": "castle hill"
+            }, 
+            "transcription": "a moderate price range pub in the castlehill area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110403_223924_0005451_0005800.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "moderate"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=moderate,=pub)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "area": "castle hill", 
+                "hasinternet": "dontcare", 
+                "type": "pub"
+            }, 
+            "transcription": "i dont care", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110403_223935_0006785_0006903.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "this", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "hasinternet": "dontcare", 
+                "type": "pub", 
+                "pricerange": "moderate", 
+                "area": "castle hill"
+            }, 
+            "transcription": "no", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110403_223942_0007449_0007527.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "negate"
+                    }
+                ], 
+                "cam": "negate()"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "type": "pub", 
+                "pricerange": "moderate", 
+                "hasinternet": "dontcare", 
+                "area": "castle hill"
+            }, 
+            "transcription": "may i have the phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-008-110403_223952_0008389_0008540.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 8, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "hasinternet": "dontcare", 
+                "type": "pub", 
+                "area": "castle hill"
+            }, 
+            "transcription": "does it have internet", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-009-110403_224015_0010723_0010875.wav", 
+            "requested-slots": [
+                "hasinternet"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "hasinternet"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "confirm(hasinternet=true)"
+            }
+        }, 
+        {
+            "turn-index": 9, 
+            "goal-labels": {
+                "hasinternet": "dontcare", 
+                "area": "castle hill", 
+                "pricerange": "moderate", 
+                "type": "pub"
+            }, 
+            "transcription": "thank you goodbye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-010-110403_224023_0011523_0011672.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a moderately priced pub and it should be in the Castle Hill area. You want to know the phone number and whether it has internet.", 
+            "request-slots": [
+                "phone", 
+                "hasinternet"
+            ], 
+            "constraints": [
+                [
+                    "pricerange", 
+                    "moderate"
+                ], 
+                [
+                    "area", 
+                    "castle hill"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "slightly agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-5eb067b9d1-20110403_223826"
+}

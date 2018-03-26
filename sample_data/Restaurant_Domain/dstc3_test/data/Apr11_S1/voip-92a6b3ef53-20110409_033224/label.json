@@ -1,0 +1,222 @@
+{
+    "caller-id": "92a6b3ef53", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "food": "spanish", 
+                "pricerange": "cheap", 
+                "type": "restaurant"
+            }, 
+            "transcription": "im looking for a spanish restaurant in the cheap price range", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110409_033246_0001873_0002240.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "spanish"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "cheap"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=spanish,=restaurant,pricerange=cheap)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "spanish", 
+                "type": "restaurant", 
+                "pricerange": "cheap"
+            }, 
+            "transcription": "um whats the address", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110409_033259_0003279_0003422.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "spanish", 
+                "pricerange": "cheap", 
+                "type": "restaurant"
+            }, 
+            "transcription": "um whats the phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110409_033320_0005466_0005576.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "spanish", 
+                "type": "restaurant", 
+                "pricerange": "cheap"
+            }, 
+            "transcription": "what area is this restaurant in", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110409_033333_0006720_0006936.wav", 
+            "requested-slots": [
+                "area"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "area"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "request(area,=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "spanish", 
+                "pricerange": "cheap", 
+                "type": "restaurant"
+            }, 
+            "transcription": "where is it located", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110409_033342_0007686_0007820.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "spanish", 
+                "type": "restaurant", 
+                "pricerange": "cheap"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-006-110409_033352_0008643_0008788.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a Spanish restaurant and it should have cheap pricerange. Make sure you get the address, phone number, and area.", 
+            "request-slots": [
+                "addr", 
+                "phone", 
+                "area"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "spanish"
+                ], 
+                [
+                    "pricerange", 
+                    "cheap"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly agree"
+                ]
+            ], 
+            "comments": "I could not understand the name of the restaurant but I got the address and phone number ", 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-92a6b3ef53-20110409_033224"
+}

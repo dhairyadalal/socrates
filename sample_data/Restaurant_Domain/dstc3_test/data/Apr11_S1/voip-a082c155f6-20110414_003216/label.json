@@ -1,0 +1,303 @@
+{
+    "caller-id": "a082c155f6", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "type": "restaurant"
+            }, 
+            "transcription": "im looking for a cafe food restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110414_003238_0001913_0002152.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "cafe food"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=\"cafe food\",=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "type": "restaurant"
+            }, 
+            "transcription": "sure", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110414_003253_0003596_0003640.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "type": "restaurant", 
+                "area": "chesterton"
+            }, 
+            "transcription": "chesterton", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110414_003306_0004882_0004987.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "chesterton"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=chesterton)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "type": "restaurant", 
+                "area": "chesterton"
+            }, 
+            "transcription": "sil", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110414_003313_0005597_0005666.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "near": "dontcare", 
+                "type": "restaurant", 
+                "area": "chesterton"
+            }, 
+            "transcription": "i dont care", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110414_003314_0005727_0005827.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "this", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "near": "dontcare", 
+                "type": "restaurant", 
+                "area": "dontcare"
+            }, 
+            "transcription": "okay we will look in another area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110414_003327_0006887_0007043.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "ack"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "ack()|inform(area=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "near": "dontcare", 
+                "type": "restaurant", 
+                "area": "dontcare"
+            }, 
+            "transcription": "whats the phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110414_003342_0008366_0008516.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "near": "dontcare", 
+                "type": "restaurant", 
+                "area": "dontcare"
+            }, 
+            "transcription": "whats the price", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-008-110414_003353_0009599_0009736.wav", 
+            "requested-slots": [
+                "price"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "price"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(price)"
+            }
+        }, 
+        {
+            "turn-index": 8, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "near": "dontcare", 
+                "type": "restaurant", 
+                "area": "dontcare"
+            }, 
+            "transcription": "sil", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-009-110414_003356_0009853_0009970.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 9, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "near": "dontcare", 
+                "type": "restaurant", 
+                "area": "dontcare"
+            }, 
+            "transcription": "thank you", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-010-110414_003412_0011489_0011639.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "thankyou"
+                    }
+                ], 
+                "cam": "thankyou()"
+            }
+        }, 
+        {
+            "turn-index": 10, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "near": "dontcare", 
+                "type": "restaurant", 
+                "area": "dontcare"
+            }, 
+            "transcription": "goodbye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-011-110414_003415_0011773_0011849.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a cafe food restaurant. You don't care about the price range. You want to know the phone number and price.", 
+            "request-slots": [
+                "phone", 
+                "price"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "cafe food"
+                ], 
+                [
+                    "pricerange", 
+                    "dontcare"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "agree"
+                ]
+            ], 
+            "comments": "I wish it didn't take so long for it to answer, and for the system to sound less robotic!", 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-a082c155f6-20110414_003216"
+}

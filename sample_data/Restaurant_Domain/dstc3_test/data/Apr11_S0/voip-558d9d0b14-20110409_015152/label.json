@@ -1,0 +1,350 @@
+{
+    "caller-id": "558d9d0b14", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "static", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110409_015157_0000080_0000433.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {}, 
+            "transcription": "static", 
+            "method-label": "none", 
+            "audio-file": "fj228x-002-110409_015200_0000586_0000730.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {}, 
+            "transcription": "hi im looking", 
+            "method-label": "none", 
+            "audio-file": "fj228x-003-110409_015209_0001381_0001617.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "hello"
+                    }
+                ], 
+                "cam": "hello()"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "type": "restaurant"
+            }, 
+            "transcription": "a moderately priced restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110409_015215_0002001_0002231.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "moderate"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=moderate,=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "pricerange": "moderate"
+            }, 
+            "transcription": "moderate price range", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110409_015222_0002750_0002916.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "moderate"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=moderate)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "type": "restaurant", 
+                "area": "barnwell"
+            }, 
+            "transcription": "the barnwell area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110409_015233_0003818_0004022.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "barnwell"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=barnwell)"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "type": "restaurant", 
+                "pricerange": "moderate", 
+                "area": "barnwell"
+            }, 
+            "transcription": "a cafe food", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110409_015241_0004691_0004824.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "cafe food"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=\"cafe food\")"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "pricerange": "moderate", 
+                "type": "restaurant", 
+                "area": "barnwell"
+            }, 
+            "transcription": "yeah it should be in the barnwell area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-008-110409_015252_0005739_0005956.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "affirm"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "barnwell"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "affirm(area=barnwell)"
+            }
+        }, 
+        {
+            "turn-index": 8, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "type": "restaurant", 
+                "pricerange": "moderate", 
+                "area": "barnwell"
+            }, 
+            "transcription": "a barnwell area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-009-110409_015302_0006692_0006886.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "barnwell"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=barnwell)"
+            }
+        }, 
+        {
+            "turn-index": 9, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "pricerange": "moderate", 
+                "type": "restaurant", 
+                "area": "barnwell"
+            }, 
+            "transcription": "ok can i get the phone number and price", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-010-110409_015312_0007645_0007933.wav", 
+            "requested-slots": [
+                "phone", 
+                "price"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "ack"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "price"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "ack()|request(phone,price)"
+            }
+        }, 
+        {
+            "turn-index": 10, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "type": "restaurant", 
+                "pricerange": "moderate", 
+                "area": "barnwell"
+            }, 
+            "transcription": "a phone number and price", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-011-110409_015321_0008620_0008786.wav", 
+            "requested-slots": [
+                "phone", 
+                "price"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "price"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone,price)"
+            }
+        }, 
+        {
+            "turn-index": 11, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "pricerange": "moderate", 
+                "type": "restaurant", 
+                "area": "barnwell"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-012-110409_015341_0010569_0010824.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a moderately priced restaurant and it should be in the Barnwell area. Make sure you get the phone number and price.", 
+            "request-slots": [
+                "phone", 
+                "price"
+            ], 
+            "constraints": [
+                [
+                    "pricerange", 
+                    "moderate"
+                ], 
+                [
+                    "area", 
+                    "barnwell"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-558d9d0b14-20110409_015152"
+}

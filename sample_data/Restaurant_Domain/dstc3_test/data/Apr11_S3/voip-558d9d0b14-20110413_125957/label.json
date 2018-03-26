@@ -1,0 +1,259 @@
+{
+    "caller-id": "558d9d0b14", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "pricerange": "dontcare", 
+                "type": "restaurant"
+            }, 
+            "transcription": "ya hi ah im trying to find a cafe food restaurant and i dont care about the price range", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110413_130025_0002038_0002693.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "cafe food"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=\"cafe food\",=restaurant,pricerange=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "type": "restaurant", 
+                "near": "dontcare", 
+                "pricerange": "dontcare"
+            }, 
+            "transcription": "ya any part of the avenue is fine", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110413_130042_0004012_0004316.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "near", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(near=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "pricerange": "dontcare", 
+                "near": "dontcare", 
+                "type": "restaurant", 
+                "area": "dontcare"
+            }, 
+            "transcription": "ya exactly", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110413_130052_0005325_0005429.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "affirm"
+                    }
+                ], 
+                "cam": "affirm()"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "type": "restaurant", 
+                "near": "dontcare", 
+                "pricerange": "dontcare", 
+                "area": "dontcare"
+            }, 
+            "transcription": "thats right", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110413_130055_0005614_0005717.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "affirm"
+                    }
+                ], 
+                "cam": "affirm()"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "pricerange": "dontcare", 
+                "near": "dontcare", 
+                "type": "restaurant", 
+                "area": "dontcare"
+            }, 
+            "transcription": "can i have a address and post code of the venue", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110413_130112_0007008_0007290.wav", 
+            "requested-slots": [
+                "addr", 
+                "postcode"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "postcode"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr,postcode)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "type": "restaurant", 
+                "near": "dontcare", 
+                "pricerange": "dontcare", 
+                "area": "dontcare"
+            }, 
+            "transcription": "the address and post code of the venue", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110413_130126_0008562_0008808.wav", 
+            "requested-slots": [
+                "addr", 
+                "postcode"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "postcode"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr,postcode)"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "cafe food", 
+                "pricerange": "dontcare", 
+                "near": "dontcare", 
+                "type": "restaurant", 
+                "area": "dontcare"
+            }, 
+            "transcription": "ah thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-007-110413_130139_0010004_0010145.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "thankyou"
+                    }, 
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "thankyou()|bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a cafe food restaurant. You don't care about the price range. You want to know the address and postcode of the venue.", 
+            "request-slots": [
+                "addr", 
+                "postcode"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "cafe food"
+                ], 
+                [
+                    "pricerange", 
+                    "dontcare"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-558d9d0b14-20110413_125957"
+}

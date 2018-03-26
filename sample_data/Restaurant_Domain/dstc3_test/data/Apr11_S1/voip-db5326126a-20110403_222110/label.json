@@ -1,0 +1,244 @@
+{
+    "caller-id": "db5326126a", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "noise sil", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110403_222116_0000091_0000488.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {}, 
+            "transcription": "knock sil", 
+            "method-label": "none", 
+            "audio-file": "fj228x-002-110403_222121_0001027_0001090.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {}, 
+            "transcription": "i am looking for a moderately", 
+            "method-label": "none", 
+            "audio-file": "fj228x-003-110403_222131_0001820_0002070.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "inform(task=find)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "area": "girton"
+            }, 
+            "transcription": "yes the girton area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110403_222139_0002760_0002954.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "affirm"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "girton"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "affirm(area=girton)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "area": "girton"
+            }, 
+            "transcription": "no", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110403_222143_0003217_0003291.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "negate"
+                    }
+                ], 
+                "cam": "negate()"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "area": "girton"
+            }, 
+            "transcription": "im looking for a mod", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110403_222149_0003656_0003861.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "type": "restaurant", 
+                "area": "girton"
+            }, 
+            "transcription": "im looking for a moderately priced restaurant in the sh", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110403_222153_0003968_0004235.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "moderate"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=moderate,=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "pricerange": "moderate", 
+                "area": "girton"
+            }, 
+            "transcription": "im looking for a mod", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-008-110403_222156_0004375_0004608.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 8, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "type": "restaurant", 
+                "area": "girton"
+            }, 
+            "transcription": "yes i am looking for a moderately priced restaurant in", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-009-110403_222201_0004798_0005154.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "affirm"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "moderate"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "affirm(=restaurant,pricerange=moderate,task=find)"
+            }
+        }, 
+        {
+            "turn-index": 9, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "pricerange": "moderate", 
+                "area": "girton"
+            }, 
+            "transcription": "thank you good bye laughing", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-010-110403_222212_0005802_0006212.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a moderately priced restaurant and it should be in the Girton area. Make sure you get the address, phone number, and postcode of the venue.", 
+            "request-slots": [
+                "addr", 
+                "phone", 
+                "postcode"
+            ], 
+            "constraints": [
+                [
+                    "pricerange", 
+                    "moderate"
+                ], 
+                [
+                    "area", 
+                    "girton"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "disagree"
+                ]
+            ], 
+            "comments": "The beginning statement skipped many words and it automatically thought I was looking for a pub, before I even began speaking. I was able to get it to look in the Girton area, but it kept repeating things about a pub. ", 
+            "success": false
+        }
+    }, 
+    "session-id": "voip-db5326126a-20110403_222110"
+}

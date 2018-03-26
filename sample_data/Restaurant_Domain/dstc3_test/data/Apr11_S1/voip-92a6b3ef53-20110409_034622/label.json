@@ -1,0 +1,170 @@
+{
+    "caller-id": "92a6b3ef53", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "area": "addenbrookes"
+            }, 
+            "transcription": "im looking a restaurant in the addenbrookes area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110409_034647_0002020_0002505.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "addenbrookes"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=restaurant,area=addenbrookes)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "area": "addenbrookes"
+            }, 
+            "transcription": "um whats the phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110409_034701_0003702_0003852.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "area": "addenbrookes"
+            }, 
+            "transcription": "um whats the address", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110409_034714_0005015_0005165.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "area": "addenbrookes"
+            }, 
+            "transcription": "um whats the address", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110409_034723_0005862_0006012.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "type": "restaurant", 
+                "area": "addenbrookes"
+            }, 
+            "transcription": "um thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-005-110409_034733_0006855_0007004.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a Chinese restaurant and it should be in the Addenbrookes area. You want to know the phone number and address.", 
+            "request-slots": [
+                "phone", 
+                "addr"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "chinese"
+                ], 
+                [
+                    "area", 
+                    "addenbrookes"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly agree"
+                ]
+            ], 
+            "comments": "Great Call", 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-92a6b3ef53-20110409_034622"
+}

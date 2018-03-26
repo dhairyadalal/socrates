@@ -1,0 +1,482 @@
+{
+    "caller-id": "f56e234e96", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "pricerange": "cheap", 
+                "type": "pub"
+            }, 
+            "transcription": "i would like a cheap pub", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110403_071732_0001830_0002105.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "cheap"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=cheap,=pub)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "type": "pub", 
+                "pricerange": "cheap"
+            }, 
+            "transcription": "whats the phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110403_071746_0003315_0003460.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "pricerange": "cheap", 
+                "type": "pub"
+            }, 
+            "transcription": "and the post code", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110403_071800_0004718_0004867.wav", 
+            "requested-slots": [
+                "postcode"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "postcode"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(postcode)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "type": "pub", 
+                "pricerange": "cheap"
+            }, 
+            "transcription": "do they allow children", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110403_071811_0005850_0005999.wav", 
+            "requested-slots": [
+                "childrenallowed"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "childrenallowed"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "confirm(childrenallowed=true)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "type": "pub", 
+                "pricerange": "cheap", 
+                "childrenallowed": "false"
+            }, 
+            "transcription": "i dont want children", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110403_071821_0006809_0006983.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "childrenallowed", 
+                                "false"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(childrenallowed=false)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "childrenallowed": "false", 
+                "pricerange": "cheap", 
+                "type": "pub"
+            }, 
+            "transcription": "is there a pub with no children", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110403_071835_0008098_0008346.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "childrenallowed", 
+                                "false"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=pub,childrenallowed=false)"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "pricerange": "cheap", 
+                "childrenallowed": "false", 
+                "type": "pub"
+            }, 
+            "transcription": "no i want a cheap pub with no children", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110403_071851_0009709_0010031.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "negate"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "childrenallowed", 
+                                "false"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "cheap"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "negate(pricerange=cheap,=pub,childrenallowed=false)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "childrenallowed": "false", 
+                "pricerange": "cheap", 
+                "type": "pub"
+            }, 
+            "transcription": "i want a different pub", 
+            "method-label": "byalternatives", 
+            "audio-file": "fj228x-008-110403_071904_0011118_0011300.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "reqalts"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "reqalts(=pub)"
+            }
+        }, 
+        {
+            "turn-index": 8, 
+            "goal-labels": {
+                "pricerange": "cheap", 
+                "childrenallowed": "false", 
+                "type": "pub"
+            }, 
+            "transcription": "jolly good is there a different pub", 
+            "method-label": "byalternatives", 
+            "audio-file": "fj228x-009-110403_071919_0012477_0012799.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "reqalts"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "reqalts(=pub)"
+            }
+        }, 
+        {
+            "turn-index": 9, 
+            "goal-labels": {
+                "childrenallowed": "false", 
+                "pricerange": "cheap", 
+                "type": "pub"
+            }, 
+            "transcription": "your just a one string ukulele arent you", 
+            "method-label": "byalternatives", 
+            "audio-file": "fj228x-010-110403_071935_0014025_0014293.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 10, 
+            "goal-labels": {
+                "pricerange": "expensive", 
+                "childrenallowed": "false", 
+                "type": "pub"
+            }, 
+            "transcription": "i want an expensive pub", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-011-110403_071946_0015298_0015540.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "expensive"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=expensive,=pub)"
+            }
+        }, 
+        {
+            "turn-index": 11, 
+            "goal-labels": {
+                "childrenallowed": "false", 
+                "pricerange": "moderate", 
+                "type": "pub"
+            }, 
+            "transcription": "i want a moderate pub", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-012-110403_071956_0016306_0016517.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "moderate"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=moderate,=pub)"
+            }
+        }, 
+        {
+            "turn-index": 12, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "childrenallowed": "false", 
+                "type": "pub"
+            }, 
+            "transcription": "do they allow children", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-013-110403_072006_0017302_0017468.wav", 
+            "requested-slots": [
+                "childrenallowed"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "childrenallowed"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "confirm(childrenallowed=true)"
+            }
+        }, 
+        {
+            "turn-index": 13, 
+            "goal-labels": {
+                "childrenallowed": "false", 
+                "pricerange": "moderate", 
+                "type": "pub"
+            }, 
+            "transcription": "whats the post code", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-014-110403_072028_0019488_0019637.wav", 
+            "requested-slots": [
+                "postcode"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "postcode"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(postcode)"
+            }
+        }, 
+        {
+            "turn-index": 14, 
+            "goal-labels": {
+                "pricerange": "moderate", 
+                "childrenallowed": "false", 
+                "type": "pub"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-015-110403_072039_0020520_0020729.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a cheap pub. You don't care about whether children are allowed. Make sure you get the phone number and postcode of the venue.", 
+            "request-slots": [
+                "phone", 
+                "postcode"
+            ], 
+            "constraints": [
+                [
+                    "pricerange", 
+                    "cheap"
+                ], 
+                [
+                    "childrenallowed", 
+                    "dontcare"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "agree"
+                ]
+            ], 
+            "comments": "I got all of the information I was looking for quickly.  I tried a few different tacts as well (since it found it so quickly), but could NOT find a pub that did not allow children.", 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-f56e234e96-20110403_071711"
+}

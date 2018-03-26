@@ -1,0 +1,280 @@
+{
+    "caller-id": "28a2404cf4", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "food": "mediterranean", 
+                "type": "restaurant"
+            }, 
+            "transcription": "hi im looking for a mediterranean restaurant in the rosemary area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110415_030551_0001863_0002238.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "hello"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "mediterranean"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "hello(food=mediterranean,=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "mediterranean", 
+                "type": "restaurant"
+            }, 
+            "transcription": "no rosemary", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110415_030600_0003000_0003158.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "negate"
+                    }
+                ], 
+                "cam": "negate()"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "mediterranean", 
+                "type": "restaurant"
+            }, 
+            "transcription": "unintelligible sorry", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110415_030605_0003541_0003659.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "mediterranean", 
+                "type": "restaurant", 
+                "area": "romsey"
+            }, 
+            "transcription": "yes romsey", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110415_030607_0003787_0003896.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "affirm"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "romsey"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "affirm(area=romsey)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "mediterranean", 
+                "type": "restaurant", 
+                "area": "romsey"
+            }, 
+            "transcription": "romsey area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110415_030617_0004766_0004885.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "romsey"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=romsey)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "mediterranean", 
+                "type": "restaurant", 
+                "area": "romsey"
+            }, 
+            "transcription": "can i get the address phone number and pricings for that", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110415_030630_0005877_0006188.wav", 
+            "requested-slots": [
+                "phone", 
+                "price", 
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "price"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr,phone,price)"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "mediterranean", 
+                "type": "restaurant", 
+                "area": "romsey"
+            }, 
+            "transcription": "yes id like to know the address phone number and price", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110415_030640_0006799_0007130.wav", 
+            "requested-slots": [
+                "phone", 
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "affirm"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "affirm()|request(addr,phone)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "food": "mediterranean", 
+                "type": "restaurant", 
+                "area": "romsey"
+            }, 
+            "transcription": "alright thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-008-110415_030700_0008878_0009144.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "thankyou"
+                    }, 
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "thankyou()|bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a Mediterranean restaurant and it should be in the Romsey area. You want to know the address, phone number, and price.", 
+            "request-slots": [
+                "addr", 
+                "phone", 
+                "price"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "mediterranean"
+                ], 
+                [
+                    "area", 
+                    "romsey"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-28a2404cf4-20110415_030528"
+}

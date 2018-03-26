@@ -1,0 +1,316 @@
+{
+    "caller-id": "25b918bb11", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "pricerange": "free", 
+                "type": "restaurant", 
+                "area": "centre"
+            }, 
+            "transcription": "free restaurant in the city center area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110410_180352_0001809_0002145.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "free"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "centre"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=free,=restaurant,area=centre)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "traditional", 
+                "type": "restaurant", 
+                "pricerange": "free", 
+                "area": "centre"
+            }, 
+            "transcription": "traditional", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110410_180402_0003017_0003127.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "traditional"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=traditional)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "traditional", 
+                "pricerange": "free", 
+                "type": "restaurant", 
+                "area": "centre"
+            }, 
+            "transcription": "is it free", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110410_180414_0004223_0004343.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "free"
+                            ]
+                        ], 
+                        "act": "confirm"
+                    }
+                ], 
+                "cam": "confirm(pricerange=free)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "traditional", 
+                "type": "restaurant", 
+                "pricerange": "free", 
+                "area": "centre"
+            }, 
+            "transcription": "i need a free restaurant in the city center area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110410_180424_0004963_0005275.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "free"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "centre"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=free,=restaurant,area=centre)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "traditional", 
+                "pricerange": "free", 
+                "type": "restaurant", 
+                "area": "centre"
+            }, 
+            "transcription": "what is the address phone number and price", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110410_180438_0006558_0006767.wav", 
+            "requested-slots": [
+                "phone", 
+                "price", 
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "price"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr,phone,price)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "traditional", 
+                "type": "restaurant", 
+                "pricerange": "free", 
+                "area": "centre"
+            }, 
+            "transcription": "thank you and have a good day", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-006-110410_180508_0009605_0009752.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "traditional", 
+                "pricerange": "free", 
+                "type": "restaurant", 
+                "area": "centre"
+            }, 
+            "transcription": "thank you and have a good day", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-007-110410_180519_0010661_0010829.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "food": "traditional", 
+                "type": "restaurant", 
+                "pricerange": "free", 
+                "area": "centre"
+            }, 
+            "transcription": "thank you", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-008-110410_180532_0011992_0012116.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "thankyou"
+                    }
+                ], 
+                "cam": "thankyou()"
+            }
+        }, 
+        {
+            "turn-index": 8, 
+            "goal-labels": {
+                "food": "traditional", 
+                "pricerange": "free", 
+                "type": "restaurant", 
+                "area": "centre"
+            }, 
+            "transcription": "thank you and have a good day", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-009-110410_180600_0014736_0014912.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a free restaurant and it should be in the city centre area. You want to know the address, phone number, and price of the venue.", 
+            "request-slots": [
+                "addr", 
+                "phone", 
+                "price"
+            ], 
+            "constraints": [
+                [
+                    "pricerange", 
+                    "free"
+                ], 
+                [
+                    "area", 
+                    "centre"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "slightly agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-25b918bb11-20110410_180330"
+}

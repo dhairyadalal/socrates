@@ -1,0 +1,245 @@
+{
+    "caller-id": "3078ea4dca", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "sil", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110412_201728_0001417_0001560.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "italian", 
+                "type": "coffeeshop"
+            }, 
+            "transcription": "hi i want to find a coffee shop serving italian food", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110412_201742_0002492_0003029.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "hello"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "coffeeshop"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "italian"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "hello(=coffeeshop,food=italian)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "italian", 
+                "type": "coffeeshop", 
+                "area": "dontcare"
+            }, 
+            "transcription": "i dont care about the area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110412_201756_0004119_0004383.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "italian", 
+                "type": "coffeeshop", 
+                "area": "dontcare"
+            }, 
+            "transcription": "is it can i know the m the the price range please", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110412_201811_0005539_0005891.wav", 
+            "requested-slots": [
+                "pricerange"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "pricerange"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(pricerange)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "italian", 
+                "type": "coffeeshop", 
+                "area": "dontcare"
+            }, 
+            "transcription": "ah okay", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110412_201822_0006824_0006974.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "ack"
+                    }
+                ], 
+                "cam": "ack()"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "italian", 
+                "type": "coffeeshop", 
+                "area": "dontcare"
+            }, 
+            "transcription": "so whats the address of this one", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110412_201826_0007101_0007345.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "italian", 
+                "type": "coffeeshop", 
+                "area": "dontcare"
+            }, 
+            "transcription": "a and the phone number please", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110412_201835_0008059_0008263.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "food": "italian", 
+                "type": "coffeeshop", 
+                "area": "dontcare"
+            }, 
+            "transcription": "okay thank you goodbye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-008-110412_201847_0009249_0009526.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "ack"
+                    }, 
+                    {
+                        "slots": [], 
+                        "act": "thankyou"
+                    }, 
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "ack()|thankyou()|bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a coffee shop serving Italian food. You don't care about the area. Make sure you get the address and phone number of the venue.", 
+            "request-slots": [
+                "addr", 
+                "phone"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "italian"
+                ], 
+                [
+                    "area", 
+                    "dontcare"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly agree"
+                ]
+            ], 
+            "comments": "But the system asked me about the venue while I haven't yet said what I was looking for.", 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-3078ea4dca-20110412_201712"
+}

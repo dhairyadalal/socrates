@@ -1,0 +1,316 @@
+{
+    "caller-id": "49eab3686b", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "um", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110402_152524_0002131_0002208.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "chinese takeaway", 
+                "type": "restaurant"
+            }, 
+            "transcription": "chinese take away restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110402_152527_0002235_0002431.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "chinese takeaway"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=\"chinese takeaway\",=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "chinese takeaway", 
+                "near": "dontcare", 
+                "type": "restaurant"
+            }, 
+            "transcription": "it does not matter", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110402_152542_0003869_0003998.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "this", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "chinese takeaway", 
+                "near": "dontcare", 
+                "type": "restaurant"
+            }, 
+            "transcription": "um is it in the moderate price range", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110402_152557_0005176_0005432.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "moderate"
+                            ]
+                        ], 
+                        "act": "confirm"
+                    }
+                ], 
+                "cam": "confirm(pricerange=moderate)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "chinese takeaway", 
+                "near": "dontcare", 
+                "type": "restaurant"
+            }, 
+            "transcription": "can i have the address please", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110402_152612_0006782_0006932.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "chinese takeaway", 
+                "near": "dontcare", 
+                "type": "restaurant"
+            }, 
+            "transcription": "im sorry could you repeat that", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110402_152622_0007799_0007949.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "repeat"
+                    }
+                ], 
+                "cam": "repeat()"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "chinese takeaway", 
+                "near": "dontcare", 
+                "type": "restaurant"
+            }, 
+            "transcription": "im sure it is can i have the address please", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110402_152632_0008757_0008989.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "food": "chinese takeaway", 
+                "near": "dontcare", 
+                "type": "restaurant"
+            }, 
+            "transcription": "phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-008-110402_152640_0009684_0009786.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 8, 
+            "goal-labels": {
+                "food": "chinese takeaway", 
+                "near": "dontcare", 
+                "type": "restaurant"
+            }, 
+            "transcription": "repeat the phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-009-110402_152656_0011262_0011376.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 9, 
+            "goal-labels": {
+                "food": "chinese takeaway", 
+                "near": "dontcare", 
+                "type": "restaurant"
+            }, 
+            "transcription": "and what area is that", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-010-110402_152711_0012691_0012813.wav", 
+            "requested-slots": [
+                "area"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "area"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(area)"
+            }
+        }, 
+        {
+            "turn-index": 10, 
+            "goal-labels": {
+                "food": "chinese takeaway", 
+                "near": "dontcare", 
+                "type": "restaurant"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-011-110402_152720_0013587_0013727.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a Chinese takeaway restaurant and it should have moderate pricerange. Make sure you get the address, phone number, and area of the venue.", 
+            "request-slots": [
+                "addr", 
+                "phone", 
+                "area"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "chinese takeaway"
+                ], 
+                [
+                    "pricerange", 
+                    "moderate"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly agree"
+                ]
+            ], 
+            "comments": "Yankee Noodle Bar\n79 Kings St.\n012 235 18111\nCentral Part of Town", 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-49eab3686b-20110402_152502"
+}

@@ -1,0 +1,148 @@
+{
+    "caller-id": "60ddc6ec49", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "pricerange": "expensive", 
+                "area": "castle hill"
+            }, 
+            "transcription": "uh can i get an expensive retaurant around castle hill", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110412_192146_0001837_0002199.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "expensive"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "castle hill"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=expensive,area=\"castle hill\")"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "seafood", 
+                "pricerange": "expensive", 
+                "area": "castle hill"
+            }, 
+            "transcription": "uh seafood", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110412_192157_0003184_0003317.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "seafood"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=seafood)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "seafood", 
+                "pricerange": "expensive", 
+                "area": "castle hill"
+            }, 
+            "transcription": "uh can i get a phone number please", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110412_192209_0004328_0004490.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "seafood", 
+                "pricerange": "expensive", 
+                "area": "castle hill"
+            }, 
+            "transcription": "breathing ok thank you goodbye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-004-110412_192222_0005370_0005769.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "thankyou"
+                    }, 
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "thankyou()|bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for an expensive restaurant and it should be in the Castle Hill area. You want to know the phone number and type of food.", 
+            "request-slots": [
+                "phone", 
+                "food"
+            ], 
+            "constraints": [
+                [
+                    "pricerange", 
+                    "expensive"
+                ], 
+                [
+                    "area", 
+                    "castle hill"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly agree"
+                ]
+            ], 
+            "comments": "The automated systems accents get me at times, but I think that's just my accent getting in the way.", 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-60ddc6ec49-20110412_192124"
+}

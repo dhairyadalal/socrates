@@ -1,0 +1,392 @@
+{
+    "caller-id": "e68122aa92", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "cough", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110406_064526_0001596_0001684.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {}, 
+            "transcription": "im loo", 
+            "method-label": "none", 
+            "audio-file": "fj228x-002-110406_064531_0002020_0002115.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "mexican tex mex", 
+                "type": "restaurant"
+            }, 
+            "transcription": "restaurant im looking for a mexican", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110406_064538_0002576_0002873.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "mexican tex mex"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=restaurant,food=\"mexican tex mex\")"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "mexican tex mex", 
+                "type": "restaurant"
+            }, 
+            "transcription": "mexican tex mex restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110406_064545_0003301_0003553.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "mexican tex mex"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=\"mexican tex mex\",=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "mexican tex mex", 
+                "type": "restaurant", 
+                "area": "chesterton"
+            }, 
+            "transcription": "chesterton is fine uh mexican", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110406_064557_0004331_0004680.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "mexican tex mex"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "chesterton"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=chesterton,food=\"mexican tex mex\")"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "mexican tex mex", 
+                "type": "restaurant", 
+                "area": "chesterton"
+            }, 
+            "transcription": "ches", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110406_064600_0004829_0004999.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "mexican tex mex", 
+                "type": "restaurant", 
+                "area": "chesterton"
+            }, 
+            "transcription": "ches chesterton is fine", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110406_064603_0005147_0005397.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "chesterton"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=chesterton)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "food": "mexican tex mex", 
+                "type": "restaurant", 
+                "area": "chesterton"
+            }, 
+            "transcription": "yes mexican tex mex restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-008-110406_064608_0005559_0005875.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "affirm"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "mexican tex mex"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "affirm(food=\"mexican tex mex\",=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 8, 
+            "goal-labels": {
+                "food": "mexican tex mex", 
+                "type": "restaurant", 
+                "pricerange": "expensive", 
+                "area": "chesterton"
+            }, 
+            "transcription": "and it should have expensive price range", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-009-110406_064616_0006378_0006599.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "expensive"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=expensive)"
+            }
+        }, 
+        {
+            "turn-index": 9, 
+            "goal-labels": {
+                "food": "mexican tex mex", 
+                "pricerange": "expensive", 
+                "type": "restaurant", 
+                "area": "chesterton"
+            }, 
+            "transcription": "and i want another phone number and postcode", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-010-110406_064624_0007196_0007464.wav", 
+            "requested-slots": [
+                "phone", 
+                "postcode"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "postcode"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone,postcode)"
+            }
+        }, 
+        {
+            "turn-index": 10, 
+            "goal-labels": {
+                "food": "mexican tex mex", 
+                "type": "restaurant", 
+                "pricerange": "expensive", 
+                "area": "chesterton"
+            }, 
+            "transcription": "thats fine phone number and post", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-011-110406_064636_0008322_0008604.wav", 
+            "requested-slots": [
+                "phone", 
+                "postcode"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "postcode"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone,postcode)"
+            }
+        }, 
+        {
+            "turn-index": 11, 
+            "goal-labels": {
+                "food": "mexican tex mex", 
+                "pricerange": "expensive", 
+                "type": "restaurant", 
+                "area": "chesterton"
+            }, 
+            "transcription": "got it thank you", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-012-110406_064646_0009454_0009623.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "thankyou"
+                    }
+                ], 
+                "cam": "thankyou()"
+            }
+        }, 
+        {
+            "turn-index": 12, 
+            "goal-labels": {
+                "food": "mexican tex mex", 
+                "type": "restaurant", 
+                "pricerange": "expensive", 
+                "area": "chesterton"
+            }, 
+            "transcription": "thank you and goodbye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-013-110406_064655_0010326_0010496.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a Mexian/Tex-Mex restaurant and it should have expensive pricerange. You want to know the phone number and postcode.", 
+            "request-slots": [
+                "phone", 
+                "postcode"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "mexican tex mex"
+                ], 
+                [
+                    "pricerange", 
+                    "expensive"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly disagree"
+                ]
+            ], 
+            "comments": "terrible!", 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-e68122aa92-20110406_064509"
+}

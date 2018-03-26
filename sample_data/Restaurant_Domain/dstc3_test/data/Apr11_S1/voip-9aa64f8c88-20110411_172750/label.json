@@ -1,0 +1,128 @@
+{
+    "caller-id": "9aa64f8c88", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "food": "continental", 
+                "type": "restaurant"
+            }, 
+            "transcription": "um i want a continental restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110411_172812_0001822_0002211.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "continental"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=continental,=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "continental", 
+                "type": "restaurant"
+            }, 
+            "transcription": "um unintelligible", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110411_172827_0003409_0003639.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "continental", 
+                "type": "restaurant"
+            }, 
+            "transcription": "ok", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110411_172835_0004469_0004544.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "ack"
+                    }
+                ], 
+                "cam": "ack()"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "continental", 
+                "type": "restaurant"
+            }, 
+            "transcription": "alright thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-004-110411_172851_0005938_0006040.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "thankyou"
+                    }, 
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "thankyou()|bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a continental restaurant. You don't care about the price range. Make sure you get the address and postcode.", 
+            "request-slots": [
+                "addr", 
+                "postcode"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "continental"
+                ], 
+                [
+                    "pricerange", 
+                    "dontcare"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-9aa64f8c88-20110411_172750"
+}

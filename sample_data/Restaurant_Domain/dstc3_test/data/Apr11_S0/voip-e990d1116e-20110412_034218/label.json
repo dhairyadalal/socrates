@@ -1,0 +1,503 @@
+{
+    "caller-id": "e990d1116e", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "background noise", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110412_034310_0004326_0005149.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "pricerange": "cheap", 
+                "type": "pub", 
+                "area": "riverside"
+            }, 
+            "transcription": "im looking for a cheap pub and it should be in the riverside area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110412_034317_0005383_0005837.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "cheap"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "riverside"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(pricerange=cheap,=pub,area=riverside)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "type": "pub", 
+                "pricerange": "cheap", 
+                "area": "riverside"
+            }, 
+            "transcription": "background noise", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110412_034325_0006429_0006597.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "pricerange": "cheap", 
+                "type": "pub", 
+                "area": "riverside"
+            }, 
+            "transcription": "a pub", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110412_034327_0006696_0006816.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=pub)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "type": "pub", 
+                "pricerange": "cheap", 
+                "area": "riverside"
+            }, 
+            "transcription": "no", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110412_034332_0007208_0007300.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "negate"
+                    }
+                ], 
+                "cam": "negate()"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "pricerange": "cheap", 
+                "type": "pub", 
+                "area": "riverside"
+            }, 
+            "transcription": "background noise", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110412_034339_0007940_0008082.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "type": "pub", 
+                "pricerange": "cheap", 
+                "area": "riverside"
+            }, 
+            "transcription": "in the riverside area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110412_034343_0008234_0008465.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "riverside"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=riverside)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "pricerange": "cheap", 
+                "type": "pub", 
+                "area": "riverside"
+            }, 
+            "transcription": "are there any other pubs", 
+            "method-label": "byalternatives", 
+            "audio-file": "fj228x-008-110412_034352_0008953_0009313.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "reqalts"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "reqalts(=pub)"
+            }
+        }, 
+        {
+            "turn-index": 8, 
+            "goal-labels": {
+                "type": "pub", 
+                "pricerange": "cheap", 
+                "area": "riverside"
+            }, 
+            "transcription": "are there any pubs", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-009-110412_034400_0009914_0010099.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=pub)"
+            }
+        }, 
+        {
+            "turn-index": 9, 
+            "goal-labels": {
+                "pricerange": "cheap", 
+                "type": "pub", 
+                "area": "riverside"
+            }, 
+            "transcription": "any other pubs", 
+            "method-label": "byalternatives", 
+            "audio-file": "fj228x-010-110412_034401_0010137_0010247.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "reqalts"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "pub"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "reqalts(=pub)"
+            }
+        }, 
+        {
+            "turn-index": 10, 
+            "goal-labels": {
+                "type": "pub", 
+                "pricerange": "cheap", 
+                "area": "riverside"
+            }, 
+            "transcription": "is it in the cheap price range", 
+            "method-label": "byalternatives", 
+            "audio-file": "fj228x-011-110412_034406_0010565_0010749.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "cheap"
+                            ]
+                        ], 
+                        "act": "confirm"
+                    }
+                ], 
+                "cam": "confirm(pricerange=cheap)"
+            }
+        }, 
+        {
+            "turn-index": 11, 
+            "goal-labels": {
+                "pricerange": "cheap", 
+                "type": "pub", 
+                "name": "the avery", 
+                "area": "riverside"
+            }, 
+            "transcription": "can i have the address for the avery", 
+            "method-label": "byname", 
+            "audio-file": "fj228x-012-110412_034415_0011343_0011603.wav", 
+            "requested-slots": [
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "name", 
+                                "the avery"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "request(addr,name=\"the avery\")"
+            }
+        }, 
+        {
+            "turn-index": 12, 
+            "goal-labels": {
+                "type": "pub", 
+                "pricerange": "cheap", 
+                "name": "the avery", 
+                "area": "riverside"
+            }, 
+            "transcription": "breathing", 
+            "method-label": "byname", 
+            "audio-file": "fj228x-013-110412_034431_0013119_0013226.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 13, 
+            "goal-labels": {
+                "pricerange": "cheap", 
+                "type": "pub", 
+                "name": "the avery", 
+                "area": "riverside"
+            }, 
+            "transcription": "does it have tv", 
+            "method-label": "byname", 
+            "audio-file": "fj228x-014-110412_034439_0013788_0013988.wav", 
+            "requested-slots": [
+                "hastv"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "hastv"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "confirm(hastv=true)"
+            }
+        }, 
+        {
+            "turn-index": 14, 
+            "goal-labels": {
+                "type": "pub", 
+                "pricerange": "cheap", 
+                "name": "the avery", 
+                "area": "riverside"
+            }, 
+            "transcription": "background noise", 
+            "method-label": "byname", 
+            "audio-file": "fj228x-015-110412_034442_0014207_0014317.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 15, 
+            "goal-labels": {
+                "pricerange": "cheap", 
+                "type": "pub", 
+                "name": "the avery", 
+                "area": "riverside"
+            }, 
+            "transcription": "does the avery have a television", 
+            "method-label": "byname", 
+            "audio-file": "fj228x-016-110412_034447_0014554_0014799.wav", 
+            "requested-slots": [
+                "hastv"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "hastv"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "name", 
+                                "the avery"
+                            ]
+                        ], 
+                        "act": "confirm"
+                    }
+                ], 
+                "cam": "confirm(name=\"the avery\",hastv=true)"
+            }
+        }, 
+        {
+            "turn-index": 16, 
+            "goal-labels": {
+                "type": "pub", 
+                "pricerange": "cheap", 
+                "name": "the avery", 
+                "area": "riverside"
+            }, 
+            "transcription": "sil", 
+            "method-label": "byname", 
+            "audio-file": "fj228x-017-110412_034452_0015299_0015334.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 17, 
+            "goal-labels": {
+                "pricerange": "cheap", 
+                "type": "pub", 
+                "name": "the avery", 
+                "area": "riverside"
+            }, 
+            "transcription": "sil", 
+            "method-label": "byname", 
+            "audio-file": "fj228x-018-110412_034453_0015395_0015462.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 18, 
+            "goal-labels": {
+                "type": "pub", 
+                "pricerange": "cheap", 
+                "name": "the avery", 
+                "area": "riverside"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-019-110412_034502_0016141_0016340.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for a cheap pub and it should be in the riverside area. You want to know the address and whether it has TV.", 
+            "request-slots": [
+                "addr", 
+                "hastv"
+            ], 
+            "constraints": [
+                [
+                    "pricerange", 
+                    "cheap"
+                ], 
+                [
+                    "area", 
+                    "riverside"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "slightly agree"
+                ]
+            ], 
+            "comments": "Before I coudl finish my opening statement the automated started replying prematurely.  Felt like I was being cut off and there is a delay in responses.", 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-e990d1116e-20110412_034218"
+}

@@ -1,0 +1,386 @@
+{
+    "caller-id": "9372d1cbd6", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "food": "east asian", 
+                "type": "restaurant"
+            }, 
+            "transcription": "um im looking for an east asian restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110412_193135_0001764_0002209.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "east asian"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=\"east asian\",=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "east asian", 
+                "near": "dontcare", 
+                "type": "restaurant"
+            }, 
+            "transcription": "no just anything east asian", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110412_193150_0003375_0003655.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "negate"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "east asian"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "this", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "negate(food=\"east asian\",=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "east asian", 
+                "near": "dontcare", 
+                "type": "restaurant"
+            }, 
+            "transcription": "is little fill um what whats the price range for little fill", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110412_193204_0004528_0005017.wav", 
+            "requested-slots": [
+                "pricerange"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "pricerange"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(pricerange)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "east asian", 
+                "near": "dontcare", 
+                "type": "restaurant"
+            }, 
+            "transcription": "thats um exactly what im looking for so ill go to little fill um wha whats the address and whats the phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110412_193217_0005559_0006331.wav", 
+            "requested-slots": [
+                "phone", 
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(addr,phone)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "east asian", 
+                "near": "dontcare", 
+                "type": "restaurant"
+            }, 
+            "transcription": "no i wanted to go to little fill", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110412_193226_0007066_0007278.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "negate"
+                    }
+                ], 
+                "cam": "negate()"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "east asian", 
+                "near": "dontcare", 
+                "type": "restaurant"
+            }, 
+            "transcription": "but i need the", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110412_193230_0007580_0007661.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "east asian", 
+                "near": "dontcare", 
+                "type": "restaurant"
+            }, 
+            "transcription": "i need the phone number for little fill", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110412_193234_0007857_0008063.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "food": "east asian", 
+                "near": "dontcare", 
+                "type": "restaurant"
+            }, 
+            "transcription": "whats the phone number of little fill", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-008-110412_193241_0008557_0008804.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 8, 
+            "goal-labels": {
+                "food": "east asian", 
+                "near": "dontcare", 
+                "type": "restaurant"
+            }, 
+            "transcription": "and what about little fill", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-009-110412_193253_0009644_0009911.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 9, 
+            "goal-labels": {
+                "food": "east asian", 
+                "near": "dontcare", 
+                "type": "restaurant"
+            }, 
+            "transcription": "i want to go to little fill", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-010-110412_193302_0010579_0010825.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 10, 
+            "goal-labels": {
+                "food": "east asian", 
+                "near": "dontcare", 
+                "type": "restaurant"
+            }, 
+            "transcription": "what is its phone number and address", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-011-110412_193309_0011327_0011533.wav", 
+            "requested-slots": [
+                "phone", 
+                "addr"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "addr"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone,addr)"
+            }
+        }, 
+        {
+            "turn-index": 11, 
+            "goal-labels": {
+                "food": "east asian", 
+                "near": "dontcare", 
+                "type": "restaurant"
+            }, 
+            "transcription": "whats its phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-012-110412_193312_0011755_0011917.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 12, 
+            "goal-labels": {
+                "food": "east asian", 
+                "near": "dontcare", 
+                "type": "restaurant"
+            }, 
+            "transcription": "thank you good bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-013-110412_193324_0012878_0013046.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You are looking for an East asian restaurant and it should have moderate pricerange. You want to know the phone number and address of the venue.", 
+            "request-slots": [
+                "phone", 
+                "addr"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "east asian"
+                ], 
+                [
+                    "pricerange", 
+                    "moderate"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "disagree"
+                ]
+            ], 
+            "comments": "Kept giving me names of other restaurants", 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-9372d1cbd6-20110412_193113"
+}

@@ -1,0 +1,159 @@
+{
+    "caller-id": "25b06175db", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "humming", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110404_183821_0000325_0000474.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "fast food", 
+                "type": "restaurant"
+            }, 
+            "transcription": "fast food restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110404_183835_0001769_0001940.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "fast food"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=\"fast food\",=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "fast food", 
+                "type": "restaurant"
+            }, 
+            "transcription": "", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110404_183846_0002922_0003052.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "fast food", 
+                "type": "restaurant", 
+                "area": "trumpington"
+            }, 
+            "transcription": "trumpington area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110404_183859_0004140_0004291.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "trumpington"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=trumpington)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "fast food", 
+                "type": "restaurant", 
+                "area": "trumpington"
+            }, 
+            "transcription": "cambridge area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110404_183910_0005280_0005450.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "fast food", 
+                "type": "restaurant", 
+                "area": "trumpington"
+            }, 
+            "transcription": "thank you bye bye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-006-110404_183920_0006281_0006442.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a fast food restaurant. You don't care about the price range. You want to know the address and phone number.", 
+            "request-slots": [
+                "addr", 
+                "phone"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "fast food"
+                ], 
+                [
+                    "pricerange", 
+                    "dontcare"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "lightly disagree"
+                ]
+            ], 
+            "comments": null, 
+            "success": false
+        }
+    }, 
+    "session-id": "voip-25b06175db-20110404_183815"
+}

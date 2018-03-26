@@ -1,0 +1,227 @@
+{
+    "caller-id": "558d9d0b14", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {
+                "pricerange": "cheap", 
+                "type": "restaurant", 
+                "area": "centre"
+            }, 
+            "transcription": "hello uh im looking for a cheap restaurant and it should be in the area of uh city centre", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-001-110409_021307_0001963_0002600.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "hello"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "pricerange", 
+                                "cheap"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "centre"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "hello(pricerange=cheap,=restaurant,area=centre)"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "food": "american", 
+                "type": "restaurant", 
+                "pricerange": "cheap", 
+                "area": "centre"
+            }, 
+            "transcription": "uh american food", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110409_021319_0003667_0003825.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "american"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=american)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "food": "american", 
+                "pricerange": "cheap", 
+                "type": "restaurant", 
+                "area": "centre"
+            }, 
+            "transcription": "uh city centre area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110409_021332_0004976_0005177.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "centre"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=centre)"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "food": "american", 
+                "type": "restaurant", 
+                "pricerange": "cheap", 
+                "area": "centre"
+            }, 
+            "transcription": "uh can i have the phone number and postcode", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110409_021348_0006434_0006701.wav", 
+            "requested-slots": [
+                "phone", 
+                "postcode"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "postcode"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone,postcode)"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "food": "american", 
+                "pricerange": "cheap", 
+                "type": "restaurant", 
+                "area": "centre"
+            }, 
+            "transcription": "the phone number", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110409_021357_0007543_0007654.wav", 
+            "requested-slots": [
+                "phone"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "food": "american", 
+                "type": "restaurant", 
+                "pricerange": "cheap", 
+                "area": "centre"
+            }, 
+            "transcription": "uh thank you goodbye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-006-110409_021410_0008774_0008925.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a cheap restaurant and it should be in the city centre area. You want to know the phone number and postcode.", 
+            "request-slots": [
+                "phone", 
+                "postcode"
+            ], 
+            "constraints": [
+                [
+                    "pricerange", 
+                    "cheap"
+                ], 
+                [
+                    "area", 
+                    "centre"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "strongly agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": true
+        }
+    }, 
+    "session-id": "voip-558d9d0b14-20110409_021240"
+}

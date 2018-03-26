@@ -1,0 +1,340 @@
+{
+    "caller-id": "f436c2055b", 
+    "turns": [
+        {
+            "turn-index": 0, 
+            "goal-labels": {}, 
+            "transcription": "unitelligible", 
+            "method-label": "none", 
+            "audio-file": "fj228x-001-110414_195619_0000678_0000753.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [], 
+                "cam": "null()"
+            }
+        }, 
+        {
+            "turn-index": 1, 
+            "goal-labels": {
+                "type": "restaurant"
+            }, 
+            "transcription": "restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-002-110414_195631_0001725_0001874.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 2, 
+            "goal-labels": {
+                "near": "little saint marys church", 
+                "type": "restaurant"
+            }, 
+            "transcription": "little saint mary", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-003-110414_195648_0003425_0003574.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "near", 
+                                "little saint marys church"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(near=\"little saint marys church\")"
+            }
+        }, 
+        {
+            "turn-index": 3, 
+            "goal-labels": {
+                "near": "whipple museum of the history of science", 
+                "type": "restaurant"
+            }, 
+            "transcription": "history museum of science", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-004-110414_195709_0005365_0005671.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "near", 
+                                "whipple museum of the history of science"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(near=\"whipple museum of the history of science\")"
+            }
+        }, 
+        {
+            "turn-index": 4, 
+            "goal-labels": {
+                "near": "whipple museum of the history of science", 
+                "type": "restaurant", 
+                "area": "riverside"
+            }, 
+            "transcription": "riverside area", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-005-110414_195726_0006928_0007459.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "riverside"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=riverside)"
+            }
+        }, 
+        {
+            "turn-index": 5, 
+            "goal-labels": {
+                "near": "whipple museum of the history of science", 
+                "type": "restaurant", 
+                "area": "dontcare"
+            }, 
+            "transcription": "i dont care about the location or the venue", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-006-110414_195740_0008440_0008788.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "area", 
+                                "dontcare"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(area=dontcare)"
+            }
+        }, 
+        {
+            "turn-index": 6, 
+            "goal-labels": {
+                "food": "middle eastern", 
+                "near": "whipple museum of the history of science", 
+                "type": "restaurant", 
+                "area": "dontcare"
+            }, 
+            "transcription": "i need a middle eastern restaurant", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-007-110414_195756_0010116_0010389.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "middle eastern"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "inform(food=\"middle eastern\",=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 7, 
+            "goal-labels": {
+                "food": "middle eastern", 
+                "near": "whipple museum of the history of science", 
+                "type": "restaurant", 
+                "area": "dontcare"
+            }, 
+            "transcription": "okay middle eastern restaurant near a venue", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-008-110414_195811_0011561_0011911.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "ack"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "food", 
+                                "middle eastern"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "type", 
+                                "restaurant"
+                            ]
+                        ], 
+                        "act": "inform"
+                    }
+                ], 
+                "cam": "ack()|inform(food=\"middle eastern\",=restaurant)"
+            }
+        }, 
+        {
+            "turn-index": 8, 
+            "goal-labels": {
+                "food": "middle eastern", 
+                "near": "whipple museum of the history of science", 
+                "type": "restaurant", 
+                "area": "dontcare"
+            }, 
+            "transcription": "yes", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-009-110414_195818_0012562_0012641.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "affirm"
+                    }
+                ], 
+                "cam": "affirm()"
+            }
+        }, 
+        {
+            "turn-index": 9, 
+            "goal-labels": {
+                "food": "middle eastern", 
+                "near": "whipple museum of the history of science", 
+                "type": "restaurant", 
+                "area": "dontcare"
+            }, 
+            "transcription": "may i get the phone number and postcode", 
+            "method-label": "byconstraints", 
+            "audio-file": "fj228x-010-110414_195835_0013978_0014233.wav", 
+            "requested-slots": [
+                "phone", 
+                "postcode"
+            ], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "phone"
+                            ]
+                        ], 
+                        "act": "request"
+                    }, 
+                    {
+                        "slots": [
+                            [
+                                "slot", 
+                                "postcode"
+                            ]
+                        ], 
+                        "act": "request"
+                    }
+                ], 
+                "cam": "request(phone,postcode)"
+            }
+        }, 
+        {
+            "turn-index": 10, 
+            "goal-labels": {
+                "food": "middle eastern", 
+                "near": "whipple museum of the history of science", 
+                "type": "restaurant", 
+                "area": "dontcare"
+            }, 
+            "transcription": "okay thank you goodbye", 
+            "method-label": "finished", 
+            "audio-file": "fj228x-011-110414_195853_0015895_0016092.wav", 
+            "requested-slots": [], 
+            "semantics": {
+                "json": [
+                    {
+                        "slots": [], 
+                        "act": "ack"
+                    }, 
+                    {
+                        "slots": [], 
+                        "act": "thankyou"
+                    }, 
+                    {
+                        "slots": [], 
+                        "act": "bye"
+                    }
+                ], 
+                "cam": "ack()|thankyou()|bye()"
+            }
+        }
+    ], 
+    "task-information": {
+        "goal": {
+            "text": "You want to find a Middle Eastern restaurant. You don't care about the price range. Make sure you get the phone number and postcode of the venue.", 
+            "request-slots": [
+                "phone", 
+                "postcode"
+            ], 
+            "constraints": [
+                [
+                    "food", 
+                    "middle eastern"
+                ], 
+                [
+                    "pricerange", 
+                    "dontcare"
+                ]
+            ]
+        }, 
+        "feedback": {
+            "questionnaire": [
+                [
+                    "The system understood me well.", 
+                    "agree"
+                ]
+            ], 
+            "comments": null, 
+            "success": false
+        }
+    }, 
+    "session-id": "voip-f436c2055b-20110414_195611"
+}
