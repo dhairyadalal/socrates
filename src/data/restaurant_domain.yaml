@@ -5,9 +5,113 @@ domain_name: restaurant
 version: 1.0
 
 # Dialog Acts
-dialog_acts: ["inform", "request", "affirm", "negate", "greetings", "bye"]
+dialog_acts: [ "inform", "request", "affirm", "negate", "greetings", "bye"]
 
+# Request Slots
+request_slots: [ "address", "area", "food", "phone", "pricerange", "postcode", "name" ]
 
-# Valid Goals
-valid_goals:
-  restaurant_request: []
+# Inform slots
+inform_slots: [ "cuisine", "pricerange", "name", "area" ]
+
+# Valid User Goals
+valid_user_goals:
+  - [ "name" ]                  # User wants restaurant name
+  - [ "name", "address"  ]      # User wants
+  - [ "name", "address", "phone" ]
+  - [ "name", "phone" ]
+
+# Domain Knowledge Base
+inform_slot_values:
+  pricerange: [ "cheap", "moderate", "expensive"]
+  area: [  "centre", "north", "west", "south", "east" ]
+  food: [ "afghan",
+            "african",
+            "afternoon tea",
+            "asian oriental",
+            "australasian",
+            "australian",
+            "austrian",
+            "barbeque",
+            "basque",
+            "belgian",
+            "bistro",
+            "brazilian",
+            "british",
+            "canapes",
+            "cantonese",
+            "caribbean",
+            "catalan",
+            "chinese",
+            "christmas",
+            "corsica",
+            "creative",
+            "crossover",
+            "cuban",
+            "danish",
+            "eastern european",
+            "english",
+            "eritrean",
+            "european",
+            "french",
+            "fusion",
+            "gastropub",
+            "german",
+            "greek",
+            "halal",
+            "hungarian",
+            "indian",
+            "indonesian",
+            "international",
+            "irish",
+            "italian",
+            "jamaican",
+            "japanese",
+            "korean",
+            "kosher",
+            "latin american",
+            "lebanese",
+            "light bites",
+            "malaysian",
+            "mediterranean",
+            "mexican",
+            "middle eastern",
+            "modern american",
+            "modern eclectic",
+            "modern european",
+            "modern global",
+            "molecular gastronomy",
+            "moroccan",
+            "new zealand",
+            "north african",
+            "north american",
+            "north indian",
+            "northern european",
+            "panasian",
+            "persian",
+            "polish",
+            "polynesian",
+            "portuguese",
+            "romanian",
+            "russian",
+            "scandinavian",
+            "scottish",
+            "seafood",
+            "singaporean",
+            "south african",
+            "south indian",
+            "spanish",
+            "sri lankan",
+            "steakhouse",
+            "swedish",
+            "swiss",
+            "thai",
+            "the americas",
+            "traditional",
+            "turkish",
+            "tuscan",
+            "unusual",
+            "vegetarian",
+            "venetian",
+            "vietnamese",
+            "welsh",
+            "world" ]

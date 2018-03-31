@@ -1,24 +1,11 @@
 import pickle
 import random
-
-
-class DialogTemplates:
-
-    def __init__(self):
-        self.dialog_acts =[]
-        self.dialog_templates = {}
-
-    def add_dialog_act(self, dialog_act:str)->None:
-        self.dialog_acts.append(dialog_act)
-        if dialog_act not in self.dialog_templates.keys():
-            self.dialog_templates[dialog_act] = {}
-
-    def add_dialog_tempate(self, dialog_act: str, key: str, template: str)->None:
-        self.dialog_acts[dialog_act][key] = template
+import yaml
 
 
 class Domain:
 
+    # Functions to update Domain
     def add_request_slots(self, request_slots: list)->None:
         if request_slots is not None:
             self.request_slots.extend(request_slots)
@@ -33,36 +20,45 @@ class Domain:
         else:
             self.inform_slots = new_inform_slots
 
-    def add_dialog_acts(self, dialog_acts: list)->None:
-        self.dialog_acts = dialog_acts
-
-    def add_dialog_act(self, dialog_act:str)->None:
-        self.dialog_acts.append(dialog_act)
-
     def add_domain_kb(self, domain_kb):
         self.domain_kb = domain_kb
 
-    def __init__(self, domain_name, dialog_acts=None, request_slots=None, inform_slots=None, domain_kb=None):
-        self.domain_name = domain_name
-        self.dialog_acts = dialog_acts
-        self.request_slots = request_slots
-        self.inform_slots = inform_slots
-        self.domain_kb = domain_kb
+    # Functions to retrieve Domain values
+    def sample_inform_slot(self, inform_slot: str) -> str:
+        return random.choice(self.inform_slots)
 
-
-
-    def sample_inform_slot(self, inform_slot):
+    def sample_inform_slot_value(self, inform_slot: str) -> str:
         return random.choice(self.inform_slots[inform_slot])
 
     def sample_request_slot(self):
         return random.choice(self.request_slots)
+
+    def get_all_inform_slots(self) -> list:
+        return self.inform_slots
+
+    def get_all_request_slots(self) -> list:
+        return self.request_slots
+
+    def get_all_inform_slot_values(self) -> dict:
+        return self.inform_slot_values
+
+    def __init__(self, domain_name, version_number=None, dialog_acts=None, request_slots=None,
+                 inform_slots=None, valid_user_goals=None, inform_slot_values=None, domain_kb=None):
+        self.domain_name = domain_name
+        self.version = version_number
+        self.dialog_acts = dialog_acts
+        self.request_slots = request_slots
+        self.inform_slots = inform_slots
+        self.valid_user_goals = valid_user_goals
+        self.inform_slot_values = inform_slot_values
+        self.domain_kb = domain_kb
+
 
 class DomainManager:
 
     def __init__(self):
         self.domain_names =[]
         self.domains = {}
-        self.dialog_templates = {}
         self.default_path = "../data/domains.pkl"
 
     def add_domain(self, domain: Domain)->None:
@@ -88,14 +84,34 @@ class DomainManager:
         pickle.dump(self, open(path, 'wb'))
         return path
 
+    def _load_yaml(self, file_path: str)->dict:
+        try:
+            file = yaml.safe_load(open(file_path))
+            return file
+        except ImportError:
+            raise("Error: unable import %s." % file_path)
+
+    def import_domain(self, file_path: str, file_type: str)->None:
+        if file_type == "yaml":
+            file = self._load_yaml(file_path)
+            if file != None:
+                domain = Domain(domain_name = file["domain_name"],
+                                 version_number = file["version"],
+                                 dialog_acts = file["dialog_acts"],
+                                 request_slots = file["request_slots"],
+                                 inform_slots = file["dialog_acts"],
+                                 valid_user_goals = file["dialog_acts"],
+                                 inform_slot_values = file["dialog_acts"],
+                                 domain_kb = None)
+                self.add_domain(domain)
+            else:
+                raise ValueError("Error: Load_yaml failed, NoneType returned.")
+
     def load_domains(self)->None:
         tmp = pickle.load(open(self.default_path, "rb"))
         self.domain_names = tmp.domain_names
         self.domains = tmp.domains
         self.dialog_templates = tmp.dialog_templates
-
-    def add_dialog_templates(self, domain_name:str, dialog_templates: DialogTemplates) -> None:
-        self.dialog_templates[domain_name] = dialog_templates
 
     def __str__(self):
         return "Current domains: " + str(self.domain_names)
