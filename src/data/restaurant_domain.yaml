@@ -5,7 +5,7 @@ domain_name: restaurant
 version: 1.0
 
 # Dialog Acts
-dialog_acts: [ "inform", "request", "affirm", "negate", "greetings", "bye"]
+dialog_acts: [ "inform", "confirm", "request", "affirm", "negate", "greetings", "bye" ]
 
 # Request Slots
 request_slots: [ "address", "area", "food", "phone", "pricerange", "postcode", "name" ]
@@ -24,7 +24,7 @@ valid_user_goals:
 inform_slot_values:
   pricerange: [ "cheap", "moderate", "expensive"]
   area: [  "centre", "north", "west", "south", "east" ]
-  food: [ "afghan",
+  cuisine: [ "afghan",
             "african",
             "afternoon tea",
             "asian oriental",

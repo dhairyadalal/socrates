@@ -1,0 +1,27 @@
+domain: restaurant
+version: 1.0
+
+dialog_acts:
+  inform:
+    cuisine: [ "I'd like find a restaurant that serves $CUISINE.",
+               "I'm looking for $CUISINE.",
+               "I want to eat $CUISINE.",
+               "$CUISINE" ]
+    pricerange: ["I'm looking for $PRICERANGE. ",
+                 "$PRICERANGE",
+                 "Looking $PRICERANGE food." ]
+    area: [ "I'm looking for $PRICERANGE. ",
+            "$PRICERANGE",
+            "Looking $PRICERANGE food." ]
+
+    "cuisine,area": ["Looking $CUISINE near $AREA.",
+                   "I want $CUISINE in $AREA." ]
+
+    "cuisine,pricerange": ["Looking for $PRICERANGE $CUISINE.",
+                        "I want $CUISINE that's $PRICERANGE." ]
+    "area,pricerange": [ "I'm looking for $PRICERANGE food in $AREA",
+                         "I want $PRICERANGE near $AREA" ]
+  affirm: [ "Yes.", "Yup.", "Yes, that's right." ]
+  negate  : ["No.", "No that wrong.", "Wrong.", "Incorrect."]
+  greetings : ["Hi!", "Hi, I'm looking for a restaurant."]
+  bye : ["Thanks!", "Thank you.", "Bye.", "Awesome, thanks!"]

@@ -24,11 +24,11 @@ class Domain:
         self.domain_kb = domain_kb
 
     # Functions to retrieve Domain values
-    def sample_inform_slot(self, inform_slot: str) -> str:
+    def sample_inform_slot(self) -> str:
         return random.choice(self.inform_slots)
 
     def sample_inform_slot_value(self, inform_slot: str) -> str:
-        return random.choice(self.inform_slots[inform_slot])
+        return random.choice(self.inform_slot_values[inform_slot])
 
     def sample_request_slot(self):
         return random.choice(self.request_slots)
@@ -42,6 +42,9 @@ class Domain:
     def get_all_inform_slot_values(self) -> dict:
         return self.inform_slot_values
 
+    def get_valid_user_goals(self) -> list:
+        return self.valid_user_goals
+
     def __init__(self, domain_name, version_number=None, dialog_acts=None, request_slots=None,
                  inform_slots=None, valid_user_goals=None, inform_slot_values=None, domain_kb=None):
         self.domain_name = domain_name
@@ -53,14 +56,13 @@ class Domain:
         self.inform_slot_values = inform_slot_values
         self.domain_kb = domain_kb
 
+    def __str__(self):
+        return "Domain: %s | Version: %s " % (self.domain_name, self.version)
+
 
 class DomainManager:
 
-    def __init__(self):
-        self.domain_names =[]
-        self.domains = {}
-        self.default_path = "../data/domains.pkl"
-
+    # Manage Domains
     def add_domain(self, domain: Domain)->None:
         if domain is None:
             raise ValueError("Error: Invalid domain object. Domain is NoneType.")
@@ -78,12 +80,21 @@ class DomainManager:
         self.domain_names.remove(domain.domain_name)
         self.domains.pop(domain, None)
 
-    def save_domains(self, path=None)->str:
-        if path is None:
-            path = self.default_path
-        pickle.dump(self, open(path, 'wb'))
-        return path
+    def save_domains(self, path: str)->str:
+        if path[-1] != '/':
+            path += '/'
+        pickle.dump(self, open(path + self.default_name, 'wb'))
+        return "Saved domains to: " + path + self.default_name
 
+    # Load Domains
+    def load_domains(self, path: str)->None:
+        if path[-1] != '/':
+            path += '/'
+        tmp = pickle.load(open(path + self.default_name, "rb"))
+        self.domain_names = tmp.domain_names
+        self.domains = tmp.domains
+
+    # Import Domains
     def _load_yaml(self, file_path: str)->dict:
         try:
             file = yaml.safe_load(open(file_path))
@@ -99,19 +110,21 @@ class DomainManager:
                                  version_number = file["version"],
                                  dialog_acts = file["dialog_acts"],
                                  request_slots = file["request_slots"],
-                                 inform_slots = file["dialog_acts"],
-                                 valid_user_goals = file["dialog_acts"],
-                                 inform_slot_values = file["dialog_acts"],
+                                 inform_slots = file["inform_slots"],
+                                 valid_user_goals = file["valid_user_goals"],
+                                 inform_slot_values = file["inform_slot_values"],
                                  domain_kb = None)
                 self.add_domain(domain)
+                print("Successfully imported %s domain. Use get_domain('%s') to access domain object."
+                      % (file["domain_name"], file["domain_name"]))
             else:
                 raise ValueError("Error: Load_yaml failed, NoneType returned.")
 
-    def load_domains(self)->None:
-        tmp = pickle.load(open(self.default_path, "rb"))
-        self.domain_names = tmp.domain_names
-        self.domains = tmp.domains
-        self.dialog_templates = tmp.dialog_templates
+
+    def __init__(self):
+        self.domain_names = []
+        self.domains = {}
+        self.default_name = "domains.pkl"
 
     def __str__(self):
         return "Current domains: " + str(self.domain_names)
