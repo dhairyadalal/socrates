@@ -2,26 +2,35 @@ domain: restaurant
 version: 1.0
 
 dialog_acts:
+  affirm: [ "Yes.", "Yup.", "Yes, that's right." ]
+
+  bye : ["Thanks!", "Thank you.", "Bye.", "Awesome, thanks!"]
+
+  greetings : [ "Hi, I'm looking for a restaurant.",
+                "Hi! Can you help me find a restaurant?"]
+
   inform:
     cuisine: [ "I'd like find a restaurant that serves $CUISINE.",
-               "I'm looking for $CUISINE.",
-               "I want to eat $CUISINE.",
-               "$CUISINE" ]
-    pricerange: ["I'm looking for $PRICERANGE. ",
-                 "$PRICERANGE",
-                 "Looking $PRICERANGE food." ]
-    area: [ "I'm looking for $PRICERANGE. ",
-            "$PRICERANGE",
-            "Looking $PRICERANGE food." ]
-
-    "cuisine,area": ["Looking $CUISINE near $AREA.",
-                   "I want $CUISINE in $AREA." ]
-
+               "I'm looking for $CUISINE food.",
+               "I want to eat $CUISINE food." ]
+    pricerange: ["I'm looking for a $PRICERANGE priced restaurant. ",
+                 "Looking $PRICERANGE priced food." ]
+    area: [ "I'm looking for a restaurant in $AREA.",
+            "Looking for a food in $AREA." ]
+    area,cuisine: ["Looking $CUISINE near $AREA.",
+                     "I want $CUISINE in $AREA." ]
     "cuisine,pricerange": ["Looking for $PRICERANGE $CUISINE.",
                         "I want $CUISINE that's $PRICERANGE." ]
     "area,pricerange": [ "I'm looking for $PRICERANGE food in $AREA",
                          "I want $PRICERANGE near $AREA" ]
-  affirm: [ "Yes.", "Yup.", "Yes, that's right." ]
+    "unknown": ["I don't know.", "Not sure.", "Don't know."]
+    "no_pref": [ "I don't care", "whatever", "up for anything."]
+
+  "request":
+    "name": ["What is the restaurant's name?", "What's the name?"]
+    "phone": ["What is the phone number?", "How do I contact the restaurant?",
+               "What is the restaurant's phone number?"]
+    "address": ["What is the address?", "Where is the restaurant located?",
+                "What's the address?"]
+
   negate  : ["No.", "No that wrong.", "Wrong.", "Incorrect."]
-  greetings : ["Hi!", "Hi, I'm looking for a restaurant."]
-  bye : ["Thanks!", "Thank you.", "Bye.", "Awesome, thanks!"]

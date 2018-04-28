@@ -2,9 +2,8 @@
 
 # Goal 1. Request name and phone for cheap chinese food
 -
-  dialog_act: "request"
   inform_slots:
-    food: "chinese"
+    cuisine: "chinese"
     pricerange: "cheap"
   request_slots:
     name: "UNK"
@@ -12,9 +11,8 @@
 
 # Goal 2. Request name and address for expensive chinese food in central
 -
-  dialog_act: "request"
   inform_slots:
-    food: "chinese"
+    cuisine: "chinese"
     pricerange: "expensive"
     area: "central"
   request_slots:
@@ -23,7 +21,6 @@
 
 # Goal 3. Request name and phone number for moderate priced food in central
 -
-  dialog_act: "request"
   inform_slots:
     pricerange: "moderate"
     area: "north"
@@ -33,9 +30,8 @@
 
 # Goal 4. Request name for moderate priced indian food in south area of town
 -
-  dialog_act: "request"
   inform_slots:
-    food: "north indian"
+    cuisine: "north indian"
     pricerange: "moderate"
     area: "central"
   request_slots:

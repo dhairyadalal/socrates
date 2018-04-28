@@ -15,7 +15,7 @@ class Domain:
     def add_inform_slots(self, new_inform_slots: list)->None:
 
         if self.inform_slots is not None:
-            for item in new_inform_slot:
+            for item in new_inform_slots:
                 self.inform_slots.update(item)
         else:
             self.inform_slots = new_inform_slots
@@ -73,6 +73,10 @@ class DomainManager:
             self.domains[domain.domain_name] = domain
             self.domain_names.append(domain.domain_name)
 
+    def update_domain(self, domain: Domain) -> None:
+        print("updating domain",  domain.domain_name)
+        self.domains[domain.domain_name] = domain
+
     def get_domain(self, domain_name:str)->Domain:
         return self.domains[domain_name]
 
@@ -105,21 +109,20 @@ class DomainManager:
     def import_domain(self, file_path: str, file_type: str)->None:
         if file_type == "yaml":
             file = self._load_yaml(file_path)
-            if file != None:
+            if file is not None:
                 domain = Domain(domain_name = file["domain_name"],
-                                 version_number = file["version"],
-                                 dialog_acts = file["dialog_acts"],
-                                 request_slots = file["request_slots"],
-                                 inform_slots = file["inform_slots"],
-                                 valid_user_goals = file["valid_user_goals"],
-                                 inform_slot_values = file["inform_slot_values"],
-                                 domain_kb = None)
+                                version_number = file["version"],
+                                dialog_acts = file["dialog_acts"],
+                                request_slots = file["request_slots"],
+                                inform_slots = file["inform_slots"],
+                                valid_user_goals = file["valid_user_goals"],
+                                inform_slot_values = file["inform_slot_values"],
+                                domain_kb = None)
                 self.add_domain(domain)
                 print("Successfully imported %s domain. Use get_domain('%s') to access domain object."
                       % (file["domain_name"], file["domain_name"]))
             else:
                 raise ValueError("Error: Load_yaml failed, NoneType returned.")
-
 
     def __init__(self):
         self.domain_names = []
