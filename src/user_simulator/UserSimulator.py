@@ -73,7 +73,12 @@ class UserSimulator(Speaker):
         except ImportError:
             raise ("Error: unable import %s." % file_path)
 
-    def __init__(self, domain):
+    def reset(self):
+        self.dialog_status = DialogStatus.NOT_STARTED
+        self.current_turn = -1
+        self.generate_goal(self.goal_type)
+
+    def __init__(self, domain, goal_type):
         super(UserSimulator, self).__init__()
         self.domain = domain
         self.valid_goals = domain.get_valid_user_goals()
@@ -81,6 +86,7 @@ class UserSimulator(Speaker):
         self.dialog_status = DialogStatus.NOT_STARTED
         self.current_turn = -1
         self.starting_goals = None
+        self.goal_type = goal_type
 
 
 class RuleSimulator(UserSimulator):
@@ -115,6 +121,8 @@ class RuleSimulator(UserSimulator):
         for key in agent_action.params:
             if key in inform_slots:
                 params[key] = inform_slots[key]
+            else:
+                params["no_pref"] = "UNK"
         ret_action = DialogAction(dialog_act="inform", params=params)
         ret_action.update_utterance(self._action_to_nl(ret_action))  # generate nl utterance
         return ret_action
@@ -196,8 +204,11 @@ class RuleSimulator(UserSimulator):
     def _action_to_nl(self, dialog_action: DialogAction)-> str:
         return self.nlg.get_utterance(dialog_action)
 
-    def __init__(self, domain):
-        super(RuleSimulator, self).__init__(domain)
+    def __str__(self):
+        return "Restaurant Rules Simulator: v.1.0"
+
+    def __init__(self, domain, goal_type):
+        super(RuleSimulator, self).__init__(domain, goal_type)
         self.response_router = {"greetings": self._respond_general,
                                 "inform": self._respond_to_suggestion,
                                 "random_inform": self._respond_random_inform,

@@ -10,8 +10,8 @@ class DialogStatus(Enum):
 
 class DialogGoal(object):
     def get_goal(self):
-        return { "inform_slots": self.inform_slots,
-                 "request_slots": self.request_slots }
+        return {"inform_slots": self.inform_slots,
+                 "request_slots": self.request_slots}
 
     def update_goal(self, inform_slots):
         pass
@@ -57,11 +57,16 @@ class DialogAction(object):
         else:
             raise ValueError("Invalid param type. Supported types: dict, set.")
 
-    def __init__(self, dialog_act: str = None, params = None, nl_utterance: str = None):
+    def __init__(self, dialog_act: str = None, params=None, nl_utterance: str = None):
         self.dialog_act = dialog_act
         self.params = params
         self.nl_utterance = nl_utterance
 
+
+class NLU(object):
+    """ Base class for natural language understanding module. """
+    def __init__(self):
+        pass
 
 class NLG(object):
     """ Base class for natural language generation module. """
@@ -113,16 +118,19 @@ class Speaker(object):
     def next(self, previous_action: object, turn: int):
         pass
 
+    def reset(self):
+        pass
+
     def get_nlu(self):
         return self.nlu
 
     def get_nlg(self):
         return self.nlg
 
-    def set_nlg(self, nlg):
+    def set_nlg(self, nlg: NLG):
         self.nlg = nlg
 
-    def set_nlu(self, nlu):
+    def set_nlu(self, nlu: NLU):
         self.nlu = nlu
 
     def get_dialog_status(self):

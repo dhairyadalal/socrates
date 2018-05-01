@@ -15,6 +15,9 @@ class AgentGoal(DialogGoal):
 
 class Agent(Speaker):
 
+    def reset(self):
+        pass
+
     def next(self, user_action, current_turn):
         pass
 
@@ -28,21 +31,33 @@ class Agent(Speaker):
 
 class RestaurantAgent(Agent):
 
+    def reset(self):
+        self.current_turn = -1
+        self.dialog_status = DialogStatus.NOT_STARTED
+        self.goal = AgentGoal(inform_slots=dict(),
+                              request_slots={"cuisine": "UNK",
+                                             "area": "UNK",
+                                             "pricerange": "UNK"})
+
     def next(self, user_action: DialogAction, current_turn: int) -> DialogAction:
-        self.dialog_status = DialogStatus.NO_OUTCOME_YET
         self.current_turn = current_turn
+
         if user_action is None and self.dialog_status == DialogStatus.NOT_STARTED:
+            self.dialog_status = DialogStatus.NO_OUTCOME_YET
             return DialogAction(dialog_act="greetings")
 
         elif user_action.dialog_act == "request":
+            self.dialog_status = DialogStatus.NO_OUTCOME_YET
             params = {}
             for k,v in user_action.params.items():
                 if k in self.dialog_state["inform_slots"]:
                     params[k] = v
             return DialogAction(dialog_act="inform", params=params)
+
         elif user_action.dialog_act == "bye":
             self.dialog_status = DialogStatus.FINISHED
             return DialogAction(dialog_act="bye")
+
         else:
             if user_action.params is None:
                 return self._request_user_pref()
@@ -70,6 +85,8 @@ class RestaurantAgent(Agent):
                                                          'phone': '933-333-2222',
                                                          'address':'324343'})
 
+    def __str__(self):
+        return "Restaurant Recommender v.1.0"
 
     def __init__(self, domain):
         super(RestaurantAgent, self).__init__(domain)

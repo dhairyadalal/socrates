@@ -28,8 +28,8 @@ class DialogManager:
         self.reward = 0
         self.episode_over = False
         self.state_tracker.initialize_episode()
-        self.user_ac tion = self.user.initialize_episode()
-        self.st ate_tracker.update(user_action = self.user_action)
+        self.user_action = self.user.initialize_episode()
+        self.state_tracker.update(user_action = self.user_action)
         
         if dialog_config.run_mode < 3:
             print ("New episode, user goal:")

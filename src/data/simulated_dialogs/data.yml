@@ -1,0 +1,1241 @@
+- dialog_grade: Success
+  dialog_id: 05efb336-d3ed-44cb-bd72-a14913710c14
+  goal_grade: Success
+  reward: 0
+  starting_user_goal:
+    inform_slots: &id001
+      area: west
+      cuisine: basque
+      pricerange: moderate
+    request_slots: &id002
+      name: aladin
+      phone: 933-333-2222
+  turn_history:
+  - first_speaker:
+      dialog_act: greetings
+      dialog_slots: null
+      nl_utterance: Hi, I'm looking for a restaurant.
+      speaker: agent
+    second_speaker:
+      dialog_act: greetings
+      dialog_slots: null
+      nl_utterance: Hi, I'm looking for a restaurant.
+      speaker: usersim
+    turn: 0
+    user_goal:
+      inform_slots: *id001
+      request_slots: *id002
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        cuisine: basque
+      nl_utterance: I want to eat basque food.
+      speaker: usersim
+    turn: 1
+    user_goal:
+      inform_slots: *id001
+      request_slots: *id002
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        area: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        area: west
+      nl_utterance: I'm looking for a restaurant in west.
+      speaker: usersim
+    turn: 2
+    user_goal:
+      inform_slots: *id001
+      request_slots: *id002
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        pricerange: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        pricerange: moderate
+      nl_utterance: 'I''m looking for a moderate priced restaurant. '
+      speaker: usersim
+    turn: 3
+    user_goal:
+      inform_slots: *id001
+      request_slots: *id002
+  - first_speaker:
+      dialog_act: inform
+      dialog_slots:
+        address: '324343'
+        name: aladin
+        phone: 933-333-2222
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: bye
+      dialog_slots: null
+      nl_utterance: Thank you.
+      speaker: usersim
+    turn: 4
+    user_goal:
+      inform_slots: *id001
+      request_slots: *id002
+  turns_taken: 5
+- dialog_grade: Failed
+  dialog_id: b04b9feb-aedd-4a30-a618-0660d3e2b88f
+  goal_grade: Success
+  reward: 0
+  starting_user_goal:
+    inform_slots: &id003 {}
+    request_slots: &id004
+      name: UNK
+  turn_history:
+  - first_speaker:
+      dialog_act: greetings
+      dialog_slots: null
+      nl_utterance: Hi, I'm looking for a restaurant.
+      speaker: agent
+    second_speaker:
+      dialog_act: greetings
+      dialog_slots: null
+      nl_utterance: Hi, I'm looking for a restaurant.
+      speaker: usersim
+    turn: 0
+    user_goal:
+      inform_slots: *id003
+      request_slots: *id004
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: up for anything.
+      speaker: usersim
+    turn: 1
+    user_goal:
+      inform_slots: *id003
+      request_slots: *id004
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: up for anything.
+      speaker: usersim
+    turn: 2
+    user_goal:
+      inform_slots: *id003
+      request_slots: *id004
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: I don't care
+      speaker: usersim
+    turn: 3
+    user_goal:
+      inform_slots: *id003
+      request_slots: *id004
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: I don't care
+      speaker: usersim
+    turn: 4
+    user_goal:
+      inform_slots: *id003
+      request_slots: *id004
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: I don't care
+      speaker: usersim
+    turn: 5
+    user_goal:
+      inform_slots: *id003
+      request_slots: *id004
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: up for anything.
+      speaker: usersim
+    turn: 6
+    user_goal:
+      inform_slots: *id003
+      request_slots: *id004
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: I don't care
+      speaker: usersim
+    turn: 7
+    user_goal:
+      inform_slots: *id003
+      request_slots: *id004
+  turns_taken: 8
+- dialog_grade: Failed
+  dialog_id: fc3de46c-3b9d-4558-b7fb-ba0c1465a2e4
+  goal_grade: Success
+  reward: 0
+  starting_user_goal:
+    inform_slots: &id005
+      area: east
+    request_slots: &id006
+      address: UNK
+      name: UNK
+  turn_history:
+  - first_speaker:
+      dialog_act: greetings
+      dialog_slots: null
+      nl_utterance: Hi, I'm looking for a restaurant.
+      speaker: agent
+    second_speaker:
+      dialog_act: greetings
+      dialog_slots: null
+      nl_utterance: Hi, I'm looking for a restaurant.
+      speaker: usersim
+    turn: 0
+    user_goal:
+      inform_slots: *id005
+      request_slots: *id006
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: I don't care
+      speaker: usersim
+    turn: 1
+    user_goal:
+      inform_slots: *id005
+      request_slots: *id006
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: up for anything.
+      speaker: usersim
+    turn: 2
+    user_goal:
+      inform_slots: *id005
+      request_slots: *id006
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: whatever
+      speaker: usersim
+    turn: 3
+    user_goal:
+      inform_slots: *id005
+      request_slots: *id006
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: whatever
+      speaker: usersim
+    turn: 4
+    user_goal:
+      inform_slots: *id005
+      request_slots: *id006
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: I don't care
+      speaker: usersim
+    turn: 5
+    user_goal:
+      inform_slots: *id005
+      request_slots: *id006
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: whatever
+      speaker: usersim
+    turn: 6
+    user_goal:
+      inform_slots: *id005
+      request_slots: *id006
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: up for anything.
+      speaker: usersim
+    turn: 7
+    user_goal:
+      inform_slots: *id005
+      request_slots: *id006
+  turns_taken: 8
+- dialog_grade: Failed
+  dialog_id: e308ceef-3cd2-42e5-ab42-d21a6120efc5
+  goal_grade: Success
+  reward: 0
+  starting_user_goal:
+    inform_slots: &id007
+      area: south
+    request_slots: &id008
+      address: UNK
+      name: UNK
+  turn_history:
+  - first_speaker:
+      dialog_act: greetings
+      dialog_slots: null
+      nl_utterance: Hi! Can you help me find a restaurant?
+      speaker: usersim
+    second_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    turn: 0
+    user_goal:
+      inform_slots: *id007
+      request_slots: *id008
+  - first_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: I don't care
+      speaker: usersim
+    second_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    turn: 1
+    user_goal:
+      inform_slots: *id007
+      request_slots: *id008
+  - first_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: whatever
+      speaker: usersim
+    second_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    turn: 2
+    user_goal:
+      inform_slots: *id007
+      request_slots: *id008
+  - first_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: whatever
+      speaker: usersim
+    second_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    turn: 3
+    user_goal:
+      inform_slots: *id007
+      request_slots: *id008
+  - first_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: whatever
+      speaker: usersim
+    second_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    turn: 4
+    user_goal:
+      inform_slots: *id007
+      request_slots: *id008
+  - first_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: I don't care
+      speaker: usersim
+    second_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    turn: 5
+    user_goal:
+      inform_slots: *id007
+      request_slots: *id008
+  - first_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: whatever
+      speaker: usersim
+    second_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    turn: 6
+    user_goal:
+      inform_slots: *id007
+      request_slots: *id008
+  - first_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: I don't care
+      speaker: usersim
+    second_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    turn: 7
+    user_goal:
+      inform_slots: *id007
+      request_slots: *id008
+  turns_taken: 8
+- dialog_grade: Success
+  dialog_id: 872ab975-9066-4d6b-9c2f-0d3c491f78d6
+  goal_grade: Success
+  reward: 0
+  starting_user_goal:
+    inform_slots: &id009
+      area: east
+      cuisine: mediterranean
+      pricerange: expensive
+    request_slots: &id010
+      name: aladin
+  turn_history:
+  - first_speaker:
+      dialog_act: greetings
+      dialog_slots: null
+      nl_utterance: Hi! Can you help me find a restaurant?
+      speaker: agent
+    second_speaker:
+      dialog_act: greetings
+      dialog_slots: null
+      nl_utterance: Hi! Can you help me find a restaurant?
+      speaker: usersim
+    turn: 0
+    user_goal:
+      inform_slots: *id009
+      request_slots: *id010
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        cuisine: mediterranean
+      nl_utterance: I'd like find a restaurant that serves mediterranean.
+      speaker: usersim
+    turn: 1
+    user_goal:
+      inform_slots: *id009
+      request_slots: *id010
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        area: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        area: east
+      nl_utterance: I'm looking for a restaurant in east.
+      speaker: usersim
+    turn: 2
+    user_goal:
+      inform_slots: *id009
+      request_slots: *id010
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        pricerange: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        pricerange: expensive
+      nl_utterance: 'I''m looking for a expensive priced restaurant. '
+      speaker: usersim
+    turn: 3
+    user_goal:
+      inform_slots: *id009
+      request_slots: *id010
+  - first_speaker:
+      dialog_act: inform
+      dialog_slots:
+        address: '324343'
+        name: aladin
+        phone: 933-333-2222
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: bye
+      dialog_slots: null
+      nl_utterance: Thanks!
+      speaker: usersim
+    turn: 4
+    user_goal:
+      inform_slots: *id009
+      request_slots: *id010
+  turns_taken: 5
+- dialog_grade: Success
+  dialog_id: c49352ec-143e-4225-a4d9-f9f6ed0a7151
+  goal_grade: Success
+  reward: 0
+  starting_user_goal:
+    inform_slots: &id011
+      area: north
+      cuisine: halal
+      pricerange: moderate
+    request_slots: &id012
+      address: '324343'
+      name: aladin
+  turn_history:
+  - first_speaker:
+      dialog_act: greetings
+      dialog_slots: null
+      nl_utterance: Hi, I'm looking for a restaurant.
+      speaker: usersim
+    second_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    turn: 0
+    user_goal:
+      inform_slots: *id011
+      request_slots: *id012
+  - first_speaker:
+      dialog_act: inform
+      dialog_slots:
+        cuisine: halal
+      nl_utterance: I want to eat halal food.
+      speaker: usersim
+    second_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        area: null
+      nl_utterance: null
+      speaker: agent
+    turn: 1
+    user_goal:
+      inform_slots: *id011
+      request_slots: *id012
+  - first_speaker:
+      dialog_act: inform
+      dialog_slots:
+        area: north
+      nl_utterance: Looking for a food in north.
+      speaker: usersim
+    second_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        pricerange: null
+      nl_utterance: null
+      speaker: agent
+    turn: 2
+    user_goal:
+      inform_slots: *id011
+      request_slots: *id012
+  - first_speaker:
+      dialog_act: inform
+      dialog_slots:
+        pricerange: moderate
+      nl_utterance: 'I''m looking for a moderate priced restaurant. '
+      speaker: usersim
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        address: '324343'
+        name: aladin
+        phone: 933-333-2222
+      nl_utterance: null
+      speaker: agent
+    turn: 3
+    user_goal:
+      inform_slots: *id011
+      request_slots: *id012
+  - first_speaker:
+      dialog_act: bye
+      dialog_slots: null
+      nl_utterance: Awesome, thanks!
+      speaker: usersim
+    second_speaker:
+      dialog_act: bye
+      dialog_slots: null
+      nl_utterance: null
+      speaker: agent
+    turn: 4
+    user_goal:
+      inform_slots: *id011
+      request_slots: *id012
+  turns_taken: 5
+- dialog_grade: Failed
+  dialog_id: 0294afd8-9e39-4a0f-8324-f187d26c2fed
+  goal_grade: Success
+  reward: 0
+  starting_user_goal:
+    inform_slots: &id013
+      pricerange: expensive
+    request_slots: &id014
+      address: UNK
+      name: UNK
+  turn_history:
+  - first_speaker:
+      dialog_act: greetings
+      dialog_slots: null
+      nl_utterance: Hi, I'm looking for a restaurant.
+      speaker: agent
+    second_speaker:
+      dialog_act: greetings
+      dialog_slots: null
+      nl_utterance: Hi, I'm looking for a restaurant.
+      speaker: usersim
+    turn: 0
+    user_goal:
+      inform_slots: *id013
+      request_slots: *id014
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: up for anything.
+      speaker: usersim
+    turn: 1
+    user_goal:
+      inform_slots: *id013
+      request_slots: *id014
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: up for anything.
+      speaker: usersim
+    turn: 2
+    user_goal:
+      inform_slots: *id013
+      request_slots: *id014
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: up for anything.
+      speaker: usersim
+    turn: 3
+    user_goal:
+      inform_slots: *id013
+      request_slots: *id014
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: whatever
+      speaker: usersim
+    turn: 4
+    user_goal:
+      inform_slots: *id013
+      request_slots: *id014
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: whatever
+      speaker: usersim
+    turn: 5
+    user_goal:
+      inform_slots: *id013
+      request_slots: *id014
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: I don't care
+      speaker: usersim
+    turn: 6
+    user_goal:
+      inform_slots: *id013
+      request_slots: *id014
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: I don't care
+      speaker: usersim
+    turn: 7
+    user_goal:
+      inform_slots: *id013
+      request_slots: *id014
+  turns_taken: 8
+- dialog_grade: Failed
+  dialog_id: cf49bf5d-cb8b-46a2-b1a3-59fe87889e36
+  goal_grade: Success
+  reward: 0
+  starting_user_goal:
+    inform_slots: &id015 {}
+    request_slots: &id016
+      name: UNK
+  turn_history:
+  - first_speaker:
+      dialog_act: greetings
+      dialog_slots: null
+      nl_utterance: Hi, I'm looking for a restaurant.
+      speaker: usersim
+    second_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    turn: 0
+    user_goal:
+      inform_slots: *id015
+      request_slots: *id016
+  - first_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: whatever
+      speaker: usersim
+    second_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    turn: 1
+    user_goal:
+      inform_slots: *id015
+      request_slots: *id016
+  - first_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: up for anything.
+      speaker: usersim
+    second_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    turn: 2
+    user_goal:
+      inform_slots: *id015
+      request_slots: *id016
+  - first_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: whatever
+      speaker: usersim
+    second_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    turn: 3
+    user_goal:
+      inform_slots: *id015
+      request_slots: *id016
+  - first_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: I don't care
+      speaker: usersim
+    second_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    turn: 4
+    user_goal:
+      inform_slots: *id015
+      request_slots: *id016
+  - first_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: whatever
+      speaker: usersim
+    second_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    turn: 5
+    user_goal:
+      inform_slots: *id015
+      request_slots: *id016
+  - first_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: whatever
+      speaker: usersim
+    second_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    turn: 6
+    user_goal:
+      inform_slots: *id015
+      request_slots: *id016
+  - first_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: up for anything.
+      speaker: usersim
+    second_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    turn: 7
+    user_goal:
+      inform_slots: *id015
+      request_slots: *id016
+  turns_taken: 8
+- dialog_grade: Failed
+  dialog_id: ce15b471-bea5-44ea-96a1-f33830fb15da
+  goal_grade: Success
+  reward: 0
+  starting_user_goal:
+    inform_slots: &id017
+      area: south
+      cuisine: barbeque
+    request_slots: &id018
+      name: UNK
+  turn_history:
+  - first_speaker:
+      dialog_act: greetings
+      dialog_slots: null
+      nl_utterance: Hi! Can you help me find a restaurant?
+      speaker: agent
+    second_speaker:
+      dialog_act: greetings
+      dialog_slots: null
+      nl_utterance: Hi! Can you help me find a restaurant?
+      speaker: usersim
+    turn: 0
+    user_goal:
+      inform_slots: *id017
+      request_slots: *id018
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        cuisine: barbeque
+      nl_utterance: I want to eat barbeque food.
+      speaker: usersim
+    turn: 1
+    user_goal:
+      inform_slots: *id017
+      request_slots: *id018
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        area: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        area: south
+      nl_utterance: Looking for a food in south.
+      speaker: usersim
+    turn: 2
+    user_goal:
+      inform_slots: *id017
+      request_slots: *id018
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        pricerange: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: whatever
+      speaker: usersim
+    turn: 3
+    user_goal:
+      inform_slots: *id017
+      request_slots: *id018
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        pricerange: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: I don't care
+      speaker: usersim
+    turn: 4
+    user_goal:
+      inform_slots: *id017
+      request_slots: *id018
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        pricerange: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: whatever
+      speaker: usersim
+    turn: 5
+    user_goal:
+      inform_slots: *id017
+      request_slots: *id018
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        pricerange: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: I don't care
+      speaker: usersim
+    turn: 6
+    user_goal:
+      inform_slots: *id017
+      request_slots: *id018
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        pricerange: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: up for anything.
+      speaker: usersim
+    turn: 7
+    user_goal:
+      inform_slots: *id017
+      request_slots: *id018
+  turns_taken: 8
+- dialog_grade: Failed
+  dialog_id: 4188ff68-866f-4137-83a7-31075c5f24ae
+  goal_grade: Success
+  reward: 0
+  starting_user_goal:
+    inform_slots: &id019 {}
+    request_slots: &id020
+      name: UNK
+      phone: UNK
+  turn_history:
+  - first_speaker:
+      dialog_act: greetings
+      dialog_slots: null
+      nl_utterance: Hi, I'm looking for a restaurant.
+      speaker: agent
+    second_speaker:
+      dialog_act: greetings
+      dialog_slots: null
+      nl_utterance: Hi, I'm looking for a restaurant.
+      speaker: usersim
+    turn: 0
+    user_goal:
+      inform_slots: *id019
+      request_slots: *id020
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: whatever
+      speaker: usersim
+    turn: 1
+    user_goal:
+      inform_slots: *id019
+      request_slots: *id020
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: up for anything.
+      speaker: usersim
+    turn: 2
+    user_goal:
+      inform_slots: *id019
+      request_slots: *id020
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: whatever
+      speaker: usersim
+    turn: 3
+    user_goal:
+      inform_slots: *id019
+      request_slots: *id020
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: up for anything.
+      speaker: usersim
+    turn: 4
+    user_goal:
+      inform_slots: *id019
+      request_slots: *id020
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: I don't care
+      speaker: usersim
+    turn: 5
+    user_goal:
+      inform_slots: *id019
+      request_slots: *id020
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: up for anything.
+      speaker: usersim
+    turn: 6
+    user_goal:
+      inform_slots: *id019
+      request_slots: *id020
+  - first_speaker:
+      dialog_act: request
+      dialog_slots: !!set
+        cuisine: null
+      nl_utterance: null
+      speaker: agent
+    second_speaker:
+      dialog_act: inform
+      dialog_slots:
+        no_pref: UNK
+      nl_utterance: I don't care
+      speaker: usersim
+    turn: 7
+    user_goal:
+      inform_slots: *id019
+      request_slots: *id020
+  turns_taken: 8
