@@ -85,7 +85,7 @@ class NLG(object):
         return None
 
     # --------------------------------- Class Public Methods ---------------------------------------------------- #
-    def get_utterance(self, dialog_action: DialogAction):
+    def get_utterance(self, dialog_action: DialogAction)->str:
 
         if self.type == "dict":
             if dialog_action.params is None:
