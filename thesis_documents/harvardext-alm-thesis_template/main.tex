@@ -1,0 +1,147 @@
+
+\documentclass[12pt]{harvardalmthesis}
+\listfiles
+
+%% personal customizations like graphics, math, ...
+\include{settings}
+
+
+
+
+\begin{document}
+
+% ------------------------------------------------------------
+% BEGINNING PART
+
+%% Roman numeral page counting
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+\pdfbookmark[0]{Titlepage}{title}
+\include{title}
+
+
+%% Blank page
+\clearpage
+%\phantomsection % Ensures that a PDF bookmark is set here
+%\pdfbookmark[0]{}{}
+\chapter*{}
+\thispagestyle{empty}	% no page numbering
+
+
+
+\clearpage
+%\phantomsection % Ensures that a PDF bookmark is set here
+\pdfbookmark[0]{Abstract}{abstract}
+\include{abstract}
+
+
+\clearpage
+%\phantomsection % Ensures that a PDF bookmark is set here
+\pdfbookmark[0]{Acknowledgements}{acknowledgements}
+\include{acknowledgment}
+
+\clearpage
+\phantomsection % Ensures that a PDF bookmark is set here
+%\pdfbookmark[0]{Contents}{contents}
+\addcontentsline{toc}{chapter}{Table of Contents}
+\tableofcontents
+
+
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Equations}
+\listofmyequations
+%\listofmyequations
+
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Algorithms}
+\listofalgorithms
+
+
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Code}
+\renewcommand{\lstlistlistingname}{List of Code}
+\lstlistoflistings
+
+
+
+%% ------------------------------------------------------------
+%% MAIN PART
+
+%% Restarting page counting with numeric
+\clearpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+
+\include{intro}
+
+
+\include{requirements}
+
+
+\include{design}
+
+
+\include{implement}
+
+
+\include{development}
+
+
+\include{sequence}
+
+
+\include{conclusion}
+
+
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{References}
+\renewcommand{\bibname}{References}
+\bibliographystyle{apalike2}
+\bibliography{main}
+
+
+% ------------------------------------------------------------
+% APPENDIX
+
+\newpage
+\appendix
+
+
+
+\clearpage
+\phantomsection
+\printglossary
+
+\clearpage
+
+% CODE APPENDICES
+% should be single space
+% each code package, and each code file, should begin on a new page
+\singlespacing
+\phantomsection
+\include{code}
+
+
+\end{document}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

@@ -1,7 +1,11 @@
 from dialog_agents import RestaurantAgent
 from user_simulator import RuleSimulator
-from dialog_simulator import *
-import yaml
+from dialog_simulator import DomainManager, import_yaml
+import argparse
+
+def import_config(config_path:str)->dict:
+    pass
+
 
 def main():
 
@@ -33,4 +37,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+

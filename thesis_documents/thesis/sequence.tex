@@ -1,0 +1,53 @@
+
+\chapter{Sequence Analysis Tools and Applications}
+\label{chap:sequence}
+
+%http://en.wikipedia.org/wiki/Pandemic_H1N1/09_virus
+
+...
+
+
+\section{Needleman-Wunsch Implementation}
+\label{sec:nw}
+
+...
+
+
+\subsection{Global Sequence Alignment}
+\label{sec:seqglobal}
+
+...
+
+\subsection{Longest Common Subsequence (LCS)}
+\label{sec:lcs}
+
+
+...
+
+Essentially the first step of \algor{LCS} performs this
+recursion:
+\begin{eqnarray}
+S_{0,j} &=& 0\\
+S_{i,0} &=& 0\\
+S_{i,j} &=& \max
+\begin{cases}
+  S_{i,j-1} & \\
+  S_{i-1,j} & \\
+  S_{i-1,j-1} + 1 & \textrm{if } A_i = B_j
+\end{cases}
+\end{eqnarray}
+\addmyequations{Longest Common Subsequence Recursion}
+
+...
+
+The pseudocode of \algor{LCS} is shown in Algorithm~\ref{algo:LCS}.
+
+...
+
+\input{lcs}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End: 

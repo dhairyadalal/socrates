@@ -1,0 +1,268 @@
+%% This file contains personal customizations like graphics, math,
+%% algorithm/code listing, and glossary.
+
+
+% ------------------------------------------------------------
+% graphics
+
+\usepackage{graphicx}
+\usepackage{epsf}
+\usepackage{multicol}
+\usepackage{graphics,color,latexsym}
+
+
+
+%% ------------------------------------------------------------
+%% basic math packages
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{theorem}
+
+% other math packages
+\usepackage{bm}
+
+% for diagrams
+\usepackage{amscd}
+
+% for conditionals
+\usepackage{ifthen}
+
+% linear
+%\usepackage{esvect}
+
+\usepackage{enumerate}
+
+% change the way items are numbered in the enumerate environment
+\renewcommand{\labelenumi}{(\alph{enumi})}
+
+%% ------------------------------------------------------------
+%% some basic math definitions
+
+
+%% ------------------------------------------------------------
+%% some math environments
+
+
+\newlistof{myequations}{equ}{\listequationsname}
+\newcommand{\addmyequations}[1]{
+  \addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}\par
+}
+\cftsetindents{myequations}{1.5em}{3em}
+
+
+%% ------------------------------------------------------------
+%% some math bold faces
+
+
+
+%% ------------------------------------------------------------
+%% for some CS
+
+%\def\O{\mathcal{O}}
+
+\newcommand{\sym}[1]{\texttt{#1}}
+\newcommand{\algor}[1]{\textsf{\textsc{#1}}}
+
+
+% ------------------------------------------------------------
+% for code and algorithms 
+
+\usepackage{verbatim}
+\usepackage[chapter]{algorithm}
+\usepackage{listings}
+%\usepackage{algorithmic}
+\usepackage{afterpage}		% help with multi-page listing
+
+
+
+\newcommand{\INPUT}{\textbf{Input}}
+\newcommand{\as}{\ensuremath{\leftarrow}}
+
+% these should be after hyperref because of conflicts
+% this might help
+%\newcommand{\theHalgorithm}{\arabic{algorithm}}
+
+% for lsting
+%\renewcommand{\lstlistingname}{\textbf{Algorithm}}
+%\renewcommand{\lstlistlistingname}{Algorithms}
+
+
+\lstdefinelanguage{Algorithm}%
+{morekeywords={input,for,each,while,if,else,then,do,to,break,end,print,return,function},%
+  aboveskip=\smallskipamount,
+  belowskip=\smallskipamount,
+  xleftmargin=25pt,         
+  basicstyle=\footnotesize,	% \tiny, \scriptsize, \small, \footnotesize, \bfseries, \upshape
+  sensitive,%
+  mathescape,%
+  commentstyle=\footnotesize\upshape,%
+%  morecomment=[s]{\{}{\}},%
+  morecomment=[s]{\{}{\}},%
+  %morecomment=[l]\%,%
+  %morestring=[m]'%  
+%  fontadjust=true,		%
+  texcl=true,			% include TEX source
+  numbers=left,			% where to put the line-numbers
+  numberstyle=\tiny,		% 
+  numbersep=10pt,		% how far the line-numbers are from the code
+  captionpos=b,		        % sets the caption-position to bottom
+ }
+
+
+\lstdefinelanguage{JavaText}%
+{
+  aboveskip=\smallskipamount,
+  belowskip=\smallskipamount,
+  xleftmargin=25pt,         
+  basicstyle=\footnotesize\ttfamily,	% \tiny, \scriptsize, \small, \footnotesize, \bfseries, \upshape
+  frame=single,			% adds a frame around the code ('single', 'b')
+  numbers=left,			% where to put the line-numbers
+  numberstyle=\tiny,		% 
+  numbersep=10pt,		% how far the line-numbers are from the code
+  captionpos=b,		        % sets the caption-position to bottom
+}
+\lstdefinelanguage{Java}%
+{
+}
+
+
+\lstdefinelanguage{XMLText}%
+{
+  aboveskip=\smallskipamount,
+  belowskip=\smallskipamount,
+  xleftmargin=25pt,         
+  basicstyle=\footnotesize\ttfamily,	% \tiny, \scriptsize, \small, \footnotesize, \bfseries, \upshape
+  frame=single,			% adds a frame around the code ('single', 'b')
+  numbers=left,			% where to put the line-numbers
+  numberstyle=\tiny,		% 
+  numbersep=10pt,		% how far the line-numbers are from the code
+  captionpos=b,		        % sets the caption-position to bottom
+}
+\lstdefinelanguage{XML}%
+{
+  basicstyle=\footnotesize\ttfamily,	% \tiny, \scriptsize, \small, \footnotesize, \bfseries, \upshape
+}
+
+
+
+%% The default listing format
+%% 
+\lstset{ %
+  %language=Java,		% default language, set with \lstset{language=XXX}
+  %------- MARGINS and FRAMES --------
+%  aboveskip=\smallskipamount,
+%  belowskip=\smallskipamount,
+  xleftmargin=0pt,         
+  % xleftmargin=17pt,
+  %framexleftmargin=17pt,
+  %framexrightmargin=5pt,
+  %framexbottommargin=4pt,
+  % frame=single,			% adds a frame around the code ('single', 'b')
+  % float=true,			% make it a float
+  %------- FONTS --------
+  basicstyle=\footnotesize\ttfamily,	% \tiny, \scriptsize, \small, \footnotesize, \bfseries, \upshape
+  % keywordstyle=\bfseries,	% \color{red},
+  % commentstyle=\upshape,	%         
+  % stringstyle=\color{white}\ttfamily,	%
+  %------- BACKGROUND COLOR --------
+  %backgroundcolor=\color{white},  % choose the background color. Must add \usepackage{color}
+  %backgroundcolor=\color{lightgray},
+  %------- HORIZONTAL SPACING  --------
+  % fontadjust=true,		%
+  keepspaces=true,		%
+  showspaces=false,		% show spaces adding particular underscores
+  showstringspaces=false,	% underline spaces within strings
+  showtabs=false,               % show tabs within strings adding particular underscores
+  % tabsize=3,			% sets default tabsize to 2 spaces
+  columns=[l]flexible,		% 'flexible', 'fixed'
+  % texcl=true,			% include TEX source
+  %------- NUMBERING --------
+  numbers=none,			% where to put the line-numbers
+  %numberstyle=\tiny,		% 
+  %numbersep=10pt,		% how far the line-numbers are from the code
+  % stepnumber=2,		% the step between two line-numbers. If it's 1 each line will be numbered
+  %------- CAPTION --------
+  % caption=\lstname		% default caption name
+  %captionpos=b,		% sets the caption-position to bottom
+  %------- LINE BREAKING --------
+  breaklines=true,		% sets automatic line breaking
+  % breakatwhitespace=false,    % sets if automatic breaks should only happen at whitespace
+  %------- COMMENTS --------
+  % escapeinside={\%*}{*)}          % if you want to add a comment within your code
+}
+
+%\cftsetindents{algorithm}{1.5em}{3em}
+
+%\renewcommand{\lstlistingname}{Listing \arabic{chapter}.\arabic{section}}
+
+
+
+
+% ------------------------------------------------------------
+% for url
+\usepackage{url}
+
+\usepackage[pdftex,colorlinks,plainpages=false,pdfpagelabels]{hyperref}
+%\usepackage[ps2pdf=true,colorlinks]{hyperref}
+%\usepackage{hyperref}	%% this should be last
+
+\usepackage[figure,table]{hypcap} % Correct a problem with hyperref
+\hypersetup{
+% these are from beamer
+  bookmarks=true,%
+%  bookmarksopen=true,%
+  pdfborder={0 0 0},%
+  pdfhighlight={/N},%
+  linkbordercolor={.5 .5 .5},
+%%
+  bookmarksnumbered,
+  pdfstartview={FitH},
+  citecolor={black},
+  linkcolor={black},
+  urlcolor={black},
+  pdfpagemode={UseOutlines}
+} 
+\makeatletter
+\newcommand\org@hypertarget{}
+\let\org@hypertarget\hypertarget
+\renewcommand\hypertarget[2]{%
+  \Hy@raisedlink{\org@hypertarget{#1}{}}#2%
+} \makeatother 
+
+% ------------------------------------------------------------
+% Glossary
+
+\usepackage{etex}   % to avoid: 'supp-mis.tex:197: No room for a new \dimen'
+%\usepackage[nonumberlist,section=chapter,numberedsection=autolabel]{glossaries}
+\usepackage[section=chapter,numberedsection=autolabel]{glossaries}
+
+%% make glossary
+% latex
+% makeindex -s main.ist -t main.glg -o main.gls main.glo
+% ./makeglossaries.pl main
+% latex; latex
+
+% for glossary
+\makeglossaries
+\loadglsentries{glossary}
+
+% load all glossary entries
+%\glsaddall
+
+%A \gls{sample} entry and \gls{aca}. Second use: \gls{aca}.
+%Plurals: \glspl{sample}. Reset acronym\glsreset{aca}.
+%First use: \glspl{aca}. Second use: \glspl{aca}.
+
+
+%% ------------------------------------------------------------
+%% OTHER CUSTOMIZATIONS
+
+% for landscape pages
+\usepackage{lscape}
+
+\DeclareGraphicsExtensions{.pdf,.eps,.jpg,.mps,.png}
+
+\usepackage{pifont}
