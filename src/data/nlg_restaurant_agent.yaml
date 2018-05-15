@@ -1,0 +1,25 @@
+domain: restaurant
+version: 1.0
+
+dialog_acts:
+  affirm: [ "Yes.", "Yes, that's right." ]
+
+  bye : ["Thank you for using the restaurant recommend service."]
+
+  greetings : [ "Welcome to the Restaurant Recommend Service. How can I help you?" ]
+
+  inform:
+    cuisine: [ "$CUISINE" ]
+    pricerange: [ "$PRICERANGE" ]
+    area: [ "$AREA" ]
+    phone: [ "$PHONE" ]
+    address: [ "$ADDRESS" ]
+    name: [ "$NAME" ]
+    "area,cuisine,pricerange": [ "Checkout $NAME, which is located in $AREA. The price range is $PRICERANGE." ]
+
+  "request":
+    cuisine: [ "What kind of cuisine are you looking for?" ]
+    pricerange: [ "What is your price range?" ]
+    area: ["What is your preferred area?"]
+
+  negate  : ["No."]

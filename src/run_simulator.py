@@ -16,6 +16,7 @@ parser.add_argument('-t', '--type', required=True,
 parser.add_argument('-o', '--output_loc',
                     help='Output location to store simulated dialog histories.')
 
+
 # Config File Validation
 def validate_config(config: dict) -> bool:
     # Loop through config file and validate args. Replace missing args w/ None

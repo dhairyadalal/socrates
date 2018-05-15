@@ -8,6 +8,7 @@ class DialogStatus(Enum):
     NO_OUTCOME_YET = auto()
     NOT_STARTED = auto()
 
+
 class DialogGoal(object):
     def get_goal(self):
         return {"inform_slots": self.inform_slots,
@@ -65,8 +66,12 @@ class DialogAction(object):
 
 class NLU(object):
     """ Base class for natural language understanding module. """
-    def __init__(self):
-        pass
+
+    def parse_utterance(self, utterance: str) -> 'DialogAction':
+        return None
+
+    def __init__(self, model):
+        self.model = model
 
 class NLG(object):
     """ Base class for natural language generation module. """
@@ -115,10 +120,16 @@ class NLG(object):
 
 class Speaker(object):
     """ Base class for User Simulator and Dialog Agents """
-    def next(self, previous_action: object, turn: int):
+    def next(self, previous_action: DialogAction, turn: int) -> DialogAction:
         pass
 
     def reset(self):
+        pass
+
+    def get_utterance(self, action: DialogAction) -> str:
+        pass
+
+    def parse_utterance(self, utterance: str) -> 'DialogAction':
         pass
 
     def get_nlu(self):

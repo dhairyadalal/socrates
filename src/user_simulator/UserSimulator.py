@@ -204,6 +204,9 @@ class RuleSimulator(UserSimulator):
     def _action_to_nl(self, dialog_action: DialogAction)-> str:
         return self.nlg.get_utterance(dialog_action)
 
+    def get_utterance(self, action: DialogAction) -> str:
+        return self.nlg.get_utterance(action)
+
     def __str__(self):
         return "Restaurant Rules Simulator: v.1.0"
 

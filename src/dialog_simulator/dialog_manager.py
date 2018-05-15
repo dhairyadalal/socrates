@@ -12,13 +12,26 @@ class DialogManager:
 
     @ staticmethod
     def _take_turn(action, turn, speaker):
-        # 1. If speaker has no NLU, directly pass frame
-        if speaker.get_nlu() is None:
+
+        # Cold start case: action is None
+        if action is None:
             action = speaker.next(action, turn)
-        # Add in else logic
-        # a. pass NL utterance of previous speaker to nlu of current speaker
-        # b. pass action frame return by nlu to next()
-        return action
+            action.nl_utterance = speaker.get_utterance(action)
+            return action
+
+        # Otherwise follow conversation parse flow
+        else:
+            # 1. Parse previous utterance using speaker's NLU
+            parsed_action = speaker.parse_utterance(action.nl_utterance)
+
+            # 2. Check if nlu returned an action. If not, pass action action.
+            if parsed_action is not None:
+                action = speaker.next(parsed_action, turn)
+            else:
+                action = speaker.next(action, turn)
+
+            action.nl_utterance = speaker.get_utterance(action)
+            return action
 
     def _evaluate_dialog(self):
         for k, v in self.user_sim.goal.request_slots.items():

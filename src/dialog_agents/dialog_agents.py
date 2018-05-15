@@ -4,7 +4,6 @@ from pandas import DataFrame
 
 class AgentGoal(DialogGoal):
 
-
     def update_goal(self, inform_slots):
         for k, v in inform_slots.items():
             if k in self.request_slots:
@@ -14,12 +13,6 @@ class AgentGoal(DialogGoal):
         super(AgentGoal, self).__init__(inform_slots, request_slots)
 
 class Agent(Speaker):
-
-    def reset(self):
-        pass
-
-    def next(self, user_action, current_turn):
-        pass
 
     def __init__(self, domain):
         super(Agent, self).__init__()
@@ -39,7 +32,13 @@ class RestaurantAgent(Agent):
                                              "area": "UNK",
                                              "pricerange": "UNK"})
 
-    def next(self, user_action: DialogAction, current_turn: int) -> DialogAction:
+    def get_utterance(self, action: DialogAction) -> str:
+        return None
+
+    def parse_utterance(self, utterance: str) -> 'DialogAction':
+        return None
+
+    def next(self, user_action: DialogAction, current_turn: int) -> 'DialogAction':
         self.current_turn = current_turn
 
         if user_action is None and self.dialog_status == DialogStatus.NOT_STARTED:
