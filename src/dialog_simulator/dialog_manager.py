@@ -124,13 +124,15 @@ class DialogManager:
         # 7. Register Simulation
         self._register_simulated_dialog(user_goal, self.current_turn)
 
-    def __init__(self, user_sim, agent, domain, max_turns=8, num_sim=1):
+    def __init__(self, user_sim, agent, domain, max_turns=8, num_sim=1, reward=1, first_speaker="random"):
         self.user_sim = user_sim
         self.agent = agent
         self.domain = domain
         self.max_turns = max_turns
         self.current_turn = 0
         self.num_sim = num_sim
+        self.reward = reward
+        self.first_speaker = first_speaker
         self.dialog_history = []
         self.all_simulations = []
 

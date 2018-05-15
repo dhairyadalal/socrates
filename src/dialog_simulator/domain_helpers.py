@@ -1,7 +1,6 @@
 import pickle
 import random
-import yaml
-
+from .utils import *
 
 class Domain:
 
@@ -133,9 +132,39 @@ class DomainManager:
         return "Current domains: " + str(self.domain_names)
 
 
+class DomainKB(object):
 
+    def __init__(self, type: str):
+        self.type = type
+        self.kb = None
 
+    def suggest(self, params: dict) -> dict:
+        pass
 
+    def validate(self, suggestion, user_params: dict) -> bool:
+        pass
 
+    def get(self, params):
+        pass
 
+    def load_json(self, file_path: str):
+        pass
 
+# Public method for Domain digestion
+def import_domain_yaml(file_path: str) -> Domain:
+    try:
+        file = import_yaml(file_path)
+        if file is None:
+            raise ImportError("File was empty. Unable to load domain.")
+
+        domain = Domain(domain_name=file["domain_name"],
+                        version_number=file["version"],
+                        dialog_acts=file["dialog_acts"],
+                        request_slots=file["request_slots"],
+                        inform_slots=file["inform_slots"],
+                        valid_user_goals=file["valid_user_goals"],
+                        inform_slot_values=file["inform_slot_values"],
+                        domain_kb=None)
+        return domain
+    except:
+        raise ImportError("Error: Failed to load %s." % file_path)

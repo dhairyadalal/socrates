@@ -1,40 +1,94 @@
 from dialog_agents import RestaurantAgent
 from user_simulator import RuleSimulator
-from dialog_simulator import DomainManager, import_yaml
+from dialog_simulator import *
 import argparse
 
-def import_config(config_path:str)->dict:
-    pass
+# Set up command line paraser
+parser = argparse.ArgumentParser(description=
+                                 'Socrates Sim, a user simulator to support task completion dialog. Use -h for help.')
+
+parser.add_argument('-p', '--path', required=True,
+                    help='Path to simulation configuration file.')
+
+parser.add_argument('-t', '--type', required=True,
+                    help='Simulation config file type. Supported file types: json, yaml')
+
+parser.add_argument('-o', '--output_loc',
+                    help='Output location to store simulated dialog histories.')
+
+# Config File Validation
+def validate_config(config: dict) -> bool:
+    # Loop through config file and validate args. Replace missing args w/ None
+    return True
 
 
-def main():
+# Setup dialog manager
+def import_config(file_path: str, file_type: str)->dict:
+    if file_type == "yaml":
+        return import_yaml(file_path)
+    else:
+        return import_json(file_path)
 
-    # 1. Load Domain
-    print("Loading domain .... ")
-    domain_manager = DomainManager()
-    domain_manager.load_domains("data/")
-    restaurant = domain_manager.get_domain("restaurant")
-    print("\tLoaded: ", restaurant)
 
-    # 2. Setup User sim
-    print("Setting up user simulator .... ")
-    usersim = RuleSimulator(restaurant, "random")
-    goal_path = "data/sample_starting_goals.yaml"
-    usersim.load_starting_goals(goal_path, "yaml")
-    nlg_dict = yaml.safe_load(open("data/nlg_rules.yaml"))  # Load NLG model
-    nlg_model = NLG("dict", nlg_dict)
-    usersim.set_nlg(nlg_model)
-    print("\tLoaded: ", usersim)
+def setup_agent(type_: str, domain: Domain)->'Agent':
+    if type_ == "rules":
+        return RestaurantAgent(domain)
+    else:
+        return None # replace w/ other options
 
-    # 3. Setup Agent
-    print("Setting up user simulator .... ")
-    agent = RestaurantAgent(restaurant)
-    print("\tLoaded:", agent)
+def setup_usersim( type_: str, domain: Domain, goal_type: str, nlg_type: str, nlg_path: str, starting_goals_path: str,
+                   nlu_path: str )->'UserSimulator':
 
-    # 4. Setup DialogManager
-    dialog_manager = DialogManager(usersim, agent, restaurant, num_sim=10)
-    dialog_manager.run_simulations()
+    if type_ == "rules":
+        # Load simulator
+        usersim = RuleSimulator(domain, goal_type)
+
+        # Load starting goals
+        usersim.load_starting_goals(starting_goals_path, "yaml")
+
+        # Load NLU and NLG models
+        nlg_dict = yaml.safe_load(open(nlg_path))
+        nlg_model = NLG("dict", nlg_dict)
+        usersim.set_nlg(nlg_model)
+
+        if nlu_path is None:
+            usersim.set_nlu(None)
+    return usersim
+
+
+def load_dialog_manager(config: dict) -> DialogManager:
+
+    # Load domain
+    domain = import_domain_yaml(config.get("domain_config"))           # 1. Load domain
+    domain.add_domain_kb(json.load(open("data/restaurants_kb.json")))  # 2. Load KB (replace w/ Domain obj)
+
+    # Load Speakers
+    agent = setup_agent(config.get("agent_type"), domain)
+    usersim = setup_usersim(config.get("usersim_type"), domain, config.get("user_goal_type"),
+                            config.get("nlg_type"), config.get("nlg_path"), config.get("starting_goal_path"),
+                            None)
+
+    dialog_manager = DialogManager(user_sim=usersim, agent=agent, domain=domain, max_turns=config.get("max_turns"),
+                                   num_sim=config.get("simulation_rounds"), reward=config.get(("reward")))
+
+    return dialog_manager
 
 
 if __name__ == "__main__":
+    args = parser.parse_args()
+
+    # Check for valid file types
+    if args.type not in ["json", "yaml"]:
+        raise ValueError("Bad file type provided. Valid file types: json and yaml.")
+
+    # Import config file
+    config = import_config(args.path, args.type)
+
+    # Load Dialog Manager with provided configuration settings
+    dialog_manager = load_dialog_manager(config)
+
+    # Run Dialog manager
+    dialog_manager.run_simulations()
+
+
 

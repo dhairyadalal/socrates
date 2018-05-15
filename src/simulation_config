@@ -1,22 +1,23 @@
 # Dialog Simulation Configuration
 
 # Dialog Domain Settings
-domain_name: "restaurant"
-saved_domain_path: "/data"
+domain_config: data/restaurant_domain.yaml
+domain_kb: data/restaurants_kb.json
 
 # User Simulator settings
-usersim_class: ""
-starting_goal_path: "data/sample_starting_goals.yaml"
-nlg_model_type: "dict"
-nlg_model_path: "data/sample_starting_goals.yaml"
-user_goal_type: "random"
+usersim_type: rules
+starting_goal_path: data/sample_starting_goals.yaml
+nlg_type: dict
+nlg_path: data/nlg_rules.yaml
+user_goal_type: random
 
 # Dialog Agent settings
-agent_class: "RestaurantAgent"
+agent_type: rules
 
 # Dialog Simulation settings
 simulation_rounds: 10
+max_turns: 8
 first_speaker: random
 reward: 10
-simulation_output_path: "data/simulated_dialogs/"
+simulation_output_path: data/simulated_dialogs/
 
