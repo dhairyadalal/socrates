@@ -92,7 +92,7 @@ class UserSimulator(Speaker):
 class RuleSimulator(UserSimulator):
 
     # ------------------------  Route Response -----------------------------------------------------------------#
-    def next(self, agent_action: DialogAction, current_turn: int) -> DialogAction:
+    def next(self, agent_action: DialogAction, current_turn: int) -> 'DialogAction':
 
         self.current_turn = current_turn
 
@@ -108,11 +108,11 @@ class RuleSimulator(UserSimulator):
             return self.response_router[agent_action.dialog_act](agent_action)
 
     # ------------------------  Respond Methods -----------------------------------------------------------------#
-    def _respond_general(self, action: DialogAction) -> DialogAction:
+    def _respond_general(self, action: DialogAction) -> 'DialogAction':
         action.update_utterance(self._action_to_nl(action))
         return action
 
-    def _respond_request(self, agent_action: DialogAction) -> DialogAction:
+    def _respond_request(self, agent_action: DialogAction) -> 'DialogAction':
         """ Respond to an agent's request for more information by informing them based on user preferences. """
         params = {}
         inform_slots = self.goal.get_inform_slots()
@@ -127,17 +127,17 @@ class RuleSimulator(UserSimulator):
         ret_action.update_utterance(self._action_to_nl(ret_action))  # generate nl utterance
         return ret_action
 
-    def _respond_confirm_multiple(self, agent_action: DialogAction) -> DialogAction:
-        return DialogAction(dialog_act="inform", params={"unknown"})
+    def _respond_confirm_multiple(self, agent_action: DialogAction) -> 'DialogAction':
+        return DialogAction(dialog_act="inform", params={"unknown": None})
 
-    def _respond_confirm(self, agent_action: DialogAction) -> DialogAction:
+    def _respond_confirm(self, agent_action: DialogAction) -> 'DialogAction':
         confirm_params = list(agent_action.params.items())
         inform_slots = self.goal.get_inform_slots()
 
         # Check if agent is asking to confirm single or multiple prefs
         if len(confirm_params) == 1:  # Single pref case
             if confirm_params[0][0] not in inform_slots:
-                return self._respond_general(DialogAction(dialog_act="inform", params={"unknown"}))
+                return self._respond_general(DialogAction(dialog_act="inform", params={"unknown": None}))
             elif inform_slots[confirm_params[0][0]] == confirm_params[0][1]:
                 utterance = self._action_to_nl(DialogAction(dialog_act="affirm"))
                 return DialogAction(dialog_act="affirm", nl_utterance=utterance)
@@ -149,7 +149,7 @@ class RuleSimulator(UserSimulator):
         else:
             self._respond_confirm_multiple(agent_action)
 
-    def _respond_to_suggestion(self, agent_action: DialogAction) -> DialogAction:
+    def _respond_to_suggestion(self, agent_action: DialogAction) -> 'DialogAction':
 
         ret_action = DialogAction()
 
@@ -169,7 +169,7 @@ class RuleSimulator(UserSimulator):
             for k, v in self.goal.get_request_slots().items():
                 if v == "UNK":
                     ret_action.update_dialog_act("request")
-                    ret_action.update_params({k})
+                    ret_action.update_params({k:None})
                     ret_action.update_utterance(self._action_to_nl(ret_action))
                     return ret_action
 

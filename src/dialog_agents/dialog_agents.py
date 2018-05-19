@@ -68,7 +68,7 @@ class RestaurantAgent(Agent):
         # Find first unfilled slot and ask user about it
         for k,v in self.goal.get_request_slots().items():
             if v == "UNK":
-                return DialogAction(dialog_act="request", params={k})
+                return DialogAction(dialog_act="request", params={k: None})
 
         # If agent knows all of user's preferences, make a suggestion
         return self._make_recommendation()

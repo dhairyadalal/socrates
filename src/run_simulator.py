@@ -38,7 +38,7 @@ def setup_agent(type_: str, domain: Domain)->'Agent':
         return None # replace w/ other options
 
 def setup_usersim( type_: str, domain: Domain, goal_type: str, nlg_type: str, nlg_path: str, starting_goals_path: str,
-                   nlu_path: str )->'UserSimulator':
+                   nlu_path: str)->'UserSimulator':
 
     if type_ == "rules":
         # Load simulator
@@ -57,7 +57,7 @@ def setup_usersim( type_: str, domain: Domain, goal_type: str, nlg_type: str, nl
     return usersim
 
 
-def load_dialog_manager(config: dict) -> DialogManager:
+def load_dialog_manager(config: dict) -> 'DialogManager':
 
     # Load domain
     domain = import_domain_yaml(config.get("domain_config"))           # 1. Load domain
