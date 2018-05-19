@@ -1,8 +1,7 @@
 from dialog_simulator import *
 from dialog_simulator.dialog_helpers import DialogStatus
-import random
-import uuid
-import yaml
+import datetime, json, random, uuid, yaml
+
 
 def print_action(action, turn, speaker):
     print(turn,': ', speaker, "->", action.dialog_act, action.params)
@@ -96,15 +95,43 @@ class DialogManager:
         self.current_turn = 0
         self.dialog_history = []
 
-    def run_simulations(self):
+    def write_history_json(self, path):
+        now = datetime.datetime.now()
+        file = "data_%d_%d_%d.json" % (now.year, now.month, now.day)
+        try:
+            with open(path + file, 'w') as outfile:
+                json.dump( self.all_simulations, outfile, indent=4, sort_keys=True)
+        except IOError:
+            raise IOError("Error: Unable to write to file. ")
+        return True
+
+    def write_history_yaml(self, path) -> bool:
+        now = datetime.datetime.now()
+        file = "data_%d_%d_%d.yaml" % (now.year, now.month, now.day)
+        try:
+            with open( path + file, 'w') as outfile:
+                yaml.dump(self.all_simulations, outfile, default_flow_style=False)
+        except IOError:
+            raise IOError("Error: Unable to write to file. ")
+        return True
+
+    def run_simulations(self, save_loc: str, save_history: bool = True, output: str = 'json'):
         print("Preparing to run simulations ... ")
         for i in range(self.num_sim):
             print("\tRunning simulation %i of %i" % (i+1, self.num_sim))
             self.run_simulation()
 
         # write to file
-        with open('data/simulated_dialogs/data.yml', 'w') as outfile:
-            yaml.dump(self.all_simulations, outfile, default_flow_style=False)
+        if save_history:
+            if output == "json":
+                write_status = self.write_history_json(save_loc)
+            elif output == "yaml":
+                write_status = self.write_history_yaml(save_loc)
+            else:
+                raise ValueError("Unsupported export type. Expecting json or yaml.")
+
+            if write_status:
+                print("Successfully wrote dialog histories to %s" % save_loc)
 
     def run_simulation(self):
 

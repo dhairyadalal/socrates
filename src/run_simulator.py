@@ -89,7 +89,7 @@ if __name__ == "__main__":
     dialog_manager = load_dialog_manager(config)
 
     # Run Dialog manager
-    dialog_manager.run_simulations()
+    dialog_manager.run_simulations(config.get("save_location"), config.get("save_history"), config.get("save_type"))
 
 
 
