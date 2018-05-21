@@ -1,15 +1,16 @@
 # Dialog Simulation Configuration
 
 # Dialog Domain Settings
-domain_config: data/restaurant_domain.yaml
-domain_kb: data/restaurants_kb.json
+domain_config: sample_domains/restaurant/restaurant_domain.yaml
+domain_kb_path: sample_domains/restaurant/restaurants_kb.json
+domain_kb_type: json
 
 # User Simulator settings
 usersim_type: rules
-starting_goal_path: data/sample_starting_goals.yaml
+starting_goal_path: sample_domains/restaurant/sample_starting_goals.yaml
 nlg_type: dict
-nlg_path: data/nlg_rules.yaml
-user_goal_type: random
+nlg_path: sample_domains/restaurant/nlg_rules.yaml
+user_goal_type: mix
 
 # Dialog Agent settings
 agent_type: rules

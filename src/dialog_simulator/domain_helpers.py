@@ -4,6 +4,17 @@ from .utils import *
 
 class Domain:
 
+    def __init__(self, domain_name, version_number=None, dialog_acts=None, request_slots=None,
+                 inform_slots=None, valid_user_goals=None, inform_slot_values=None, domain_kb=None):
+        self.domain_name = domain_name
+        self.version = version_number
+        self.dialog_acts = dialog_acts
+        self.request_slots = request_slots
+        self.inform_slots = inform_slots
+        self.valid_user_goals = valid_user_goals
+        self.inform_slot_values = inform_slot_values
+        self.domain_kb = domain_kb
+
     # Functions to update Domain
     def add_request_slots(self, request_slots: list)->None:
         if request_slots is not None:
@@ -44,22 +55,16 @@ class Domain:
     def get_valid_user_goals(self) -> list:
         return self.valid_user_goals
 
-    def __init__(self, domain_name, version_number=None, dialog_acts=None, request_slots=None,
-                 inform_slots=None, valid_user_goals=None, inform_slot_values=None, domain_kb=None):
-        self.domain_name = domain_name
-        self.version = version_number
-        self.dialog_acts = dialog_acts
-        self.request_slots = request_slots
-        self.inform_slots = inform_slots
-        self.valid_user_goals = valid_user_goals
-        self.inform_slot_values = inform_slot_values
-        self.domain_kb = domain_kb
-
     def __str__(self):
         return "Domain: %s | Version: %s " % (self.domain_name, self.version)
 
 
 class DomainManager:
+
+    def __init__(self):
+        self.domain_names = []
+        self.domains = {}
+        self.default_name = "domains.pkl"
 
     # Manage Domains
     def add_domain(self, domain: Domain)->None:
@@ -123,11 +128,6 @@ class DomainManager:
             else:
                 raise ValueError("Error: Load_yaml failed, NoneType returned.")
 
-    def __init__(self):
-        self.domain_names = []
-        self.domains = {}
-        self.default_name = "domains.pkl"
-
     def __str__(self):
         return "Current domains: " + str(self.domain_names)
 
@@ -144,11 +144,20 @@ class DomainKB(object):
     def validate(self, suggestion, user_params: dict) -> bool:
         pass
 
-    def get(self, params):
+    def get_item(self, params):
         pass
 
     def load_json(self, file_path: str):
-        pass
+        self.kb = import_json(file_path)
+
+
+class DomainKBJSON(DomainKB):
+
+    def __init__(self, domain_dict: dict):
+        super()
+
+
+
 
 # Public method for Domain digestion
 def import_domain_yaml(file_path: str) -> Domain:

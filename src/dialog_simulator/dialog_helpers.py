@@ -12,10 +12,12 @@ class DialogStatus(Enum):
 class DialogGoal(object):
     def get_goal(self):
         return {"inform_slots": self.inform_slots,
-                 "request_slots": self.request_slots}
+                "request_slots": self.request_slots}
 
     def update_goal(self, inform_slots):
-        pass
+        for k, v in inform_slots.items():
+            if k in self.request_slots:
+                self.request_slots[k] = v
 
     def update_goal_slot(self, slot_type: str, key: str, val: str):
         if slot_type == "inform":

@@ -1,5 +1,4 @@
-from dialog_simulator import *
-from dialog_simulator.dialog_helpers import DialogStatus
+from dialog_simulator.dialog_helpers import DialogStatus, DialogGoal
 import datetime, json, random, uuid, yaml
 
 
@@ -7,36 +6,90 @@ def print_action(action, turn, speaker):
     print(turn,': ', speaker, "->", action.dialog_act, action.params)
     print(speaker, ": ", action.nl_utterance)
 
-class DialogManager:
 
-    @ staticmethod
-    def _take_turn(action, turn, speaker):
+class DialogManager(object):
 
-        # Cold start case: action is None
-        if action is None:
-            action = speaker.next(action, turn)
-            action.nl_utterance = speaker.get_utterance(action)
-            return action
+    def __init__(self, user_sim, user_goal_type, agent, domain, max_turns=8, num_sim=1, reward=1,
+                 first_speaker="random"):
+        self.user_sim = user_sim
+        self.user_goal_type = user_goal_type
+        self.agent = agent
+        self.domain = domain
+        self.max_turns = max_turns
+        self.current_turn = 0
+        self.num_sim = num_sim
+        self.reward = reward
+        self.first_speaker = first_speaker
+        self.dialog_history = []
+        self.all_simulations = []
+        self.starting_goals = None
 
-        # Otherwise follow conversation parse flow
-        else:
-            # 1. Parse previous utterance using speaker's NLU
-            parsed_action = speaker.parse_utterance(action.nl_utterance)
-
-            # 2. Check if nlu returned an action. If not, pass action action.
-            if parsed_action is not None:
-                action = speaker.next(parsed_action, turn)
-            else:
-                action = speaker.next(action, turn)
-
-            action.nl_utterance = speaker.get_utterance(action)
-            return action
-
+    # ------------------------------------- Dialog Evaluation ----------------------------------------#
     def _evaluate_dialog(self):
         for k, v in self.user_sim.goal.request_slots.items():
             if v == "UNK":
                 return False
         return True
+
+    # ------------------------------------- Goal Management ----------------------------------------#
+
+    def set_starting_goals(self, starting_goals: dict):
+        self.starting_goals = starting_goals
+
+    def _generate_random_starting_goal(self):
+        goal_params = random.choice(self.starting_goals)
+        return DialogGoal(goal_params["inform_slots"], goal_params["request_slots"])
+
+    def generate_goal(self, goal_type: str) -> 'DialogGoal':
+        route = {"template": self._generate_random_starting_goal(),
+                 "random": self._generate_random_goal()}
+        if goal_type in route:
+            return route.get(goal_type)
+        elif goal_type == "mix":
+            rand_gt = random.choice(list(route.keys()))
+            return route.get(rand_gt)
+        else:
+            raise ValueError("Invalid goal type. Supported goal types: template, random.")
+
+    def _get_rand_constraints(self, request_template: list):
+        # 1. Generate inform slots
+        inform_slots = self.domain.get_all_inform_slots()
+        valid_inform_slots = list(set(inform_slots).difference(request_template))
+        random.shuffle(valid_inform_slots)  # shuffle slots
+        random_slots = valid_inform_slots[: random.randint(0, len(valid_inform_slots))]
+
+        # 2. Populate inform slots with random constraints
+        return {slot: self.domain.sample_inform_slot_value(slot) for slot in random_slots}
+
+    def _generate_random_goal(self):
+        # 1. Create request slots
+        request_template = random.choice(self.domain.valid_user_goals)
+        request_slots = {slot: "UNK" for slot in request_template}
+
+        # 2. Generate random inform constraints
+        inform_slots = self._get_rand_constraints(request_template)
+        return DialogGoal(inform_slots, request_slots)
+
+    # ------------------------------------- Turn Management ----------------------------------------#
+    @staticmethod
+    def _take_turn(prev_action: 'DialogAction', turn: int, speaker: 'Speaker') -> 'DialogAction':
+
+        # Cold start case: prev_action is None
+        if prev_action is None:
+            next_action = speaker.next(prev_action, turn)
+            return next_action
+
+        # Otherwise follow conversation parse flow
+        else:
+            # 1. Parse previous utterance using speaker's NLU
+            parsed_action = speaker.parse_utterance(prev_action.nl_utterance)
+
+            # 2. Check if nlu returned an prev_action. If not, pass prev_action prev_action.
+            if parsed_action is not None:
+                next_action = speaker.next(parsed_action, turn)
+            else:
+                next_action = speaker.next(prev_action, turn)
+            return next_action
 
     def _register_turn(self, user_action, agent_action, user_goal, turn, first_speaker):
         if first_speaker == "usersim":
@@ -90,8 +143,15 @@ class DialogManager:
                                      "turn_history": self.dialog_history})
 
     def _initialize_new_round(self):
-        self.user_sim.reset()
+
+        # Generate New Goal
+        new_user_goal = self.generate_goal(self.user_goal_type)
+
+        # Reset Speakers
+        self.user_sim.reset(new_user_goal)
         self.agent.reset()
+
+        # Reset conversation params
         self.current_turn = 0
         self.dialog_history = []
 
@@ -163,17 +223,5 @@ class DialogManager:
 
         # 7. Register Simulation
         self._register_simulated_dialog(user_goal, self.current_turn)
-
-    def __init__(self, user_sim, agent, domain, max_turns=8, num_sim=1, reward=1, first_speaker="random"):
-        self.user_sim = user_sim
-        self.agent = agent
-        self.domain = domain
-        self.max_turns = max_turns
-        self.current_turn = 0
-        self.num_sim = num_sim
-        self.reward = reward
-        self.first_speaker = first_speaker
-        self.dialog_history = []
-        self.all_simulations = []
 
 

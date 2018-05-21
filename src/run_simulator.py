@@ -42,10 +42,7 @@ def setup_usersim( type_: str, domain: Domain, goal_type: str, nlg_type: str, nl
 
     if type_ == "rules":
         # Load simulator
-        usersim = RuleSimulator(domain, goal_type)
-
-        # Load starting goals
-        usersim.load_starting_goals(starting_goals_path, "yaml")
+        usersim = RuleSimulator(domain)
 
         # Load NLU and NLG models
         nlg_dict = yaml.safe_load(open(nlg_path))
@@ -61,7 +58,10 @@ def load_dialog_manager(config: dict) -> 'DialogManager':
 
     # Load domain
     domain = import_domain_yaml(config.get("domain_config"))           # 1. Load domain
-    domain.add_domain_kb(json.load(open("data/restaurants_kb.json")))  # 2. Load KB (replace w/ Domain obj)
+
+    if config.get("domain_kb_type") == "json":
+        domain_kb_path = config.get("domain_kb_path")
+        domain.add_domain_kb(json.load(open(domain_kb_path)))  # 2. Load KB (replace w/ Domain obj)
 
     # Load Speakers
     agent = setup_agent(config.get("agent_type"), domain)
@@ -69,8 +69,14 @@ def load_dialog_manager(config: dict) -> 'DialogManager':
                             config.get("nlg_type"), config.get("nlg_path"), config.get("starting_goal_path"),
                             None)
 
-    dialog_manager = DialogManager(user_sim=usersim, agent=agent, domain=domain, max_turns=config.get("max_turns"),
+    dialog_manager = DialogManager(user_sim=usersim, user_goal_type=config.get("user_goal_type"),
+                                   agent=agent, domain=domain, max_turns=config.get("max_turns"),
                                    num_sim=config.get("simulation_rounds"), reward=config.get(("reward")))
+
+    # Load Starting Goals if present
+    if config.get("starting_goal_path") is not None:
+        starting_goals = import_yaml(config.get("starting_goal_path"))
+        dialog_manager.set_starting_goals(starting_goals)
 
     return dialog_manager
 

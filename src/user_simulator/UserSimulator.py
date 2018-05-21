@@ -2,52 +2,18 @@ import yaml
 import random
 from dialog_simulator import *
 
-
-class UserGoal(DialogGoal):
-    def update_goal(self, inform_slots):
-        for k, v in inform_slots.items():
-            if k in self.request_slots:
-                self.request_slots[k] = v
-
-    def __init__(self, inform_slots: dict, request_slots: dict):
-        super(UserGoal, self).__init__(inform_slots, request_slots)
-
-
 class UserSimulator(Speaker):
 
+    def __init__(self, domain):
+        super(UserSimulator, self).__init__()
+        self.domain = domain
+        self.valid_goals = domain.get_valid_user_goals()
+        self.goal = None
+        self.dialog_status = DialogStatus.NOT_STARTED
+        self.current_turn = -1
+        self.starting_goals = None
+
     # ------------------------------------- Goal Management ----------------------------------------#
-    def generate_goal(self, goal_type: str):
-        if goal_type == "template":
-            goal = random.choice(self.starting_goals)
-            self.goal = UserGoal(goal["inform_slots"], goal["request_slots"])
-        elif goal_type == "random":
-            self.goal = self._generate_random_goal()
-        else:
-            raise ValueError("Invalid goal type. Supported goal types: template, random.")
-
-    def _get_rand_constraints(self, request_template: list):
-        # 1. Generate inform slots
-        inform_slots = self.domain.get_all_inform_slots()
-        valid_inform_slots = list(set(inform_slots).difference(request_template))
-        random.shuffle(valid_inform_slots)  # shuffle slots
-        random_slots = valid_inform_slots[: random.randint(0, len(valid_inform_slots))]
-
-        # 2. Populate inform slots with random constraints
-        return {slot: self.domain.sample_inform_slot_value(slot) for slot in random_slots}
-
-    def _generate_random_goal(self):
-        # 1. Create request slots
-        request_template = random.choice(self.valid_goals)
-        request_slots = {slot: "UNK" for slot in request_template}
-
-        # 2. Generate random inform constraints
-        inform_slots = self._get_rand_constraints(request_template)
-        return UserGoal(inform_slots, request_slots)
-
-    def load_starting_goals(self, file_path: str, file_type: str):
-        if file_type == "yaml":
-            self.starting_goals = self._load_yaml(file_path)
-
     def get_goal(self):
         return self.goal.get_goal()
 
@@ -73,21 +39,10 @@ class UserSimulator(Speaker):
         except ImportError:
             raise ("Error: unable import %s." % file_path)
 
-    def reset(self):
+    def reset(self, user_goal: DialogGoal):
         self.dialog_status = DialogStatus.NOT_STARTED
         self.current_turn = -1
-        self.generate_goal(self.goal_type)
-
-    def __init__(self, domain, goal_type):
-        super(UserSimulator, self).__init__()
-        self.domain = domain
-        self.valid_goals = domain.get_valid_user_goals()
-        self.goal = None
-        self.dialog_status = DialogStatus.NOT_STARTED
-        self.current_turn = -1
-        self.starting_goals = None
-        self.goal_type = goal_type
-
+        self.goal = user_goal
 
 class RuleSimulator(UserSimulator):
 
@@ -210,8 +165,8 @@ class RuleSimulator(UserSimulator):
     def __str__(self):
         return "Restaurant Rules Simulator: v.1.0"
 
-    def __init__(self, domain, goal_type):
-        super(RuleSimulator, self).__init__(domain, goal_type)
+    def __init__(self, domain: 'Domain'):
+        super(RuleSimulator, self).__init__(domain)
         self.response_router = {"greetings": self._respond_general,
                                 "inform": self._respond_to_suggestion,
                                 "random_inform": self._respond_random_inform,
