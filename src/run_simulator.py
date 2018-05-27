@@ -44,6 +44,12 @@ def setup_agent(type_: str,
         if nlu_type == "simple":
             nlu = NLUsimple(domain)
             agent.set_nlu(nlu)
+
+        if nlg_type == "dict":
+            nlg_dict = import_yaml(nlg_path)
+            nlg_model = NLG(nlg_type, nlg_dict)
+            agent.set_nlg(nlg_model)
+
         return agent
 
     else:
@@ -61,13 +67,12 @@ def setup_usersim( type_: str,
         usersim = RuleSimulator(domain)
 
         # Load NLU and NLG models
-        nlg_dict = yaml.safe_load(open(nlg_path))
+        nlg_dict = import_yaml(nlg_path)
         nlg_model = NLG(nlg_type, nlg_dict)
+        usersim.set_nlg(nlg_model)
 
         if nlu_type is not None:
             pass
-
-        usersim.set_nlg(nlg_model)
 
         if nlu_path is None:
             usersim.set_nlu(None)

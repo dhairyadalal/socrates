@@ -16,7 +16,7 @@ dialog_acts:
     address: [ "$ADDRESS" ]
     name: [ "$NAME" ]
     area,cuisine,pricerange: [ "Checkout $NAME, which is located in $AREA. The price range is $PRICERANGE." ]
-
+    address,name,phone: ["The phone number of $NAME is $PHONE and the address is $ADDRESS"]
   confirm:
     cuisine: [ "You want $CUISINE food, right?", "$CUISINE, right?" ]
     pricerange: [ "You want food that $PRICERANGE, right?" ]
@@ -25,7 +25,7 @@ dialog_acts:
 
   "request":
     cuisine: [ "What kind of cuisine are you looking for?" ]
-    pricerange: [ "What is your pricerange?" ]
+    pricerange: [ "What is your price range?" ]
     area: ["What is your preferred area?"]
 
   negate  : ["No."]

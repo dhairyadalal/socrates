@@ -42,7 +42,7 @@ class RestaurantAgent(Agent):
                                              "pricerange": "UNK"})
 
     def get_utterance(self, action: DialogAction) -> str:
-        return None
+        return self.nlg.get_utterance(action)
 
     def parse_utterance(self, utterance: str) -> 'DialogAction':
         if self.nlu is not None:
@@ -55,7 +55,9 @@ class RestaurantAgent(Agent):
 
         if user_action is None and self.dialog_status == DialogStatus.NOT_STARTED:
             self.dialog_status = DialogStatus.NO_OUTCOME_YET
-            return DialogAction(dialog_act="greetings")
+            action = DialogAction(dialog_act="greetings")
+            action.update_utterance(self.get_utterance(action))
+            return action
 
         elif user_action.dialog_act == "request":
             self.dialog_status = DialogStatus.NO_OUTCOME_YET
@@ -63,11 +65,15 @@ class RestaurantAgent(Agent):
             for k,v in user_action.params.items():
                 if k in self.dialog_state["inform_slots"]:
                     params[k] = v
-            return DialogAction(dialog_act="inform", params=params)
+            action = DialogAction(dialog_act="inform", params=params)
+            action.update_utterance(self.get_utterance(action))
+            return action
 
         elif user_action.dialog_act == "bye":
             self.dialog_status = DialogStatus.FINISHED
-            return DialogAction(dialog_act="bye")
+            action = DialogAction(dialog_act="bye")
+            action.update_utterance(self.get_utterance(action))
+            return action
 
         else:
             if user_action.params is None:
@@ -80,7 +86,9 @@ class RestaurantAgent(Agent):
         # Find first unfilled slot and ask user about it
         for k,v in self.goal.get_request_slots().items():
             if v == "UNK":
-                return DialogAction(dialog_act="request", params={k: None})
+                action = DialogAction(dialog_act="request", params={k: None})
+                action.update_utterance(self.get_utterance(action))
+                return action
 
         # If agent knows all of user's preferences, make a suggestion
         return self._make_recommendation()
@@ -92,9 +100,11 @@ class RestaurantAgent(Agent):
         return self._make_recommendation()
 
     def _make_recommendation(self):
-        return DialogAction(dialog_act="inform", params={"name": 'aladin',
+        action = DialogAction(dialog_act="inform", params={"name": 'aladin',
                                                          'phone': '933-333-2222',
                                                          'address':'324343'})
+        action.update_utterance(self.get_utterance(action))
+        return action
 
     def __str__(self):
         return "Restaurant Recommender v.1.0"

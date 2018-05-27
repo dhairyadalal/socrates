@@ -3,8 +3,8 @@ import datetime, json, random, uuid, yaml
 
 
 def print_action(action, turn, speaker):
-    print(turn,': ', speaker, "->", action.dialog_act, action.params)
-    print(speaker, ": ", action.nl_utterance)
+    print("\t", turn, ": ", speaker, ": ", action.nl_utterance)
+    print("\t\t  DialogAction: ", action.dialog_act, action.params)
 
 
 class DialogManager(object):
@@ -23,6 +23,7 @@ class DialogManager(object):
         self.dialog_history = []
         self.all_simulations = []
         self.starting_goals = None
+        self.clean_dialogs = []
 
     # ------------------------------------- Dialog Evaluation ----------------------------------------#
     def _evaluate_dialog(self):
@@ -73,23 +74,8 @@ class DialogManager(object):
     # ------------------------------------- Turn Management ----------------------------------------#
     @staticmethod
     def _take_turn(prev_action: 'DialogAction', turn: int, speaker: 'Speaker') -> 'DialogAction':
-
-        # Cold start case: prev_action is None
-        if prev_action is None:
-            next_action = speaker.next(prev_action, turn)
-            return next_action
-
-        # Otherwise follow conversation parse flow
-        else:
-            # 1. Parse previous utterance using speaker's NLU
-            parsed_action = speaker.parse_utterance(prev_action.nl_utterance)
-
-            # 2. Check if nlu returned an prev_action. If not, pass prev_action prev_action.
-            if parsed_action is not None:
-                next_action = speaker.next(parsed_action, turn)
-            else:
-                next_action = speaker.next(prev_action, turn)
-            return next_action
+        next_action = speaker.next(prev_action, turn)
+        return next_action
 
     def _register_turn(self, user_action, agent_action, user_goal, turn, first_speaker):
         if first_speaker == "usersim":
@@ -154,6 +140,7 @@ class DialogManager(object):
         # Reset conversation params
         self.current_turn = 0
         self.dialog_history = []
+        self.clean_dialogs = []
 
     def write_history_json(self, path):
         now = datetime.datetime.now()
