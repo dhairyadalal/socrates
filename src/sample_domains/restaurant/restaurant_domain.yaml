@@ -5,20 +5,20 @@ domain_name: restaurant
 version: 1.0
 
 # Dialog Acts
-dialog_acts: [ "inform", "confirm", "request", "affirm", "negate", "greetings", "bye" ]
+dialog_acts: [ "inform", "confirm", "affirm", "request", "negate", "greetings", "bye" ]
 
 # Request Slots
-request_slots: [ "address", "area", "food", "phone", "pricerange", "postcode", "name" ]
+request_slots: [ "address", "area", "cuisine", "phone", "pricerange", "postcode", "name" ]
 
 # Inform slots
 inform_slots: [ "cuisine", "pricerange", "name", "area" ]
 
 # Valid User Goals
 valid_user_goals:
-  - [ "name" ]                  # User wants restaurant name
-  - [ "name", "address"  ]      # User wants
-  - [ "name", "address", "phone" ]
-  - [ "name", "phone" ]
+  - [ "name" ]                     # User wants restaurant name
+  - [ "name", "address"  ]         # User wants name and address
+  - [ "name", "address", "phone" ] # User wants name, address, and phone
+  - [ "name", "phone" ]            # Use wants name and phone
 
 # Domain Inform Slots and values
 inform_slot_values:

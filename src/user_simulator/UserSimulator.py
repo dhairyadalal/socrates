@@ -2,6 +2,7 @@ import yaml
 import random
 from dialog_simulator import *
 
+
 class UserSimulator(Speaker):
 
     def __init__(self, domain):
@@ -44,10 +45,11 @@ class UserSimulator(Speaker):
         self.current_turn = -1
         self.goal = user_goal
 
+
 class RuleSimulator(UserSimulator):
 
     # ------------------------  Route Response -----------------------------------------------------------------#
-    def next(self, agent_action: DialogAction, current_turn: int) -> 'DialogAction':
+    def next(self, agent_action: 'DialogAction', current_turn: int) -> 'DialogAction':
 
         self.current_turn = current_turn
 
@@ -63,7 +65,7 @@ class RuleSimulator(UserSimulator):
             return self.response_router[agent_action.dialog_act](agent_action)
 
     # ------------------------  Respond Methods -----------------------------------------------------------------#
-    def _respond_general(self, action: DialogAction) -> 'DialogAction':
+    def _respond_general(self, action: 'DialogAction') -> 'DialogAction':
         action.update_utterance(self._action_to_nl(action))
         return action
 
@@ -82,7 +84,7 @@ class RuleSimulator(UserSimulator):
         ret_action.update_utterance(self._action_to_nl(ret_action))  # generate nl utterance
         return ret_action
 
-    def _respond_confirm_multiple(self, agent_action: DialogAction) -> 'DialogAction':
+    def _respond_confirm_multiple(self, agent_action: 'DialogAction') -> 'DialogAction':
         return DialogAction(dialog_act="inform", params={"unknown": None})
 
     def _respond_confirm(self, agent_action: DialogAction) -> 'DialogAction':

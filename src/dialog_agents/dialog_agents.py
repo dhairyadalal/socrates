@@ -24,6 +24,15 @@ class Agent(Speaker):
 
 class RestaurantAgent(Agent):
 
+    def __init__(self, domain):
+        super(RestaurantAgent, self).__init__(domain)
+        self.dialog_status = DialogStatus.NOT_STARTED
+        self.goal = AgentGoal(inform_slots=dict(),
+                              request_slots={"cuisine": "UNK",
+                                             "area": "UNK",
+                                             "pricerange": "UNK"})
+        self.kb = DataFrame(self.domain.domain_kb["kb"])
+
     def reset(self):
         self.current_turn = -1
         self.dialog_status = DialogStatus.NOT_STARTED
@@ -36,7 +45,10 @@ class RestaurantAgent(Agent):
         return None
 
     def parse_utterance(self, utterance: str) -> 'DialogAction':
-        return None
+        if self.nlu is not None:
+            return self.nlu.parse_utterance(utterance)
+        else:
+            return None
 
     def next(self, user_action: DialogAction, current_turn: int) -> 'DialogAction':
         self.current_turn = current_turn
@@ -86,12 +98,3 @@ class RestaurantAgent(Agent):
 
     def __str__(self):
         return "Restaurant Recommender v.1.0"
-
-    def __init__(self, domain):
-        super(RestaurantAgent, self).__init__(domain)
-        self.dialog_status = DialogStatus.NOT_STARTED
-        self.goal = AgentGoal(inform_slots=dict(),
-                              request_slots={"cuisine": "UNK",
-                                             "area": "UNK",
-                                             "pricerange": "UNK"})
-        self.kb = DataFrame(self.domain.domain_kb["kb"])

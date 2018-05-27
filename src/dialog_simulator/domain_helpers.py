@@ -150,13 +150,11 @@ class DomainKB(object):
     def load_json(self, file_path: str):
         self.kb = import_json(file_path)
 
-
-class DomainKBJSON(DomainKB):
-
-    def __init__(self, domain_dict: dict):
-        super()
-
-
+#
+# class DomainKBJSON(DomainKB):
+#
+#     def __init__(self, domain_dict: dict):
+#         super()
 
 
 # Public method for Domain digestion
@@ -175,5 +173,5 @@ def import_domain_yaml(file_path: str) -> Domain:
                         inform_slot_values=file["inform_slot_values"],
                         domain_kb=None)
         return domain
-    except:
+    except Exception:
         raise ImportError("Error: Failed to load %s." % file_path)

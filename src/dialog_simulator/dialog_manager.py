@@ -175,12 +175,16 @@ class DialogManager(object):
             raise IOError("Error: Unable to write to file. ")
         return True
 
-    def run_simulations(self, save_loc: str, save_history: bool = True, output: str = 'json'):
+    def run_simulations(self, save_loc: str,
+                        save_history: bool = True,
+                        output: str = 'json',
+                        verbose_flag: bool = True) -> None:
         print("Preparing to run simulations ... ")
         for i in range(self.num_sim):
-            print("\tRunning simulation %i of %i" % (i+1, self.num_sim))
-            self.run_simulation()
-
+            if verbose_flag:
+                print("\tRunning simulation %i of %i" % (i+1, self.num_sim))
+            self.run_simulation(verbose_flag)
+        print("Successfully ran %i simulations." % self.num_sim)
         # write to file
         if save_history:
             if output == "json":
@@ -193,7 +197,7 @@ class DialogManager(object):
             if write_status:
                 print("Successfully wrote dialog histories to %s" % save_loc)
 
-    def run_simulation(self):
+    def run_simulation(self, verbose: bool = True) -> None:
 
         self._initialize_new_round()            # 1. Reset agents
         flip = random.randint(0, 1)             # 2. Flip coin to see who goes first.
@@ -219,7 +223,8 @@ class DialogManager(object):
 
         # 6. Evaluate goal
         dialog_result = "Success" if self._evaluate_dialog() else "Failed"
-        print("\tDialog Result: ", dialog_result)
+        if verbose:
+            print("\tDialog Result: ", dialog_result)
 
         # 7. Register Simulation
         self._register_simulated_dialog(user_goal, self.current_turn)

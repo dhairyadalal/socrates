@@ -16,6 +16,9 @@ parser.add_argument('-t', '--type', required=True,
 parser.add_argument('-o', '--output_loc',
                     help='Output location to store simulated dialog histories.')
 
+parser.add_argument('-nv', '--non_verbose', action='store_true',
+                    help='Show invocation and status for each simulated dialog')
+
 
 # Config File Validation
 def validate_config(config: dict) -> bool:
@@ -31,14 +34,27 @@ def import_config(file_path: str, file_type: str)->dict:
         return import_json(file_path)
 
 
-def setup_agent(type_: str, domain: Domain)->'Agent':
+def setup_agent(type_: str,
+                domain: Domain,
+                nlg_type: str = None,
+                nlg_path: str = None,
+                nlu_type: str = None) ->'Agent':
     if type_ == "rules":
-        return RestaurantAgent(domain)
+        agent = RestaurantAgent(domain)
+        if nlu_type == "simple":
+            nlu = NLUsimple(domain)
+            agent.set_nlu(nlu)
+        return agent
+
     else:
         return None # replace w/ other options
 
-def setup_usersim( type_: str, domain: Domain, goal_type: str, nlg_type: str, nlg_path: str, starting_goals_path: str,
-                   nlu_path: str)->'UserSimulator':
+def setup_usersim( type_: str,
+                   domain: Domain,
+                   nlg_type: str,
+                   nlg_path: str = None,
+                   nlu_type: str = None,
+                   nlu_path: str = None)->'UserSimulator':
 
     if type_ == "rules":
         # Load simulator
@@ -46,7 +62,11 @@ def setup_usersim( type_: str, domain: Domain, goal_type: str, nlg_type: str, nl
 
         # Load NLU and NLG models
         nlg_dict = yaml.safe_load(open(nlg_path))
-        nlg_model = NLG("dict", nlg_dict)
+        nlg_model = NLG(nlg_type, nlg_dict)
+
+        if nlu_type is not None:
+            pass
+
         usersim.set_nlg(nlg_model)
 
         if nlu_path is None:
@@ -57,21 +77,30 @@ def setup_usersim( type_: str, domain: Domain, goal_type: str, nlg_type: str, nl
 def load_dialog_manager(config: dict) -> 'DialogManager':
 
     # Load domain
-    domain = import_domain_yaml(config.get("domain_config"))           # 1. Load domain
+    domain = import_domain_yaml(config.get("domain_config"))   # 1. Load domain
 
     if config.get("domain_kb_type") == "json":
         domain_kb_path = config.get("domain_kb_path")
         domain.add_domain_kb(json.load(open(domain_kb_path)))  # 2. Load KB (replace w/ Domain obj)
 
     # Load Speakers
-    agent = setup_agent(config.get("agent_type"), domain)
-    usersim = setup_usersim(config.get("usersim_type"), domain, config.get("user_goal_type"),
-                            config.get("nlg_type"), config.get("nlg_path"), config.get("starting_goal_path"),
+    agent = setup_agent(type_=config.get("agent_type"),
+                        domain=domain,
+                        nlg_type=config.get("agent_nlg_type"),
+                        nlg_path=config.get("agent_nlg_path"),
+                        nlu_type=config.get("agent_nlu_type"))
+
+    usersim = setup_usersim(config.get("usersim_type"), domain,
+                            config.get("usersim_nlg_type"),
+                            config.get("usersim_nlg_path"),
                             None)
 
-    dialog_manager = DialogManager(user_sim=usersim, user_goal_type=config.get("user_goal_type"),
-                                   agent=agent, domain=domain, max_turns=config.get("max_turns"),
-                                   num_sim=config.get("simulation_rounds"), reward=config.get(("reward")))
+    dialog_manager = DialogManager(user_sim=usersim,
+                                   user_goal_type=config.get("user_goal_type"),
+                                   agent=agent, domain=domain,
+                                   max_turns=config.get("max_turns"),
+                                   num_sim=config.get("simulation_rounds"),
+                                   reward=config.get(("reward")))
 
     # Load Starting Goals if present
     if config.get("starting_goal_path") is not None:
@@ -82,7 +111,12 @@ def load_dialog_manager(config: dict) -> 'DialogManager':
 
 
 if __name__ == "__main__":
+
     args = parser.parse_args()
+
+    verbose_flag = True
+    if args.non_verbose:
+        verbose_flag = False
 
     # Check for valid file types
     if args.type not in ["json", "yaml"]:
@@ -95,7 +129,7 @@ if __name__ == "__main__":
     dialog_manager = load_dialog_manager(config)
 
     # Run Dialog manager
-    dialog_manager.run_simulations(config.get("save_location"), config.get("save_history"), config.get("save_type"))
-
-
-
+    dialog_manager.run_simulations(config.get("save_location"),
+                                   config.get("save_history"),
+                                   config.get("save_type"),
+                                   verbose_flag)
