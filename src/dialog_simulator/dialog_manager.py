@@ -9,8 +9,8 @@ def print_action(action, turn, speaker):
 
 class DialogManager(object):
 
-    def __init__(self, user_sim, user_goal_type, agent, domain, max_turns=8, num_sim=1, reward=1,
-                 first_speaker="random"):
+    def __init__(self, user_sim, user_goal_type, agent, domain, max_turns=8, num_sim=1,
+                 reward=1, first_speaker="random"):
         self.user_sim = user_sim
         self.user_goal_type = user_goal_type
         self.agent = agent
@@ -165,12 +165,13 @@ class DialogManager(object):
     def run_simulations(self, save_loc: str,
                         save_history: bool = True,
                         output: str = 'json',
+                        print_dialog_flag: bool = False,
                         verbose_flag: bool = True) -> None:
         print("Preparing to run simulations ... ")
         for i in range(self.num_sim):
             if verbose_flag:
                 print("\tRunning simulation %i of %i" % (i+1, self.num_sim))
-            self.run_simulation(verbose_flag)
+            self.run_simulation(print_dialog_flag, verbose_flag)
         print("Successfully ran %i simulations." % self.num_sim)
         # write to file
         if save_history:
@@ -184,10 +185,18 @@ class DialogManager(object):
             if write_status:
                 print("Successfully wrote dialog histories to %s" % save_loc)
 
-    def run_simulation(self, verbose: bool = True) -> None:
+    def run_simulation(self, print_dialog_flag: bool = False, verbose: bool = True) -> None:
 
         self._initialize_new_round()            # 1. Reset agents
-        flip = random.randint(0, 1)             # 2. Flip coin to see who goes first.
+
+        # 2. Deterime who goes first
+        if self.first_speaker == "random":
+            flip = random.randint(0, 1)
+        elif self.first_speaker == "usersim":
+            flip = 0
+        else:
+            flip = 1
+
         user_goal = self.user_sim.goal          # 3. Stash user goal
         user_action, agent_action = None, None  # 4. Set agent actions
 
@@ -199,12 +208,27 @@ class DialogManager(object):
             if flip == 0:  # Assume User takes first action
                 user_action = self._take_turn(agent_action, self.current_turn, self.user_sim)
                 agent_action = self._take_turn(user_action, self.current_turn, self.agent)
-                self._register_turn(user_action, agent_action, self.user_sim.goal.get_goal(),
+
+                if print_dialog_flag:
+                    print_action(user_action, self.current_turn, "usersim")
+                    print_action(agent_action, self.current_turn, "agent")
+
+                self._register_turn(user_action,
+                                    agent_action,
+                                    self.user_sim.goal.get_goal(),
                                     self.current_turn, "usersim")
+
             else:  # Assume Agent takes first action
                 agent_action = self._take_turn(user_action, self.current_turn, self.agent)
                 user_action = self._take_turn(agent_action, self.current_turn, self.user_sim)
-                self._register_turn(user_action, agent_action, self.user_sim.goal.get_goal(),
+
+                if print_dialog_flag:
+                    print_action(agent_action, self.current_turn, "agent")
+                    print_action(user_action, self.current_turn, "usersim")
+
+                self._register_turn(user_action,
+                                    agent_action,
+                                    self.user_sim.goal.get_goal(),
                                     self.current_turn, "agent")
             self.current_turn += 1
 

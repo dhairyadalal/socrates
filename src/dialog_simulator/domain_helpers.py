@@ -1,5 +1,6 @@
 import pickle
 import random
+import pandas as pd
 from .utils import *
 
 class Domain:
@@ -138,23 +139,74 @@ class DomainKB(object):
         self.type = type
         self.kb = None
 
-    def suggest(self, params: dict) -> dict:
+    def get_suggestions(self, params: dict, num_results: int) -> list:
         pass
 
-    def validate(self, suggestion, user_params: dict) -> bool:
+    def validate_suggestion(self, suggestion: dict, user_params: dict) -> float:
         pass
 
     def get_item(self, params):
         pass
 
-    def load_json(self, file_path: str):
-        self.kb = import_json(file_path)
 
-#
-# class DomainKBJSON(DomainKB):
-#
-#     def __init__(self, domain_dict: dict):
-#         super()
+class DomainKBsimple(DomainKB):
+
+    def __init__(self, type: str, kb_path: str, kb_file_type: str):
+        super(DomainKBsimple, self).__init__(type)
+        self.tbl = self._load_kb(kb_path, kb_file_type)
+
+    def _load_kb(self, kb_path, kb_file_type) -> 'pandas.DataFrame':
+        if kb_file_type == "json":
+            return pd.read_json(kb_path)
+        if kb_file_type == "csv":
+            return pd.read_csv(kb_path)
+
+    def get_suggestions(self, params: dict, num_results: int) -> list:
+
+        # 1. Check if exact match exists
+        results = self._extact_match(params)
+
+        if len(results) == 0:
+            results = self._or_match(params)
+            results = self.rank_results(results, params)
+
+            return results[:num_results]
+
+        else:
+            return [(json.loads(row.to_json()), 1.0) for _, row in results.iterrows()][:num_results]
+
+    def validate_suggestion(self, suggestion: dict, user_params: dict) -> float:
+        return 0
+
+    def get_item(self, params) -> dict:
+        return {}
+
+    def _extact_match(self, params: dict) -> 'pandas.DataFrame':
+        query = [str(key) + "=='" + str(val) + "'" for key, val in params.items()]
+        query = '&'.join(query)
+        return self.tbl.query(query)
+
+    def _or_match(self, params: dict) -> 'pandas.DataFrame':
+        query = [str(key) + "=='" + str(val) + "'" for key, val in params.items()]
+        query = '|'.join(query)
+        return self.tbl.query(query)
+
+    @staticmethod
+    def _sim_score(set1: set, set2: set) -> float:
+        return len(set1.intersection(set2)) / len(set2)
+
+    def rank_results(self, results: 'pandas.DataFrame', params: dict) -> list:
+
+        param_val_set = set(params.values())
+        param_key_list = list(params.keys())
+        result_list = []
+
+        for _, row in results.iterrows():
+            row_vals_set = set(row[param_key_list].values)
+            result_list.append((json.loads(row.to_json()),
+                                self._sim_score(row_vals_set, param_val_set)))
+
+        return sorted(result_list, key=lambda tup: tup[1], reverse=True)
 
 
 # Public method for Domain digestion

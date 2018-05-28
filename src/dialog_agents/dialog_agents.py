@@ -1,16 +1,4 @@
 from dialog_simulator import *
-from pandas import DataFrame
-
-
-class AgentGoal(DialogGoal):
-
-    def update_goal(self, inform_slots):
-        for k, v in inform_slots.items():
-            if k in self.request_slots:
-                self.request_slots[k] = v
-
-    def __init__(self, inform_slots: dict, request_slots: dict):
-        super(AgentGoal, self).__init__(inform_slots, request_slots)
 
 class Agent(Speaker):
 
@@ -27,16 +15,16 @@ class RestaurantAgent(Agent):
     def __init__(self, domain):
         super(RestaurantAgent, self).__init__(domain)
         self.dialog_status = DialogStatus.NOT_STARTED
-        self.goal = AgentGoal(inform_slots=dict(),
-                              request_slots={"cuisine": "UNK",
-                                             "area": "UNK",
-                                             "pricerange": "UNK"})
-        self.kb = DataFrame(self.domain.domain_kb["kb"])
+        self.goal = DialogGoal(inform_slots=dict(),
+                               request_slots={"cuisine": "UNK",
+                                              "area": "UNK",
+                                              "pricerange": "UNK"})
+        self.kb = None
 
     def reset(self):
         self.current_turn = -1
         self.dialog_status = DialogStatus.NOT_STARTED
-        self.goal = AgentGoal(inform_slots=dict(),
+        self.goal = DialogGoal(inform_slots=dict(),
                               request_slots={"cuisine": "UNK",
                                              "area": "UNK",
                                              "pricerange": "UNK"})
@@ -84,7 +72,7 @@ class RestaurantAgent(Agent):
 
     def _request_user_pref(self):
         # Find first unfilled slot and ask user about it
-        for k,v in self.goal.get_request_slots().items():
+        for k,v in self.goal.request_slots.items():
             if v == "UNK":
                 action = DialogAction(dialog_act="request", params={k: None})
                 action.update_utterance(self.get_utterance(action))
@@ -100,10 +88,27 @@ class RestaurantAgent(Agent):
         return self._make_recommendation()
 
     def _make_recommendation(self):
-        action = DialogAction(dialog_act="inform", params={"name": 'aladin',
-                                                         'phone': '933-333-2222',
-                                                         'address':'324343'})
-        action.update_utterance(self.get_utterance(action))
+        params = self.goal.request_slots
+        suggestions = self.domain.domain_kb.get_suggestions(params, 1)
+
+        if len(suggestions) == 0:
+            action = DialogAction(dialog_act="inform",
+                                  params={"name": 'aladin',
+                                          'phone': '933-333-2222',
+                                          'address':'324343'})
+            action.update_utterance(self.get_utterance(action))
+
+        else:
+            suggestion = suggestions[0][0]
+            recommend_params = {"name", "phone", "address"}
+            params = dict()
+            for rp in recommend_params:
+                params.update({rp:suggestion.get(rp)})
+            action = DialogAction(dialog_act="inform",
+                                  params=params)
+            action.update_utterance(self.get_utterance(action))
+
+
         return action
 
     def __str__(self):

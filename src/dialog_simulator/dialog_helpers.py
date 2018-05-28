@@ -36,6 +36,11 @@ class DialogGoal(object):
     def get_request_slots(self):
         return self.request_slots
 
+    def __str__(self):
+        return json.dumps({"inform_slots": self.inform_slots,
+                           "request_slots": self.request_slots},
+                          indent=4)
+
     def __init__(self, inform_slots: dict, request_slots: dict):
         self.inform_slots = inform_slots
         self.request_slots = request_slots

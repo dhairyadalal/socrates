@@ -2,6 +2,7 @@ from dialog_agents import RestaurantAgent
 from user_simulator import RuleSimulator
 from dialog_simulator import *
 import argparse
+import json
 
 # Set up command line paraser
 parser = argparse.ArgumentParser(description=
@@ -18,6 +19,10 @@ parser.add_argument('-o', '--output_loc',
 
 parser.add_argument('-nv', '--non_verbose', action='store_true',
                     help='Show invocation and status for each simulated dialog')
+
+parser.add_argument('-pd', '--print_dialog', action='store_true',
+                    help='Print simulated dialog')
+
 
 
 # Config File Validation
@@ -83,10 +88,15 @@ def load_dialog_manager(config: dict) -> 'DialogManager':
 
     # Load domain
     domain = import_domain_yaml(config.get("domain_config"))   # 1. Load domain
+    domain_kb_type = config.get("domain_kb_type")
+    domain_kb = None
 
-    if config.get("domain_kb_type") == "json":
-        domain_kb_path = config.get("domain_kb_path")
-        domain.add_domain_kb(json.load(open(domain_kb_path)))  # 2. Load KB (replace w/ Domain obj)
+    if domain_kb_type == "table":
+        domain_kb_path = config.get("domain_kb_file_path")
+        domain_kb_file_type = config.get("domain_kb_file_type")
+        domain_kb = DomainKBsimple(domain_kb_type, domain_kb_path, domain_kb_file_type)
+
+    domain.add_domain_kb(domain_kb)  # 2. Load KB (replace w/ Domain obj)
 
     # Load Speakers
     agent = setup_agent(type_=config.get("agent_type"),
@@ -102,10 +112,12 @@ def load_dialog_manager(config: dict) -> 'DialogManager':
 
     dialog_manager = DialogManager(user_sim=usersim,
                                    user_goal_type=config.get("user_goal_type"),
-                                   agent=agent, domain=domain,
+                                   agent=agent,
+                                   domain=domain,
                                    max_turns=config.get("max_turns"),
                                    num_sim=config.get("simulation_rounds"),
-                                   reward=config.get(("reward")))
+                                   reward=config.get(("reward")),
+                                   first_speaker=config.get("first_speaker"))
 
     # Load Starting Goals if present
     if config.get("starting_goal_path") is not None:
@@ -123,6 +135,11 @@ if __name__ == "__main__":
     if args.non_verbose:
         verbose_flag = False
 
+    print_dialog_flag = False
+    if args.print_dialog:
+        print_dialog_flag = True
+
+
     # Check for valid file types
     if args.type not in ["json", "yaml"]:
         raise ValueError("Bad file type provided. Valid file types: json and yaml.")
@@ -137,4 +154,5 @@ if __name__ == "__main__":
     dialog_manager.run_simulations(config.get("save_location"),
                                    config.get("save_history"),
                                    config.get("save_type"),
+                                   print_dialog_flag,
                                    verbose_flag)

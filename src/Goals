@@ -1,19 +1,24 @@
 5/27
 - fix goal serialization
-
+- udpate usersim to support no response edge case
+- add clean history
+- Metrics
+    -  score simulation (% perc successful)
+- usersim features
+    - random corruption of goal
+    - random user dropout
+    - random user bad answers
+- Document Speaker design, NLU/NLG design, and external configurations
 
 5/22
 - refactor DialogAction to remove set/dict duality of params (complete)
-- export as json and clean up ouput format (complete)
+- export as json and clean up output format (complete)
 - move parsing to inside speaker (complete)
 - move goal generation to outside of user sim (complete)
 - update speaker reset code (complete)
 - simple nlu w/ key work lookup (complete)
 - update NLG ex for RestaurantAgent (complete)
-
-- rewrite DomainKB as class with API
-- agent manager -> dynamically load modules
-
+- rewrite DomainKB as class with API (complete)
 - Document Speaker design, NLU/NLG design, and external configurations
 
 5/15 - Check-in
@@ -38,4 +43,9 @@
 To Do - 5/22
 - agent manager -> dynamically load modules
 - rewrite DomainKB as class with API
+- update NLG ex for RestaurantAgent
+- update speaker reset code
+- move parsing to inside speaker
+- simple nlu w/ key work lookup
+- move goal generation to outside of user sim
 - Document Speaker design, NLU/NLG design, and external configurations

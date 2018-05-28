@@ -2,8 +2,9 @@
 
 # Dialog Domain Settings
 domain_config: sample_domains/restaurant/restaurant_domain.yaml
-domain_kb_path: sample_domains/restaurant/restaurants_kb.json
-domain_kb_type: json
+domain_kb_type: table
+domain_kb_file_path: sample_domains/restaurant/restaurants_kb.json
+domain_kb_file_type: json
 
 # User Simulator settings
 usersim_type: rules
@@ -21,7 +22,7 @@ agent_nlg_path: sample_domains/restaurant/nlg_restaurant_agent.yaml
 # Dialog Simulation settings
 simulation_rounds: 10
 max_turns: 8
-first_speaker: random
+first_speaker: usersim
 reward: 10
 simulation_output_path: data/simulated_dialogs/
 save_history: True
