@@ -211,14 +211,14 @@ class NLUsimple(NLU):
 
 class NLG(object):
 
-    def __init__(self, type: str, model: object, model_name: str = None):
+    def __init__(self, type: str, model: object, model_name: str = None, token_re=r"(?:^|\s)([$])(\w+)"):
         if type in ["dict", "model"]:
             self.type = type
         else:
             raise ValueError("Invalid model type. Supported types: dict, model.")
         self.model = model
         self.model_name = model_name
-        self.re_nlg_pattern = re.compile(r"(?:^|\s)([$])(\w+)")
+        self.re_nlg_pattern = re.compile(token_re)
 
     """ Base class for natural language generation module. """
     # ---------------------------- Generate Utterance using Dictionary Lookup ----------------------------------- #
