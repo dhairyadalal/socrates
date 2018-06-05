@@ -1,23 +1,24 @@
 # Dialog Simulation Configuration
 
 # Dialog Domain Settings
-domain_config: sample_domains/restaurant/restaurant_domain.yaml
+domain_config: sample_domains/movies/movie_domain.yaml
 domain_kb_type: table
-domain_kb_file_path: sample_domains/restaurant/restaurants_kb.json
-domain_kb_file_type: json
+domain_kb_file_path: sample_domains/movies/moviekb.csv
 
 # User Simulator settings
 usersim_type: rules
-starting_goal_path: sample_domains/restaurant/sample_starting_goals.yaml
+starting_goal_path: sample_domains/movies/sample_starting_goals.json
 usersim_nlg_type: dict
-usersim_nlg_path: sample_domains/restaurant/nlg_usersim_rules.yaml
+usersim_nlg_path: sample_domains/movies/nlg_usersim_rules.json
 user_goal_type: mix
+usersim_nlu_type: None
+
 
 # Dialog Agent settings
 agent_type: rules
 agent_nlg_type: dict
-agent_nlg_path: sample_domains/restaurant/nlg_restaurant_agent.yaml
-#agent_nlu_type: None
+agent_nlg_path: sample_domains/movies/nlg_agent_rules.json
+agent_nlu_type: None
 
 # Dialog Simulation settings
 simulation_rounds: 1
