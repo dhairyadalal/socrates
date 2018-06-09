@@ -4,194 +4,543 @@
     "regex": "(?:^|\\s)([$])(\\w+)([$])",
     "dialog_acts": {
         "confirm_answer": {
-            "default": "Yes"
+            "default": [
+                "Yes"
+            ]
         },
         "confirm_question": {
-            "default": "Could you help me to book the tickets?",
-            "": "Could you help me to book the tickets?",
-            "moviename": "Could you help me to book that movie ticket?",
-            "numberofpeople": "Could you help me to book the tickets?",
-            "moviename,numberofpeople": "Could you help me to book the tickets for that movie?"
+            "default": [
+                "Could you help me to book the tickets?"
+            ],
+            "": [
+                "Could you help me to book the tickets?"
+            ],
+            "moviename": [
+                "Could you help me to book that movie ticket?"
+            ],
+            "numberofpeople": [
+                "Could you help me to book the tickets?"
+            ],
+            "moviename,numberofpeople": [
+                "Could you help me to book the tickets for that movie?"
+            ]
         },
         "deny": {
-            "default": "Oh, sorry! This is the wrong ticket!"
+            "default": [
+                "Oh, sorry! This is the wrong ticket!"
+            ]
         },
         "greeting": {
-            "numberofpeople": "Hi"
+            "default" : ["Hi!"],
+            "numberofpeople": [
+                "Hi"
+            ]
         },
         "inform": {
-            "moviename": "I want to watch $moviename$.",
-            "ticket": "yes",
-            "starttime": "I want to watch at $starttime$.",
-            "city": "I want to watch at $city$.",
-            "state": "I want to watch at $state$.",
-            "date": "I want to set it up $date$",
-            "numberofpeople": "I want $numberofpeople$ tickets please!",
-            "theater": "I want to watch at $theater$.",
-            "actor": "$actor$",
-            "actress": "$actress$",
-            "city,numberofpeople,state": "I need $numberofpeople$ tickets at $city$ $state$.",
-            "numberofpeople,starttime": "I need $numberofpeople$ tickets at $starttime$.",
-            "date,starttime": "I want to watch at $starttime$ on $date$.",
-            "moviename,starttime": "I want to watch $moviename$ at $starttime$.",
-            "critic_rating": "$critic_rating$",
-            "distanceconstraints": "$distanceconstraints$",
-            "description": "$description$",
-            "genre": "I want to watch a $genre$ movie.",
-            "mpaa_rating": "$mpaa_rating$",
-            "video_format": "$video_format$",
-            "price": "$price$",
-            "zip": "$zip$",
-            "numberofkids": "$numberofkids$",
-            "movie_series": "$movie_series$",
-            "theater_chain": "$theater_chain$",
-            "city,starttime": "I want to watch at $starttime$ in $city$.",
-            "distanceconstraints,moviename": "Okay, I have booked the tickets for $moviename$ $distanceconstraints$.",
-            "distanceconstraints,video_format": "$video_format$ $distanceconstraints$",
-            "numberofpeople,theater": "$numberofpeople$ tickets at $theater$.",
-            "city,moviename,starttime": "$moviename$ is playing at $starttime$ in $city$.",
-            "moviename,theater": "Okay, I have book the tickets for $moviename$ at $theater$ for you.",
-            "date,numberofpeople,starttime": "$numberofpeople$ tickets at $starttime$ $date$.",
-            "default": "Okay, your tickets is booked.",
-            "": "Okay, your tickets is booked.",
-            "other": "$other$",
-            "date,moviename,starttime,taskcomplete,theater,theater_chain,video_format": "Okay, I have booked the tickets for $video_format$ $moviename$ starting at $starttime$ at $theater$ on $date$.",
-            "date,moviename,numberofpeople,starttime,taskcomplete,theater,theater_chain,video_format": "Okay, I have booked $numberofpeople$ tickets for $video_format$ $moviename$ starting at $starttime$ at $theater$ on $date$.",
-            "closing,date,moviename,numberofpeople,starttime,taskcomplete,theater": "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ at $theater$ on $date$.",
-            "city,closing,date,moviename,numberofpeople,starttime,taskcomplete,theater,theater_chain": "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ at $theater$ in $city$ on $date$.",
-            "city,date,distanceconstraints,moviename,numberofpeople,starttime,state,taskcomplete,theater": "Okay, I was able to book $numberofpeople$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $city$ $state$.",
-            "city,date,distanceconstraints,moviename,numberofpeople,starttime,taskcomplete,theater,video_format": "Okay, I was able to book $numberofpeople$ $video_format$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $city$.",
-            "date,distanceconstraints,moviename,numberofpeople,starttime,state,taskcomplete,theater,video_format": "Okay, I was able to book $numberofpeople$ $video_format$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $city$ $state$.",
-            "city,date,distanceconstraints,moviename,numberofpeople,starttime,taskcomplete,theater": "Okay, I was able to book $numberofpeople$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $city$.",
-            "city,date,moviename,starttime,taskcomplete,theater,theater_chain": "Okay, I have booked the tickets for $moviename$ starting at $starttime$ at $theater$ in $city$ on $date$.",
-            "city,closing,date,moviename,starttime,taskcomplete,theater,theater_chain,video_format": "Okay, I have booked the tickets for $video_format$ $moviename$ starting at $starttime$ at $theater$ in $city$ on $date$.",
-            "date,moviename,numberofpeople,starttime,state,taskcomplete,theater": "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $state$.",
-            "city,date,moviename,numberofpeople,starttime,taskcomplete,theater,zip": "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $city$ $zip$.",
-            "date,distanceconstraints,moviename,numberofpeople,starttime,taskcomplete,theater": "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ $distanceconstraints$.",
-            "date,moviename,numberofpeople,starttime,taskcomplete,theater,zip": "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in zipcode $zip$.",
-            "city,date,moviename,numberofpeople,starttime,taskcomplete,theater,video_format": "Okay, I have booked $numberofpeople$ $video_format$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $city$.",
-            "city,date,moviename,numberofpeople,starttime,state,taskcomplete,theater,video_format": "Okay, I have booked $numberofpeople$ $video_format$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $city$ $state$.",
-            "city,date,distanceconstraints,moviename,numberofpeople,starttime,state,taskcomplete,theater,video_format": "Okay, I have booked $numberofpeople$ $video_format$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ $distanceconstraints$ in $city$ $state$.",
-            "date,moviename,numberofpeople,starttime,taskcomplete,theater,video_format": "Okay, I have booked $numberofpeople$ tickets for $video_format$ $moviename$ starting at $starttime$ at $theater$ on $date$.",
-            "moviename,numberofpeople,taskcomplete": "Okay, I have booked $numberofpeople$ tickets for $moviename$ for you.",
-            "date,moviename,numberofpeople,starttime,taskcomplete": "Okay, I have booked $numberofpeople$ tickets for $moviename$ at $starttime$ $date$ for you.",
-            "distanceconstraints,moviename,numberofpeople,taskcomplete": "Okay, I have booked $numberofpeople$ tickets for $moviename$ $distanceconstraints$.",
-            "numberofpeople,starttime,taskcomplete,theater": "Okay, I have booked $numberofpeople$ tickets for $moviename$ at $starttime$ at $theater$.",
-            "date,moviename,starttime,taskcomplete": "Okay, I have booked the tickets for $moviename$ at $starttime$ $date$.",
-            "city,date,numberofpeople,starttime,taskcomplete,theater": "Okay, I have booked the tickets at $starttime$ $date$ at $theater$ in $city$.",
-            "city,state": "$city$ at $state$",
-            "moviename,numberofpeople,taskcomplete,theater": "Okay, I have booked $numberofpeople$ tickets for $moviename$ at $theater$.",
-            "city,moviename,numberofpeople,starttime,taskcomplete,theater": "Okay, I have booked $numberofpeople$ tickets for $moviename$ at $starttime$ at $theater$ in $city$.",
-            "distanceconstraints,moviename,taskcomplete": "Okay, I have booked the tickets for $moviename$ $distanceconstraints$.",
-            "date,moviename,taskcomplete": "Okay, I have booked the tickets for $moviename$ on $date$.",
-            "city,date,distanceconstraints,moviename,numberofpeople,starttime,taskcomplete": "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ on $date$ $distanceconstraints$ in $city$.",
-            "date,moviename,numberofpeople,other,taskcomplete": "Okay, I have booked $numberofpeople$ tickets for $moviename$ on $date$.",
-            "city,moviename,numberofpeople,other,state,taskcomplete": "Okay, I have booked $numberofpeople$ tickets for $moviename$ at $city$ $state$.",
-            "moviename,numberofpeople,starttime,taskcomplete": "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$.",
-            "distanceconstraints,moviename,numberofpeople,other,taskcomplete": "Okay, I have booked $numberofpeople$ tickets for $moviename$ $distanceconstraints$.",
-            "date,moviename,numberofpeople,taskcomplete": "Okay, I have booked $numberofpeople$ tickets for $moviename$ $date$.",
-            "city,moviename,taskcomplete,theater": "Okay, I have booked the tickets for $moviename$ at $theater$ in $city$.",
-            "city,date,moviename,starttime,taskcomplete": "Okay, I have booked the tickets for $moviename$ at $starttime$ on $date$ in $city$.",
-            "city,date,moviename,starttime,taskcomplete,theater": "Okay, I have booked the tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $city$.",
-            "moviename,taskcomplete": "Okay, I have booked the tickets for $moviename$ for you.",
-            "date,moviename,numberofpeople,other,starttime,taskcomplete": "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ on $date$.",
-            "date,moviename,numberofpeople,taskcomplete,theater,theater_chain": "Okay, I have booked $numberofpeople$ tickets for $moviename$ at $theater$ $theater_chain$ on $date$.",
-            "date,moviename,starttime,taskcomplete,theater": "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ at $theater$ on $date$.",
-            "numberofpeople,taskcomplete": "Yes, I have booked $numberofpeople$ tickets for you.",
-            "date,moviename,numberofpeople,taskcomplete,theater": "Okay, I have booked $numberofpeople$ tickets for $moviename$ at $theater$ on $date$.",
-            "city,taskcomplete,theater": "Okay, I have booked the tickets at $theater$ in $city$.",
-            "city,date,distanceconstraints,moviename,numberofpeople,starttime,taskcomplete,video_format": "Thank you, I was able to purchase $numberofpeople$ tickets for you to see $moviename$ with $video_format$ $date$ at $city$ $distanceconstraints$ at $starttime$.",
-            "date,moviename,numberofpeople,starttime,taskcomplete,theater,ticket": "Okay - I was able to book $numberofpeople$ tickets for you to see $moviename$ at $theater$ at $starttime$ $date$.",
-            "closing,date,moviename,numberofpeople,starttime,taskcomplete,theater,ticket": "Okay - I was able to book $numberofpeople$ tickets for you to see $moviename$ at $theater$ at $starttime$ $date$.",
-            "city,closing,date,moviename,numberofpeople,starttime,taskcomplete,theater,ticket": "Okay - I was able to book $numberofpeople$ tickets for you to see $moviename$ at $theater$ in $city$ at $starttime$ $date$.",
-            "date,moviename,numberofpeople,starttime,taskcomplete,theater": "Okay - I was able to book $numberofpeople$ tickets for you to see $moviename$ at $theater$ at $starttime$ $date$.",
-            "city,date,moviename,numberofpeople,starttime,taskcomplete,theater,ticket": "Okay - I was able to book $numberofpeople$ tickets for you to see $moviename$ at $theater$ in $city$ at $starttime$ $date$.",
-            "city,date,moviename,numberofpeople,starttime,taskcomplete,theater,theater_chain": "Thank you, I was able to purchase $numberofpeople$ tickets for you to see $moviename$ at $theater$, $theater_chain$ at $city$ at $starttime$ on $date$.",
-            "city,moviename,numberofpeople,taskcomplete": "Okay your purchase of $numberofpeople$ tickets for $moviename$ at $city$ is confirmed.",
-            "city,date,moviename,numberofpeople,starttime,taskcomplete,theater": "Great - I was able to purchase $numberofpeople$ tickets for you to see $moviename$ $date$ at $theater$ theater in $city$ at $starttime$.",
-            "city,distanceconstraints,moviename,numberofpeople,taskcomplete": "Okay, your purchase of $numberofpeople$ for $moviename$ at $city$ $distanceconstraints$ is confirmed!",
-            "city,date,moviename,numberofpeople,taskcomplete": "Okay, I purchased $numberofpeople$ tickets for $moviename$ at $city$ on $date$.",
-            "city,moviename,numberofpeople,taskcomplete,zip": "I have booked you $numberofpeople$ tickets for moviename at $city$, $zip$.",
-            "city,date,moviename,numberofpeople,starttime,taskcomplete": "Great - I was able to purchase $numberofpeople$ tickets for you to watch $moviename$ at $theater$ in $city$ at $starttime$, $date$.",
-            "city,moviename,numberofpeople,state,taskcomplete": "Okay your purchase $numberofpeople$ tickets for $moviename$ at $city$, $state$ is confirmed!",
-            "city,moviename,numberofpeople,starttime,taskcomplete": "Okay your purchase of $numberofpeople$ tickets for $moviename$ at $starttime$ in $city$ is confimed!",
-            "city,date,moviename,numberofpeople,taskcomplete,theater": "Great, I was able to purchase $numberofpeople$ tickets for you to watch $moviename$ $date$ at $theater$ in $city$.",
-            "city,moviename,numberofpeople,starttime,state,taskcomplete": "Okay, your purchase of $numberofpeople$ tickets for $moviename$ at $starttime$ in $city$, $state$ is confirmed!",
-            "city,date,distanceconstraints,moviename,numberofpeople,starttime,state,taskcomplete,video_format": "Excellent - I have booked $numberofpeople$ tickets for you to watch $moviename$ at $starttime$ $date$ at $theater$ in $city$ $state$, $distanceconstraints$.",
-            "city,date,moviename,numberofpeople,taskcomplete,zip": "I have successfully purchased $numberofpeople$ tickets to see $moviename$ $date$ at $city$ $zip$.",
-            "city,moviename,numberofpeople,taskcomplete,theater": "Okay, your purchase of $numberofpeople$ tickets for $moviename$ at $theater$ in $city$.",
-            "city,date,moviename,numberofpeople,starttime,state,taskcomplete,theater": "Great, I was able to purchase $numberofpeople$ tickets to $moviename$ for $date$ at $starttime$ at $theater$ in $city$, $state$.",
-            "city,date,moviename,numberofpeople,starttime,state,taskcomplete": "Great - I was able to purchase $numberofpeople$ tickets for you to see $moviename$ $date$ at $theater$ in $city$ $state$ at $starttime$."
+            "moviename": [
+                "I want to watch $moviename$."
+            ],
+            "ticket": [
+                "yes"
+            ],
+            "starttime": [
+                "I want to watch at $starttime$."
+            ],
+            "city": [
+                "I want to watch at $city$."
+            ],
+            "state": [
+                "I want to watch at $state$."
+            ],
+            "date": [
+                "I want to set it up $date$"
+            ],
+            "numberofpeople": [
+                "I want $numberofpeople$ tickets please!"
+            ],
+            "theater": [
+                "I want to watch at $theater$."
+            ],
+            "actor": [
+                "$actor$"
+            ],
+            "actress": [
+                "$actress$"
+            ],
+            "city,numberofpeople,state": [
+                "I need $numberofpeople$ tickets at $city$ $state$."
+            ],
+            "numberofpeople,starttime": [
+                "I need $numberofpeople$ tickets at $starttime$."
+            ],
+            "date,starttime": [
+                "I want to watch at $starttime$ on $date$."
+            ],
+            "moviename,starttime": [
+                "I want to watch $moviename$ at $starttime$."
+            ],
+            "critic_rating": [
+                "$critic_rating$"
+            ],
+            "distanceconstraints": [
+                "$distanceconstraints$"
+            ],
+            "description": [
+                "$description$"
+            ],
+            "genre": [
+                "I want to watch a $genre$ movie."
+            ],
+            "mpaa_rating": [
+                "$mpaa_rating$"
+            ],
+            "video_format": [
+                "$video_format$"
+            ],
+            "price": [
+                "$price$"
+            ],
+            "zip": [
+                "$zip$"
+            ],
+            "numberofkids": [
+                "$numberofkids$"
+            ],
+            "movie_series": [
+                "$movie_series$"
+            ],
+            "theater_chain": [
+                "$theater_chain$"
+            ],
+            "city,starttime": [
+                "I want to watch at $starttime$ in $city$."
+            ],
+            "distanceconstraints,moviename": [
+                "Okay, I have booked the tickets for $moviename$ $distanceconstraints$."
+            ],
+            "distanceconstraints,video_format": [
+                "$video_format$ $distanceconstraints$"
+            ],
+            "numberofpeople,theater": [
+                "$numberofpeople$ tickets at $theater$."
+            ],
+            "city,moviename,starttime": [
+                "$moviename$ is playing at $starttime$ in $city$."
+            ],
+            "moviename,theater": [
+                "Okay, I have book the tickets for $moviename$ at $theater$ for you."
+            ],
+            "date,numberofpeople,starttime": [
+                "$numberofpeople$ tickets at $starttime$ $date$."
+            ],
+            "default": [
+                "Okay, your tickets is booked."
+            ],
+            "": [
+                "Okay, your tickets is booked."
+            ],
+            "other": [
+                "$other$"
+            ],
+            "date,moviename,starttime,taskcomplete,theater,theater_chain,video_format": [
+                "Okay, I have booked the tickets for $video_format$ $moviename$ starting at $starttime$ at $theater$ on $date$."
+            ],
+            "date,moviename,numberofpeople,starttime,taskcomplete,theater,theater_chain,video_format": [
+                "Okay, I have booked $numberofpeople$ tickets for $video_format$ $moviename$ starting at $starttime$ at $theater$ on $date$."
+            ],
+            "closing,date,moviename,numberofpeople,starttime,taskcomplete,theater": [
+                "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ at $theater$ on $date$."
+            ],
+            "city,closing,date,moviename,numberofpeople,starttime,taskcomplete,theater,theater_chain": [
+                "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ at $theater$ in $city$ on $date$."
+            ],
+            "city,date,distanceconstraints,moviename,numberofpeople,starttime,state,taskcomplete,theater": [
+                "Okay, I was able to book $numberofpeople$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $city$ $state$."
+            ],
+            "city,date,distanceconstraints,moviename,numberofpeople,starttime,taskcomplete,theater,video_format": [
+                "Okay, I was able to book $numberofpeople$ $video_format$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $city$."
+            ],
+            "date,distanceconstraints,moviename,numberofpeople,starttime,state,taskcomplete,theater,video_format": [
+                "Okay, I was able to book $numberofpeople$ $video_format$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $city$ $state$."
+            ],
+            "city,date,distanceconstraints,moviename,numberofpeople,starttime,taskcomplete,theater": [
+                "Okay, I was able to book $numberofpeople$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $city$."
+            ],
+            "city,date,moviename,starttime,taskcomplete,theater,theater_chain": [
+                "Okay, I have booked the tickets for $moviename$ starting at $starttime$ at $theater$ in $city$ on $date$."
+            ],
+            "city,closing,date,moviename,starttime,taskcomplete,theater,theater_chain,video_format": [
+                "Okay, I have booked the tickets for $video_format$ $moviename$ starting at $starttime$ at $theater$ in $city$ on $date$."
+            ],
+            "date,moviename,numberofpeople,starttime,state,taskcomplete,theater": [
+                "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $state$."
+            ],
+            "city,date,moviename,numberofpeople,starttime,taskcomplete,theater,zip": [
+                "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $city$ $zip$."
+            ],
+            "date,distanceconstraints,moviename,numberofpeople,starttime,taskcomplete,theater": [
+                "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ $distanceconstraints$."
+            ],
+            "date,moviename,numberofpeople,starttime,taskcomplete,theater,zip": [
+                "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in zipcode $zip$."
+            ],
+            "city,date,moviename,numberofpeople,starttime,taskcomplete,theater,video_format": [
+                "Okay, I have booked $numberofpeople$ $video_format$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $city$."
+            ],
+            "city,date,moviename,numberofpeople,starttime,state,taskcomplete,theater,video_format": [
+                "Okay, I have booked $numberofpeople$ $video_format$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $city$ $state$."
+            ],
+            "city,date,distanceconstraints,moviename,numberofpeople,starttime,state,taskcomplete,theater,video_format": [
+                "Okay, I have booked $numberofpeople$ $video_format$ tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ $distanceconstraints$ in $city$ $state$."
+            ],
+            "date,moviename,numberofpeople,starttime,taskcomplete,theater,video_format": [
+                "Okay, I have booked $numberofpeople$ tickets for $video_format$ $moviename$ starting at $starttime$ at $theater$ on $date$."
+            ],
+            "moviename,numberofpeople,taskcomplete": [
+                "Okay, I have booked $numberofpeople$ tickets for $moviename$ for you."
+            ],
+            "date,moviename,numberofpeople,starttime,taskcomplete": [
+                "Okay, I have booked $numberofpeople$ tickets for $moviename$ at $starttime$ $date$ for you."
+            ],
+            "distanceconstraints,moviename,numberofpeople,taskcomplete": [
+                "Okay, I have booked $numberofpeople$ tickets for $moviename$ $distanceconstraints$."
+            ],
+            "numberofpeople,starttime,taskcomplete,theater": [
+                "Okay, I have booked $numberofpeople$ tickets for $moviename$ at $starttime$ at $theater$."
+            ],
+            "date,moviename,starttime,taskcomplete": [
+                "Okay, I have booked the tickets for $moviename$ at $starttime$ $date$."
+            ],
+            "city,date,numberofpeople,starttime,taskcomplete,theater": [
+                "Okay, I have booked the tickets at $starttime$ $date$ at $theater$ in $city$."
+            ],
+            "city,state": [
+                "$city$ at $state$"
+            ],
+            "moviename,numberofpeople,taskcomplete,theater": [
+                "Okay, I have booked $numberofpeople$ tickets for $moviename$ at $theater$."
+            ],
+            "city,moviename,numberofpeople,starttime,taskcomplete,theater": [
+                "Okay, I have booked $numberofpeople$ tickets for $moviename$ at $starttime$ at $theater$ in $city$."
+            ],
+            "distanceconstraints,moviename,taskcomplete": [
+                "Okay, I have booked the tickets for $moviename$ $distanceconstraints$."
+            ],
+            "date,moviename,taskcomplete": [
+                "Okay, I have booked the tickets for $moviename$ on $date$."
+            ],
+            "city,date,distanceconstraints,moviename,numberofpeople,starttime,taskcomplete": [
+                "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ on $date$ $distanceconstraints$ in $city$."
+            ],
+            "date,moviename,numberofpeople,other,taskcomplete": [
+                "Okay, I have booked $numberofpeople$ tickets for $moviename$ on $date$."
+            ],
+            "city,moviename,numberofpeople,other,state,taskcomplete": [
+                "Okay, I have booked $numberofpeople$ tickets for $moviename$ at $city$ $state$."
+            ],
+            "moviename,numberofpeople,starttime,taskcomplete": [
+                "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$."
+            ],
+            "distanceconstraints,moviename,numberofpeople,other,taskcomplete": [
+                "Okay, I have booked $numberofpeople$ tickets for $moviename$ $distanceconstraints$."
+            ],
+            "date,moviename,numberofpeople,taskcomplete": [
+                "Okay, I have booked $numberofpeople$ tickets for $moviename$ $date$."
+            ],
+            "city,moviename,taskcomplete,theater": [
+                "Okay, I have booked the tickets for $moviename$ at $theater$ in $city$."
+            ],
+            "city,date,moviename,starttime,taskcomplete": [
+                "Okay, I have booked the tickets for $moviename$ at $starttime$ on $date$ in $city$."
+            ],
+            "city,date,moviename,starttime,taskcomplete,theater": [
+                "Okay, I have booked the tickets for $moviename$ starting at $starttime$ on $date$ at $theater$ in $city$."
+            ],
+            "moviename,taskcomplete": [
+                "Okay, I have booked the tickets for $moviename$ for you."
+            ],
+            "date,moviename,numberofpeople,other,starttime,taskcomplete": [
+                "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ on $date$."
+            ],
+            "date,moviename,numberofpeople,taskcomplete,theater,theater_chain": [
+                "Okay, I have booked $numberofpeople$ tickets for $moviename$ at $theater$ $theater_chain$ on $date$."
+            ],
+            "date,moviename,starttime,taskcomplete,theater": [
+                "Okay, I have booked $numberofpeople$ tickets for $moviename$ starting at $starttime$ at $theater$ on $date$."
+            ],
+            "numberofpeople,taskcomplete": [
+                "Yes, I have booked $numberofpeople$ tickets for you."
+            ],
+            "date,moviename,numberofpeople,taskcomplete,theater": [
+                "Okay, I have booked $numberofpeople$ tickets for $moviename$ at $theater$ on $date$."
+            ],
+            "city,taskcomplete,theater": [
+                "Okay, I have booked the tickets at $theater$ in $city$."
+            ],
+            "city,date,distanceconstraints,moviename,numberofpeople,starttime,taskcomplete,video_format": [
+                "Thank you, I was able to purchase $numberofpeople$ tickets for you to see $moviename$ with $video_format$ $date$ at $city$ $distanceconstraints$ at $starttime$."
+            ],
+            "date,moviename,numberofpeople,starttime,taskcomplete,theater,ticket": [
+                "Okay - I was able to book $numberofpeople$ tickets for you to see $moviename$ at $theater$ at $starttime$ $date$."
+            ],
+            "closing,date,moviename,numberofpeople,starttime,taskcomplete,theater,ticket": [
+                "Okay - I was able to book $numberofpeople$ tickets for you to see $moviename$ at $theater$ at $starttime$ $date$."
+            ],
+            "city,closing,date,moviename,numberofpeople,starttime,taskcomplete,theater,ticket": [
+                "Okay - I was able to book $numberofpeople$ tickets for you to see $moviename$ at $theater$ in $city$ at $starttime$ $date$."
+            ],
+            "date,moviename,numberofpeople,starttime,taskcomplete,theater": [
+                "Okay - I was able to book $numberofpeople$ tickets for you to see $moviename$ at $theater$ at $starttime$ $date$."
+            ],
+            "city,date,moviename,numberofpeople,starttime,taskcomplete,theater,ticket": [
+                "Okay - I was able to book $numberofpeople$ tickets for you to see $moviename$ at $theater$ in $city$ at $starttime$ $date$."
+            ],
+            "city,date,moviename,numberofpeople,starttime,taskcomplete,theater,theater_chain": [
+                "Thank you, I was able to purchase $numberofpeople$ tickets for you to see $moviename$ at $theater$, $theater_chain$ at $city$ at $starttime$ on $date$."
+            ],
+            "city,moviename,numberofpeople,taskcomplete": [
+                "Okay your purchase of $numberofpeople$ tickets for $moviename$ at $city$ is confirmed."
+            ],
+            "city,date,moviename,numberofpeople,starttime,taskcomplete,theater": [
+                "Great - I was able to purchase $numberofpeople$ tickets for you to see $moviename$ $date$ at $theater$ theater in $city$ at $starttime$."
+            ],
+            "city,distanceconstraints,moviename,numberofpeople,taskcomplete": [
+                "Okay, your purchase of $numberofpeople$ for $moviename$ at $city$ $distanceconstraints$ is confirmed!"
+            ],
+            "city,date,moviename,numberofpeople,taskcomplete": [
+                "Okay, I purchased $numberofpeople$ tickets for $moviename$ at $city$ on $date$."
+            ],
+            "city,moviename,numberofpeople,taskcomplete,zip": [
+                "I have booked you $numberofpeople$ tickets for moviename at $city$, $zip$."
+            ],
+            "city,date,moviename,numberofpeople,starttime,taskcomplete": [
+                "Great - I was able to purchase $numberofpeople$ tickets for you to watch $moviename$ at $theater$ in $city$ at $starttime$, $date$."
+            ],
+            "city,moviename,numberofpeople,state,taskcomplete": [
+                "Okay your purchase $numberofpeople$ tickets for $moviename$ at $city$, $state$ is confirmed!"
+            ],
+            "city,moviename,numberofpeople,starttime,taskcomplete": [
+                "Okay your purchase of $numberofpeople$ tickets for $moviename$ at $starttime$ in $city$ is confimed!"
+            ],
+            "city,date,moviename,numberofpeople,taskcomplete,theater": [
+                "Great, I was able to purchase $numberofpeople$ tickets for you to watch $moviename$ $date$ at $theater$ in $city$."
+            ],
+            "city,moviename,numberofpeople,starttime,state,taskcomplete": [
+                "Okay, your purchase of $numberofpeople$ tickets for $moviename$ at $starttime$ in $city$, $state$ is confirmed!"
+            ],
+            "city,date,distanceconstraints,moviename,numberofpeople,starttime,state,taskcomplete,video_format": [
+                "Excellent - I have booked $numberofpeople$ tickets for you to watch $moviename$ at $starttime$ $date$ at $theater$ in $city$ $state$, $distanceconstraints$."
+            ],
+            "city,date,moviename,numberofpeople,taskcomplete,zip": [
+                "I have successfully purchased $numberofpeople$ tickets to see $moviename$ $date$ at $city$ $zip$."
+            ],
+            "city,moviename,numberofpeople,taskcomplete,theater": [
+                "Okay, your purchase of $numberofpeople$ tickets for $moviename$ at $theater$ in $city$."
+            ],
+            "city,date,moviename,numberofpeople,starttime,state,taskcomplete,theater": [
+                "Great, I was able to purchase $numberofpeople$ tickets to $moviename$ for $date$ at $starttime$ at $theater$ in $city$, $state$."
+            ],
+            "city,date,moviename,numberofpeople,starttime,state,taskcomplete": [
+                "Great - I was able to purchase $numberofpeople$ tickets for you to see $moviename$ $date$ at $theater$ in $city$ $state$ at $starttime$."
+            ]
         },
         "multiple_choice": {
-            "numberofpeople": "How many tickets are available?",
-            "moviename": "Which movie is showing?",
-            "date,starttime": "Which date and start time are available?",
-            "date,numberofpeople": "How many tickets are available for that day?"
+            "numberofpeople": [
+                "How many tickets are available?"
+            ],
+            "moviename": [
+                "Which movie is showing?"
+            ],
+            "date,starttime": [
+                "Which date and start time are available?"
+            ],
+            "date,numberofpeople": [
+                "How many tickets are available for that day?"
+            ]
         },
         "request": {
-            "moviename,starttime": "Which day $moviename$ will be showing at $starttime$?",
-            "moviename,theater_chain": "I need some tickets for $moviename$ at $theater_chain$.",
-            "startime": "I need some tickets $starttime$.",
-            "city,moviename,starttime": "Which theater is playing $moviename$ at $starttime$ in $city$?",
-            "city": "What date and start time do you want at $city$?",
-            "numberofpeople,starttime,video_format": "I need $numberofpeople$ tickets for $video_format$ at $starttime$.",
-            "date": "What time would you like on $date$?",
-            "numberofpeople": "What theater and start time are available to book $numberofpeople$ tickets?",
-            "city,date,starttime": "What movie is playing at $starttime$ $date$ in $city$?",
-            "city,numberofpeople": "What start time can I book $numberofpeople$ tickets at $city$?",
-            "city,numberofpeople,zip": "I want to purchase $numberofpeople$ tickets. What time is playing at $city$, and zipcode is $zip$?",
-            "numberofpeople,theater": "What start time can I book $numberofpeople$ tickets at $theater$?",
-            "city,date": "What time is playing in $city$ on $date$",
-            "default": "What is the movie series?",
-            "": "What is the movie series?",
-            "distanceconstraints": "What is the start time for that movie $distanceconstraints$?",
-            "city,numberofpeople,theater": "I want to purchase $numberofpeople$ tickets. What time is that movie playing at $theater$ in $city$?",
-            "city,numberofpeople,state": "I want to get $numberofpeople$ tickets. What time is it playing at $city$ $state$?",
-            "zip": "What time is playing in zipcode $zip$?",
-            "state": "What theater is playing at $state$?",
-            "video_format": "Is there $video_format$ tickets available?",
-            "city,state": "When it will play at $city$ $state$?",
-            "date,moviename,starttime": "Which theater is $moviename$ playing at $starttime$ $date$?",
-            "city,theater": "What time is playing at $theater$ in $city$?",
-            "distanceconstraints,numberofpeople": "I need $numberofpeople$ tickets. Which theater $distanceconstraints$ is playing?",
-            "city,date,numberofpeople": "I want to purchase $numberofpeople$ tickets. What time is it playing at $city$ on $date$?",
-            "numberofpeople,state": "Which theater can I book $numberofpeople$ tickets at $state$?",
-            "city,date,zip": "What time is playing at $city$ $zip$ on $date$?",
-            "numberofpeople,zip": "I need $numberofpeople$ tickets. What is the start time in the area of zipcode $zip$?",
-            "greeting,theater": "I want some tickets at $theater$.",
-            "greeting": "I want some tickets at $theater$.",
-            "date,numberofpeople": "What time is it playing $date$? I need $numberofpeople$ tickets.",
-            "city,date,numberofpeople,zip": "I want to get $numberofpeople$ tickets. What is the start time at $city$ $zip$ on $date$?",
-            "moviename,other": "Which theater is playing $moviename$?",
-            "theater_chain": "What start time is it playing at $theater_chain$?",
-            "theater": "What time is playing at $theater$?",
-            "starttime": "Which theater is it playing at $starttime$?",
-            "moviename": "When is $moviename$ playing?",
-            "moviename,numberofpeople": "What start time can I book $numberofpeople$ tickets for $moviename$?",
-            "date,moviename": "What is the start time for $moviename$ $date$?",
-            "city,moviename": "When is $moviename$ playing at $city$?",
-            "distanceconstraints,moviename": "When is $moviename$ playing $distanceconstraints$?",
-            "moviename,zip": "Which theater near zipcode $zip$ is playing $moviename$?",
-            "moviename,theater": "What is the start time for $moviename$ at $theater$?",
-            "moviename,state": "When is $moviename$ playing in $state$?",
-            "moviename,video_format": "Which theater is playing $video_format$ $moviename$?",
-            "distanceconstraints,numberofpeople,video_format": "Which theater $distanceconstraints$ can I book $numberofpeople$ $video_format$ tickets?",
-            "distanceconstraints,state,video_format": "Which theater $distanceconstraints$ is available in $state$ for $video_format$?",
-            "date,numberofpeople,zip": "I want to purchase $numberofpeople$ tickets. What time is playing on $date$, in zipcode $zip$?",
-            "date,numberofpeople,theater": "I need $numberofpeople$ tickets. What time is the movie playing at $theater$ on $date$?",
-            "date,theater": "What time is playing at $theater$ on $date$?",
-            "city,date,theater": "What time is playing at $theater$ in $city$ on $date$? ",
-            "distanceconstraints,numberofpeople,state,video_format": "I need $numberofpeople$ tickets. Which theater $distanceconstraints$ offers $video_format$ in $state$?",
-            "numberofpeople,video_format": "I need $numberofpeople$ tickets. Which theater offers $video_format$?",
-            "distanceconstraints,video_format": "Which theater $distanceconstraints$ offers $video_format$?",
-            "city,date,numberofpeople,theater": "I want $numberofpeople$ tickets. What is the start time at $theater$ in $city$ on $date$?",
-            "distanceconstraints,numberofpeople,state": "I need $numberofpeople$ tickets. Which theater $distanceconstraints$ at $state$?",
-            "numberofpeople,state,video_format": "I need $numberofpeople$ tickets. Which theater offers $video_format$ at $state$?"
+            "moviename,starttime": [
+                "Which day $moviename$ will be showing at $starttime$?"
+            ],
+            "moviename,theater_chain": [
+                "I need some tickets for $moviename$ at $theater_chain$."
+            ],
+            "startime": [
+                "I need some tickets $starttime$."
+            ],
+            "city,moviename,starttime": [
+                "Which theater is playing $moviename$ at $starttime$ in $city$?"
+            ],
+            "city": [
+                "What date and start time do you want at $city$?"
+            ],
+            "numberofpeople,starttime,video_format": [
+                "I need $numberofpeople$ tickets for $video_format$ at $starttime$."
+            ],
+            "date": [
+                "What time would you like on $date$?"
+            ],
+            "numberofpeople": [
+                "What theater and start time are available to book $numberofpeople$ tickets?"
+            ],
+            "city,date,starttime": [
+                "What movie is playing at $starttime$ $date$ in $city$?"
+            ],
+            "city,numberofpeople": [
+                "What start time can I book $numberofpeople$ tickets at $city$?"
+            ],
+            "city,numberofpeople,zip": [
+                "I want to purchase $numberofpeople$ tickets. What time is playing at $city$, and zipcode is $zip$?"
+            ],
+            "numberofpeople,theater": [
+                "What start time can I book $numberofpeople$ tickets at $theater$?"
+            ],
+            "city,date": [
+                "What time is playing in $city$ on $date$"
+            ],
+            "default": [
+                "What is the movie series?"
+            ],
+            "": [
+                "What is the movie series?"
+            ],
+            "distanceconstraints": [
+                "What is the start time for that movie $distanceconstraints$?"
+            ],
+            "city,numberofpeople,theater": [
+                "I want to purchase $numberofpeople$ tickets. What time is that movie playing at $theater$ in $city$?"
+            ],
+            "city,numberofpeople,state": [
+                "I want to get $numberofpeople$ tickets. What time is it playing at $city$ $state$?"
+            ],
+            "zip": [
+                "What time is playing in zipcode $zip$?"
+            ],
+            "state": [
+                "What theater is playing at $state$?"
+            ],
+            "video_format": [
+                "Is there $video_format$ tickets available?"
+            ],
+            "city,state": [
+                "When it will play at $city$ $state$?"
+            ],
+            "date,moviename,starttime": [
+                "Which theater is $moviename$ playing at $starttime$ $date$?"
+            ],
+            "city,theater": [
+                "What time is playing at $theater$ in $city$?"
+            ],
+            "distanceconstraints,numberofpeople": [
+                "I need $numberofpeople$ tickets. Which theater $distanceconstraints$ is playing?"
+            ],
+            "city,date,numberofpeople": [
+                "I want to purchase $numberofpeople$ tickets. What time is it playing at $city$ on $date$?"
+            ],
+            "numberofpeople,state": [
+                "Which theater can I book $numberofpeople$ tickets at $state$?"
+            ],
+            "city,date,zip": [
+                "What time is playing at $city$ $zip$ on $date$?"
+            ],
+            "numberofpeople,zip": [
+                "I need $numberofpeople$ tickets. What is the start time in the area of zipcode $zip$?"
+            ],
+            "greeting,theater": [
+                "I want some tickets at $theater$."
+            ],
+            "greeting": [
+                "I want some tickets at $theater$."
+            ],
+            "date,numberofpeople": [
+                "What time is it playing $date$? I need $numberofpeople$ tickets."
+            ],
+            "city,date,numberofpeople,zip": [
+                "I want to get $numberofpeople$ tickets. What is the start time at $city$ $zip$ on $date$?"
+            ],
+            "moviename,other": [
+                "Which theater is playing $moviename$?"
+            ],
+            "theater_chain": [
+                "What start time is it playing at $theater_chain$?"
+            ],
+            "theater": [
+                "What time is playing at $theater$?"
+            ],
+            "starttime": [
+                "Which theater is it playing at $starttime$?"
+            ],
+            "moviename": [
+                "When is $moviename$ playing?"
+            ],
+            "moviename,numberofpeople": [
+                "What start time can I book $numberofpeople$ tickets for $moviename$?"
+            ],
+            "date,moviename": [
+                "What is the start time for $moviename$ $date$?"
+            ],
+            "city,moviename": [
+                "When is $moviename$ playing at $city$?"
+            ],
+            "distanceconstraints,moviename": [
+                "When is $moviename$ playing $distanceconstraints$?"
+            ],
+            "moviename,zip": [
+                "Which theater near zipcode $zip$ is playing $moviename$?"
+            ],
+            "moviename,theater": [
+                "What is the start time for $moviename$ at $theater$?"
+            ],
+            "moviename,state": [
+                "When is $moviename$ playing in $state$?"
+            ],
+            "moviename,video_format": [
+                "Which theater is playing $video_format$ $moviename$?"
+            ],
+            "distanceconstraints,numberofpeople,video_format": [
+                "Which theater $distanceconstraints$ can I book $numberofpeople$ $video_format$ tickets?"
+            ],
+            "distanceconstraints,state,video_format": [
+                "Which theater $distanceconstraints$ is available in $state$ for $video_format$?"
+            ],
+            "date,numberofpeople,zip": [
+                "I want to purchase $numberofpeople$ tickets. What time is playing on $date$, in zipcode $zip$?"
+            ],
+            "date,numberofpeople,theater": [
+                "I need $numberofpeople$ tickets. What time is the movie playing at $theater$ on $date$?"
+            ],
+            "date,theater": [
+                "What time is playing at $theater$ on $date$?"
+            ],
+            "city,date,theater": [
+                "What time is playing at $theater$ in $city$ on $date$? "
+            ],
+            "distanceconstraints,numberofpeople,state,video_format": [
+                "I need $numberofpeople$ tickets. Which theater $distanceconstraints$ offers $video_format$ in $state$?"
+            ],
+            "numberofpeople,video_format": [
+                "I need $numberofpeople$ tickets. Which theater offers $video_format$?"
+            ],
+            "distanceconstraints,video_format": [
+                "Which theater $distanceconstraints$ offers $video_format$?"
+            ],
+            "city,date,numberofpeople,theater": [
+                "I want $numberofpeople$ tickets. What is the start time at $theater$ in $city$ on $date$?"
+            ],
+            "distanceconstraints,numberofpeople,state": [
+                "I need $numberofpeople$ tickets. Which theater $distanceconstraints$ at $state$?"
+            ],
+            "numberofpeople,state,video_format": [
+                "I need $numberofpeople$ tickets. Which theater offers $video_format$ at $state$?"
+            ]
         },
         "thanks": {
-            "default": "Thank you",
-            "closing": "Thank you, goodbye"
+            "default": [
+                "Thank you"
+            ],
+            "closing": [
+                "Thank you, goodbye"
+            ]
         }
     }
 }

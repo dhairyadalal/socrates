@@ -1,9 +1,22 @@
 from dialog_simulator import *
+domain_config = "sample_domains/movies/movie_domain.yaml"
+domain_kb_file_path = "sample_domains/movies/moviekb.csv"
 
-kb_path = "sample_domains/restaurant/restaurants_kb.json"
+starting_goal_path = "sample_domains/movies/sample_starting_goals.json"
+usersim_nlg_path = "sample_domains/movies/nlg_usersim_rules.json"
+agent_nlg_path = "sample_domains/movies/nlg_agent_rules.json"
 
-kb = DomainKBsimple(type="tbl", kb_path=kb_path, kb_file_type="json")
+# domain
+dc = import_yaml(domain_config)
+kb = DomainKBtable("table", domain_kb_file_path, "csv")
 
-params = {"cuisine": "indian", "area":"central"}
+# NLG
+nlg_dict = import_json(usersim_nlg_path)
+unlg = NLG("dict", nlg_dict)
 
-print(kb.get_suggestions(params))
+nlg_dict = import_json(agent_nlg_path)
+anlg = NLG("dict", nlg_dict)
+
+sg = import_json(starting_goal_path)
+import random
+print(random.choice(sg))

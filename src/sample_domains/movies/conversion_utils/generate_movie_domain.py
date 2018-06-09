@@ -35,17 +35,17 @@ for k, v in nl_pairs["dia_acts"].items():
     # handle requests seperately
     for i in v:
         if len(i["inform_slots"]) == 0:
-            usr.update({'default': i["nl"]["usr"]})
-            agt.update({'default': i["nl"]["agt"]})
+            usr.update({'default': [i["nl"]["usr"]]})
+            agt.update({'default': [i["nl"]["agt"]]})
         else:
             ik = ','.join(sorted(i["inform_slots"]))
-            usr.update({ik: i["nl"]["usr"]})
-            agt.update({ik: i["nl"]["agt"]})
+            usr.update({ik: [i["nl"]["usr"]]})
+            agt.update({ik: [i["nl"]["agt"]]})
 
         if len(i["request_slots"]) > 0:
             ik = ','.join(sorted(i["inform_slots"]))
-            usr.update({ik: i["nl"]["usr"]})
-            agt.update({ik: i["nl"]["agt"]})
+            usr.update({ik: [i["nl"]["usr"]]})
+            agt.update({ik: [i["nl"]["agt"]]})
 
     # Update nlg respectively w/ extracted templates
     agent_nlg.get('dialog_acts').update({k: agt})
@@ -64,5 +64,5 @@ with open("../tc_bot_movie_data/user_first_goals.json", "r") as file:
 
 discard = [ item.pop('diaact') for item in first_goals ]
 
-with open("../ssample_staring_goals.json", "w") as file:
+with open("../sample_starting_goals.json", "w") as file:
     json.dump(first_goals, file, indent=4)

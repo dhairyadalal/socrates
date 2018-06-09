@@ -149,10 +149,10 @@ class DomainKB(object):
         pass
 
 
-class DomainKBsimple(DomainKB):
+class DomainKBtable(DomainKB):
 
     def __init__(self, type: str, kb_path: str, kb_file_type: str):
-        super(DomainKBsimple, self).__init__(type)
+        super(DomainKBtable, self).__init__(type)
         self.tbl = self._load_kb(kb_path, kb_file_type)
 
     def _load_kb(self, kb_path, kb_file_type) -> 'pandas.DataFrame':

@@ -2,11 +2,14 @@ domain: restaurant
 version: 1.0
 
 dialog_acts:
-  affirm: [ "Yes.", "Yup.", "Yes, that's right." ]
+  affirm:
+    default: [ "Yes.", "Yup.", "Yes, that's right." ]
 
-  bye : ["Thanks!", "Thank you.", "Bye.", "Awesome, thanks!"]
+  bye:
+    default: ["Thanks!", "Thank you.", "Bye.", "Awesome, thanks!"]
 
-  greetings : [ "Hi, I'm looking for a restaurant.",
+  greetings:
+    default: [ "Hi, I'm looking for a restaurant.",
                 "Hi! Can you help me find a restaurant?"]
 
   inform:
@@ -33,4 +36,5 @@ dialog_acts:
     "address": ["What is the address?", "Where is the restaurant located?",
                 "What's the address?"]
 
-  negate  : ["No.", "No that wrong.", "Wrong.", "Incorrect."]
+  negate:
+    default: ["No.", "No that wrong.", "Wrong.", "Incorrect."]

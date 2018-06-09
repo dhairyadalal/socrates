@@ -2,11 +2,14 @@ domain: restaurant
 version: 1.0
 
 dialog_acts:
-  affirm: [ "Yes.", "Yes, that's right." ]
+  affirm:
+    default: [ "Yes.", "Yes, that's right." ]
 
-  bye : ["Thank you for using the restaurant recommend service."]
+  bye:
+    default: ["Thank you for using the restaurant recommend service."]
 
-  greetings : [ "Welcome to the Restaurant Recommend Service. How can I help you?" ]
+  greetings:
+    default: [ "Welcome to the Restaurant Recommend Service. How can I help you?" ]
 
   inform:
     cuisine: [ "$CUISINE" ]
@@ -28,4 +31,5 @@ dialog_acts:
     pricerange: [ "What is your price range?" ]
     area: ["What is your preferred area?"]
 
-  negate  : ["No."]
+  negate:
+    default: ["No."]

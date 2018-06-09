@@ -14,7 +14,6 @@ def import_json(file_path: str)->dict:
     try:
         with open(file_path, "r") as file:
             file = json.load(file)
-        file.close()
         return file
     except ImportError:
         raise("Error: unable to import %s." % file_path)

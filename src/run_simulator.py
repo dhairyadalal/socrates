@@ -44,6 +44,7 @@ def setup_agent(type_: str,
                 nlg_type: str = None,
                 nlg_path: str = None,
                 nlu_type: str = None) ->'Agent':
+
     if type_ == "rules":
         agent = RestaurantAgent(domain)
         if nlu_type == "simple":
@@ -94,7 +95,7 @@ def load_dialog_manager(config: dict) -> 'DialogManager':
     if domain_kb_type == "table":
         domain_kb_path = config.get("domain_kb_file_path")
         domain_kb_file_type = config.get("domain_kb_file_type")
-        domain_kb = DomainKBsimple(domain_kb_type, domain_kb_path, domain_kb_file_type)
+        domain_kb = DomainKBtable(domain_kb_type, domain_kb_path, domain_kb_file_type)
 
     domain.add_domain_kb(domain_kb)  # 2. Load KB (replace w/ Domain obj)
 

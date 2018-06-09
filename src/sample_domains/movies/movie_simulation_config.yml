@@ -4,12 +4,14 @@
 domain_config: sample_domains/movies/movie_domain.yaml
 domain_kb_type: table
 domain_kb_file_path: sample_domains/movies/moviekb.csv
+domain_kb_file_type: csv
 
 # User Simulator settings
 usersim_type: rules
 starting_goal_path: sample_domains/movies/sample_starting_goals.json
 usersim_nlg_type: dict
 usersim_nlg_path: sample_domains/movies/nlg_usersim_rules.json
+usersim_nlg_re: (?:^|\s)([$])(\w+)([$])
 user_goal_type: mix
 usersim_nlu_type: None
 

@@ -211,13 +211,18 @@ class NLUsimple(NLU):
 
 class NLG(object):
 
-    def __init__(self, type: str, model: object, model_name: str = None, token_re=r"(?:^|\s)([$])(\w+)"):
+    def __init__(self, type: str, model: object):
         if type in ["dict", "model"]:
             self.type = type
         else:
             raise ValueError("Invalid model type. Supported types: dict, model.")
         self.model = model
-        self.model_name = model_name
+
+        if type == "dict":
+            token_re = r"(?:^|\s)([$])(\w+)" if self.model.get("regex") is None else self.model.get("regex")
+            self.version = self.model.get("version")
+            self.domain = self.model.get("domain")
+
         self.re_nlg_pattern = re.compile(token_re)
 
     """ Base class for natural language generation module. """
@@ -236,10 +241,13 @@ class NLG(object):
 
     # --------------------------------- Class Public Methods ---------------------------------------------------- #
     def get_utterance(self, dialog_action: DialogAction)->str:
-
         if self.type == "dict":
-            if not dialog_action.params_empty():
-                return random.choice(self.model["dialog_acts"][dialog_action.dialog_act])
+            if "default" in dialog_action.params or not bool(dialog_action.params):
+                default_exp = self.model["dialog_acts"][dialog_action.dialog_act]["default"]
+                if len(default_exp) > 0:
+                    return random.choice(self.model["dialog_acts"][dialog_action.dialog_act]["default"])
+                else:
+                    return default_exp
             else:
                 # Generate natural language template
                 param_keys = dialog_action.get_param_keys()
@@ -252,6 +260,9 @@ class NLG(object):
 
     def get_model(self):
         return {"model": self.model, "type": self.type}
+
+    def __str__(self):
+        return "NLG v.%s, domain: %s" % (self.version, self.domain)
 
 
 class Speaker(object):
