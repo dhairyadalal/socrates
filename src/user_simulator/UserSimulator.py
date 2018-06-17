@@ -5,7 +5,7 @@ from dialog_simulator import *
 
 class UserSimulator(Speaker):
 
-    def __init__(self, domain):
+    def __init__(self, domain: 'Domain'):
         super(UserSimulator, self).__init__()
         self.domain = domain
         self.valid_goals = domain.get_valid_user_goals()
@@ -47,6 +47,16 @@ class UserSimulator(Speaker):
 
 
 class RuleSimulator(UserSimulator):
+
+    def __init__(self, domain: 'Domain'):
+        super(RuleSimulator, self).__init__(domain)
+        self.response_router = {"greetings": self._respond_general,
+                                "inform": self._respond_to_suggestion,
+                                "random_inform": self._respond_random_inform,
+                                "request": self._respond_request,
+                                "confirm": self._respond_confirm,
+                                "bye": self._respond_general}
+
 
     # ------------------------  Route Response -----------------------------------------------------------------#
     def next(self, agent_action: 'DialogAction', current_turn: int) -> 'DialogAction':
@@ -166,13 +176,4 @@ class RuleSimulator(UserSimulator):
 
     def __str__(self):
         return "Restaurant Rules Simulator: v.1.0"
-
-    def __init__(self, domain: 'Domain'):
-        super(RuleSimulator, self).__init__(domain)
-        self.response_router = {"greetings": self._respond_general,
-                                "inform": self._respond_to_suggestion,
-                                "random_inform": self._respond_random_inform,
-                                "request": self._respond_request,
-                                "confirm": self._respond_confirm,
-                                "bye": self._respond_general}
 

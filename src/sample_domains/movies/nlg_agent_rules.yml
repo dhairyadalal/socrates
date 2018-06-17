@@ -1,0 +1,44 @@
+domain: movie
+version: 1.0
+
+dialog_acts:
+
+  affirm:
+    default: [ "Yes", "Yes, that's right." ]
+
+  confirm:
+     "city,date,movie,no_tickets,theater": [ "Please confirm. You want $NO_TICKETS for $MOVIE playing $THEATER on $DATE."]
+
+  bye:
+    default: [ "Thanks for using the Move Booking service!" ]
+
+  greetings:
+    default: [ "Welcome to the movie booking service. I can help you buy movie tickets." ]
+
+  negate:
+    default: [ "No" ]
+
+  inform:
+    city: [ "$CITY" ]
+    date: [ "$DATE" ]
+    movie: [ "$MOVIE" ]
+    times: [ "$TIMES" ]
+    theater: [ "$THEATER" ]
+    stars: ["$STARS"]
+    zip: [ "$ZIP" ]
+    no_tickets: [ "$NO_TICKETS" ]
+
+    "movie,theater": [ "You can watch $MOVIE at $THEATER." ]
+    "city,date,movie,no_tickets,theater": [ "Finished. You've purchased $NO_TICKETS for $MOVIE playing $THEATER on $DATE. Your confirmation code is AAACSJ." ]
+    unknown: [ "I'm not sure. Can you ask again?" ]
+    errror: [ "Sorry, we were unable to process your request. Please try again." ]
+
+  request:
+    city: [ "Which city do you want to see the movie in?" ]
+    date: [ "Which date would you like to go?" ]
+    movie: [ "Which would you like to see?" ]
+    times: [ "Which time do you prefer?" ]
+    theater: [ "Which theater do you want to see the movie at?" ]
+    no_tickets: [ "How many tickets do you want to purchase?" ]
+
+

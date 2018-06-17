@@ -107,8 +107,6 @@ class RestaurantAgent(Agent):
             action = DialogAction(dialog_act="inform",
                                   params=params)
             action.update_utterance(self.get_utterance(action))
-
-
         return action
 
     def __str__(self):

@@ -56,6 +56,16 @@ class Domain:
     def get_valid_user_goals(self) -> list:
         return self.valid_user_goals
 
+    # Domain kb methods
+    def get_suggestions(self, params: dict, num_results: int) -> list:
+        return self.domain_kb.get_suggestions(params, num_results)
+
+    def validate_suggestion(self, suggestion: dict, user_params: dict) -> float:
+        return self.domain_kb.validate_suggestion(suggestion, user_params)
+
+    def get_item(self, params):
+        return self.domain_kb.get_item(params)
+
     def __str__(self):
         return "Domain: %s | Version: %s " % (self.domain_name, self.version)
 

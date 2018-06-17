@@ -1,0 +1,41 @@
+domain: movie
+version: 1.0
+
+dialog_acts:
+  affirm:
+    default: [ "Yes.", "Yup.", "Yes, that's right." ]
+
+  bye:
+    default: [ "Thanks!", "Thank you.", "Bye.", "Awesome, thanks!" ]
+
+  greetings:
+    default: [ "Hi, I'd like to reserve tickets.",
+               "Hi! Can you help book tickets for me?"]
+  negate:
+    default: ["No.", "No that wrong.", "Wrong.", "Incorrect."]
+
+  inform:
+    city: [ "$CITY", "I'm looking for a theater in $CITY" ]
+    date: [ "$DATE", "Thinking $DATE", "Looking for movies playing on $DATE" ]
+    movie: [ "$MOVIE", "I want to see $MOVIE", "I'd like to see $MOVIE" ]
+    rating: ["I want to see a $RATING movie", "Preferably $RATING", "$RATING" ]
+    times: [ "$TIMES", "I want to see it at $TIMES", ]
+    theater: ["$THEATER", "I want to reserve tickets at $THEATER"]
+    zip: ["$ZIP"]
+    no_tickets: ["$NO_TICKETS", "I want to buy $NO_TICKETS"]
+    "movie,no_tickets": [ "I want to buy $NO_TICKETS for $MOVIE" ]
+    "movie,theater": ["I want to buy tickets for $MOVIE playing at $THEATER"]
+    "unknown": ["I don't know.", "Not sure.", "Don't know."]
+    "no_pref": [ "I don't care", "whatever", "up for anything."]
+
+  request:
+    address: [ "What is the address of the theater?" ]
+    city: [ "What is city the theater located in?", "Where is the theater?" ]
+    date: [ "What date is the movie playing on?", "Which dates are available?" ]
+    movie: [ "What is the movie's name?" ]
+    rating: [ "What is the rating of the movie?", "What is the movie's mpaa rating?" ]
+    stars: [ "How many stars the movie have?"]
+    theater: [ "What is the theater's name?" ]
+    times: [ "What time is the movie playing?" ]
+    genre: [ "What is the genre?" ]
+    showtime: [ "When is the movie playing?" ]

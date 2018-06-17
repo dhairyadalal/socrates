@@ -8,22 +8,21 @@ domain_kb_file_type: csv
 
 # User Simulator settings
 usersim_type: rules
-starting_goal_path: sample_domains/movies/sample_starting_goals.json
+starting_goal_path: sample_domains/movies/sample_starting_goals.yml
 usersim_nlg_type: dict
-usersim_nlg_path: sample_domains/movies/nlg_usersim_rules.json
-usersim_nlg_re: (?:^|\s)([$])(\w+)([$])
-user_goal_type: mix
+usersim_nlg_path: sample_domains/movies/nlg_usersim_rules.yml
+user_goal_type: template
 usersim_nlu_type: None
 
 
 # Dialog Agent settings
 agent_type: rules
 agent_nlg_type: dict
-agent_nlg_path: sample_domains/movies/nlg_agent_rules.json
+agent_nlg_path: sample_domains/movies/nlg_agent_rules.yml
 agent_nlu_type: None
 
 # Dialog Simulation settings
-simulation_rounds: 1
+simulation_rounds: 10
 max_turns: 8
 first_speaker: usersim
 reward: 10

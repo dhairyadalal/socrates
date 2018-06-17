@@ -1,1 +1,1 @@
-from .UserSimulator import RuleSimulator
+from .UserSimulator import RuleSimulator, UserSimulator

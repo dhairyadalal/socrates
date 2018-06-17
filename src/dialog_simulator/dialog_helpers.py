@@ -11,7 +11,6 @@ class DialogStatus(Enum):
     NO_OUTCOME_YET = auto()
     NOT_STARTED = auto()
 
-
 class DialogGoal(object):
     def get_goal(self):
         return {"inform_slots": self.inform_slots,

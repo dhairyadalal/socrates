@@ -1,5 +1,6 @@
 from dialog_agents import RestaurantAgent
-from user_simulator import RuleSimulator
+# from user_simulator import RuleSimulator
+from sample_domains import MovieAgent, MovieUserSim
 from dialog_simulator import *
 import argparse
 import json
@@ -46,7 +47,7 @@ def setup_agent(type_: str,
                 nlu_type: str = None) ->'Agent':
 
     if type_ == "rules":
-        agent = RestaurantAgent(domain)
+        agent = MovieAgent(domain)
         if nlu_type == "simple":
             nlu = NLUsimple(domain)
             agent.set_nlu(nlu)
@@ -70,7 +71,7 @@ def setup_usersim( type_: str,
 
     if type_ == "rules":
         # Load simulator
-        usersim = RuleSimulator(domain)
+        usersim = MovieUserSim(domain)
 
         # Load NLU and NLG models
         nlg_dict = import_yaml(nlg_path)
