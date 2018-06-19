@@ -6,7 +6,6 @@ def print_action(action, turn, speaker):
     print("\t", turn, ": ", speaker, ": ", action.nl_utterance)
     print("\t\t  DialogAction: ", action.dialog_act, action.params)
 
-
 class DialogManager(object):
 
     def __init__(self, user_sim, user_goal_type, agent, domain, max_turns=8, num_sim=1,

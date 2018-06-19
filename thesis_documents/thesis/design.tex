@@ -13,8 +13,6 @@ Underlying the simulator is a framework that consists the following components:
 	\item \textbf{Dialog Manager}: A coordinator component that tracks the current state of the dialog and facilitates the conversation between the user simulator and dialog agent/system. Add the end of the simulated conversation, the manager will evaluate and score the conversion. 
 \end{itemize}
 
-Note, we defer discussing the implementation details until the Implementation chapter (Chapter~\ref{chap:implementation}).
-
 \section{User Simulator} 
 
 The user simulator is responsible for imitating a real user and generating realistic speech utterances. Here we assume the user is an actor that is attempting complete task. For example, the user may want to travel to Japan and is attempting to book a flight there. That user could then interact with a travel agent chatbot in order to get assistance in identifying the appropriate flight and purchasing tickets. In order to model and represent a user, we will utilize the formalization of the hidden user agenda described in \cite{Schatzmann2009TheHA}.
@@ -45,8 +43,7 @@ The user agenda A is stack-like structure which contains all pending user action
 At the start of the dialog a new goal is randomly generated from the provided dialog domain. An accompanying agenda is then generated to represent the potential sequential of events. 
 
 \begin{figure}[h!]
-	\includegraphics[width=\linewidth]{diagrams/}
-	\caption{Example User Agenda,  }
+	\caption{Example User Agenda }
 	\label{fig:goals1}
 \end{figure}
 
@@ -57,25 +54,96 @@ Over the course of the conversation the agenda is updated, as are the request sl
 
 
 
-\section{Dialog Model Overview}
+\section{Dialog Model}
 
-This section will describe the 
+\subsection{Overview}
+
+Add paragraph here about high level design and how all component fit together. 
+
+Give example of simple conversation flow.
+
+
+\subsection{Design Philosophy}
+
+At a high level, our aim is to develop a framework to allow dialog researchers to simulate a conversation between the user simulator and dialog agent. The framework needs to be modular so that it can be quickly adapted to support new dialog domains and experiments. Each major component of the framework is represented as a python class. Additionally, I promoted dialog actions, goals, and domain knowledge bases to first class objects, rather than implementing them at the lower dictionary level. As first class objects, I can standardize the communication, APIs, and management of these pieces and ensure more consistent behavior.
+
+Additionally, we want to provide as much flexibility and freedom to the researcher and limit what is hard-coded. I follow the configuration first approach leveraged in the development of AllenNLP, a deep learning for NLP tool developed at the Allen Institute for Artificial Intelligence. The code is generalized and the user defines particular implementation details in configuration file. 
+
+To support a configuration driven approach, each configurable module will have a use defined yaml or json file. For smaller configuration details, the user will prefer using yaml which is more human readable. 
+
+The yaml format is simple and has a very low learning curve. It follows a basic key value pair paradigm, where keys have clear semantic meaning and values can be represented in a variety of data structures. 
+\begin{figure}[h!]
+	\caption{Example yaml section. }
+	\label{fig:ex_yaml}
+	\begin{lstlisting}
+		# Dialog Simulation settings
+		simulation_rounds: 10
+		max_turns: 8
+		first_speaker: usersim
+		reward: 10
+		simulation_output_path: data/simulated_dialogs/
+		save_history: True
+		save_location: "data/simulated_dialogs/"
+		save_type: json
+	\end{lstlisting}
+\end{figure}
+
+\section{ Simulation Framework Components}
+
+All components are represented as python classes. The ensuing section further describe the component's function, design, and any salient implementation details. 
+
+\subsection{Dialog Action}
+The fundamental unit of transaction for the simulator is the dialog action. It is an explicit semantic representation of the speech utterance that is machine readable. The dialog action consist of three key properties: the dialog act, a set of explicit params, and corresponding unparsed speech utterance. 
+
+
+ 
+
+\subsection{Goals}
+
+\subsection{Dialog Status}
+
+
+\subsection{Speaker}
+
+The speaker represents an actor that has the ability to speak and comprehend speech utterances. In our framework, the both user simulator and the dialog agent are represented by the same base speaker class. Both actors conceptually are identical in terms of functional behavior, in that they both listen and comprehend speech utterances and in turn respond by speaking. As such, both the user simulator and dialog agent can be represented in the same way to the dialog manager. In fact, the entire conversation round can be expressed in two lines: 
+
+\begin{figure}[h!]
+	\caption{Psuedo code for conversation round.}
+	\label{fig:conv_round}
+	\begin{lstlisting}
+	# Assuming user speaks first 
+	# 1. User Simulator takes turn and speaks
+	user_action = user_simulator.next(previous_agent_action, turn_number)
+	# 2. Agent takes turn and responds to user 
+	agent_action = agent.next(previous_user_action, turn_number)
+	\end{lstlisting}
+\end{figure}
+
+The speaker class has four basic functions (\textit{next, reset, get utterance, and parse utterance}) and three properties (\textit{nlg model, nlu model, and dialog status}). When the speaker is initialized, the natural language object and the natural language understanding object are passed to the constructor. We abstract away the implementation of how the speaker speaks and parses speech in order maintain separation of concerns and also empower the researcher to be able to experiment with multiple techniques. 
+
+The \textit{next} method is the primary driver how the speaker behaves. For the dialog agent class, the next method functions as an API to the simulator. It is assumed that the dialog agent will live and operate external the simulator. The researcher can define how the dialog agent will interact with the user simulator here. For the user simulator, the bulk of the logic will reside here. The \textit{get utterance} and \textit{parse utterances} methods are simply wrappers for the speaker's nlg and nlg objects. The primary parameter for next is the previous dialog action. 
+
+\begin{figure}[h!]
+	\includegraphics[width=\linewidth]{diagrams/speaker_class.png}
+	\caption{ Definition of the Speaker class and methods.}
+	\label{fig:speaker_class}
+\end{figure}
+
+
 
 \subsection{Dialog Domain}
-\subsection{Speaker}
-\subsection{Goals}
-\subsection{Dialog Status}
-\subsection{Dialog Acts}
+
+The domain class standardizes the collection and storage of information about the 
+
+\subsubsection{Domain Knowledge Base}
+
+
 \subsection{Natural Language Understanding}
+
 \subsection{Natural Language Generation}
 
 
-\section{Reinforcement Learning Support}
-tbd
-\subsection{Replay Conversation}
-tbd
-\subsection{Reward Function}
-tbd
+
 
 %%% Local Variables: 
 %%% mode: latex
