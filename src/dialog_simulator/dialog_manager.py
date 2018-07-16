@@ -131,6 +131,7 @@ class DialogManager(object):
 
         # Generate New Goal
         new_user_goal = self.generate_goal(self.user_goal_type)
+        print("User Goal: \n", new_user_goal)
 
         # Reset Speakers
         self.user_sim.reset(new_user_goal)

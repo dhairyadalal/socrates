@@ -11,7 +11,7 @@ usersim_type: rules
 starting_goal_path: sample_domains/restaurant/sample_starting_goals.yaml
 usersim_nlg_type: dict
 usersim_nlg_path: sample_domains/restaurant/nlg_usersim_rules.yaml
-user_goal_type: rules
+user_goal_type: template
 
 # Dialog Agent settings
 agent_type: rules
@@ -20,7 +20,7 @@ agent_nlg_path: sample_domains/restaurant/nlg_restaurant_agent.yaml
 #agent_nlu_type: None
 
 # Dialog Simulation settings
-simulation_rounds: 1
+simulation_rounds: 10
 max_turns: 8
 first_speaker: usersim
 reward: 10

@@ -1,1 +1,1 @@
-from .dialog_agents import RestaurantAgent, Agent
+from .dialog_agents import Agent

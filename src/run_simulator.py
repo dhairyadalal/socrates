@@ -1,5 +1,4 @@
-from dialog_agents import RestaurantAgent
-from sample_domains import RestaurantUserSim
+from sample_domains import RestaurantUserSim, RestaurantAgent
 from dialog_simulator import *
 import argparse
 import json
