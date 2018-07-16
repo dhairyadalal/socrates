@@ -4,16 +4,29 @@
 This chapter discusses the tools and methodologies employed in the code development of this system. 
 
 \section{Development  Language}
-%The framework was written in Python 3.7, which at the time of submission is the latest python version. It is worth noting that the research implementation of the user simulator described in \cite{li_usersim} was written in Python 2. Python 3x is the preferred version for production python products. Most major data science and machine learning research python libraries no longer support Python 2. Python 3 provides many useful features and performance upgrade that make writing and deploying python projects more efficient and effective. In addition to updated syntax that allows for more expressive coding, the standard library was extended to support new data types (ordered dictionaries, enumerated types, data classes). Additionally, Python 3.5 introduced type annotation, which allows for the writing of cleaner, better documented, and unambiguous code. We describe type annotations further below.
+
+The framework was written in Python 3.7, which at the time of submission is the latest python version. It is worth noting that the research implementation of the user simulator described in \cite{li_usersim} was written in Python 2. Python 3x is the preferred version for production python products. Most major data science and machine learning research python libraries no longer support Python 2. Python 3 provides many useful features and performance upgrade that make writing and deploying python projects more efficient and effective. In addition to updated syntax that allows for more expressive coding, the standard library was extended to support new data types (ordered dictionaries, enumerated types, data classes). Additionally, Python 3.5 introduced type annotation, which allows for the writing of cleaner, better documented, and unambiguous code. We describe type annotations further below.
 
 The framework was written to adhere to PEP8 standard and all method signatures have type annotation. The hope is that good software documentation and standard coding styles will allow future contributers to easily debug, modify, and build new modules for the framework. 
 
+\section{Development  Tools}
+
+The framework was developed using the PyCharm IDE. Pycharm was selected for its ease of use for rapid development, python debugging tools, and integration with Github. Various python libraries were used in the development of the framework. The following third party python packages had significant impact on the development of the framework:
+\begin{itemize}
+	\item yaml: The yaml library provides a set of function to read and write yaml files. It was primarily for the loading and saving of the various configuration files. 
+	\item json: The json library provides a set of functions to read and write json files. It was primarily used for the loading and saving of various configuration files and the serialization of the simulated dialogs. 
+	\item spacy and nltk: Spacy and NLTK are natural language processing libraries that provides standard NLP tools like part of speech tagging, dependency parsing and, named entity recognition. They were used primarily for developing the base natural language understanding and natural language generation models. 
+	\item pandas: The pandas library provides robust, efficient, and flexible data structures that can be used for data science. The pandas dataframe was used to represent the in memory knowledge base and execute various logical queries.
+	\item keras: The keras library is high level front for develop neural network models for deep learning. Keras compiles the neural architectures using either a Tensorflow, Theano, or Microsoft CTNK back-end. Keras was used to develop and deploy the neural machine translation models used for the natural language understanding and natural language generation modules.
+\end{itemize}
+
+The code base is stored on Github.com and uses git for version control and bug tracking. Github is an online, cloud based, software platform used for sharing and hosting code bases. Github provides various collaboration and version tracking. It is one of the most popular platforms for code sharing and collaboration. 
+
+The Sphinx tool was used for documentation generation. Sphinx automatically extracts method docstrings and generates code documentation as rendered markdown files. For hosting, I used the open source and free Read the Docs service, which hosts code documentation websites.  
+
 \section{Unit Testing}
 
-
-\section{Development  Tools}
-\label{sec:devtools}
-
+I used the Python unit testing library (unittest) to create standard performance and integration tests. The test used for benchmarking the Socrates Simulator framework performance and also testing code stability. Additionally, a simple set of methods are available to the end user to write custom unit tests to validate their user simulators and dialog domain classes. 
 
 
 %%% Local Variables: 
