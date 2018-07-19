@@ -1,17 +1,65 @@
 \chapter{Design}
 \label{chap:design}
 
-\section{Introduction}
+\section{Overview}
 \label{sec:designintroduction}
 
-The goal of this thesis is to develop a modularized and production grade user simulator that can be re-targeted for new domains and provide a framework to produce training data and train dialog agents. The overall design for the simulator was inspired by the work done by \cite{li_usersim} and the formalization of hidden user agenda models by \cite{Schatzmann2009TheHA}. 
+In this chapter we will describe the architecture of the Socrates Sim framework, highlight key design choices, and describe in detail the component parts. 
+
+Our goal is develop a modularized and production grade dialog simulation framework that can be re-targeted for new domains and produce training data and train dialog agents. The overall design for the simulator was inspired by the work done by \cite{li_usersim}. For the user simulator, we implement the theoretical formulation of the hidden user agenda models described in \cite{Schatzmann2009TheHA}. We also adopt the configuration first user access pattern used in the AllenNLP library \cite{Gardner_allennlp}.
 
 Underlying the simulator is a framework that consists the following components:
 \begin{itemize}
 	\item \textbf{User Simulator}: An agenda based user modeling component that generates natural language speech utterances to simulate what an actual human would say in the context of task-completion dialog activity. 
-	\item \textbf{Dialog Agent API}: A set of methods to allow a researcher to provide an agent(s) that simulate how the system / dialog agent would respond 
-	\item \textbf{Dialog Manager}: A coordinator component that tracks the current state of the dialog and facilitates the conversation between the user simulator and dialog agent/system. Add the end of the simulated conversation, the manager will evaluate and score the conversion. 
+	\item \textbf{Dialog Agent Interface}: A set of methods to allow a researcher to plug-in their dialog agent and have it interact with the user simulator
+	\item \textbf{Dialog Manager}: A coordinator tool that will facilitate the conversation between the user simulator and dialog agent. The simulator will save the simulated conversations in a annotated format.
 \end{itemize}
+
+\section{Architecture and Design} 
+
+The general architectural is greatly inspired by the end-to-end neural dialog framework described in \cite{li_end_to_end}  (see Figure \ref{fig:li_end_end}). In this design, there are two key components. The first is an agenda based user simulator, which has an internal natural language generation (NLG) model. The right hand side of the framework is the Neural Dialog System, which consists of a language understanding (LU) unit and a dialog management (DM) unit. The user simulator generates speech utterances using its NLG and sends to the LU unit. The LU parses the speech utterance into a semantic frame (implemented as python dictionary) and hands it the dialog management unit, which generates a system action and sends to the user simulator (as a semantic frame). The dialog manager also has a state tracker and policy learner. The policy learner is implemented as a deep Q-network (DQN). 
+
+\begin{figure}[h!]
+	\label{fig:li_end_end}
+	\includegraphics[width=\linewidth]{diagrams/li_end_to_end.jpeg}
+	\caption{ The User simulator architecture described by Li et al. (2016) }
+\end{figure}
+
+The neural dialog system uses reinforcement learning to learn optimal policies. At the end of each simulated conversation, the dialog manager will score itself and update its policy learner. One of the key features to note is that the dialog agent is built in as a learner in the Neural Dialog System. After a set of predefined rounds, the output will be a neural dialog agent serialized as a model file. The simulated dialogs will also stored externally and can be used downstream as further training data.
+
+The primary challenge with this framework is that it is hard to adapt to new domains. While the user simulator is a separate component and can be easily reconfigured, the dialog agent and dialog manager are tightly coupled. The dialog agent must be implemented as neural learner. To adapt this framework to a new domain would require rewriting the dialog manager, language understanding unit, and surrounded scaffolding scripts setting up and running the simulations. In the research code provided by \cite{li_end_to_end}, the domain information (movie booking) is directly hard coded into all the components of the framework. Communication between components takes place with python dictionaries, which can arbitrarily defined. This introduces an element of variability that can present challenges downstream for debugging.
+
+\begin{figure}[h!]
+	\label{fig:socrates_sim_framework}
+	\includegraphics[width=\linewidth]{diagrams/socrates_diagram.jpeg}
+	\caption{ Design of Socrates Simulator Framework }
+\end{figure}
+
+The Socrates Sim framework was designed generalize to new domains and provide a consistent experience for dialog simulation and generation of labeled data. Figure \ref{fig:socrates_sim_framework} provides a high level overview of the framework. The framework is pretty basic. There are three key modules, the user simulator, the dialog agent, and the dialog manager. The researcher is responsible for implementing the user simulator and dialog agent. The dialog manager class can configured using an external configuration file, allowing for easier experimentation.
+
+The framework needs to be modular so that it can be quickly adapted to support new dialog domains and experiments. Each major component of the framework is represented as a python abstract base class. Both the user simulator and agent have the same base class (Speaker) and have their own internal nlg and nlu objects. Additionally, I promoted dialog actions, goals, and domain knowledge bases to first class objects, rather than implementing them at the lower dictionary level. As first class objects, I can standardize the communication and management of these pieces and ensure more consistent behavior.
+
+One of the key distinctions, is that the framework is agnostic to how the dialog agent is implemented. By decoupling the agent from the dialog manager, the researcher is free to test out different agents without having to rewrite the entire simulation framework.  The dialog agent class provides a simple interface to allow external agents to plug into the simulation framework. This also frees up the dialog manager to provide other useful services like metrics, dialog analysis, and labeled data generation. 
+
+We want to provide as much flexibility and freedom to the researcher and limit what is hard-coded. I follow the configuration first approach leveraged in the development of AllenNLP, a deep learning for NLP tool developed at the Allen Institute for Artificial Intelligence. The code is generalized and the user defines particular implementation details in external configuration files. 
+
+To support a configuration driven approach, each configurable module will have a use defined yaml or json file. For smaller configuration details, the user will prefer using yaml which is more human readable. The yaml format is simple and has a very low learning curve. It follows a basic key value pair paradigm, where keys have clear semantic meaning and values can be represented in a variety of data structures. 
+
+\begin{figure}[h!]
+	\caption{Example yaml section. }
+	\label{fig:ex_yaml}
+	\begin{lstlisting}
+	# Dialog Simulation settings
+	simulation_rounds: 10
+	max_turns: 8
+	first_speaker: usersim
+	simulation_output_path: data/simulated_dialogs/
+	\end{lstlisting}
+\end{figure}
+
+Socrates Sim is command line tool. Once the researcher has setup the user simulator and dialog agent, they can invoke the dialog manager and run simulations with the command line. At the end of the simulation, the dialog manager will output performance metrics for dialog agent and store the generated dialogs with annotations.
+
+The remainder of the chapter will further describe in detail the different components of Socrates Sim.
 
 \section{User Simulator} 
 
@@ -19,7 +67,7 @@ The user simulator is responsible for imitating a real user and generating reali
 
  One of the primary assumptions here is that user has intentionally engaged with the dialog agent in order to complete their task. At the outset of the conversation, the user will have some specific goal in mind (order Indian food, book a flight to Japan, etc). The dialog agent will attempt to learn user's goal by asking the user a set of clarifying questions. Schatzmann and Young introduces the idea of a hidden user agenda as a mechanism to represent the sequence of dialog acts and utterances a user will say in the context of that conversation. At each step of a task-completion dialog, the user is either responding to the dialog agent or initiating a new conversation direction. The user agenda provides an efficient way and formal structure to represent the pending set of dialog acts the user will communicate to the dialog agent.
  
-Socrates Simulator implements the Schatzmann and Young's concept of user agenda and user goal as first class objects. The conversion from the formal representation to code is rather straightforward as there are analogous data structures. We will defer discussing implementation details until the next chapter. The subsections below will further describe how the user goal and agenda is defined. 
+Socrates Simulator implements the Schatzmann and Young's concept of user agenda and user goal as first class objects. The conversion from the formal representation to code is rather straightforward as there are analogous data structures. 
 
 \subsection{User Goals} 
 The user goal captures explicitly both user's preferences and missing information needs they are trying to fill. For example, take a user who wants to find an Indian restaurant in Central square for dinner. We can decompose this goal into two distinct components. The first is the user's explicit preferences. In this example, their preferred cuisine is Indian. The second component is implicit and unknown to the user. They are looking for a restaurant or more specifically the name and presumably the restaurant's phone number and address. This information is unknown but can be broken down into discrete pieces of information the user will attempt to elicit from the dialog agent as a request for more information. 
@@ -27,7 +75,7 @@ The user goal captures explicitly both user's preferences and missing informatio
 Formally, Schatzmann and Young defines the user goal \textit{G} as \textit{G = (C,R)}, where \textit{C} consists of constraints or the user's explicit preferences and \textit{R} represents the user's requests. The constraints and requests are explicitly represented as slot-value pairs. \ref{fig:goals1} below shows how one could represent the goal of user looking for a bar. 
 
 \begin{figure}[h!]
-	\includegraphics[width=\linewidth]{diagrams/schatzmann_goal_fig.jpeg}
+	\includegraphics[scale=.35]{diagrams/schatzmann_goal_fig.jpeg}
 	\caption{Example User goal. User wants the name, address and phone number of a cheap bar in central.  }
 	\label{fig:goals1}
 \end{figure}
@@ -36,7 +84,7 @@ The concept of a goal abstractly turns out to be useful in also driving the dial
 
 \subsection{User Agenda} 
 
-Schatzmann and Young define the user agenda as a “[stack] structure of pending dialogue acts [which] serve as a convenient mechanisms for encoding the dialogue history and user’s ‘state of mind’ ” \cite{Schatzmann2009TheHA}. Formally, at any time t, the user is in a state su  and takes an action au,which transitions into an intermediate state s’u. During this intermediate state, the user will receive an action from the system (machine) am, which will transition dialog to next state s’’u and the cycle will reset. The result is a sequence of alternating turns between the user and system (i.e. su -> au -> s’u -> am -> s’’u -> … ), which represents the conversation state over time t.
+\cite{Schatzmann2009TheHA} define the user agenda as a \textit{“[stack] structure of pending dialogue acts [which] serve as a convenient mechanisms for encoding the dialogue history and user’s ‘state of mind’ ”}. Formally, at any time t, the user is in a state su  and takes an action au,which transitions into an intermediate state s’u. During this intermediate state, the user will receive an action from the system (machine) am, which will transition dialog to next state s’’u and the cycle will reset. The result is a sequence of alternating turns between the user and system (i.e. su -> au -> s’u -> am -> s’’u -> … ), which represents the conversation state over time t.
  
 The user agenda A is stack-like structure which contains all pending user actions. User actions are actualized through popping the stack and the agenda is updated by pushing back onto the stack. A user act is a representation of the user’s intent, which will eventually be translated into a speech utterance. The stack may also contain other actions that will affect the user when popped. For example, the system can communicate a restaurant suggestion, which would fill the one of the request slots for restaurant name.  
 
@@ -45,47 +93,49 @@ At the start of the dialog a new goal is randomly generated from the provided di
 Below is an  example of the a sample user agenda that Schatzmann and Young provide in the context of a user asking the dialog system for a bar recommendation [6]. The states of the conversation are indexed by time t. Note, Schatzmann and Young use constraints C, which would be the equivalent of inform slots in our representation. In the first turn, the user simulator generates a set of constraints (bar serving beer in central) and goals (name, address, and phone for a bar that meets the constraints in C0). This set of inform and request slots are translated into a user action stored in A0. When the system initiates the conversation, the user simulator pops two inform actions which translate into the user utterance “I’m looking for a nice bar serving beer”. When the system at t=1, responds “Ok, a wine bar. What price range?” the agenda updated to include a new inform intent (inform(prange=cheap)). Also added is a negate action, as the user asked beer and not wine. 
 
 Over the course of the conversation the agenda is updated, as are the request slots. The conversation ends at t=5, when bye() is popped and the agenda stack is empty. The conversation will then be evaluated based on how well the request slots were filled.
-
-
-
-\section{Dialog Model}
-
-\subsection{Overview}
-
-Add paragraph here about high level design and how all component fit together. 
-
-Give example of simple conversation flow.
-
-
-\subsection{Design Philosophy}
-
-At a high level, our aim is to develop a framework to allow dialog researchers to simulate a conversation between the user simulator and dialog agent. The framework needs to be modular so that it can be quickly adapted to support new dialog domains and experiments. Each major component of the framework is represented as a python class. Additionally, I promoted dialog actions, goals, and domain knowledge bases to first class objects, rather than implementing them at the lower dictionary level. As first class objects, I can standardize the communication, APIs, and management of these pieces and ensure more consistent behavior.
-
-Additionally, we want to provide as much flexibility and freedom to the researcher and limit what is hard-coded. I follow the configuration first approach leveraged in the development of AllenNLP, a deep learning for NLP tool developed at the Allen Institute for Artificial Intelligence. The code is generalized and the user defines particular implementation details in configuration file. To support a configuration driven approach, each configurable module will have a use defined yaml or json file. For smaller configuration details, the user will prefer using yaml which is more human readable. The yaml format is simple and has a very low learning curve. It follows a basic key value pair paradigm, where keys have clear semantic meaning and values can be represented in a variety of data structures. 
-
-\begin{figure}[h!]
-	\caption{Example yaml section. }
-	\label{fig:ex_yaml}
-	\begin{lstlisting}
-		# Dialog Simulation settings
-		simulation_rounds: 10
-		max_turns: 8
-		first_speaker: usersim
-		reward: 10
-		simulation_output_path: data/simulated_dialogs/
-		save_history: True
-		save_location: "data/simulated_dialogs/"
-		save_type: json
-	\end{lstlisting}
-\end{figure}
-
-\section{ Framework Overview}
-
-All components are represented as python classes. The ensuing section further describe the component's function, design, and any salient implementation details. 
+\clearpage
 
 \subsection{Dialog  Manager}
 
-The Dialog Manager class does thing
+\begin{figure}[h!]
+	\includegraphics[ scale=0.8]{diagrams/dialog_manager.jpeg}
+	\caption{ Class Definition of Dialog Manager. }
+	\label{fig:dialog_manager}
+\end{figure}
+
+The dialog manager has many responsibilities and is the primary engine of the simulation framework. Its responsibilities include loading the dialog domain, setting up user simulator and dialog agent, running the simulations, and performing post simulation metrics. The dialog manager does not need to modified by the researcher and is setup to implement the researcher's preferences via a configuration file. The configuration file is translated into a configuration object by the command line tool and sent to the dialog manager. In the configuration file, the user specifies the following:
+\begin{itemize}
+	\item user simulator class
+	\item dialog agent class
+	\item dialog domain representation
+	\item domain knowledge base class
+	\item simulation settings 
+\end{itemize}
+
+The dialog manger uses python dynamic loading capabilities to import the end user custom classes for the user simulator, dialog agent, and domain knowledge base. Once these are loaded into memory, the simulator runs the simulations. Figure \ref{fig:dialog_model} shows at a high level what the dialog model looks like. 
+\begin{figure}[h!]
+	\includegraphics[width=\linewidth]{diagrams/dialog_model.jpeg}
+	\caption{ Dialog Model Overview}
+	\label{fig:dialog_model}
+\end{figure}
+
+The dialog manager follow a basic pattern when running the simulation. It first generates a user goal, which will drive the user's hidden agenda and behavior. Next it resets the user simulator with the newly generated goal and calls the dialog agent to reset itself. Once both speakers are to ready to interact, the simulation is initiated. The logic for conversation is quite straightforward. The speaker class has next method, which takes in dialog action and returns a response dialog action. The logic for the speakers to communicate with each other can be expressed int two line (see  \ref{fig:conv_round}. The dialog action object standardizes how the speakers talk to each other and detail can found below.  
+
+\begin{figure}[h!]
+	\caption{Psuedo code for conversation round.}
+	\label{fig:conv_round}
+	\begin{lstlisting}
+	# Assuming user speaks first 
+	# 1. User Simulator takes turn and speaks
+	user_action = user_simulator.next(previous_agent_action, turn_number)
+	# 2. Agent takes turn and responds to user 
+	agent_action = agent.next(previous_user_action, turn_number)
+	\end{lstlisting}
+\end{figure}
+
+Finally, in order to simulate a real user, the researcher can set configure the user simulator to be corrupted in different ways. The user can change their minds and have a new preference generated from the dialog domain. To simulate faulty technical issues, the user may randomly exit the conversation. And finally the user's goals can be corrupted resulting in an indiscernible signal from the user as to whether their goals were met or not. All these corruption are specified by the researcher with a probability value, which represents the likelihood the user simulator will  act abhorrently. This behavior will help generate more diverse data  by providing negative examples.
+
+Once all the simulations are run, dialog simulator will run performance metrics to evaluate the efficacy of the dialog agent, and provide general statics about coverage of the generated data. The simulator evaluates the dialog agent in two ways. First it determines if the user was able to fill all the request slots in their hidden goal, which signals if the dialog outcome was successful or not. The researcher will be informed the average success rate of the dialog agent and can also see the round level evaluations in the generated dataset. Additionally, the simulator will produce quality score per round, which qualitatively evaluates the suggestions the agent made. The quality score captures how many of the user's preferences were satisfied by the agent's suggestion. Finally, the diaog manager will present the metrics describing the variance and distribution of the generated dataset. This way the researcher can see the coverage domain (which preference were used ) and general aggregate level statistics about the dataset. 
 
 \subsection{Dialog Action}
 
@@ -115,19 +165,7 @@ The DialogStatus is a python enumerative object that encodes the internal state 
 
 \subsection{Speaker}
 
-The speaker represents an actor that has the ability to speak and comprehend speech utterances. In our framework, the both user simulator and the dialog agent are represented by the same base speaker class. Both actors conceptually are identical in terms of functional behavior, in that they both listen and comprehend speech utterances and in turn respond by speaking. As such, both the user simulator and dialog agent can be represented in the same way to the dialog manager. In fact, the entire conversation round can be expressed in two lines: 
-
-\begin{figure}[h!]
-	\caption{Psuedo code for conversation round.}
-	\label{fig:conv_round}
-	\begin{lstlisting}
-	# Assuming user speaks first 
-	# 1. User Simulator takes turn and speaks
-	user_action = user_simulator.next(previous_agent_action, turn_number)
-	# 2. Agent takes turn and responds to user 
-	agent_action = agent.next(previous_user_action, turn_number)
-	\end{lstlisting}
-\end{figure}
+The speaker represents an actor that has the ability to speak and comprehend speech utterances. In our framework, the both user simulator and the dialog agent are represented by the same base speaker class. Both actors conceptually are identical in terms of functional behavior, in that they both listen and comprehend speech utterances and in turn respond by speaking. As such, both the user simulator and dialog agent can be represented in the same way to the dialog manager. In fact, the entire conversation round can be expressed in two lines (see Figure \ref{fig:conv_round}).
 
 The speaker class has four basic functions (\textit{next, reset, get utterance, and parse utterance}) and three properties (\textit{nlg model, nlu model, and dialog status}). When the speaker is initialized, the natural language object and the natural language understanding object are passed to the constructor. We abstract away the implementation of how the speaker speaks and parses speech in order maintain separation of concerns and also empower the researcher to be able to experiment with multiple techniques. 
 

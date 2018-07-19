@@ -1,4 +1,3 @@
-
 \chapter{Implementation}
 \label{chap:implementation}
 
@@ -59,7 +58,7 @@ Note, the figure above does not include the all the possible inform and request 
 
 The knowledge base for this use case is csv with various restaurants from the Cambridge area. Each row represents a unique restaurant and the column values capture the restaurant's cuisine, price range, area, phone number, and address. The data was scraped by Yelp. For the scraping script, see the appendix. The restaurants list was loaded as DomainKBtable object. The DomainKBtable loads the csv files as in memory pandas dataframes and provides a a set of methods for querying. 
 
-\section{Natural Language Understanding Implementations}
+\subsection{Natural Language Understanding Implementations}
 
 The goal of NLU implementation is to parse a natural language utterance into a DialogAction object. The parsed dialog action contains the intent of the utterance, i.e. the dialog act, and any entity / entity types, i.e. the dialog parameters, which are contained in the utterance. A rules based model and neural model were implemented to demonstrate the different models a researcher can use to support the natural language understanding. 
 
@@ -105,7 +104,7 @@ SERT NMT model diagram.
 
 
 
-\section{Natural Language Generation Implementations}
+\subsection{Natural Language Generation Implementations}
 
 The objective of the NLG module is to generate a natural language utterance, provided a dialog action. For the restaurant recommendation use case, we implemented both a template based model and a neural model. 
 
@@ -134,7 +133,7 @@ The template model is defined by a yaml file (see figure \ref{fig:res_nlg}). The
 The logic then is straight forward to generating a natural language utterance. The get utterance method in simulator will be passed a dialog action object which contains the dialog act and a list dialog parameters. We first look up the dialog act in the nlg template dictionary. Next we look up the slot values ( if any ) for the specific language templates. The slot values are passed in the dialog params property of the DialogAction object. Additionally, language templates that have multiples slot types, are indexed by combination of the slot types into a single string. We take the slot types, lower case them, arrange them by alphabetical order, and concatenate them together with comma separator into a single string. For example, "I want \$PRICE \$CUISINE" would be indexed by the string "cuisine,price". Finally, we randomly sample the list from the list of potential language template, substitute slot values, and return a generated natural language utterance. 
 
 
-\subsubsection{Neural Model for NLU}
+\subsection{Neural Model for NLU}
 
 We also implemented a simple neural machine translation model for our NLU module. 
 
@@ -221,18 +220,20 @@ If restaurant agent goes first, it issues a greetings action. If the agent is no
 
 \section{Movie Tickets}
 
+\subsection{Overview}
+The goal of the Movie Booking agent is help the end user purchase movie tickets. A similar domain agent was developed for the \cite{li_usersim} paper. Unfortunately, I was unable to use their agent and domain knowledge base in the context of the Socrates User Simulator. Much of their data was crowd sourced from Amazon Mechanical Turk and their use cases were a bit convoluted. There was a confusing overlap between the dialog action space for the user and agent which resulted in the user simulator making nonsensical and unrealistic utterances and dialog acts. There was a hight ratio of nose and data quality issues which would have made it difficult to replicate.  
 
+Drawing inspiration from their use case, the agent we developed is a bit more refined and modeled after something you would see on a movie booking site like Fandango. The agent will help identify movies for the user based on user preferences and also collect the user's payment details if the user choses to book a ticket. As the goal for this implementation is mainly to demonstrate the end to end dialog simulation framework and the user simulator, we did not implement an actual reservation database, a payment processing system, and a large move show times catalog. There are stubs for where the dialog agent would theoretically consult external resources in the aiding the user. We focus below on the the implementation details for the user simulator and domain modeling exercise.  
 
 \subsection{Domain}
 
+\subsection{Domain Knowledge Base}
+
+\subsection{ Natural Language Understanding}
+\subsection{ Natural Language Generation}
 \subsection{User Simulator}
-
-NLG and NLU
-
-
 \subsection{Dialog Agent}
 
-NLG and NLU
 
 
 %%% Local Variables: 
