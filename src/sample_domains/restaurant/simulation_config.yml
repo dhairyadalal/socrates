@@ -8,19 +8,16 @@ domain_kb_file_type: json
 
 # User Simulator settings
 usersim_type: rules
+usersim_class: sample_domains.restaurant.usersim.RestaurantUserSim
+nlg_class: sample_domains.restaurant.usersim_nlg.UserSimNLGTemplate
 starting_goal_path: sample_domains/restaurant/sample_starting_goals.yaml
-usersim_nlg_type: dict
-usersim_nlg_path: sample_domains/restaurant/nlg_usersim_rules.yaml
-user_goal_type: template
+user_goal_type: mix
 
 # Dialog Agent settings
-agent_type: rules
-agent_nlg_type: dict
-agent_nlg_path: sample_domains/restaurant/nlg_restaurant_agent.yaml
-#agent_nlu_type: None
+agent_class: sample_domains.restaurant.agent.RestaurantAgent
 
 # Dialog Simulation settings
-simulation_rounds: 10
+simulation_rounds: 1
 max_turns: 8
 first_speaker: usersim
 reward: 10

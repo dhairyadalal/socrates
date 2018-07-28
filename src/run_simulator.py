@@ -38,54 +38,29 @@ def import_config(file_path: str, file_type: str)->dict:
         return import_json(file_path)
 
 
-def setup_agent(agent_class: str,
-                domain: Domain,
-                nlg_type: str = None,
-                nlg_path: str = None,
-                nlu_type: str = None) ->'Agent':
+def setup_agent(agent_class: str, domain: Domain) ->'Agent':
 
     # Locate Agent and load
-    agent = locate(agent_class)
+    agent = locate(agent_class)(domain)
 
+    return agent
 
+def setup_usersim(usersim_class: str,
+                  domain: Domain,
+                  nlg_class: str,
+                  nlu_class: str=None)->'UserSimulator':
 
-    if type_ == "rules":
-        agent = RestaurantAgent(domain)
-        if nlu_type == "simple":
-            nlu = NLUsimple(domain)
-            agent.set_nlu(nlu)
+    # Locate and load usersim class
+    usersim = locate(usersim_class)(domain)
 
-        if nlg_type == "dict":
-            nlg_dict = import_yaml(nlg_path)
-            nlg_model = NLG(nlg_type, nlg_dict)
-            agent.set_nlg(nlg_model)
+    # locate and load nlg class
+    nlg = locate(nlg_class)()
+    usersim.set_nlg(nlg)
 
-        return agent
+    if nlu_class is not None:
+        nlu = locate(nlu_class)
+        usersim.set_nlu(nlu)
 
-    else:
-        return None # replace w/ other options
-
-def setup_usersim( type_: str,
-                   domain: Domain,
-                   nlg_type: str,
-                   nlg_path: str = None,
-                   nlu_type: str = None,
-                   nlu_path: str = None)->'UserSimulator':
-
-    if type_ == "rules":
-        # Load simulator
-        usersim = RestaurantUserSim(domain)
-
-        # Load NLU and NLG models
-        nlg_dict = import_yaml(nlg_path)
-        nlg_model = NLG(nlg_type, nlg_dict)
-        usersim.set_nlg(nlg_model)
-
-        if nlu_type is not None:
-            pass
-
-        if nlu_path is None:
-            usersim.set_nlu(None)
     return usersim
 
 
@@ -104,16 +79,11 @@ def load_dialog_manager(config: dict) -> 'DialogManager':
     domain.add_domain_kb(domain_kb)  # 2. Load KB (replace w/ Domain obj)
 
     # Load Speakers
-    agent = setup_agent(type_=config.get("agent_type"),
-                        domain=domain,
-                        nlg_type=config.get("agent_nlg_type"),
-                        nlg_path=config.get("agent_nlg_path"),
-                        nlu_type=config.get("agent_nlu_type"))
+    agent = setup_agent(agent_class=config.get("agent_class"),
+                        domain=domain)
 
-    usersim = setup_usersim(config.get("usersim_type"), domain,
-                            config.get("usersim_nlg_type"),
-                            config.get("usersim_nlg_path"),
-                            None)
+    usersim = setup_usersim(config.get("usersim_class"), domain,
+                            config.get("nlg_class"))
 
     dialog_manager = DialogManager(user_sim=usersim,
                                    user_goal_type=config.get("user_goal_type"),

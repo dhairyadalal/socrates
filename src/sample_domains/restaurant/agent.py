@@ -1,7 +1,6 @@
-from dialog_simulator import DialogAction, DialogGoal, DialogStatus
+from dialog_simulator import DialogAction, DialogGoal, DialogStatus,\
+    NLGTemplate, import_yaml
 from dialog_agents import Agent
-from copy import deepcopy
-
 
 class RestaurantAgent(Agent):
 
@@ -12,6 +11,9 @@ class RestaurantAgent(Agent):
                                request_slots={"cuisine": "UNK",
                                               "area": "UNK",
                                               "pricerange": "UNK"})
+
+        nlg_template = import_yaml("sample_domains/restaurant/nlg_restaurant_agent.yaml")
+        self.nlg = NLGTemplate(nlg_template = nlg_template)
         self.kb = None
 
     def reset(self):

@@ -80,8 +80,6 @@ class DialogAction(object):
                   "nl_utterance": self.nl_utterance}
         return json.dumps(action, indent = 4)
 
-
-
 class NLU(object):
     """ Base class for natural language understanding module. """
 
@@ -205,21 +203,18 @@ class NLUsimple(NLU):
 
         return DialogAction(dialog_act=intent, params=params)
 
-
 class NLG(object):
+    def get_utterance(self, dialog_action: DialogAction) -> str:
+        pass
 
-    def __init__(self, type: str, model: object):
-        if type in ["dict", "model"]:
-            self.type = type
-        else:
-            raise ValueError("Invalid model type. Supported types: dict, model.")
-        self.model = model
+class NLGTemplate(NLG):
 
-        if type == "dict":
-            token_re = r"(?:^|\s)([$])(\w+)" if self.model.get("regex") is None else self.model.get("regex")
-            self.version = self.model.get("version")
-            self.domain = self.model.get("domain")
+    def __init__(self, nlg_template: dict):
+        self.model = nlg_template
+        self.version = self.model.get("version")
+        self.domain = self.model.get("domain")
 
+        token_re = r"(?:^|\s)([$])(\w+)" if self.model.get("regex") is None else self.model.get("regex")
         self.re_nlg_pattern = re.compile(token_re)
 
     """ Base class for natural language generation module. """
@@ -238,20 +233,17 @@ class NLG(object):
 
     # --------------------------------- Class Public Methods ---------------------------------------------------- #
     def get_utterance(self, dialog_action: DialogAction)->str:
-        if self.type == "dict":
-            if "default" in dialog_action.params or not bool(dialog_action.params):
-                default_exp = self.model["dialog_acts"][dialog_action.dialog_act]["default"]
-                if len(default_exp) > 0:
-                    return random.choice(self.model["dialog_acts"][dialog_action.dialog_act]["default"])
-                else:
-                    return default_exp
+        if "default" in dialog_action.params or not bool(dialog_action.params):
+            default_exp = self.model["dialog_acts"][dialog_action.dialog_act]["default"]
+            if len(default_exp) > 0:
+                return random.choice(self.model["dialog_acts"][dialog_action.dialog_act]["default"])
             else:
-                # Generate natural language template
-                param_keys = dialog_action.get_param_keys()
-                nl_template = random.choice(self.model["dialog_acts"][dialog_action.dialog_act][param_keys])
-                utterance = self._generate_utterance(nl_template, dialog_action)
+                return default_exp
         else:
-            utterance = self._model_generate_utterance(dialog_action)
+            # Generate natural language template
+            param_keys = dialog_action.get_param_keys()
+            nl_template = random.choice(self.model["dialog_acts"][dialog_action.dialog_act][param_keys])
+            utterance = self._generate_utterance(nl_template, dialog_action)
 
         return utterance
 

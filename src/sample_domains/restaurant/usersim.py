@@ -6,7 +6,6 @@ import random
 class RestaurantUserSim(UserSimulator):
 
     def __init__(self, domain: 'Domain') -> None:
-
         super(RestaurantUserSim, self).__init__(domain)
         self.response_router = {"greetings": self._respond_general,
                                 "inform": self._respond_to_suggestion,
