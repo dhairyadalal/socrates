@@ -1,7 +1,7 @@
 from sample_domains import RestaurantUserSim, RestaurantAgent
 from dialog_simulator import *
 import argparse
-import json
+from pydoc import locate
 
 # Set up command line paraser
 parser = argparse.ArgumentParser(description=
@@ -38,11 +38,16 @@ def import_config(file_path: str, file_type: str)->dict:
         return import_json(file_path)
 
 
-def setup_agent(type_: str,
+def setup_agent(agent_class: str,
                 domain: Domain,
                 nlg_type: str = None,
                 nlg_path: str = None,
                 nlu_type: str = None) ->'Agent':
+
+    # Locate Agent and load
+    agent = locate(agent_class)
+
+
 
     if type_ == "rules":
         agent = RestaurantAgent(domain)

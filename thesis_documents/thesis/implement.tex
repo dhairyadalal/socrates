@@ -221,17 +221,75 @@ If restaurant agent goes first, it issues a greetings action. If the agent is no
 \section{Movie Tickets}
 
 \subsection{Overview}
-The goal of the Movie Booking agent is help the end user purchase movie tickets. A similar domain agent was developed for the \cite{li_usersim} paper. Unfortunately, I was unable to use their agent and domain knowledge base in the context of the Socrates User Simulator. Much of their data was crowd sourced from Amazon Mechanical Turk and their use cases were a bit convoluted. There was a confusing overlap between the dialog action space for the user and agent which resulted in the user simulator making nonsensical and unrealistic utterances and dialog acts. There was a hight ratio of nose and data quality issues which would have made it difficult to replicate.  
+The goal of the Movie Booking agent is help the end user purchase movie tickets. A similar domain agent was developed for the \cite{li_usersim} paper. Unfortunately, I was unable to use their agent and domain knowledge base in the context of the Socrates User Simulator. Much of their data was crowd sourced from Amazon Mechanical Turk and their use cases were a bit convoluted. There was a confusing overlap between the dialog action space for the user and agent which resulted in the user simulator making unrealistic utterances and dialog acts. There was a high ratio of nose and data quality issues which would have made it difficult to replicate.  
 
 Drawing inspiration from their use case, the agent we developed is a bit more refined and modeled after something you would see on a movie booking site like Fandango. The agent will help identify movies for the user based on user preferences and also collect the user's payment details if the user choses to book a ticket. As the goal for this implementation is mainly to demonstrate the end to end dialog simulation framework and the user simulator, we did not implement an actual reservation database, a payment processing system, and a large move show times catalog. There are stubs for where the dialog agent would theoretically consult external resources in the aiding the user. We focus below on the the implementation details for the user simulator and domain modeling exercise.  
 
 \subsection{Domain}
 
+ \begin{figure}[h!]
+	\caption{ Restaurant Agent Goal }
+	\label{fig:ex_res_agent_goal}
+	\begin{lstlisting}
+	# Domain Information
+	domain_name: movie
+	version: 1.0
+	
+	# Dialog Acts
+	dialog_acts: [ inform, confirm, affirm, request, negate, greeting, bye ]
+	
+	# Inform slots
+	inform_slots: [ city, date, movie, rating, genre, 
+	theater, times, zip, no_tickets ]
+	
+	# Request Slots
+	request_slots: [ address, city, date, movie, rating, stars,
+	state, theater, times, zip, genre, no_tickets, showtime ]
+	
+	# Required slots
+	required_inform_slots: [ no_tickets, date, cc_number, cc_exp,
+	cc_zip, cc_type, ccv ]
+	
+	# Valid User Goals
+	valid_user_goals:
+	- [ tickets_booked, movie, theater, showtime, address ]
+	- [ tickets_booked, movie, showtime ]
+	
+	# Random integer contraints
+	RAND_INTEGER_RANGE: [ 1, 10 ]
+	\end{lstlisting}
+\end{figure}
+
+For the movie domain, we first set up the domain configuration file. This file is used to generate the domain object that will be used by both the user simulator and dialog agent. The inform and request slots reflect information that will be communicated and captured specifically for the movie book use case. The user will haves preferences that include desired movie genre, minimum movie rating, show times, and theater location. From the agent's point of view, it will need to elicit the number of tickets the user wants to buy, the movie's name, showtime, and theater location. Additionally, the agent will collect the user's credit card information to complete the "purchase" of the tickets. 
+
+The  domain configuration file is intentionally flexible. Compared to the the configuration file for the restaurant domain, you will notice two new sections, required slots and random integer range. The required slots indicate the inform slots the user goal must have in its inform slots. Here, that is the credit card information, which the agent uses to charge the user for the purchase of the tickets. The random integer range is used to generate at random, the number of tickets the user simulator wishes to purchase. 
+
+The configuration file gets read into Socrates Sim as a python dictionary and then converted into a domain object. Standard domain information (dialog acts, inform and request slots, valid goals) are mapped directly as object properties. Additional information is stored in a dictionary called \textit{additional\_params} and is also part of the domain object. This design allows the user flexibility in defining the domain while maintaining a minimum level of standardization. 
+
 \subsection{Domain Knowledge Base}
 
+We generated a sample movie database using Fandango movie showing data. To acquire the data, we developed a simple web scraper that used BeautifulSoup and the python requests library. The scraper navigated to Fandango.com, and extracted movie show times and move information. Since the data is only meant to be a proof of concept, we limited scraping to a single location (movie theaters with 2 miles of Cambridge, MA) and showings for one week. As result we scraped show times for about 9 movies across 6 theaters offered and all possible show times. Unfortunately, Fandango does not make available genre information and star ratings about the movies on the website. I randomly assigned each unique movie genre from 6 genres (action, romance, comedy, adventure, thriller and horror ) and star rating score from 1 to 5.
+
+The scraped data was stored as in a csv file. Like the restaurant domain, I created a DomainKBtable object, which loads in memory the csv file as a pandas data frame. The DomainKBtable provides several methods for querying and sampling.
+
 \subsection{ Natural Language Understanding}
+
+For the movie domain, there were no publicly available datasets to seed a neural based nlu model. We reused the rule based nlu model developed for the restaurant domain. No new code had to be written. The rule based model ingests a domain object and uses the domain's inform and request slot values for parsing. It should be noted that the rule based nlu is brittle as it will use the literal slot values for reverse matching the entity. If the user simulator generates paraphrase or alters the spelling of the entity, the model will fail to map the entity to he appropriate slot type. For demonstration purposes that is alright, as the goal of this use case is demonstrate re-targetability and flexibility of the framework.
+
+No new code had to be written to incorporate the a new nlu model for the movie domain, demonstrating the value of creating a higher level NLU abstract class. If researcher wishes to build a more robust and finely tuned nlu model, they can easily plug it into the framework. This is accomplished by writing a simple wrapper that inherits the NLU abstract class and 
+ specifying the new location of this new nlu object in the simulator configuration file.
+
 \subsection{ Natural Language Generation}
+
+We used a template based model for generating the user simulator utterances. As mentioned above, there was no publicly available data to seed the neural model. The language templates were written as yaml file.
+
+
+
+
 \subsection{User Simulator}
+
+
+
 \subsection{Dialog Agent}
 
 

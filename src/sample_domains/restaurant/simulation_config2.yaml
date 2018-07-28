@@ -1,0 +1,30 @@
+# Dialog Simulation Configuration
+
+# Domain Setup
+domain_config: sample_domains/restaurant/restaurant_domain.yaml
+domain_kb_class: sample_domains.restaurant.domainkb.RestaurantKB
+
+agent_class: sample_domains.restaurant.agent.RestaurantAgent
+
+# User Simulator settings
+# Usersim NLG Settings
+nlg_class: sample_domains.resaturant.nlg.TemplateNLG
+nlg_params:
+  template_loc: sample_domains/restaurant/
+
+
+# Usersim general settings
+sample_starting_goals: sample_domains/restaurant/sample_starting_goals.yaml
+user_goal_type: mix       # Valid options: template, random, mix
+goal_corruption_prob: .01 # Corrput user goal 5% probability
+change_mind_prob: .01     # User will change mind w/ 1% probabilty
+earl_exit_prob: .01       # Use will abruptly leave conversation w/ 1% probability
+
+# Dialog Simulation Settings
+simulation_rounds: 10
+max_turns: 8
+first_speaker: usersim
+reward: 10
+save_history: True
+save_location: "data/simulated_dialogs/"
+save_type: json

@@ -2,6 +2,7 @@ from user_simulator import UserSimulator
 from dialog_simulator import DialogAction, DialogGoal, DialogStatus
 import random
 
+
 class RestaurantUserSim(UserSimulator):
 
     def __init__(self, domain: 'Domain') -> None:
