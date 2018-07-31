@@ -74,6 +74,9 @@ class DialogAction(object):
     def params_empty(self)->bool:
         return bool(self.params)
 
+    def toString(self):
+        return "{'dialog_act':%s,'params':%s}" % (self.dialog_act, self.params)
+
     def __str__(self):
         action = {"dialog_act": self.dialog_act,
                   "params": self.params,

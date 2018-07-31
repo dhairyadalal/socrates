@@ -9,7 +9,7 @@ domain_kb_file_type: json
 # User Simulator settings
 usersim_type: rules
 usersim_class: sample_domains.restaurant.usersim.RestaurantUserSim
-nlg_class: sample_domains.restaurant.usersim_nlg.UserSimNLGTemplate
+nlg_class: sample_domains.restaurant.usersim_nlg.UserSimNLGmodel
 starting_goal_path: sample_domains/restaurant/sample_starting_goals.yaml
 user_goal_type: template
 
@@ -22,6 +22,6 @@ max_turns: 8
 first_speaker: usersim
 reward: 10
 simulation_output_path: data/simulated_dialogs/
-save_history: False
+save_history: True
 save_location: "data/simulated_dialogs/"
 save_type: json
