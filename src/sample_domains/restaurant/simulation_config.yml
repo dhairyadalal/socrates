@@ -11,7 +11,7 @@ usersim_type: rules
 usersim_class: sample_domains.restaurant.usersim.RestaurantUserSim
 nlg_class: sample_domains.restaurant.usersim_nlg.UserSimNLGTemplate
 starting_goal_path: sample_domains/restaurant/sample_starting_goals.yaml
-user_goal_type: mix
+user_goal_type: template
 
 # Dialog Agent settings
 agent_class: sample_domains.restaurant.agent.RestaurantAgent
@@ -22,6 +22,6 @@ max_turns: 8
 first_speaker: usersim
 reward: 10
 simulation_output_path: data/simulated_dialogs/
-save_history: True
+save_history: False
 save_location: "data/simulated_dialogs/"
 save_type: json

@@ -22,6 +22,8 @@ parser.add_argument('-nv', '--non_verbose', action='store_true',
 parser.add_argument('-pd', '--print_dialog', action='store_true',
                     help='Print simulated dialog')
 
+parser.add_argument('-s')
+
 
 
 # Config File Validation
@@ -114,13 +116,15 @@ if __name__ == "__main__":
     if args.print_dialog:
         print_dialog_flag = True
 
-
     # Check for valid file types
     if args.type not in ["json", "yaml"]:
         raise ValueError("Bad file type provided. Valid file types: json and yaml.")
 
     # Import config file
     config = import_config(args.path, args.type)
+
+    if args.s is not None:
+        config["simulation_rounds"] = int(args.s)
 
     # Load Dialog Manager with provided configuration settings
     dialog_manager = load_dialog_manager(config)

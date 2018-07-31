@@ -131,7 +131,7 @@ class DialogManager(object):
 
         # Generate New Goal
         new_user_goal = self.generate_goal(self.user_goal_type)
-        print("User Goal: \n", new_user_goal)
+        #print("User Goal: \n", new_user_goal)
 
         # Reset Speakers
         self.user_sim.reset(new_user_goal)
@@ -167,12 +167,13 @@ class DialogManager(object):
                         output: str = 'json',
                         print_dialog_flag: bool = False,
                         verbose_flag: bool = True) -> None:
-        print("Preparing to run simulations ... ")
+        #print("Preparing to run simulations ... ")
         for i in range(self.num_sim):
             if verbose_flag:
                 print("\tRunning simulation %i of %i" % (i+1, self.num_sim))
             self.run_simulation(print_dialog_flag, verbose_flag)
-        print("Successfully ran %i simulations." % self.num_sim)
+        #print("Successfully ran %i simulations." % self.num_sim)
+
         # write to file
         if save_history:
             if output == "json":
@@ -239,5 +240,3 @@ class DialogManager(object):
 
         # 7. Register Simulation
         self._register_simulated_dialog(user_goal, self.current_turn)
-
-
