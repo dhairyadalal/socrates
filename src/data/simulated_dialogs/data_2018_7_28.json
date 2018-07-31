@@ -1,0 +1,168 @@
+[
+    {
+        "dialog_grade": "Success",
+        "dialog_id": "422aa258-a6dc-4b2a-a9a8-f382b4b9017d",
+        "goal_grade": "Success",
+        "reward": 0,
+        "starting_user_goal": {
+            "inform_slots": {
+                "area": "central",
+                "cuisine": "chinese",
+                "pricerange": "expensive"
+            },
+            "request_slots": {
+                "address": "1234 Street",
+                "name": "ali baba"
+            }
+        },
+        "turn_history": [
+            {
+                "first_speaker": {
+                    "dialog_act": "greetings",
+                    "dialog_slots": {},
+                    "nl_utterance": "Hi, I'm looking for a restaurant.",
+                    "speaker": "usersim"
+                },
+                "second_speaker": {
+                    "dialog_act": "request",
+                    "dialog_slots": {
+                        "cuisine": null
+                    },
+                    "nl_utterance": "What kind of cuisine are you looking for?",
+                    "speaker": "agent"
+                },
+                "turn": 0,
+                "user_goal": {
+                    "inform_slots": {
+                        "area": "central",
+                        "cuisine": "chinese",
+                        "pricerange": "expensive"
+                    },
+                    "request_slots": {
+                        "address": "1234 Street",
+                        "name": "ali baba"
+                    }
+                }
+            },
+            {
+                "first_speaker": {
+                    "dialog_act": "inform",
+                    "dialog_slots": {
+                        "cuisine": "chinese"
+                    },
+                    "nl_utterance": "I want to eat chinese food.",
+                    "speaker": "usersim"
+                },
+                "second_speaker": {
+                    "dialog_act": "request",
+                    "dialog_slots": {
+                        "area": null
+                    },
+                    "nl_utterance": "What is your preferred area?",
+                    "speaker": "agent"
+                },
+                "turn": 1,
+                "user_goal": {
+                    "inform_slots": {
+                        "area": "central",
+                        "cuisine": "chinese",
+                        "pricerange": "expensive"
+                    },
+                    "request_slots": {
+                        "address": "1234 Street",
+                        "name": "ali baba"
+                    }
+                }
+            },
+            {
+                "first_speaker": {
+                    "dialog_act": "inform",
+                    "dialog_slots": {
+                        "area": "central"
+                    },
+                    "nl_utterance": "Looking for a food in central.",
+                    "speaker": "usersim"
+                },
+                "second_speaker": {
+                    "dialog_act": "request",
+                    "dialog_slots": {
+                        "pricerange": null
+                    },
+                    "nl_utterance": "What is your price range?",
+                    "speaker": "agent"
+                },
+                "turn": 2,
+                "user_goal": {
+                    "inform_slots": {
+                        "area": "central",
+                        "cuisine": "chinese",
+                        "pricerange": "expensive"
+                    },
+                    "request_slots": {
+                        "address": "1234 Street",
+                        "name": "ali baba"
+                    }
+                }
+            },
+            {
+                "first_speaker": {
+                    "dialog_act": "inform",
+                    "dialog_slots": {
+                        "pricerange": "expensive"
+                    },
+                    "nl_utterance": "I'm looking for a expensive priced restaurant. ",
+                    "speaker": "usersim"
+                },
+                "second_speaker": {
+                    "dialog_act": "inform",
+                    "dialog_slots": {
+                        "address": "1234 Street",
+                        "name": "ali baba",
+                        "phone": "343-433-4433"
+                    },
+                    "nl_utterance": "The phone number of ali baba is 343-433-4433 and the address is 1234 Street",
+                    "speaker": "agent"
+                },
+                "turn": 3,
+                "user_goal": {
+                    "inform_slots": {
+                        "area": "central",
+                        "cuisine": "chinese",
+                        "pricerange": "expensive"
+                    },
+                    "request_slots": {
+                        "address": "1234 Street",
+                        "name": "ali baba"
+                    }
+                }
+            },
+            {
+                "first_speaker": {
+                    "dialog_act": "bye",
+                    "dialog_slots": {},
+                    "nl_utterance": "Thanks!",
+                    "speaker": "usersim"
+                },
+                "second_speaker": {
+                    "dialog_act": "bye",
+                    "dialog_slots": {},
+                    "nl_utterance": "Thank you for using the restaurant recommend service.",
+                    "speaker": "agent"
+                },
+                "turn": 4,
+                "user_goal": {
+                    "inform_slots": {
+                        "area": "central",
+                        "cuisine": "chinese",
+                        "pricerange": "expensive"
+                    },
+                    "request_slots": {
+                        "address": "1234 Street",
+                        "name": "ali baba"
+                    }
+                }
+            }
+        ],
+        "turns_taken": 5
+    }
+]
