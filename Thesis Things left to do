@@ -1,0 +1,112 @@
+Thesis Things left to do
+
+Code
+	
+	Clean-up command line script	
+
+	New Features 
+	(X) Dynamic Loading 			
+	() User Simulator Complication
+			() - allow user to change mind with probablity p
+			() - allow for goal corruption
+			() - allow user to randomly exit conversation	
+		Neural Based NLG/NLU
+			(X) Extract Data
+			Train model on Restaurant Data
+					
+		Metrics
+			Optimal Max Turns
+			Average Success Rate
+			Suggestion Quality Metrics	
+
+		Unit Tests
+
+	Cleanup
+		(X) Seperate out restaurant code main code and move to examples
+		Update restaurant agent to actually make suggestions and use KB
+		add consistent type annotation and signatures
+		Fix restaurant agent unknown handling
+		Cleanup agent for movie tickets
+
+	Documentation 
+		generate readthedocs documentation
+		training manual
+
+Writing
+	- Chapters to Write
+		() - Results
+		() - Implementation
+			() - Movie Use Case
+		(X) - Development
+		(X) - Design
+			(X) - Dialog Manager
+			(X) - Overall Framework
+	- Other things to do
+		- add in diagrams
+		- clean all sections
+	- Rewrite Intro
+
+
+History
+6/5
+ -
+
+5/27
+- apply to movie domain (high priority)
+    - Agent
+    - Usersim
+    - movie kb (complete)
+    - movie domain (complete)
+    - nlg models (complete)
+    - starting goals (complete)
+    - fix goal serialization
+    - udpate usersim to support no response edge case
+    - add clean history
+    - Metrics
+        -  score simulation (% perc successful)
+    - usersim features
+        - random corruption of goal
+        - random user dropout
+        - random user bad answers
+    - Document Speaker design, NLU/NLG design, and external configurations
+
+5/22
+- refactor DialogAction to remove set/dict duality of params (complete)
+- export as json and clean up output format (complete)
+- move parsing to inside speaker (complete)
+- move goal generation to outside of user sim (complete)
+- update speaker reset code (complete)
+- simple nlu w/ key work lookup (complete)
+- update NLG ex for RestaurantAgent (complete)
+- rewrite DomainKB as class with API (complete)
+- Document Speaker design, NLU/NLG design, and external configurations
+
+5/15 - Check-in
+ - Support external configuration (completed)
+ - NLU module stub out (complete)
+ - NLG model refactored to support explicit calls (complete)
+ - Document Speaker design, NLU/NLG design, and external configurations  (not completed)x
+
+ External Configuration Details
+ - Configurable options
+    - domain
+    - speaker classes
+    - User Sim settings
+        - nlg/nlu model
+        - starting goals
+    - Simulation settings
+        - simulation rounds
+        - first speaker
+        - reward
+        - simulation output path
+
+To Do - 5/22
+- agent manager -> dynamically load modules
+- rewrite DomainKB as class with API
+- update NLG ex for RestaurantAgent
+- update speaker reset code
+- move parsing to inside speaker
+- simple nlu w/ key work lookup
+- move goal generation to outside of user sim
+- Document Speaker design, NLU/NLG design, and external configurations
+
