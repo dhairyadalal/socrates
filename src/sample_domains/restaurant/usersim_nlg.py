@@ -25,10 +25,10 @@ class UserSimNLGmodel(NLG):
             file.close()
 
         # 3. Clean up temp files
-        clean_up = ["os.devnull", "action.txt", "pred.txt"]
-        for file in clean_up:
-            if os.path.exists(file):
-                os.remove(file)
+      #  clean_up = ["os.devnull", "action.txt", "pred.txt"]
+      #  for file in clean_up:
+      #      if os.path.exists(file):
+      #          os.remove(file)
 
         return utterance
 

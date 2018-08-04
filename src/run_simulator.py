@@ -60,9 +60,8 @@ def setup_usersim(usersim_class: str,
     usersim.set_nlg(nlg)
 
     if nlu_class is not None:
-        nlu = locate(nlu_class)
+        nlu = locate(nlu_class)()
         usersim.set_nlu(nlu)
-
     return usersim
 
 
@@ -84,8 +83,10 @@ def load_dialog_manager(config: dict) -> 'DialogManager':
     agent = setup_agent(agent_class=config.get("agent_class"),
                         domain=domain)
 
-    usersim = setup_usersim(config.get("usersim_class"), domain,
-                            config.get("nlg_class"))
+    usersim = setup_usersim(config.get("usersim_class"),
+                            domain,
+                            config.get("nlg_class"),
+                            config.get("nlu_class"))
 
     dialog_manager = DialogManager(user_sim=usersim,
                                    user_goal_type=config.get("user_goal_type"),
