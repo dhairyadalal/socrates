@@ -1,5 +1,5 @@
 from dialog_simulator import DialogAction, DialogGoal, DialogStatus,\
-    NLGTemplate, import_yaml
+     NLGTemplate, import_yaml
 from dialog_agents import Agent
 
 class RestaurantAgent(Agent):

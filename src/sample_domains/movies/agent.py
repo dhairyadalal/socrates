@@ -2,6 +2,7 @@ from dialog_simulator import *
 from dialog_agents import Agent
 from copy import deepcopy
 
+
 class MovieAgent(Agent):
 
     def __init__(self, domain):
@@ -19,6 +20,9 @@ class MovieAgent(Agent):
                             "cc_zip":"UNK",
                             "cc_exp":"UNK"}
         self.params = None
+
+        nlg_template = import_yaml("sample_domains/movies/nlg_agent_rules.yml")
+        self.nlg = NLGTemplate(nlg_template=nlg_template)
 
 
     def reset(self):
@@ -128,6 +132,8 @@ class MovieAgent(Agent):
             action.update_utterance(self.get_utterance(action))
             return action
         elif user_action.dialog_act == "affirm":
+            return self._purchase_tickets(None)
+        else:
             return self._purchase_tickets(None)
 
     def __str__(self):
