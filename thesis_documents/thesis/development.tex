@@ -63,14 +63,50 @@ The next two tests, we compared the performances of both frameworks using model 
 
 In Figure \ref{fig:nm_test}. we see that Socrates Sim takes about 50 minute to 1,000 simulations. Socrates Sim continues to have linear growth, though the runtime line is much steeper. This can can be attributed the in-optimal deployment of the OpenNMT model for both the nlg and nlu. Since OpenNMT is currently a command line tool, it expects its inputs as text file and makes batch predictions. The OpenNMT tool had to be rigged to support on demand predictions. We to write the inputs to a text file and  invoke OpenNMT command line as subprocess in order to generate on-demand predictions. Each invocation carries the overhead of loading the model into memory, preprocessing the input, and running the input through NMT network. As we see below, this is quite expensive. A preloaded model in memory would be more effective. As the goal of this project is the demonstration of the end-to-end framework, additional time was not spent to custom build an optimized NMT model. In contrast, we find that TC-Bot does perform much more efficiently. While its growth is still linear, it can run 1,000 simulations in about 30 seconds. Once trained, TC-Bot is rather efficient at running simulations. 
 
- Finally, our set of experiments involve testing runtime performance across domains. As TC-Bot is hard-coded for just movie booking use case, it was not included in our performance tests. 
+ \begin{figure}[h!]
+	\label{fig:perf_cd_test}
+	\includegraphics[width=\linewidth]{diagrams/domain_perf.jpeg}
+	\caption{ Runtime Performance across domains}
+\end{figure}
+
+ Finally, our last set of experiments involve testing runtime performance across domains. As TC-Bot is hard-coded for just movie booking use case, it was not included in our performance tests. In Figure \ref{fig:perf_cd_test}, we see that there is performance variation between domains. Both have linear growth, though the movie domain performs more efficiently, taking about 30 seconds to generate 50,000 simulations. What we find is that the overall performance of the framework is tied to the complexity of the domain and speaker classes. From a general usability point of view, we assert that framework scales predictably and is usable. End-to-end, it takes about two minutes to run 50,000 simulations for the restaurant domain which is reasonable. 
  
- 
+ There is an opportunity to further improve overall performance. As the simulations can run independently, we can introduce multi-threading and leverage multi-core cpus for parallel processing. The dialog manager can be extended to support a thread pool and spawn multiple threads to run simulations in parallel. This could significantly improve performance if the research needs generate hundreds of thousands or millions of simulations.  
+
+\clearpage 
 \section{Memory Consumption Experiment and Results}
 
+The next set of testing involved measuring memory consumption of the framework over the course of running multiple simulations. The goal is show that Socrates Simulator consumes memory reasonably and is usable. Like the performance tests above, we ran a total of 6 tests to evaluate memory consumption. Four tests were on the Socrates Sim framework and two on the TC-Bot framework.
 
+To measure memory consumption, we used the python based \textit{memory-profiler} tool. The tool is invoked via command lined and runs the program to be evaluated as an internal sub-process. Over the duration of observed program's runtime, \textit{memory-profiler} uses the \textit{psustil} tool to probe the operating system for information about CPU usage, running processes, and resource utilization. \textit{Memory-profiler} will log memory usage at predefined increments until the program finishes running. 
 
+\begin{figure}[h!]
+	\label{fig:mem_usage_rules}
+	\includegraphics[width=\linewidth]{diagrams/mem_usage_rules.jpeg}
+	\caption{ Memory usage of Socrates Sim vs TC-Bot with rule based user simulator}
+\end{figure}
 
+For the first test, we looked at the memory usage of both frameworks using rule based actors for the movie domain. Figure \ref{fig:mem_usage_rules} shows relative performance of both frameworks. TC-Bot performs significantly better, capping at about 150 MB of overall memory usage over the course all simulations run. Running up to 5,000 simulations, Socrates Sim uses under 200 MB of memory. At the 50,000 simulations, memory usage does significantly increase to about 700 MB. It is worth noting that this much memory is only utilized at the tail end of Socrates Sim's runtime. This likely due to the fact that the dialog manager has not serialized the generated dialogs and is holding them in memory until all simulations have run.  
+
+\begin{figure}[h!]
+	\label{fig:mem_usage_nm}
+	\includegraphics[width=\linewidth]{diagrams/mem_usage_neural.jpeg}
+	\caption{ Memory usage of Socrates Sim vs TC-Bot with model based user simulator }
+\end{figure}
+
+In Figure \ref{fig:mem_usage_nm}, we see the results for memory consumption when using neural models. Note, that we used the restaurant domain for reasons explained above. Overall, both TC-Bot and Socrates Sim use a little under 150 MB. While runtime performance is drastically different, with TC-Bot running more efficiently overall, both frameworks have similar memory usage patterns. 
+
+Finally, in Figure \ref{fig:mem_usage_cd}, we see the results for memory usage across the restaurant and movie domain for Socrates Sim. As we saw above, at 50,000 simulations both domains significantly spike in usage of memory towards the end of the program's runtime. Under 10,000 simulations, total memory usage caps around 250 MB. 
+
+\begin{figure}[h!]
+	\label{fig:mem_usage_cd}
+	\includegraphics[width=\linewidth]{diagrams/mem_usage_domains.jpeg}
+	\caption{ Memory usage across domains for Socrates Sim}
+\end{figure}
+
+All the tests reveal a small oversight in the Socrates Simulator design. The tests show that memory usage grows linearly with the number of simulations run. This is due to the fact the dialog manager does not serialize the generated dialogs until all simulations are run.This is a minor bug can be resolved by having the dialog manager periodically serialize the queue of generated dialogs and reset the queue. 
+
+Accounting for the serialization issue, the overall memory usage for Socrates Sim is reasonable. In small simulations (under 50,000), Socrates Sim has a similar memory usage profile to TC-Bot. We believe Socrates Simulator is usable and provides predictable performance and memory utilization. For rules bases use case, Socrates Sim is quite efficient. Accounting for the complexity of the rules, the researcher is able to run thousands of simulations in matter of minutes. Overall, both the performance tests and memory utilization tests show that Socrates Simulator can be used for most reasonable use cases. 
 
 %%% Local Variables: 
 %%% mode: latex

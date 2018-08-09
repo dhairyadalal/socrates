@@ -32,7 +32,7 @@
 %SS  \clearpage
 %\phantomsection % Ensures that a PDF bookmark is set here
 \pdfbookmark[0]{Abstract}{abstract}
- \include{abstract}
+% \include{abstract}
 
 
 \clearpage
@@ -42,7 +42,7 @@
 
 \clearpage
 \phantomsection % Ensures that a PDF bookmark is set here
-%\pdfbookmark[0]{Contents}{contents}
+\pdfbookmark[0]{Contents}{contents}
 \addcontentsline{toc}{chapter}{Table of Contents}
 \tableofcontents
 
@@ -86,12 +86,11 @@
 \setcounter{page}{1}
 
 
-%\include{intro}
-%\include{design}
-%\include{implement}
+\include{intro}
+\include{design}
+\include{implement}
 \include{development}
-
-%\include{conclusion}
+\include{conclusion}
 
 
 \clearpage
@@ -99,7 +98,7 @@
 \addcontentsline{toc}{chapter}{References}
 \renewcommand{\bibname}{References}
 \bibliographystyle{apalike2}
-\bibliography{main}
+ \bibliography{main}
 
 
 % ------------------------------------------------------------

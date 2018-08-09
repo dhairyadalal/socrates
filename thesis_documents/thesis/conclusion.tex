@@ -2,25 +2,28 @@
 \chapter{Summary and Conclusions}
 \label{chap:conclusions}
 
-...
+In summary,this demonstrated a novel architecture to support end-to-end dialog simulation to support task-completion dialog research. In chapter 2, we described a modular architecture design that could be re-targeted to new domains and scaled efficiently. Central to this design, were four key components. The first was the development of the speaker abstract base class and the codification ancillary communication components like dialog actions, natural language generation and natural language understanding interfaces, and domain knowledge. 
 
-In conclusion, I ... 
+The second component was the extension and implementation of user goals and agenda modeling described in \cite{Schatzmann2009TheHA} to support the development of a user simulator. The last component was the development of a dialog manager. The dialog manager tracked, evaluated, and serialized simulated dialogs allowing for end-to-end dialog simulations. Socrates Sim also adopted a configuration first philosophy, inspired by \cite{Gardner_allennlp}, to support rapid experimentation and ease of use. 
 
-...
+In chapter 3, we described how this architecture was implemented for two different domains (movie booking and restaurant recommendation). We detailed the development of user simulators for both domains. We were also able to demonstrate the framework's modularity and flexibility by implementing a rules based and neural model based natural language understanding and natural language generation component for the user simulator in the restaurant domain. The implementation section also highlighted the use of configuration files that allowed the researcher to be easily swap out different user simulators and dialog agents.  
 
+In chapter 4, we described the development of Socrates Sim. We highlighted tools, language, and other programming specific choices made in developing Scorates Sim. Finally, in chapter 5, we provided evidence of the usability of Socrates Sim. Multiple performance tests were run to evaluate the runtime efficiency and memory consumption of Socrates Sim as it ran multiple simulations. We used TC-Bot, the implementation of \cite{li_end_to_end} end-to-end neural dialog framework, as as benchmark to evaluate performance. The testing confirmed that Socrates Sim is usable and performs both predictably and reasonably for running  up to 50,000 simulations. Socrates Sim scales does increase linearly as simulations increase, but performance doesn't degrade until you exceed 100,000 simulations. 
 
-
-\section{Lessons Learned}
-\label{sec:lessons}
-
-There are many lessons learned from the project.
-
-...
+In the next section, we will describe known limitations and issues with the framework and potential solutions for future work. 
 
 \section{Limitations and Known Issues}
-\label{sec:issues}
+\label{sec:issues} 
 
-...
+Overall, the 
+memory bug
+support for reinforcement learning and training a dialog agent. 
+
+
+\section{Lessons Learned and Ideas for Future Work}
+\label{sec:lessons}
+Overall, this thesis 
+
 
 
 %%% Local Variables: 
