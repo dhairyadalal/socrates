@@ -22,7 +22,8 @@ class UserSimulator(Speaker):
         return self.dialog_status
 
     # ------------------------------------- Base Methods ----------------------------------------#
-    def next(self, agent_action: 'DialogAction', current_turn: int) -> 'DialogAction':
+    def next(self, agent_action: 'DialogAction',
+             current_turn: int) -> 'DialogAction':
         pass
 
     def get_utterance(self, action: 'DialogAction') -> str:

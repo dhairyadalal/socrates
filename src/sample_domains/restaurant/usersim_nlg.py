@@ -37,3 +37,64 @@ class UserSimNLGTemplate(NLGTemplate):
     def __init__(self):
         nlg_template = import_yaml("sample_domains/restaurant/nlg_usersim_rules.yaml")
         super(UserSimNLGTemplate, self).__init__(nlg_template)
+
+
+from keras.models import load_model
+from keras.preprocessing.text import Tokenizer
+from keras.preprocessing.sequence import pad_sequences
+import pickle
+from numpy import argmax
+
+
+class NLGModel(NLG):
+
+    def __init__(self):
+        self.model = load_model("sample_domains/restaurant/models/nlg_model.h5")
+        tokenizers = pickle.load(open("sample_domains/restaurant/models/tokenizers.pkl", "rb"))
+        self.utterance_tokenizer = tokenizers["utterance_tokenizer"]
+        self.utterance_length = tokenizers["utterance_length"]
+        self.action_tokenizer = tokenizers["action_tokenizer"]
+        self.action_length = tokenizers["action_length"]
+
+    def create_tokenizer(data, char_level=False):
+        tokenizer = Tokenizer(char_level=char_level)
+        tokenizer.fit_on_texts(data)
+        return tokenizer
+
+    # max sentence length
+    def max_length(data):
+        return max(len(line.split()) for line in data)
+
+    def encode_sequences(self, tokenizer, length, lines):
+        X = tokenizer.texts_to_sequences(lines)
+        X = pad_sequences(X, maxlen=length, padding='post')
+        return X
+
+    def word_for_id(self, integer, tokenizer):
+        for word, index in tokenizer.word_index.items():
+            if index == integer:
+                return word
+        return None
+
+    def predict_sequence(self, model, tokenizer, source):
+        prediction = model.predict(source, verbose=0)[0]
+        integers = [argmax(vector) for vector in prediction]
+        target = list()
+        for i in integers:
+            word = self.word_for_id(i, tokenizer)
+            if word is None:
+                break
+            target.append(word)
+        return ''.join(target)
+
+    def get_utterance(self, action: 'DialogAction'):
+        return self.predict_utterance(action.toString())
+
+    def predict_utterance(self, action):
+        encoded_action = self.encode_sequences(self.action_tokenizer,
+                                               self.action_length,
+                                               [action])
+        pred = self.predict_sequence(self.model,
+                                     self.utterance_tokenizer,
+                                     encoded_action)
+        return pred + "&"

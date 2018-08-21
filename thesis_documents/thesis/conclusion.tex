@@ -1,30 +1,40 @@
-
-\chapter{Summary and Conclusions}
+\chapter{Conclusion}
 \label{chap:conclusions}
 
-In summary,this demonstrated a novel architecture to support end-to-end dialog simulation to support task-completion dialog research. In chapter 2, we described a modular architecture design that could be re-targeted to new domains and scaled efficiently. Central to this design, were four key components. The first was the development of the speaker abstract base class and the codification ancillary communication components like dialog actions, natural language generation and natural language understanding interfaces, and domain knowledge. 
-
-The second component was the extension and implementation of user goals and agenda modeling described in \cite{Schatzmann2009TheHA} to support the development of a user simulator. The last component was the development of a dialog manager. The dialog manager tracked, evaluated, and serialized simulated dialogs allowing for end-to-end dialog simulations. Socrates Sim also adopted a configuration first philosophy, inspired by \cite{Gardner_allennlp}, to support rapid experimentation and ease of use. 
-
-In chapter 3, we described how this architecture was implemented for two different domains (movie booking and restaurant recommendation). We detailed the development of user simulators for both domains. We were also able to demonstrate the framework's modularity and flexibility by implementing a rules based and neural model based natural language understanding and natural language generation component for the user simulator in the restaurant domain. The implementation section also highlighted the use of configuration files that allowed the researcher to be easily swap out different user simulators and dialog agents.  
-
-In chapter 4, we described the development of Socrates Sim. We highlighted tools, language, and other programming specific choices made in developing Scorates Sim. Finally, in chapter 5, we provided evidence of the usability of Socrates Sim. Multiple performance tests were run to evaluate the runtime efficiency and memory consumption of Socrates Sim as it ran multiple simulations. We used TC-Bot, the implementation of \cite{li_end_to_end} end-to-end neural dialog framework, as as benchmark to evaluate performance. The testing confirmed that Socrates Sim is usable and performs both predictably and reasonably for running  up to 50,000 simulations. Socrates Sim scales does increase linearly as simulations increase, but performance doesn't degrade until you exceed 100,000 simulations. 
-
-In the next section, we will describe known limitations and issues with the framework and potential solutions for future work. 
-
-\section{Limitations and Known Issues}
+\section{ Known Limitations and Suggestions for Future Work}
 \label{sec:issues} 
 
-Overall, the framework 
-memory bug
-support for reinforcement learning and training a dialog agent. 
+Overall, the framework works as intended. One key limitation was discovered during performance testing. We found that our serialization strategy causes the framework to consume memory linearly as the number of simulations increase. This occurs because the dialog manager waits until all simulation are run before dumping the generated dialog history. As a result the in memory json representation grows linearly with each incremental simulation run. The remedy for this is straight forward. The dialog manager can store the dialog history is a fixed size buffer that serializes to storage when it is full. 
 
+We also saw limitations around neural mode runtime performance and general qualitative performances in the context of nlg and nlu. The focus of this project was the engineering and development of the simulation framework. Unfortunately, we did not have time to explore how to optimize a neural architectures to support our use cases. This is an exciting and active area of research and offers many interesting avenues for further inquiry.
 
-\section{Lessons Learned and Ideas for Future Work}
+In a related vein, we were unable to support reinforcement learning and incorporate online training of the dialog agent in our framework. There is fascinating value to extend the framework to provide reward signals and support live training of the dialog agent based off of the feedback from the user simulator. 
+
+Finally, there is an opportunity to extend to framework by creating visual interface. Currently it is command line driven. The framework is developed with modularity in mind. We have abstracted the domain logics from implementation. As a result, a visual front end can be developed for Socrates Sim without requiring rewrites to the underlying framework.
+
+\section{Lessons Learned}
 \label{sec:lessons}
-Overall, this thesis 
 
+This thesis was my first foray into task completion dialog research and statistical language understanding. While I ultimately approached this domain from an engineering perspective, I did gain better understanding the active research challenges and model based approaches. My understanding of the capabilities and limitations of neural network based approaches likewise enriched. 
 
+From a software engineering perspective, the greatest challenge I ran into was walking the fine line between defining rigid conventions to ensure predictable usage vs allowing for more flexibility to empower the user. Often times my framework written and rewritten to accommodate marginal edge cases because my design choices titled to far on the flexible side. Other times, in an effort to remove as much manual coding from the user as possible, I tilted in the opposite direction and defined very rigid conventions that greatly limited the potential value to the end user. My end take away was that it often helpful to take a step back list out the various use cases. If you can make assumptions capture 60\% to 80\% of those use cases, then developed defined conventions is very valuable. In fact, it reduces the friction and learning curve to understand and use your tools.
+
+Additionally, this project was great deep dive into the Python language for supported larger scale projects. One of the persistent challenges with Python over the years is the great deal of confusion its dynamic typing causes in a complex project. The ability to explore Python 3.5's type hinting capabilities was were useful and interesting. Especially since the provides a way to raise the quality of python code bases to meet software engineering best practices and norms.
+
+\section{Summary}
+
+In summary, we have demonstrated the design and implementation of an end-to-end dialog simulation framework that supports task-completion dialog research. In chapter 2, we detailed a modular architecture that can be re-targeted to new domains and scaled efficiently. Central to this design, were four key components. The first is a speaker abstract base class with provides a unified interface for external user simulators and dialog agents to communicate with the framework in a standardized manner. The second is codification of the dialog domain, where dialog acts, inform and request slots and slot values, and other pertinent information to the domain is captured. The dialog domain object is made available to the dialog manager, dialog agent, and user simulator. The third important component is the standardization of  ancillary communication components like the dialog action object. Specifically we extend and formally implement as classes the user goal and user agenda described in \cite{Schatzmann2009TheHA} to support the development of a user simulator. The final component is the the dialog manager, which tracks, evaluates, and serializes simulated dialogs. 
+
+In chapter 3, we described the general process of implementing Socrates Sim. We highlighted our configuration first philosophy, inspired by \cite{Gardner_allennlp}, which allowed for the framework to more easily generalize to new domains. Specifically, we called out the use of the simulation configuration file. The configuration file allows the researcher needs to integrate an external user simulator, dialog agent, and domain into the framework. We also demonstrated modularity by supporting the dynamic loading of the nlg and nlu modules.
+
+In chapter 4 and 5 we explored in detail how Socrates Sim was adapted for the restaurant recommendation and movie booking domain. 
+We detailed the development of dialog domain, dialog agent, and user simulators for both domains. We showed specifically how Socrates Sim was able support new domains and nlg/nlu models with the use of configuration files and require no code update to the underlying framework and dialog manager. In doing so, we were able to demonstrate that the  framework is re-targetable. 
+  
+In chapter 6, we described how Socrates Sim was developed. We highlighted the tools, programming language, and other development specific choices made while developing Scorates Sim. In chapter 7, we provided evidence that Socrates Sim is usable and scale efficient. Multiple performance tests were run to evaluate the runtime efficiency and memory consumption of Socrates Sim as it ran an increasing number of simulations. We used TC-Bot (\cite{li_end_to_end}) as a benchmark to evaluate performance. 
+
+The testing confirmed that Socrates Sim scales efficiently and predictably running up to 50,000 simulations. While Socrates Sim does scale linearly as the required number of  simulations increase, performance doesn't degrade until you exceed 100,000 simulations. The average cost of running rules based models in Socrates Sim is between .0002 to .0131 seconds. You are able to simulated 50,000 dialogs in under two minutes, which far exceeds the performance of TC-Bot. We also find there is opportunity for improvement in improving model based simulations in Socrates Sim. Objectively, the average cost for a model based simulation is .6722 seconds and it takes about 1 hour to run 50,000 simulations. In contrast, the average cost per simulation for TC-Bot s .2168 seconds. TC-Bot is able to run 50,00 simulations in about 30 seconds. 
+ 
+In conclusion, we have developed framework that can support multi-domain task completion research. We have demonstrated the framework's ability to support new domains without changing the underlying code. Additionally, our performance tests reveal that Socrates Sim scales efficiently and is generally usable. Our hope is this project can provide the foundations for support end-to-end task completion research and be extended to provide new value by the community.
 
 %%% Local Variables: 
 %%% mode: latex

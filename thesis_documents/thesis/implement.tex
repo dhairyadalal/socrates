@@ -1,294 +1,144 @@
-\chapter{Implementation}
+\chapter{Implementing Socrates Sim}
 \label{chap:implementation}
 
 \section{Overview}
 
-In this chapter, we will the deployment of the Socrates framework in two domains, restaurant recommendation and movie tickets. We will demonstrate how the framework's robustness, modularity, and ability to be re-targeted across new domains. For each domain, we describe the setup configurations used, implementation details for the user simulator, dialog agent, and the various constituent models implementations like natural language generation and knowledge base querying. Note the full implementation code can be found in the appendix. We will focus on the strategies deployed and in particular the flexibility of the framework to handle different implementations.
+In this chapter, we describe how to implement and deploy Socrates Sim. We first describe the general process of setting up Socrates Sim. In chapter \ref{chap:restaurant} and chapter \ref{chap:movie}, we focus specifically on the omplemenation choices and details for supporting the restaurant recommendation and movie booking domain. These domains were chosen for different strategic reasons. The restaurant domain was selected due to the availability of training dialog data from the Dialog State Tracking Challenge 2 (DSTC2). The dialog acts and slot values are well defined by the organizers of DSTC2. We had to manually scrape restaurant data from Yelp in order to build out the database of restaurants to use for recommendations. We used the training dialog data to train the neural translation models to support model based natural language understanding (NLU) and natural language generation (NLG). 
 
-\section{Restaurant Recommendations}
-
-\subsection{Overview}
-
-The restaurant recommendation domain focuses on developing a chat-bot service that makes restaurant recommendations. The objective of the Socrates simulator is to produce a set of simulated conversations between the user simulator and Restaurant Recommender dialog agent. The dialog agent will attempt to elicit as much information about the user's preferences and then attempt to provide a useful recommendation. In this task completion exercise, both the user and the dialog agent can take the first turn. 
-
-As mentioned in the Design chapter, the framework is driven by configuration files. The researcher can easily modify and run different experiments through updated a human readable yaml file or a programmatically generated json file. For this use case, four configuration files are created to capture the following information:
-\begin{itemize}
-	\item Simulation settings: contains all the details around simulation criteria (e.g. number of rounds, first speaker, save setting, etc) as well the configuration details for dialog domain, user simulator and dialog agent. 
-	\item Dialog domain: describes the dialog action space, inform and request slots, and specifies valid user goals templates.
-	\item NLG templates for user simulator and agent: a rules based template to generate natural language utterances 
-\end{itemize}
-Additionally, we created custom modules to implement the user simulator and dialog agent for an end-to-end dialog simulation. 
-
-We used the Dialog State Tracking Challenge 2 (DSTC2) restaurant data and service as a model for our use case. The DSTC2 is research challenge put together by the University of Oxford and Microsoft to advance dialog research. For DSTC2, the goal was track the state of multi-stage conversations between real humans and a expert restaurant recommender service. The restaurant recommender service would provide recommendations based off the following user preferences: cuisine, area, and price range. DSTC2 also provided a rich and deep set of training data that allowed to model both neural network based approaches for NLG and NLU, as well as rule based approaches. 
-
-Below we will describe our strategy for developing the user simulator and dialog agent using the Socrates Simulator Framework and implementation choices for their constituent parts. 
-
-\subsection{Domain}
-
-\begin{figure}[h!]
-	\caption{ Restaurant Dialog Domain}
-	\label{fig:restaurant_domain}
-	\begin{lstlisting}
-	# Dialog Action Space
-	dialog_acts: [ inform, confirm, affirm, request, 
-			negate, greetings, bye]
-	
-	# Request Slots
-	request_slots: [ address, area, cuisine, 
-			 phone, pricerange, postcode, name ]
-	
-	# Inform slots
-	inform_slots: [ cuisine, pricerange, name, area ]
-	
-	# Valid User Goals Temaplates
-	valid_user_goals:
-	- [ name ]                    # User wants restaurant name
-	- [ name, address ]           # User wants name and address
-	- [ name, address, phone ]    # User wants name, address, and phone
-	- [ name, phone ]             # Use wants name and phone
-	\end{lstlisting}
-\end{figure}
-The first thing we setup is the dialog domain configuration file. This file is used to generate a domain object that will be used by both the user simulator and the dialog agent. For restaurant recommendations, we used dialog domain described in the DSTC2 ontology. The figure above details the s dialog action space, and the different inform and request slot types. The dialog domain was expressed as a yaml file, where each key captured the salient attributes of the domain. 
-
-One important feature of this file is the valid user goals templates section. It specifies the valid types of goals a user may have when engaging the dialog agent. The user simulator will use it generate random goals that can explore the preference space and test the robustness of the agent. 
-
-Note, the figure above does not include the all the possible inform and request slot values. Please see the [appendix ref] for the full configuration file.  
-
-\subsection{Domain Knowledge Base }
-
-The knowledge base for this use case is csv with various restaurants from the Cambridge area. Each row represents a unique restaurant and the column values capture the restaurant's cuisine, price range, area, phone number, and address. The data was scraped by Yelp. For the scraping script, see the appendix. The restaurants list was loaded as DomainKBtable object. The DomainKBtable loads the csv files as in memory pandas dataframes and provides a a set of methods for querying. 
-
-\subsection{Natural Language Understanding Implementations}
-
-The goal of NLU implementation is to parse a natural language utterance into a DialogAction object. The parsed dialog action contains the intent of the utterance, i.e. the dialog act, and any entity / entity types, i.e. the dialog parameters, which are contained in the utterance. A rules based model and neural model were implemented to demonstrate the different models a researcher can use to support the natural language understanding. 
-
-\subsubsection{Rules Based NLU}
-
-For the rules based approach, our parser has two part strategy. The first is to classify the intent of the utterance and map it to a dialog act. The second to is run an entity extraction pass and attempt to extract the entities contained in the utterance and map them to inform slot types. 
-
-The algorithm for the intent classification consists of two parts. The first is running the utterance through a question classifier ( implemented from \cite{chewning_lord_yarvis_2015} ). If the utterance is a question, we classify it as a request dialog act. Otherwise run though a set of regular expression matches and return the corresponding dialog acts ( see \ref{fig:intent_clf} ). Given the wide range of potential string matches for inform, we use that as the default dialog act. 
-
-\begin{figure}[h!]
-	\caption{ Intent Classifier Algorithm}
-	\label{fig:intent_clf}
-	\begin{lstlisting}
-	Classify Intent
-		input: natural languge utterance
-		
-		IF input is a question:
-			return 'request'
-		ELSE IF input contains [you, you want, right?]:
-			return 'confirm'
-		ELSE IF input contains [yes, yeah, yup, correct, right]]:
-			return 'affirm'
-		ELSE IF input contains [no, nope, wrong, incorrect]:
-			return 'negate'
-		ELSE IF input contains [hi, hello]:
-			return 'greetings'
-		ELSE IF input contains [bye, goodbye, thanks, thank you]:
-			return 'bye'
-		ELSE
-			return "inform"
-	\end{lstlisting}
-\end{figure}
-
-After the intent is classified, we then check to see if any entities are found in the utterance that can be mapped to entity types. To achieve this, we first lookup all the slot values defined in the domain object. Next, we create a reverse map dictionary, where each unique slot value ( i.e. the entity ) is mapped to a slot type (e.g. cuisine or price range ). The NLU parser then tokenizes the utterance into set a of word trigrams and check if a slot type exists for the token in the reverse map. All positive matches are added to the dialog params list in the DialogAction object. Finally, the parse utterance will return a DialogAction object with parsed dialog act and a list of dialog parameters. 
-
-\subsubsection{Neural Model for NLU}
-
-We also implemented a simple neural machine translation model for our NLU module. 
-
-The DSTC2 provides a large labeled dataset of conversations between human users and an human expert posing as the dialog agent. Between the train and development set were about 2000 annotated calls. All speech utterances ( between the human and agent ) were parsed and annotated. To train the NMT model, we extracted out all utterances and the corresponding parses ( expressed as json string objects ). The model was trained over X epochs and released.
-
-SERT NMT model diagram.
-
-
-
-\subsection{Natural Language Generation Implementations}
-
-The objective of the NLG module is to generate a natural language utterance, provided a dialog action. For the restaurant recommendation use case, we implemented both a template based model and a neural model. 
-
-\subsubsection{Template  Based Model}
-
-The template model is defined by a yaml file (see figure \ref{fig:res_nlg}). The nlg template is loaded into memory as a nested python dictionary. The first layer of keys are indexed by the dialog acts ( e.g. request, inform, etc), and the corresponding values are dictionaries indexed by specific slot types. In the case where there are the are no slot types ( e.g. affirm ), the default value is used. The natural language templates are stored in lists at the values for the slot types.
-
-\begin{figure}[h!]
-	\caption{ Example NLG template for User Simulator }
-	\label{fig:res_nlg}
-	\begin{lstlisting}
-	 affirm:
-		default: [ "Yes.", "Yup.", "Yes, that's right." ]
-	 greetings:
-		default: [ "Hi, I'm looking for a restaurant.",
-			   "Hi! Can you help me find a restaurant?" ]
-	 inform:
-		cuisine: [ "I'd like find a restaurant that serves $CUISINE.",
-			   "I'm looking for $CUISINE food.",
-			   "I want to eat $CUISINE food." ]
-		pricerange: [ "I'm looking for a $PRICERANGE priced restaurant.",
-			      "Looking $PRICERANGE priced food." ]	
-	\end{lstlisting}
-\end{figure}
-
-The logic then is straight forward to generating a natural language utterance. The get utterance method in simulator will be passed a dialog action object which contains the dialog act and a list dialog parameters. We first look up the dialog act in the nlg template dictionary. Next we look up the slot values ( if any ) for the specific language templates. The slot values are passed in the dialog params property of the DialogAction object. Additionally, language templates that have multiples slot types, are indexed by combination of the slot types into a single string. We take the slot types, lower case them, arrange them by alphabetical order, and concatenate them together with comma separator into a single string. For example, "I want \$PRICE \$CUISINE" would be indexed by the string "cuisine,price". Finally, we randomly sample the list from the list of potential language template, substitute slot values, and return a generated natural language utterance. 
-
-
-\subsection{Neural Model for NLU}
-
-We also implemented a simple neural machine translation model for our NLU module. 
-
-The DSTC2 provides a large labeled dataset of conversations between human users and an human expert posing as the dialog agent. Between the train and development set were about 2000 annotated calls. All speech utterances ( between the human and agent ) were parsed and annotated. To train the NMT model, we extracted out all utterances and the corresponding parses ( expressed as json string objects ). The model was trained over X epochs and released.
-
-SERT NMT model diagram.
-
-
-\subsection{User Simulator}
-
-We designed a rule based user simulator given the simplicity of the dialog domain. In this use case, the user has a set of hidden preferences and is looking get name of a restaurant that satisfies those preferences from the dialog agent. Additionally, the user may also want to get some the restaurant's phone number and address.
-
-At the start of each dialog round, the user simulator will be provided a goal from the Dialog Manager. For demonstration purposes we defined both an explicit set of user goals  and valid goal template for random goal generation The figure below shows what a sample goal would look like. 
-
-\begin{figure}[h!]
-	\caption{ Example User Goal. User is seeking the name and phone number of a cheap Chinese restaurant}
-	\label{fig:ex_user_goal}
-	\begin{lstlisting}
-	inform_slots:
-		cuisine: "chinese"
-		pricerange: "cheap"
-	request_slots:
-		name: "UNK"
-		phone: "UNK"	
-	\end{lstlisting}
-\end{figure}
-
-The rules simulator we designed is a separate python module that will be dynamically loaded by the Dialog Manager at simulation time. The rules simulator class inherits the base UserSimulator class, which in turn is a subclass of Speaker. The rules simulator will implement two key public methods defined by the Speaker, \textit{next} and \textit{get utterance}. From the dialog managers point of view, what the rule simulator does under the hood is completely hidden. The \textit{next} method takes in the opposing speakers speech utterance 
-
-The user agenda, which captures what the user simulator will communicate to the dialog agent, is simply the concatenation of the inform and request slot lists stored in the user goal. Functionally the user agenda is a stack of pending dialog acts that user will say over the course of the conversation. All key-value pairs captured in the corresponding inform and request slot lists are mapped to inform and request dialog acts. Over the course of the dialog, the top item at the stack, which gets popped, contains that dialog action for what the user simulator will do next. That action would be passed the the simulator's internal natural language generation module to generate a natural language utterance. 
-
- For memory efficiency, we do not actually implement the agenda, as the information already exists in user goal. Instead we pop directly from the inform slots list or defer the action generated by the next method for responses to the dialog agent. We keep track of state of conversation by check how many of the request slots have been filled with real values. The rules simulator runs sequentially through the request slots at the end of each conversation and updates its internal DialogStatus enum object. The logic for how the user simulator responds to incoming speech acts from the dialog agent is handled by the \textit{next} method.
+ The movie booking domain was selected so that we could run performance tests against the TC-Bot framework (\cite{li_end_to_end}). TC-Bot was hard coded to support the movie booking use case. While the TC-Bot code repository provided some domain configuration data, it was ultimately unusable. As a result, we defined a new but analogous domain and manually created a new movie database. As there was no dialog data available for training, we did not implement model based NLU and NLG components for the user simulator. Instead, we used a rules based approach. 
  
- \begin{figure}[h!]
- 	\caption{ Internal logic for the rules simulator. }
- 	\label{fig:ex_user_goal}
- 	\begin{lstlisting}
- 	response_router = { "greetings": respond_general,
- 	"inform": respond_to_suggestion,
- 	"random_inform": respond_random_inform,
- 	"request": respond_request,
- 	"confirm": respond_confirm,
- 	"bye": respond_general}
- 	
- 	\end{lstlisting}
- \end{figure}
+Please note, we refer to the end user as the researcher, as that is the presumed user of our framework. We aim to demonstrate the value of Socrates Sim directly though applied examples. 
 
-The \textit{next} is the driver of the rules simulator. It first will first attempt to parse the agents incoming dialog action and then respond to it using an internal dispatch tree. The internal logic of the \textit{next} method is a simple dispatch dictionary, where incoming dialog acts are mapped to resolver functions. Each response function has the same method signature, which is to take in a DialogAction object and return back a DialogAction that represents the user's response to dialog agent. The dialog agent's dialog action space is limited. The agent will respond with one of the following dialog acts:
+\section{General Process to Deploy Socrates Sim}
+
+The Socrates Sim framework is domain and speaker agnostic. All domain, dialog agent, and user simulator specifics have been abstracted away. Therefore the researcher must inform Socrates Sim about the dialog domain and where the speaker classes are located. Prior to running Socrates Sim, the researcher has to prepare the different components required to run a simulation. At a high level, the researcher needs to: 
 \begin{itemize}
-	\item greetings: the agent will greet the user and list it's services
-	\item request: the agent will ask a probing question to elicit the users preferences
-	\item inform: the agent will supply the user with information (usually tied to the user request request slots)
-	\item confirm: the agent will ask the user to confirm if it understood the user's intent 
-	\item bye: the agent will end the conversation  
+	\item Define the dialog domain 
+	\item Develop the interface classes for the user simulator
+	\item Develop the interface class for the dialog agent
+	\item Define the simulation settings
 \end{itemize}
 
-The implementation of how the resolvers for the greetings, bye, and confirm responses are straight forward. The code implementation can be found in the appendix. For greetings resolver, if the rules simulator is the first speaker, it will invoke the random inform method one or several inform slots, which will be translated into an inform speech act. Otherwise, it handle the agent dialog action with the dispatch dictionary. 
+The researcher then can invoke Socrates Sim to run multiple simulations and generate train data. Next we will briefly explore how to implement the components above. We further explore  domain specific implementation details in the proceeding chapters. 
 
-The resolver for responding to the agents request actions is a bit more involved. The simulator will looked at the parsed request slots types the agent is asking about and attempt to find corresponding inform slots in it goal object. For example, if the dialog agent asks "What cuisine do you prefer?", the simulator will look up cuisine in its internal goal and return the answer Chinese (i.e based on the goal in \ref{fig:ex_user_goal}). In the case where requested slot type is not found in the user's inform preferences, the simulator will respond with either "I don't know" or "I don't care". This null response can be configured in the simulation configuration file, where the response either set to one of those two options or randomly chosen. Additionally, to simulate a realistic user, at configuration time, the researcher can also set the probability with which the simulator will "lie" or "change its mind" about its preferences. In those cases, the simulator will randomly sample the provided slot values in the dialog domain object and return a different slot value. 
+\subsection{Defining the Dialog Domain}
 
-If rules simulator has exhausted the informing the dialog agent of all its preferences, the simulator will then pop values from its request slots list and ask for a recommendation. If the dialog agent sent an inform action, the inform resolver method would update the request slot with new provided information. So for example, if the dialog agent made the suggestion, "Check out Golden Dynasty", the "UNK" value in \ref{fig:ex_user_goal} would be replaced by "Golden Dynasty". If all the "UNK" values in the request slots were filled with real values, the user simulator would update its internal status to complete and issue the bye action. 
+The first thing the researcher should do is define the dialog domain. The dialog domain captures the various dialog acts, inform and request slots, slot values, and other information pertinent to their domain. Domain information is formally captured and represented to Socrates Sim as a \textit{domain} object (see section \ref{sssec:dialog_domain}). This object made available to the user simulator, dialog agent, and dialog manager. The object is static and does not change in order to ensure consistent communication between all parties. 
 
-As described above, the nlu and nlg models were set by the researcher in the simulation configuration file. By inheriting the UserSimulator class, the get utterance and parse utterance methods are also inherited and available to the researcher. Both method essentially call the corresponding methods in nlg and nlu objects. 
+The researcher does not need to manually create and instantiate the domain object. All the domain information is captured in a yaml or json configuration file (e.g. Figure \ref{fig:sample_domain}). The yaml format is recommended for small domains that can easily written out by hand. For larger complex domains, the json format is recommended as it is easier export programmatically. 
 
-\subsection{Dialog Agent}
-
-The restaurant agent was developed to illustrate how to incorporate an external dialog agent into the simulation framework. Since we do not have an existing restaurant recommendation agent, we developed a simple rule based agent. The goal of the agent is to capture all the user's preferences and then make a suggestion from its knowledge base of Cambridge restaurants. Like the user simulator, the public facing methods the dialog manager interacts with are \textit{next} and \textit{get utterance}. 
-
-For the restaurant agent, we follow a simple rules approach. The agent expects to interact with the following dialog acts: greetings, affirm, negate, request, inform, bye. In situations where the agent encounters an unknown dialog act, it will repeat its last dialog act. At the beginning of conversation round, dialog agent internally resets its goal ( \ref{fig:ex_res_agent_goal} ). 
-
-  \begin{figure}[h!]
- 	\caption{ Restaurant Agent Goal }
- 	\label{fig:ex_res_agent_goal}
- 	\begin{lstlisting}
- 	inform_slots: None
- 	request_slots:
- 		cuisine: UNK
- 		area: UNK
- 		pricerange: UNK 	
- 	\end{lstlisting}
- \end{figure}
-
-If restaurant agent goes first, it issues a greetings action. If the agent is not responding to user, it will sequentially pop one item from it request slots and issue a request dialog act. Once the restaurant agent has collected information from the user, it will attempt to make a suggestion from the knowledge base stored in the domain object. This is accomplished by calling the get suggestion method provided by the domain object.
-
-\section{Movie Tickets}
-
-\subsection{Overview}
-The goal of the Movie Booking agent is help the end user purchase movie tickets. A similar domain agent was developed for the \cite{li_usersim} paper. Unfortunately, I was unable to use their agent and domain knowledge base in the context of the Socrates User Simulator. Much of their data was crowd sourced from Amazon Mechanical Turk and their use cases were a bit convoluted. There was a confusing overlap between the dialog action space for the user and agent which resulted in the user simulator making unrealistic utterances and dialog acts. There was a high ratio of nose and data quality issues which would have made it difficult to replicate.  
-
-Drawing inspiration from their use case, the agent we developed is a bit more refined and modeled after something you would see on a movie booking site like Fandango. The agent will help identify movies for the user based on user preferences and also collect the user's payment details if the user choses to book a ticket. As the goal for this implementation is mainly to demonstrate the end to end dialog simulation framework and the user simulator, we did not implement an actual reservation database, a payment processing system, and a large move show times catalog. There are stubs for where the dialog agent would theoretically consult external resources in the aiding the user. We focus below on the the implementation details for the user simulator and domain modeling exercise.  
-
-\subsection{Domain}
-
- \begin{figure}[h!]
-	\caption{ Restaurant Agent Goal }
-	\label{fig:ex_res_agent_goal}
-	\begin{lstlisting}
-	# Domain Information
-	domain_name: movie
-	version: 1.0
-	
-	# Dialog Acts
-	dialog_acts: [ inform, confirm, affirm, request, negate, greeting, bye ]
-	
-	# Inform slots
-	inform_slots: [ city, date, movie, rating, genre, 
-	theater, times, zip, no_tickets ]
-	
-	# Request Slots
-	request_slots: [ address, city, date, movie, rating, stars,
-	state, theater, times, zip, genre, no_tickets, showtime ]
-	
-	# Required slots
-	required_inform_slots: [ no_tickets, date, cc_number, cc_exp,
-	cc_zip, cc_type, ccv ]
-	
-	# Valid User Goals
-	valid_user_goals:
-	- [ tickets_booked, movie, theater, showtime, address ]
-	- [ tickets_booked, movie, showtime ]
-	
-	# Random integer contraints
-	RAND_INTEGER_RANGE: [ 1, 10 ]
-	\end{lstlisting}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=.25]{diagrams/sample_domain.jpeg}
+	\caption{ Sample domain configuration file. }
+	\label{fig:sample_domain}
 \end{figure}
 
-For the movie domain, we first set up the domain configuration file. This file is used to generate the domain object that will be used by both the user simulator and dialog agent. The inform and request slots reflect information that will be communicated and captured specifically for the movie book use case. The user will haves preferences that include desired movie genre, minimum movie rating, show times, and theater location. From the agent's point of view, it will need to elicit the number of tickets the user wants to buy, the movie's name, showtime, and theater location. Additionally, the agent will collect the user's credit card information to complete the "purchase" of the tickets. 
+As seen above, the dialog information is captured with key/value pairs. The values in most cases are lists of items (e.g. a list of valid dialog acts). Inform and request slot values are represented as nested dictionaries. Each slot is a nested key that points to a list of valid slot values. Chapter \ref{chap:design} specifically outlines the various domain attributes. The one thing it does not cover is the valid user goals. 
 
-The  domain configuration file is intentionally flexible. Compared to the the configuration file for the restaurant domain, you will notice two new sections, required slots and random integer range. The required slots indicate the inform slots the user goal must have in its inform slots. Here, that is the credit card information, which the agent uses to charge the user for the purchase of the tickets. The random integer range is used to generate at random, the number of tickets the user simulator wishes to purchase. 
+Valid user goals are an optional piece of information the researcher can provide to Socrates Sim. At the beginning of each round, the dialog manager will generate a goal for the user simulator. This goal can be randomly selected from a preexisting list of valid goals or randomly generated from the request and inform slot information in the domain object. In the valid user goals section, the researcher lists out the different combinations of valid request values that can be used when generating a goal. This is to ensure the random goal generator does not generate a user goal with no request slots (implying the user has no goal in mind) or accidentally select request slots that produce invalid goals.  
 
-The configuration file gets read into Socrates Sim as a python dictionary and then converted into a domain object. Standard domain information (dialog acts, inform and request slots, valid goals) are mapped directly as object properties. Additional information is stored in a dictionary called \textit{additional\_params} and is also part of the domain object. This design allows the user flexibility in defining the domain while maintaining a minimum level of standardization. 
+Additionally, the researcher may have a knowledge base which they want to provide to dialog agent. The knowledge base can be used by the dialog agent to make suggestions. We create a simple interface to allow the dialog agent to access information from a knowledge base in a standardized way. The \textit{DomainKBTable} class will take in a csv file and convert it into a pandas data frame. It additionally provides a set of query and sampling methods. The \textit{DomainKBTable} object is an public property of the domain class.
 
-\subsection{Domain Knowledge Base}
+At runtime, the dialog domain information stored in the configuration file is dynamically loaded and converted into \textit{domain} object by the run script. For local testing, the researcher can invoke the \textit{import\_domain} method from the \textit{dialog\_simulator} module to manually instantiate the object. 
 
-We generated a sample movie database using Fandango movie showing data. To acquire the data, we developed a simple web scraper that used BeautifulSoup and the python requests library. The scraper navigated to Fandango.com, and extracted movie show times and move information. Since the data is only meant to be a proof of concept, we limited scraping to a single location (movie theaters with 2 miles of Cambridge, MA) and showings for one week. As result we scraped show times for about 9 movies across 6 theaters offered and all possible show times. Unfortunately, Fandango does not make available genre information and star ratings about the movies on the website. I randomly assigned each unique movie genre from 6 genres (action, romance, comedy, adventure, thriller and horror ) and star rating score from 1 to 5.
+\subsection{User Simulator and Dialog Agent  Interface}
+\label{sec:speake_interface}
+The process for integrating an external user simulator and dialog agent into Socrates Sim is very similar. The researcher needs to create an interface class that allows Socrates Sim to communicate with both speakers in a standardized manner.  This is accomplished by creating a subclass of the base \textit{UserSimulator} and \textit{DialogAgent} (see Figure \ref{fig:speaker_ext}). Both these base classes are implementations of \textit{Speaker} abstract base class described in section \ref{sssec:speaker}. 
 
-The scraped data was stored as in a csv file. Like the restaurant domain, I created a DomainKBtable object, which loads in memory the csv file as a pandas data frame. The DomainKBtable provides several methods for querying and sampling.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=.75]{diagrams/speaker_classes.jpeg}
+	\caption{ Extending Speaker class for user simulator and dialog agent.} 
+	\label{fig:speaker_ext}
+\end{figure}
 
-\subsection{ Natural Language Understanding}
+The key distinction between both bases classes is the requirement of transparency for the user simulator. The framework assumes that the dialog agent is opaque and can only communicates with the framework through dialog action objects.Therefore the \textit{DialogAgent} serves more as a template for implementation.  In contrast, the user simulator is required to be more transparent and accessible in particular manner by the dialog manager. At the beginning of each round, the dialog manager generates a user goal and updates the user simulator with that goal. Additionally, at the end of each conversation round, the internal state of the user simulator's goal is extracted and stored in the dialog history that is being actively tracked by the dialog manger. As a result, the researcher must implement a get and overridden reset method in addition the interface methods defined in the \textit{Speaker} abstract base class. The dialog goal is formalized as a \textit{DialogGoa}l object and more details about it can be found in section \ref{sec:dialog_goal}. 
 
-For the movie domain, there were no publicly available datasets to seed a neural based nlu model. We reused the rule based nlu model developed for the restaurant domain. No new code had to be written. The rule based model ingests a domain object and uses the domain's inform and request slot values for parsing. It should be noted that the rule based nlu is brittle as it will use the literal slot values for reverse matching the entity. If the user simulator generates paraphrase or alters the spelling of the entity, the model will fail to map the entity to he appropriate slot type. For demonstration purposes that is alright, as the goal of this use case is demonstrate re-targetability and flexibility of the framework.
+Both the user simulator and dialog agent interface sub classes must implement the following methods: \textit{reset}, \textit{next} \textit{get\_utterance}, and \textit{parse\_utterance}. The method signatures and return types are strictly defined and enforced to ensure that both speakers communicate with Socrates Sim in a standardized manner. As python is a dynamically typed language, we use the type hinting feature introduced in Python 3.5 to signal to method contracts and expectations. 
 
-No new code had to be written to incorporate the a new nlu model for the movie domain, demonstrating the value of creating a higher level NLU abstract class. If researcher wishes to build a more robust and finely tuned nlu model, they can easily plug it into the framework. This is accomplished by writing a simple wrapper that inherits the NLU abstract class and 
- specifying the new location of this new nlu object in the simulator configuration file.
+The reset method is used to reset the internal state of the speaker. That is all inform/request slots are cleared and any internal state tracking is set back to 0. It is called by the dialog manager at the start of each simulation round. The reset method of the user simulator is also expected to take in a dialog goal object, which is generated anew by the dialog manager. 
 
-\subsection{ Natural Language Generation}
+The next method is the critical method that drives the simulation. It is used to capture the current speaker's response to its interlocutor. The \textit{DialogAction} class is central to standardizing communication between the speakers and the dialog manager. Each speaker must produce a dialog action object that captures both the raw speech utterance and its semantic representation. The specific design of the \textit{DialogAction} class can be found in section \ref{sssec:dialog_action}. The next method takes in as input the dialog action of the previous speaker and the current turn number. It outputs the current speaker's response as a new dialog action object.
 
-We used a template based model for generating the user simulator utterances. As mentioned above, there was no publicly available data to seed the neural model. The language templates were written as yaml file.
+Finally, the \textit{get\_utterance} and \textit{parse\_utterance} methods are tied directly to the speaker's internal \textit{NLU} and \textit{NLG} objects.The \textit{parse\_utterance} method will take in a natural language speech utterance and pass it directly to the speaker's internal nlu object for parsing. The \textit{parse\_utterance} method will then output a new dialog action object with the parsed semantic frame representation of the utterance. The \textit{get\_utterance} does the reverse of \textit{parse\_utterance}. It generates a speech response from a provided semantic frame representation. The internals of how the nlg and nlu objects are defined is up to the researcher. In the restaurant use case, we explore how to use a rules based and model based strategy. It is important to note that the researcher can specify the \textit{NLU} and \textit{NLG} class implementations in the simulation file. By abstracting out the nlu and nlg process from the speaker's internal logic, we support the ability for experimentation and code reuse. 
 
-\subsection{User Simulator}
+\subsection{Simulation Configuration}
+After the researcher has prepared all the requisite components for using Socrates Sim, they need capture that information in a configuration file.  Specifically, the researcher has to provide Socrates Sim with the following: a path to the domain configuration file, path to user simulator class, path to dialog agent class, and the simulation settings. This information is collected in a yaml or json configuration file that is provided to Socrates Sim at runtime (see Figure \ref{fig:sample_sim_config}). 
 
-The underlying code and logic for the rules based user simulator is the same as the restaurant simulator. We updated the goal space support goals relevant to the movie booking use case. Additionally, we hard coded into the user simulator credit card information.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=.25]{diagrams/sample_sim_config.jpeg}
+	\caption{ Example simulation configuration file. }
+	\label{fig:sample_sim_config}
+\end{figure}
 
+The researcher also specifies the various simulation settings (e.g. number of simulations to run, where to store generated dialogs, etc). Figure \ref{fig:sim_settings} outlines out the various settings supported by Socrates Sim.
+
+\begin{figure}[h!]
+	\centering
+	 \begin{tabular}{|l|p{5cm}|p{5cm}|}
+		\hline 
+		\textbf{Setting} &\textbf{ Description } & \textbf{Valid Values } \\ 
+		\hline 
+		first\_speaker & Defines who speaks first  & user, agent, random  \\ 
+		\hline 
+		corrupt\_goal & Probability the user's goal is randomly corrupted resulting in random user behavior  & valid probability in range [0.0, 1.0]  \\ 
+		\hline 
+		user\_exit & Probability user randomly exits conversations  & valid probability in range [0.0, 1.0]  \\ 
+		\hline 
+		user\_uncertainty & Probability user randomly changes mind and goal  & valid probability in range [0.0, 1.0]  \\ 
+		\hline 
+		max\_turns & Maximum amount of conversation turns before simulation is aborted.  &  Reasonable real integer greater than 0 \\ 
+		\hline 
+		simulation\_rounds & Number of simulations to run.  &  Reasonable real integer greater than 0 \\ 
+		\hline 
+		save\_history & Flag to indicate if generated dialogs should be saved & True or False  \\ 
+		\hline 
+		save\_location & Location to store generated dialogs  & valid save path  \\ 
+		\hline 
+	\end{tabular} 
+	\caption{ Supported simulation settings.}
+	\label{fig:sim_settings}
+\end{figure}
+
+We made deliberate choice to adopt a configuration file first approach to communicate settings and other information to our framework. We drew inspiration from \cite{Gardner_allennlp} use of configuration files for the communication of model details and experiment parameters to the AllenNLP framework. In traditional command line tools, parameters are passed to the tool by command line arguments. For example, Figure \ref{fig:cmd_line_ex} contains the command line parameters to run 300 simulations on the TC-Bot simulators. 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=.25]{diagrams/cmd_line_ex.jpeg}
+	\caption{ Command line parameters to run 300 simulation with TC-Bot. }
+	\label{fig:cmd_line_ex}
+\end{figure}
+
+The challenge with this approach is that command line invocation can grow more complex as more parameters are added. Long command line invocation commands needs to be carefully formatted to ensure there are no line breaks and proper spacing is observed to separate out the arguments. This often results in a poor user experience. It is cumbersome to remember and cleanly enter all the information required each time the program is run. In practice, most users end up creating a reference file from which they copy and paste the command line statement. Socrates Sim supports both json and yaml formatted configuration files. Yaml is the recommended format as it is more human readable and is easy to write. If the researcher want to generate configuration files as part of a larger pipeline or does not like yaml, the json format is also supported. 
+
+\section{Simulating Dialogs with Socrates Sim}
+
+The last step in the process is actually running Socrates Sim and generating simulated dialogs. The framework is currently implemented as a command line tool. The user invokes a run script with the location of the simulation configuration file. If the researcher chose to save the output, the generated dialogs will be serialized as a json file. Additionally, the researcher can signal Socrates Sim to print the simulation in terminal using the \textit{-pd} flag. 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=.15]{diagrams/sample_run.jpeg}
+	\caption{ Sample run of the Socrates Sim framework. }
+	\label{fig:sample_run}
+\end{figure}
+
+Behind the scenes, the run script first loads in the simulation configuration file. Next, it initiates the dialog manager and passes along all the simulation settings. The dialog manager first loads the various components (e.g. reading in the dialog domain, initializing the interface classes for the user simulator and agent, etc). Next it starts the simulation process and facilitates the various conversations between the user simulator and dialog agent. At the end of each conversation round, the dialog manager evaluates the conversation based on the end state of the user simulator's goal object. If all the request slots in the goal object are filled, the dialog manger grades the simulation as successful. 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=.17]{diagrams/sample_save_output.jpeg}
+	\caption{ Sample output after running one simulation round. }
+	\label{fig:sample_output}
+\end{figure}
+
+After all simulations have been run, the dialog manager will serialize the output (if specified by the researcher) and exit. Figure \ref{fig:sample_output} shows an example output generated after running one simulation. The goal of the output file is to provide quality annotated data that can be used as training data for supervised learning or reinforcement learning based dialog agent. The output contains several pieces of key information. Each simulation is assigned a unique id. At a high level, we provide information about the number of the turns taken, the grade of the simulation, and the user's initial starting goal. Additionally, we provide a turn history, which contains an annotated history of the conversation round. 
+
+Socrates Sim is written to be extensible. Given its modular nature, the researcher has the ability to go in extend the framework to support new use cases. Next we show how Socrates Sim was adapted for the restaurant and movie domains. 
 
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: "main"
 %%% End: 
+
