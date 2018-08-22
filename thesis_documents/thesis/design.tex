@@ -21,7 +21,7 @@ The general architectural is greatly inspired by the end-to-end neural dialog fr
 \begin{figure}[h!]
 	\label{fig:li_end_end}
 	\includegraphics[width=\linewidth]{diagrams/li_end_to_end.jpeg}
-	\caption{ The User simulator architecture described by Li et al. (2016) }
+	\caption{ The user simulator architecture described by Li et al. (2016) }
 \end{figure}
 
 The neural dialog system uses reinforcement learning to learn optimal policies for the dialog agent. At the end of each simulated conversation, the dialog manager will score itself and update its policy learner. One of the key limitations of this approach is that the dialog agent is built in as a learner in the Neural Dialog System. After a set of predefined rounds, the output will be a neural dialog agent serialized as a model file. The simulated dialogs will also be stored externally and can be used downstream as further training data.
