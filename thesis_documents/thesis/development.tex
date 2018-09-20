@@ -22,7 +22,7 @@ Socrates Sim was developed using the PyCharm IDE. Pycharm was selected for its e
 	\item memory-profiler: This library was used to measure the memory consumption of the framework.  
 \end{itemize}
 
-The code base is stored on Github.com and uses git for version control and bug tracking. Github is an online cloud-based software platform used for sharing and hosting code bases. Github provides various collaboration and version tracking features.
+The code base is stored on Github and uses git for version control and bug tracking. Github is an online cloud-based software platform used for sharing and hosting code bases. Github provides various collaboration and version tracking features.
 
 \chapter{Results}
 
@@ -30,17 +30,17 @@ This chapter discusses the performance tests and results of the Socrates Simulat
 
 \section{Experiment Overview and Setup}
 
- Socrates Simulator is novel as an open source end-to-end dialog simulation framework. As a result, it was challenging to develop a meaningful benchmark for evaluation. We ultimately chose the TC-Bot framework, which is the research implementation of end-to-end neural dialog framework described in \cite{li_end_to_end}. We measured two aspects of the Socrates simulator, its scalability and its memory consumption over the course of running multiple simulations. The goal was to show that Socrates Sim is generally usable and that overall performance does not significantly degrade with expanded usage across different domains and increased simulation runs. 
+ Socrates Simulator is novel as an open source end-to-end dialog simulation framework. As a result, it was challenging to develop a meaningful benchmark for evaluation. We ultimately chose the TC-Bot framework, which is the research implementation of end-to-end neural dialog framework described by \cite{li_end_to_end}. We measured two aspects of the Socrates simulator, its scalability and its memory consumption over the course of running multiple simulations. The goal was to show that Socrates Sim is generally usable and that overall performance does not significantly degrade with expanded usage across different domains and increased simulation runs. 
  
  TC-Bot is the academic inspiration for this project. TC-Bot shares similar objectives for the training and evaluation of task-completion dialog agents. However, there are several key distinctions between TC-Bot and Socrates Sim. First, the neural architecture for training the dialog agent is tightly coupled with the overall framework for TC-Bot. Second, TC-Bot was hardcoded for a limited movie booking use case. Finally, the training data used by TC-Bot was collected with Amazon Turk and not publicly released. They did provide some of the intermediate representations (Python 2.7 encoded pickle files) of the data (e.g., dialog acts, slot values, etc). However, these intermediate representations were optimized for their specific use case and were unusable for general usage. Adapting TC-Bot to a new domain would have required non-trivial work rewriting the neural framework, which is outside of the scope of this project. To test TC-Bot, we ran the framework as is, with no changes to the domain or underlying framework. 
 
-Initially, performance testing was conducted on a MacBook Pro laptop with a core i7 processor and 16 GB of memory. However, TC-Bot's performance was significantly reduced due to its neural-architecture, which performed best on a gpu (graphical processing unit) enabled machine. In order to ensure a fair comparison, all performance tests were run on a gpu enabled server. Specifically, the server was running Ubuntu 14.04, with a core i9 3.3 ghz 10 core cpu and  64 gb of RAM. Additionally, the server had two gpus, a Titan Pascal and a Titan XP 12 gb GPU. 
+TC-Bot's performance relies on GPU support for its neural-architecture. In order to ensure a fair comparison, all performance tests were therefore run on a gpu enabled server. Specifically, the server was running Ubuntu 14.04, with a core i9 3.3 ghz 10 core cpu and  64 gb of RAM. Additionally, the server had two gpus, a Titan Pascal and a Titan XP 12 gb GPU. 
 
-A master script was written to coordinate iteratively calling each framework with a variable simulation count parameter. Each time, the framework is be called as an isolated subprocess of the master script to ensure more accurate measurements. 
+A master script was written to coordinate iteratively calling each framework with a variable simulation count parameter. Each time, the framework is called as an isolated subprocess of the master script to ensure more accurate measurements. 
 
 \section{Runtime Performance Experiment and Results}
 
-The goal of these tests was to measure how effectively the framework's runtime scaled with increased simulation rounds. Runtime is defined here as the elapsed time taken to run \textit{n} simulations, where \textit{n} is a positive integer. Starting with one simulation, we iteratively increased the simulations by 500, until we ran a total of 50,000 simulated dialogs. We do not capture the write time to save the simulated dialogs to disk. This is usually a linear cost proportional to the size of the stored dialogs in memory. 
+The goal of these tests was to measure how effectively the framework's runtime scaled with increased simulation rounds. Runtime is defined here as the elapsed time taken to run \textit{n} simulations. Starting with one simulation, we iteratively increased the simulations by 500, until we ran a total of 50,000 simulated dialogs. We do not capture the write time to save the simulated dialogs to disk. This is usually a linear cost proportional to the size of the stored dialogs in memory. 
 
 In total, we ran six different performances tests. Four tests were run on the Socrates Sim framework and two on the TC-Bot framework. 
 \begin{figure}[h!]
@@ -71,12 +71,12 @@ A preloaded model in memory would be more efficient. Therefore we switched to ev
  	\caption{ Runtime performance across domains.}
  \end{figure}
 
-Growth is linear across all frameworks and domains. In the table below, we measure the average cost per simulation and rank all the framework/domain combinations from fastest to the slowest. The rules-based models for Socrates Sim significantly outperforms TC-Bot. In contrast, the model-based TC-Bot is about three times faster that Socrates Sim. Finally, rules-based approaches,in general, are more efficient to run. 
+Growth is linear across all frameworks and domains. In the table below, we measure the average cost per simulation and rank all the framework/domain combinations from fastest to the slowest. The rules-based models for Socrates Sim significantly outperforms TC-Bot. In contrast, the model-based TC-Bot is about three times faster that Socrates Sim. Finally, rules-based approaches, in general, are more efficient to run. 
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=\linewidth]{diagrams/avg_cost.jpeg}	
-	\caption{ Average cost to run a single simulation.}
+	\caption{ Average time to run a single simulation.}
 	\label{fig:avg_cost}
 \end{figure}
 

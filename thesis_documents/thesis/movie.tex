@@ -2,11 +2,11 @@
 \label{chap:movie}
 
 \section{Overview}
-In this chapter, we describe how Socrates Sim is adapted to support the movie domain. The goal of the movie booking agent is to help the end user purchase movie tickets. A similar dialog agent was developed for the \cite{li_usersim} paper. Unfortunately, I was unable to reuse their agent and domain knowledge base. Much of their data was crowdsourced from Amazon Mechanical Turk and their use cases were a bit convoluted. There was a confusing overlap between the dialog action space for the user and agent, which resulted in the user simulator generating unrealistic utterances and dialog acts. There was also a high ratio of nose and data quality issues.  
+In this chapter, we describe how Socrates Sim is adapted to support the movie domain. The goal of the movie booking agent is to help the end user purchase movie tickets. A similar dialog agent was developed for the \cite{li_usersim} paper. Unfortunately, we were unable to reuse their agent and domain knowledge base. Much of their data was crowdsourced from Amazon Mechanical Turk. There was a confusing overlap between the dialog action space for the user and agent, which resulted in the user simulator generating unrealistic utterances and dialog acts. There was also a high ratio of noise and data quality issues.  
 
 Drawing inspiration from their use case, the agent we developed is simpler and modeled after something you would see on a site like Fandango. The agent will help identify movies for the user based on the user's preferences and also collect the user's payment details if the user chooses to book a ticket. As the goal for this implementation is mainly to demonstrate the end-to-end dialog simulation using a user simulator, we did not implement an actual reservation database, a payment processing system, and a large movie showtimes catalog. There are stubs for where the dialog agent would consult external resources while aiding the user. 
 
-We focus below on the implementation details for the user simulator and domain modeling exercise. One of the primary benefits of Socrates Sim is that it can be retargeted to new domains. We do not need to reimplement the framework or dialog manager. We first define the new domain specific components (i.e. the dialog domain, user simulator, and dialog agent). Then we create a new simulation configuration file. Due to the modular nature of the Socrates Sim, we are also able to reuse much of the code developed for the restaurant domain. Most of the modules are written to be domain agnostic, and read in the domain-specific logic from external configuration files. This allows for rapid experimentations and code conservation.
+We focus below on the implementation details for the user simulator and domain modeling exercise. One of the primary benefits of Socrates Sim is that it can be retargeted to new domains. We do not need to reimplement the framework or dialog manager. We first define the new domain specific components (i.e., the dialog domain, user simulator, and dialog agent). Then we create a new simulation configuration file. Due to the modular nature of the Socrates Sim, we are also able to reuse much of the code developed for the restaurant domain. Most of the modules are written to be domain agnostic, and read in the domain-specific logic from external configuration files. This allows for rapid experimentation and code conservation.
 
 \section{Defining Dialog Domain}
 
@@ -19,19 +19,19 @@ For the movie domain, we first set up the domain configuration file. This file i
 	\label{fig:movie_domain}
 \end{figure}
 
-The domain configuration file was designed to be flexible. Compared to the the configuration file for the restaurant domain, you will notice two new sections, \textit{required\_slots} and \textit{random\_integer\_range}. The required slots property indicates the inform slots that must be included in the user's goal. We require that the user goal include credit card information in the inform slots so that it can be presented to the dialog agent for "purchasing" tickets. The \textit{random\_integer\_range} is used bound the range for generating a random positive integer. This random integer is used to indicate the number of tickets the user simulator wishes to purchase. 
+The domain configuration file was designed to be flexible. Compared to the the configuration file for the restaurant domain, we introduce two new sections, \textit{required\_slots} and \textit{random\_integer\_range}. The required slots property indicates the inform slots that must be included in the user's goal. We require that the user goal include credit card information in the inform slots so that it can be presented to the dialog agent for "purchasing" tickets. The \textit{random\_integer\_range} is used to bound the range for generating a random positive integer. This random integer is used to indicate the number of tickets the user simulator wishes to purchase. 
 
-The dialog configuration file is automatically converted into a domain object when Socrates Sim is loaded. Standard domain information (dialog acts, inform and request slots, valid goals) are mapped directly as object properties. Additional information is stored in a dictionary called \textit{additional\_params} in the domain object. This design allows the user flexibility in defining the domain while maintaining a minimum level of standardization. 
+The dialog configuration file is automatically converted into a domain object when Socrates Sim is loaded. Standard domain information (dialog acts, inform and request slots, valid goals) is mapped directly as object properties. Additional information is stored in a dictionary called \textit{additional\_params} in the domain object. This design allows the user flexibility in defining the domain while maintaining a minimum level of standardization. 
 
 \subsection{Domain Knowledge Base}
 
-The dialog agent uses a database of movie showtimes to lookup movie showings and makes movie recommendations. We generated a sample movie database using Fandango movie showing data. To acquire the data, we developed a simple web scraper that used BeautifulSoup and the Python requests library. The scraper navigated to Fandango.com and extracted movie showtimes and general movie information. Since the data is only meant to be a proof of concept, we limited scraping to a single location (movie theaters with 2 miles of Cambridge, MA) and showings for one week. As a result, we scraped show times for about 9 movies across 6 theaters offered and all possible showtimes. 
+The dialog agent uses a database of movie showtimes to lookup movie showings and makes movie recommendations. We generated a sample movie database by scraping Fandango movie data. Since the data is only meant to be a proof of concept, we limited scraping to a single location (movie theaters within 2 miles of Cambridge, MA) and showings for one week. We collected show times for about nine movies across six theaters offered and all possible showtimes. 
 
-Unfortunately, Fandango does not make available genre information and star ratings about the movies on the website. I randomly assigned each unique movie genre from 6 genres (action, romance, comedy, adventure, thriller, and horror) and star rating score from 1 to 5. The scraped data was stored in a csv file. Like the restaurant domain, I created a \textit{DomainKBtable} class to provide a standard interface to query and sample data from the knowledge base. The knowledge base is represented as a pandas data frame in memory. 
+Unfortunately, Fandango does not make available genre information and star ratings about the movies on the website. We randomly assigned each unique movie genre from six genres (action, romance, comedy, adventure, thriller, and horror) and star rating score from 1 to 5. The scraped data was stored in a csv file. Like the restaurant domain, I created a \textit{DomainKBtable} class to provide a standard interface to query and sample data from the knowledge base. The knowledge base is represented as a pandas data frame in memory. 
 
 \section{User Simulator Domain}
 
-The underlying code and logic for the rules-based user simulator are similar to that of the user simulator used in the restaurant domain. We updated the goal space support new goals relevant to the movie booking use case.
+The underlying code and logic for the rule-based user simulator are similar to that of the user simulator used in the restaurant domain. We updated the goal space to support new goals relevant to the movie booking use case.
 
 \begin{figure}[h!]
 	\centering
@@ -63,7 +63,7 @@ The nlg and nlu processes are implemented as separate classes and described furt
 
 \subsection{NLG and NLU}
 
-For the movie domain, there were no publicly available datasets to seed a neural-based nlu model. We reused the \textit{NLUSimple} class from the restaurant domain. No new code had to be written. The rules-based model ingests a domain object and uses the domain's inform and request slot values for parsing. It should be noted that the rules-based nlu is brittle as it will use the literal slot values for reverse matching the entity. If the user simulator generates paraphrase or alters the spelling of the entity, the model will fail to map the entity to the appropriate slot type. For demonstration purposes, this is acceptable, as the goal of this use case is to demonstrate retargetability and flexibility of the framework.
+For the movie domain, there were no publicly available datasets to seed a neural-based nlu model. We reused the \textit{NLUSimple} class from the restaurant domain. No new code had to be written. The rule-based model ingests a domain object and uses the domain's inform and request slot values for parsing. It should be noted that the rule-based nlu is brittle as it will use the literal slot values for reverse matching the entity. If the user simulator generates paraphrase or alters the spelling of the entity, the model will fail to map the entity to the appropriate slot type. For demonstration purposes, this is acceptable, as the goal of this use case is to demonstrate retargetability and flexibility of the framework.
 
 We reused the \textit{UserSimNLGTemplate} class for natural language generation. Like \textit{NLUSimple}, the class is able to generalize to new domains by ingesting an external template file. We created a new nlg template file to support the various utterances that the user might say based on the combination of dialog act and dialog parameters. 
 
@@ -78,7 +78,7 @@ The key takeaway for this section is that no new code had to be written to suppo
 
 \section{Dialog Agent}
 
-The movie booking agent was developed to illustrate how to incorporate an external dialog agent into the simulation framework. Since we do not have an existing movie booking agent, we developed a simple rules-based agent. The goal of the agent is to capture all the user's preferences and then make a suggestion from its knowledge base of Cambridge movie showings. Like the user simulator, the public facing methods the dialog manager interacts with are \textit{next} and \textit{get utterance}. 
+The movie booking agent was developed to illustrate how to incorporate an external dialog agent into the simulation framework. Since we do not have an existing movie booking agent, we developed a simple rule-based agent. The goal of the agent is to capture all the user's preferences and then make a suggestion from its knowledge base of Cambridge movie showings. Like the user simulator, the public facing methods the dialog manager interacts with are \textit{next} and \textit{get utterance}. 
 
 For the movie booking agent, we follow a simple rules approach. The agent expects to interact with the following dialog acts: greetings, affirm, negate, request, inform, bye. In situations where the agent encounters an unknown dialog act, it will repeat its last dialog act. 
 
@@ -86,7 +86,7 @@ If the movie booking agent goes first, it issues a greetings action. If the agen
 
 \section{Generating Sample Dialogs with Socrates Sim}
 
-Once we have all the component pieces, we were able to run Socrates Sim. To run the simulations, we first created a simulation configuration file (Figure \ref{fig:movie_sim_config }). Socrates Sim dynamically loads the dialog domain, user simulator, and the dialog agent. As a result, changing from the restaurant domain to the movie domain just requires invoking Socrates Sim with a new configuration file. In the configuration file, we update the domain\_config, usersim\_class, and agent\_class to reflect the updated component locations. 
+Once we have all the component pieces, we are able to run Socrates Sim. To run the simulations, we first created a simulation configuration file (Figure \ref{fig:movie_sim_config }). Socrates Sim dynamically loads the dialog domain, user simulator, and the dialog agent. As a result, changing from the restaurant domain to the movie domain just requires invoking Socrates Sim with a new configuration file. In the configuration file, we update the domain\_config, usersim\_class, and agent\_class to reflect the updated component locations. 
 
 \begin{figure}[h!]
 	\centering
@@ -97,7 +97,7 @@ Once we have all the component pieces, we were able to run Socrates Sim. To run 
 
 \clearpage
 
-Socrates Sim is invoked using the command line an expects the path to the configuration file as an input. The figure below shows some example output for the sample dialogs that were generated by the simulator.
+Socrates Sim is invoked using the command-line and expects the path to the configuration file as an input. The figure below shows some example output for the sample dialogs that were generated by the simulator.
 
 \begin{figure}[h!]
 	\centering
